@@ -9,6 +9,14 @@ logs/
 Logs/
 *.log
 
+# Local support folders: preserve README files, ignore future bulky contents
+Reference Mods/*
+!Reference Mods/README.md
+Vanilla EU4 Backup References/*
+!Vanilla EU4 Backup References/README.md
+Test Notes/*
+!Test Notes/README.md
+
 # Archives
 *.zip
 
