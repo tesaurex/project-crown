@@ -1,0 +1,31 @@
+# Project Crown: Europa Ascendant — Hardcoded EU4 Risk Register
+
+Every place the EU4 engine is expected to fight this design. Severity reflects impact on the design *if the risk lands*, not likelihood. Items marked **VERIFY** are Phase 0 research spikes — assumptions about the current patch that must be tested before the affected system is built.
+
+| ID | Risk | Affected rules | Severity | Status |
+|---|---|---|---|---|
+| R-1 | Peace treaties are hardcoded — conquest cannot be forced to produce a subject at the peace deal | 13, 15 | **High** | Accepted, workaround designed |
+| R-2 | Diplomatic actions are hardcoded — Back War Effort cannot be a real diplo button; scripted war-joining effects are coarse | 20 | **High** | VERIFY (spike 2) |
+| R-3 | Colonization result (culture/religion flip to colonizer) is hardcoded | 22 | Medium | Workaround designed |
+| R-4 | Cored overseas provinces in a colonial region auto-transfer to the CN — colonial region placement *is* the CA-vs-Dependency routing switch, and cannot be disabled per-region | 9, 13–15 | **High** (design constraint) | Accepted, drives §8.4 design; non-colonizer CNs (e.g., Ottoman conquests) are script-converted to Overseas Dependencies |
+| R-5 | Tariffs, colonial wars, CN naming/colors are tied to the hardcoded `colonial_nation` type — custom subject types lose them | 14–17, 19 | Medium | Mitigation: CA stays on/near the vanilla type |
+| R-6 | `takes_diplo_slot` is static per subject type — cannot be conditioned on having Exploration Ideas | 12 | Low | Workaround: Exploration finisher grants diplo upkeep |
+| R-7 | Per-subject-type force-limit/manpower/income percentages have limited script hooks — exact 30%/20%/10% targets may only be approximable | 17, 19 | Medium | VERIFY (spike 3) |
+| R-8 | "Release subject / grant independence" is hardcoded diplomacy — AI-side ban may not be fully enforceable | 18 | Medium | Mitigation: subject-type gating if available + vanilla AI near-never does this |
+| R-9 | Colonial range is radial distance — "adjacent provinces only" for Frontier Settlement cannot be expressed by range alone | 8 | Medium | Workaround: enforcement event cancels non-adjacent colonies |
+| R-10 | On_action coverage gaps: colony-finished, siege-won, province-owner-change, CN-established hooks may not all exist on current patch | 11, 13, 21, 22–23 | **High** (touches four systems) | VERIFY (spike 1); fallback = monthly/yearly pulses (perf cost) |
+| R-11 | Aggressive expansion scaling (distance/culture/religion) is hardcoded — "high AE inside Europe, low overseas" cannot be set directly | Premise, 3–5 | Medium | Workaround: event-driven opinion/coalition deterrent layer |
+| R-12 | Ownership transfer at peace is strictly per-province — fort capture can only affect wartime *control*, never peace-deal ownership | 21 | Low | Scope limited to control (matches design intent) |
+| R-13 | CN formation threshold (5 provinces) is a global define — fine today (design wants 5) but cannot vary per region/nation later | 10 | Low | Accepted; pinned in defines override |
+| R-14 | Idea-group `trigger` gating evaluates at pick time — nations that change status later keep or lose groups in untested ways | 8 | Low | VERIFY (spike 5); status is start-locked by flag anyway |
+| R-15 | AI naval invasion incompetence — with all straits gone, island/peninsular AI (England, Denmark, Japan, Ottomans across Bosphorus) may go passive | 1, premise | **High** (gameplay quality) | Playtest-driven; mission nudges + transport weighting; the single biggest fun-risk in the mod |
+| R-16 | Triggered modifiers granting `colonists` — assumed possible for the CN +1 colonist rule | 11 | Low | VERIFY (spike 4); fallback = government reform on CNs |
+| R-17 | Flattened-region (Americas, Africa, Oceania) 1/1/1 side effects: local trade value collapse, institution spawn conditions, rebel suppression failure in the flattened zones — Asia keeps vanilla development and is unaffected | 2 (amended), premise | Medium | Budgeted balance passes (Phases 1, 7) |
+| R-18 | AI control surface is coarse (event ai_chance, defines, mission weights) — every "AI should/shouldn't" rule (Dominions late-game, backing restrictions, colonize-don't-conquer) is a tuning commitment, not a switch | 17, 18, 20, premise | Medium | Accepted; Phase 7 exists for this |
+| R-19 | Trade companies remain vanilla as interim scaffolding — prolonged coexistence with the subject taxonomy risks design drift, double-dipping income paths, and colonial-region interactions; they are **not** the final Project Crown system | 13–15, premise | Medium | Scheduled Phase 7 decision point (owner decision 2026-07-04): disable, replace, or convert into a custom Trade Post Charter overseas subject/trade-post system |
+
+## Standing mitigations
+
+- **Post-hoc enforcement pattern (R-1, R-3, R-9):** where the engine can't be stopped from doing X, detect X immediately after and correct it via event, with player-facing framing so it reads as a mechanic, not a bug.
+- **Stay-near-vanilla pattern (R-5, R-13):** where hardcoded behavior is rich (colonial nations, tariffs), build *on* the vanilla type instead of replacing it.
+- **Spike-before-build rule (R-2, R-7, R-10, R-14, R-16):** no system that depends on a VERIFY item gets built before its spike verdict is written. Fallback designs are named in advance (pulses instead of on_actions; subsidy-package backing instead of true war-joining; reform instead of triggered modifier).
