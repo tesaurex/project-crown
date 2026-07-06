@@ -2,7 +2,7 @@
 
 **Version:** 0.3 — Pre-implementation design; all owner decisions of 2026-07-04 applied (Appendix B, rounds 1–2); no open design questions remain
 **Date:** 2026-07-04
-**Status:** Approved rule set, no game files written yet
+**Status:** Approved rule set; local skeleton and temporary smoke-test decision exist; no real gameplay mechanics implemented
 **Base game:** Europa Universalis IV, vanilla map, 1444 start date
 
 ---
@@ -23,9 +23,9 @@ Project Crown: Europa Ascendant is a full overhaul of EU4 built on the vanilla 1
 
 - **Map:** Vanilla 1444 EU4 map. No new provinces, no redrawn terrain in v1. Map *data* files (adjacencies, colonial regions, province history) are fair game.
 - **Start date:** 1444 only. No alternate bookmarks in v1.
-- **DLC assumption:** Design targets a "most DLC" environment (El Dorado, Golden Century, Rule Britannia, Dharma-era subject mechanics). Minimum-DLC compatibility is a non-goal for v1; document the assumption per system as it is implemented.
+- **Environment and DLC profile:** Design targets Europa Universalis IV v1.37.5.0 Inca with the confirmed DLC/content profile recorded in [05 - Environment and DLC Profile](05%20-%20Environment%20and%20DLC%20Profile.md). Future mechanics must not assume unconfirmed DLC, and any DLC-dependent mechanic must document its dependency before implementation.
 - **Compatibility:** Standalone overhaul. No compatibility patches for other overhauls in v1.
-- **No game files yet.** This document and its companions are the contract for implementation. Implementation begins with the Phase Plan (see [01 - Phase Plan](01%20-%20Phase%20Plan.md)).
+- **No real gameplay mechanics yet.** The mod currently contains only the local skeleton and temporary smoke-test decision. This document and its companions are the contract for implementation. Implementation begins with the Phase Plan (see [01 - Phase Plan](01%20-%20Phase%20Plan.md)).
 
 ## 4. Key Definitions
 

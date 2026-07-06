@@ -5,19 +5,19 @@ Phases are ordered by dependency and risk: engine-risk research first, world dat
 ---
 
 ## Phase 0 — Foundations, Tooling & Research Spikes
-**Goal:** A loading, empty mod plus verified answers to every "does the engine even allow this?" question.
+**Goal:** A loading, mechanics-empty mod plus verified answers to every "does the engine even allow this?" question.
 
-- Mod skeleton: descriptor, folder layout, load-order sanity check on current EU4 patch.
+- Mod skeleton: descriptor, folder layout, load-order sanity check on the target EU4 patch (v1.37.5.0 Inca).
 - Tooling bootstrap (Python, in `Tooling/` outside the mod): vanilla file parser, province classifier, history-file emitter, colonial-region validator (ocean access + clean borders).
 - **Research spikes — each produces a one-page verdict in Test Notes:**
-  1. Which on_actions exist on current patch (colony finished, siege won, province owner change, colonial nation established)?
+  1. Which target-patch on_actions exist for colony finished, siege won, province owner change, and colonial nation established?
   2. Do `join_all_offensive_wars` / `join_all_defensive_wars`-style effects exist and can they target a *specific* war? (Back War Effort feasibility)
   3. Exact attribute list of `common/subject_types` — what can actually be tuned per type (diplo slot, forcelimit/manpower share, income share, release gating)?
   4. Can a triggered modifier grant `colonists = 1`?
   5. Idea group `trigger` gating — confirmed behavior and grandfathering.
   6. Does conquest inside a new custom colonial region auto-route to a CN as expected, and how does it collide with trade company regions?
 
-**Exit criterion:** Empty mod loads; all six spike verdicts written; Risk Register updated with findings.
+**Exit criterion:** Mechanics-empty mod loads; all six spike verdicts written; Risk Register updated with findings.
 
 ## Phase 1 — Map & World Data
 **Goal:** The world itself matches the design before any system logic exists.

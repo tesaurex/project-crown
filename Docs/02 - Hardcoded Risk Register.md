@@ -1,6 +1,6 @@
 # Project Crown: Europa Ascendant — Hardcoded EU4 Risk Register
 
-Every place the EU4 engine is expected to fight this design. Severity reflects impact on the design *if the risk lands*, not likelihood. Items marked **VERIFY** are Phase 0 research spikes — assumptions about the current patch that must be tested before the affected system is built.
+Every place the EU4 engine is expected to fight this design. Severity reflects impact on the design *if the risk lands*, not likelihood. Items marked **VERIFY** are Phase 0 research spikes — assumptions about the target patch (v1.37.5.0 Inca) that must be tested before the affected system is built.
 
 | ID | Risk | Affected rules | Severity | Status |
 |---|---|---|---|---|
@@ -13,7 +13,7 @@ Every place the EU4 engine is expected to fight this design. Severity reflects i
 | R-7 | Per-subject-type force-limit/manpower/income percentages have limited script hooks — exact 30%/20%/10% targets may only be approximable | 17, 19 | Medium | VERIFY (spike 3) |
 | R-8 | "Release subject / grant independence" is hardcoded diplomacy — AI-side ban may not be fully enforceable | 18 | Medium | Mitigation: subject-type gating if available + vanilla AI near-never does this |
 | R-9 | Colonial range is radial distance — "adjacent provinces only" for Frontier Settlement cannot be expressed by range alone | 8 | Medium | Workaround: enforcement event cancels non-adjacent colonies |
-| R-10 | On_action coverage gaps: colony-finished, siege-won, province-owner-change, CN-established hooks may not all exist on current patch | 11, 13, 21, 22–23 | **High** (touches four systems) | VERIFY (spike 1); fallback = monthly/yearly pulses (perf cost) |
+| R-10 | On_action coverage gaps: colony-finished, siege-won, province-owner-change, CN-established hooks may not all exist on the target patch | 11, 13, 21, 22–23 | **High** (touches four systems) | VERIFY (spike 1); fallback = monthly/yearly pulses (perf cost) |
 | R-11 | Aggressive expansion scaling (distance/culture/religion) is hardcoded — "high AE inside Europe, low overseas" cannot be set directly | Premise, 3–5 | Medium | Workaround: event-driven opinion/coalition deterrent layer |
 | R-12 | Ownership transfer at peace is strictly per-province — fort capture can only affect wartime *control*, never peace-deal ownership | 21 | Low | Scope limited to control (matches design intent) |
 | R-13 | CN formation threshold (5 provinces) is a global define — fine today (design wants 5) but cannot vary per region/nation later | 10 | Low | Accepted; pinned in defines override |

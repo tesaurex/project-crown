@@ -1,6 +1,6 @@
 name="Project Crown: Europa Ascendant"
 path="mod/project_crown"
-supported_version="1.*.*.*"
+supported_version="1.37.*.*"
 version="0.0.1"
 tags={
 	"Gameplay"
