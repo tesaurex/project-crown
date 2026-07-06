@@ -11,101 +11,10 @@
       5632,
       2048
     ],
-    "imported_unique_colors": 3916,
+    "imported_unique_colors": 3925,
     "undefined_pixel_count": 0,
     "undefined_color_counts": {},
-    "missing_vanilla_defined_ids": [
-      {
-        "id": 214,
-        "name": "Zaragoza",
-        "color": [
-          30,
-          76,
-          255
-        ],
-        "vanilla_pixel_count": 322
-      },
-      {
-        "id": 263,
-        "name": "Ratibor",
-        "color": [
-          165,
-          46,
-          192
-        ],
-        "vanilla_pixel_count": 224
-      },
-      {
-        "id": 264,
-        "name": "Breslau",
-        "color": [
-          37,
-          48,
-          255
-        ],
-        "vanilla_pixel_count": 301
-      },
-      {
-        "id": 881,
-        "name": "Piro",
-        "color": [
-          134,
-          126,
-          173
-        ],
-        "vanilla_pixel_count": 899
-      },
-      {
-        "id": 1088,
-        "name": "Wergaia",
-        "color": [
-          36,
-          156,
-          126
-        ],
-        "vanilla_pixel_count": 2016
-      },
-      {
-        "id": 2292,
-        "name": "Moshi",
-        "color": [
-          140,
-          145,
-          232
-        ],
-        "vanilla_pixel_count": 743
-      },
-      {
-        "id": 2936,
-        "name": "Guyana",
-        "color": [
-          72,
-          80,
-          35
-        ],
-        "vanilla_pixel_count": 8160
-      },
-      {
-        "id": 4328,
-        "name": "Chagai",
-        "color": [
-          143,
-          34,
-          255
-        ],
-        "vanilla_pixel_count": 3106
-      },
-      {
-        "id": 4922,
-        "name": "Pepikokia",
-        "color": [
-          23,
-          110,
-          175
-        ],
-        "vanilla_pixel_count": 624
-      }
-    ]
+    "missing_vanilla_defined_ids": []
   },
   "positions": {
     "project_position_blocks": 4941,

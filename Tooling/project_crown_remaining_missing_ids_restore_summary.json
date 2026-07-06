@@ -1,0 +1,396 @@
+{
+  "reference_mod": "/Users/roman/Library/Application Support/Steam/steamapps/workshop/content/236850/3418818231",
+  "vanilla_eu4": "/Users/roman/Library/Application Support/Steam/steamapps/common/Europa Universalis IV",
+  "project_map": "/Users/roman/Desktop/Project Crown/Mod Build/project_crown/map",
+  "restored_missing_ids": {
+    "restored_ids": [
+      {
+        "id": 214,
+        "name": "Zaragoza",
+        "color": [
+          30,
+          76,
+          255
+        ],
+        "vanilla_pixel_count": 322,
+        "project_pixel_count_before": 0,
+        "project_pixel_count_after": 322,
+        "overwritten_project_ids": [
+          {
+            "id": 4557,
+            "name": "Lleida",
+            "pixels": 167,
+            "percent": 51.86
+          },
+          {
+            "id": 211,
+            "name": "Pirineo",
+            "pixels": 115,
+            "percent": 35.71
+          },
+          {
+            "id": 2987,
+            "name": "Urgell",
+            "pixels": 29,
+            "percent": 9.01
+          },
+          {
+            "id": 2990,
+            "name": "Teruel",
+            "pixels": 11,
+            "percent": 3.42
+          }
+        ]
+      },
+      {
+        "id": 263,
+        "name": "Ratibor",
+        "color": [
+          165,
+          46,
+          192
+        ],
+        "vanilla_pixel_count": 224,
+        "project_pixel_count_before": 0,
+        "project_pixel_count_after": 224,
+        "overwritten_project_ids": [
+          {
+            "id": 4723,
+            "name": "Opole",
+            "pixels": 92,
+            "percent": 41.07
+          },
+          {
+            "id": 255,
+            "name": "Kalisz",
+            "pixels": 81,
+            "percent": 36.16
+          },
+          {
+            "id": 2967,
+            "name": "Eger",
+            "pixels": 19,
+            "percent": 8.48
+          },
+          {
+            "id": 2960,
+            "name": "Sadecki",
+            "pixels": 17,
+            "percent": 7.59
+          },
+          {
+            "id": 4726,
+            "name": "Ostrava",
+            "pixels": 15,
+            "percent": 6.7
+          }
+        ]
+      },
+      {
+        "id": 264,
+        "name": "Breslau",
+        "color": [
+          37,
+          48,
+          255
+        ],
+        "vanilla_pixel_count": 301,
+        "project_pixel_count_before": 0,
+        "project_pixel_count_after": 301,
+        "overwritten_project_ids": [
+          {
+            "id": 4238,
+            "name": "Liegnitz",
+            "pixels": 237,
+            "percent": 78.74
+          },
+          {
+            "id": 4723,
+            "name": "Opole",
+            "pixels": 61,
+            "percent": 20.27
+          },
+          {
+            "id": 2966,
+            "name": "Glogau",
+            "pixels": 3,
+            "percent": 1.0
+          }
+        ]
+      },
+      {
+        "id": 881,
+        "name": "Piro",
+        "color": [
+          134,
+          126,
+          173
+        ],
+        "vanilla_pixel_count": 899,
+        "project_pixel_count_before": 0,
+        "project_pixel_count_after": 899,
+        "overwritten_project_ids": [
+          {
+            "id": 2495,
+            "name": "Acoma",
+            "pixels": 503,
+            "percent": 55.95
+          },
+          {
+            "id": 882,
+            "name": "Mescalero",
+            "pixels": 274,
+            "percent": 30.48
+          },
+          {
+            "id": 4630,
+            "name": "Natahende",
+            "pixels": 119,
+            "percent": 13.24
+          },
+          {
+            "id": 4644,
+            "name": "Jocome",
+            "pixels": 2,
+            "percent": 0.22
+          },
+          {
+            "id": 2492,
+            "name": "Chiricahua",
+            "pixels": 1,
+            "percent": 0.11
+          }
+        ]
+      },
+      {
+        "id": 1088,
+        "name": "Wergaia",
+        "color": [
+          36,
+          156,
+          126
+        ],
+        "vanilla_pixel_count": 2016,
+        "project_pixel_count_before": 0,
+        "project_pixel_count_after": 2016,
+        "overwritten_project_ids": [
+          {
+            "id": 1087,
+            "name": "Woiworung",
+            "pixels": 1102,
+            "percent": 54.66
+          },
+          {
+            "id": 4861,
+            "name": "Waveroo",
+            "pixels": 914,
+            "percent": 45.34
+          }
+        ]
+      },
+      {
+        "id": 2292,
+        "name": "Moshi",
+        "color": [
+          140,
+          145,
+          232
+        ],
+        "vanilla_pixel_count": 743,
+        "project_pixel_count_before": 0,
+        "project_pixel_count_after": 743,
+        "overwritten_project_ids": [
+          {
+            "id": 1144,
+            "name": "Oyo",
+            "pixels": 331,
+            "percent": 44.55
+          },
+          {
+            "id": 2258,
+            "name": "Cape Coast",
+            "pixels": 319,
+            "percent": 42.93
+          },
+          {
+            "id": 1143,
+            "name": "Borgu",
+            "pixels": 93,
+            "percent": 12.52
+          }
+        ]
+      },
+      {
+        "id": 2936,
+        "name": "Guyana",
+        "color": [
+          72,
+          80,
+          35
+        ],
+        "vanilla_pixel_count": 8160,
+        "project_pixel_count_before": 0,
+        "project_pixel_count_after": 8160,
+        "overwritten_project_ids": [
+          {
+            "id": 2933,
+            "name": "Faro",
+            "pixels": 3237,
+            "percent": 39.67
+          },
+          {
+            "id": 2935,
+            "name": "Muturu",
+            "pixels": 2712,
+            "percent": 33.24
+          },
+          {
+            "id": 746,
+            "name": "Cayenne",
+            "pixels": 730,
+            "percent": 8.95
+          },
+          {
+            "id": 2937,
+            "name": "Suriname",
+            "pixels": 726,
+            "percent": 8.9
+          },
+          {
+            "id": 744,
+            "name": "Demerara",
+            "pixels": 557,
+            "percent": 6.83
+          },
+          {
+            "id": 2931,
+            "name": "Pirara",
+            "pixels": 169,
+            "percent": 2.07
+          },
+          {
+            "id": 2938,
+            "name": "Oiapoque",
+            "pixels": 29,
+            "percent": 0.36
+          }
+        ]
+      },
+      {
+        "id": 4328,
+        "name": "Chagai",
+        "color": [
+          143,
+          34,
+          255
+        ],
+        "vanilla_pixel_count": 3106,
+        "project_pixel_count_before": 0,
+        "project_pixel_count_after": 3106,
+        "overwritten_project_ids": [
+          {
+            "id": 2232,
+            "name": "Kharan",
+            "pixels": 1757,
+            "percent": 56.57
+          },
+          {
+            "id": 434,
+            "name": "Quhistan",
+            "pixels": 709,
+            "percent": 22.83
+          },
+          {
+            "id": 2229,
+            "name": "Bust",
+            "pixels": 413,
+            "percent": 13.3
+          },
+          {
+            "id": 447,
+            "name": "Kandahar",
+            "pixels": 110,
+            "percent": 3.54
+          },
+          {
+            "id": 2230,
+            "name": "Chakhansur",
+            "pixels": 85,
+            "percent": 2.74
+          },
+          {
+            "id": 435,
+            "name": "Sistan",
+            "pixels": 32,
+            "percent": 1.03
+          }
+        ]
+      },
+      {
+        "id": 4922,
+        "name": "Pepikokia",
+        "color": [
+          23,
+          110,
+          175
+        ],
+        "vanilla_pixel_count": 624,
+        "project_pixel_count_before": 0,
+        "project_pixel_count_after": 624,
+        "overwritten_project_ids": [
+          {
+            "id": 943,
+            "name": "Miami",
+            "pixels": 472,
+            "percent": 75.64
+          },
+          {
+            "id": 2522,
+            "name": "Mascouten",
+            "pixels": 108,
+            "percent": 17.31
+          },
+          {
+            "id": 944,
+            "name": "Potawatomi",
+            "pixels": 22,
+            "percent": 3.53
+          },
+          {
+            "id": 946,
+            "name": "Wyandot",
+            "pixels": 18,
+            "percent": 2.88
+          },
+          {
+            "id": 942,
+            "name": "Wea",
+            "pixels": 4,
+            "percent": 0.64
+          }
+        ]
+      }
+    ],
+    "changed_pixels": 16395,
+    "undefined_pixel_count_after_restore": 0
+  },
+  "provinces": {
+    "imported_dimensions": [
+      5632,
+      2048
+    ],
+    "vanilla_dimensions": [
+      5632,
+      2048
+    ],
+    "imported_unique_colors": 3925,
+    "undefined_pixel_count": 0,
+    "undefined_color_counts": {},
+    "missing_vanilla_defined_ids": []
+  },
+  "positions": {
+    "project_position_blocks": 4941,
+    "vanilla_position_blocks": 4941,
+    "reference_position_blocks": 4789
+  }
+}

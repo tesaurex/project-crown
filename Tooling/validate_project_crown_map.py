@@ -24,6 +24,7 @@ REFERENCE_MOD = Path(
 VANILLA_EU4 = Path(
     "/Users/roman/Library/Application Support/Steam/steamapps/common/Europa Universalis IV"
 )
+DEFAULT_REMAINING_MISSING_IDS = [214, 263, 264, 881, 1088, 2292, 2936, 4328, 4922]
 
 
 class Bmp24:
@@ -104,6 +105,48 @@ class Bmp24:
         path.write_bytes(self.data)
 
 
+class Bmp8:
+    def __init__(self, path: Path) -> None:
+        self.path = path
+        self.data = path.read_bytes()
+        if self.data[:2] != b"BM":
+            raise ValueError(f"{path} is not a BMP file")
+
+        self.pixel_offset = struct.unpack_from("<I", self.data, 10)[0]
+        self.dib_size = struct.unpack_from("<I", self.data, 14)[0]
+        if self.dib_size < 40:
+            raise ValueError(f"{path} has unsupported DIB header size {self.dib_size}")
+
+        self.width = struct.unpack_from("<i", self.data, 18)[0]
+        raw_height = struct.unpack_from("<i", self.data, 22)[0]
+        self.height = abs(raw_height)
+        self.top_down = raw_height < 0
+        self.planes = struct.unpack_from("<H", self.data, 26)[0]
+        self.bits_per_pixel = struct.unpack_from("<H", self.data, 28)[0]
+        self.compression = struct.unpack_from("<I", self.data, 30)[0]
+        if self.planes != 1 or self.bits_per_pixel != 8 or self.compression != 0:
+            raise ValueError(
+                f"{path} must be an uncompressed 8-bit BMP; got planes={self.planes}, "
+                f"bpp={self.bits_per_pixel}, compression={self.compression}"
+            )
+
+        palette_offset = 14 + self.dib_size
+        palette_entries = (self.pixel_offset - palette_offset) // 4
+        self.palette: list[tuple[int, int, int]] = []
+        for index in range(palette_entries):
+            blue, green, red, _ = self.data[palette_offset + index * 4 : palette_offset + index * 4 + 4]
+            self.palette.append((red, green, blue))
+        self.row_stride = ((self.width * self.bits_per_pixel + 31) // 32) * 4
+
+    def _index(self, x: int, y: int) -> int:
+        file_y = y if self.top_down else self.height - 1 - y
+        return self.pixel_offset + file_y * self.row_stride + x
+
+    def get_pixel(self, x: int, y: int) -> tuple[int, int, int]:
+        palette_index = self.data[self._index(x, y)]
+        return self.palette[palette_index]
+
+
 def load_definition(path: Path) -> tuple[dict[int, dict], dict[tuple[int, int, int], int]]:
     by_id: dict[int, dict] = {}
     by_color: dict[tuple[int, int, int], int] = {}
@@ -131,6 +174,64 @@ def parse_number_block(path: Path, block_name: str) -> set[int]:
         raise ValueError(f"Could not find block {block_name!r} in {path}")
     body = "\n".join(line.split("#", 1)[0] for line in match.group(1).splitlines())
     return {int(value) for value in re.findall(r"\b\d+\b", body)}
+
+
+def strip_comments(text: str) -> str:
+    return "\n".join(line.split("#", 1)[0] for line in text.splitlines())
+
+
+def iter_named_blocks(text: str) -> list[tuple[str, str]]:
+    lines = text.splitlines()
+    blocks: list[tuple[str, str]] = []
+    index = 0
+    start_re = re.compile(r"^\s*([A-Za-z0-9_]+)\s*=\s*\{")
+
+    while index < len(lines):
+        line = lines[index].split("#", 1)[0]
+        match = start_re.match(line)
+        if not match:
+            index += 1
+            continue
+
+        name = match.group(1)
+        start = index
+        depth = 0
+        while index < len(lines):
+            clean_line = lines[index].split("#", 1)[0]
+            depth += clean_line.count("{")
+            depth -= clean_line.count("}")
+            if index > start and depth == 0:
+                break
+            index += 1
+        if depth != 0:
+            raise ValueError(f"Unclosed block {name!r}")
+
+        body = "\n".join(lines[start + 1 : index])
+        blocks.append((name, body))
+        index += 1
+
+    return blocks
+
+
+def parse_number_blocks(path: Path) -> dict[str, set[int]]:
+    return {
+        name: {int(value) for value in re.findall(r"\b\d+\b", strip_comments(body))}
+        for name, body in iter_named_blocks(path.read_text(encoding="latin-1"))
+    }
+
+
+def extract_word_block(body: str, block_name: str) -> set[str]:
+    match = re.search(rf"(?m)^\s*{re.escape(block_name)}\s*=\s*\{{(.*?)^\s*\}}", body, re.S)
+    if not match:
+        return set()
+    return set(re.findall(r"\b[A-Za-z0-9_]+\b", strip_comments(match.group(1))))
+
+
+def extract_number_block_from_text(body: str, block_name: str) -> set[int]:
+    match = re.search(rf"(?m)^\s*{re.escape(block_name)}\s*=\s*\{{(.*?)^\s*\}}", body, re.S)
+    if not match:
+        return set()
+    return {int(value) for value in re.findall(r"\b\d+\b", strip_comments(match.group(1)))}
 
 
 def vanilla_european_impassable_ids(vanilla_map: Path) -> list[int]:
@@ -217,6 +318,117 @@ def color_key(color: tuple[int, int, int]) -> str:
     return f"{color[0]},{color[1]},{color[2]}"
 
 
+def ids_from_arg(values: list[str] | None, fallback: list[int]) -> list[int]:
+    if not values:
+        return fallback
+
+    province_ids: list[int] = []
+    for value in values:
+        for part in value.split(","):
+            part = part.strip()
+            if not part:
+                continue
+            province_ids.append(int(part))
+    return sorted(dict.fromkeys(province_ids))
+
+
+def province_items(counter: Counter, definition_by_id: dict[int, dict], limit: int | None = 12) -> list[dict]:
+    items = []
+    total = sum(counter.values())
+    for province_id, count in counter.most_common(limit):
+        if province_id is None:
+            name = "undefined"
+        else:
+            name = definition_by_id.get(province_id, {}).get("name", "unknown")
+        items.append(
+            {
+                "id": province_id,
+                "name": name,
+                "pixels": count,
+                "percent": round((count / total) * 100, 2) if total else 0,
+            }
+        )
+    return items
+
+
+def province_metadata(vanilla_map: Path) -> dict:
+    default_blocks = parse_number_blocks(vanilla_map / "default.map")
+    continent_blocks = parse_number_blocks(vanilla_map / "continent.txt")
+    climate_blocks = parse_number_blocks(vanilla_map / "climate.txt")
+    area_blocks = parse_number_blocks(vanilla_map / "area.txt")
+
+    area_by_id: dict[int, str] = {}
+    for area, province_ids in area_blocks.items():
+        for province_id in province_ids:
+            area_by_id[province_id] = area
+
+    region_by_area: dict[str, str] = {}
+    for region, body in iter_named_blocks((vanilla_map / "region.txt").read_text(encoding="latin-1")):
+        for area in extract_word_block(body, "areas"):
+            region_by_area[area] = region
+
+    superregion_by_region: dict[str, str] = {}
+    for superregion, body in iter_named_blocks((vanilla_map / "superregion.txt").read_text(encoding="latin-1")):
+        for region in re.findall(r"\b[A-Za-z0-9_]+\b", strip_comments(body)):
+            if region.endswith("_region"):
+                superregion_by_region[region] = superregion
+
+    terrain_by_id: dict[int, str] = {}
+    terrain_by_color: dict[tuple[int, int, int], str] = {}
+    terrain_text = (vanilla_map / "terrain.txt").read_text(encoding="latin-1")
+    categories_body = dict(iter_named_blocks(terrain_text)).get("categories", "")
+    for terrain_name, body in iter_named_blocks(categories_body):
+        color_match = re.search(r"\bcolor\s*=\s*\{\s*(\d+)\s+(\d+)\s+(\d+)\s*\}", body)
+        if color_match:
+            terrain_by_color[tuple(int(part) for part in color_match.groups())] = terrain_name
+        for province_id in extract_number_block_from_text(body, "terrain_override"):
+            terrain_by_id[province_id] = terrain_name
+
+    return {
+        "sea_starts": default_blocks.get("sea_starts", set()),
+        "lakes": default_blocks.get("lakes", set()),
+        "only_used_for_random": default_blocks.get("only_used_for_random", set()),
+        "continents": continent_blocks,
+        "climates": climate_blocks,
+        "area_by_id": area_by_id,
+        "region_by_area": region_by_area,
+        "superregion_by_region": superregion_by_region,
+        "terrain_by_id": terrain_by_id,
+        "terrain_by_color": terrain_by_color,
+    }
+
+
+def classify_province(province_id: int, metadata: dict) -> dict:
+    area = metadata["area_by_id"].get(province_id)
+    region = metadata["region_by_area"].get(area) if area else None
+    superregion = metadata["superregion_by_region"].get(region) if region else None
+    continents = sorted(
+        continent for continent, ids in metadata["continents"].items() if province_id in ids
+    )
+    climates = sorted(climate for climate, ids in metadata["climates"].items() if province_id in ids)
+
+    if province_id in metadata["sea_starts"]:
+        province_type = "sea"
+    elif province_id in metadata["lakes"]:
+        province_type = "lake"
+    elif province_id in metadata["only_used_for_random"]:
+        province_type = "random-map-only"
+    elif province_id in metadata["climates"].get("impassable", set()):
+        province_type = "impassable/wasteland"
+    else:
+        province_type = "normal land"
+
+    return {
+        "type": province_type,
+        "continents": continents,
+        "climates": climates,
+        "area": area,
+        "region": region,
+        "superregion": superregion,
+        "terrain": metadata["terrain_by_id"].get(province_id),
+    }
+
+
 def summarize_missing_ids(
     vanilla_counts: Counter,
     imported_counts: Counter,
@@ -240,6 +452,169 @@ def summarize_missing_ids(
             }
         )
     return sorted(missing, key=lambda item: item["id"])
+
+
+def analyze_missing_province_ids(
+    project_path: Path,
+    vanilla_path: Path,
+    reference_path: Path,
+    definition_path: Path,
+    vanilla_map: Path,
+    province_ids: list[int],
+) -> dict:
+    definition_by_id, definition_by_color = load_definition(definition_path)
+    project_bmp = Bmp24(project_path)
+    vanilla_bmp = Bmp24(vanilla_path)
+    reference_bmp = Bmp24(reference_path)
+    terrain_bmp = Bmp8(vanilla_map / "terrain.bmp")
+    if (project_bmp.width, project_bmp.height) != (vanilla_bmp.width, vanilla_bmp.height):
+        raise ValueError("Project and vanilla provinces.bmp dimensions do not match")
+    if (reference_bmp.width, reference_bmp.height) != (vanilla_bmp.width, vanilla_bmp.height):
+        raise ValueError("Reference and vanilla provinces.bmp dimensions do not match")
+    if (terrain_bmp.width, terrain_bmp.height) != (vanilla_bmp.width, vanilla_bmp.height):
+        raise ValueError("Terrain and vanilla provinces.bmp dimensions do not match")
+
+    metadata = province_metadata(vanilla_map)
+    target_colors = {tuple(definition_by_id[province_id]["color"]): province_id for province_id in province_ids}
+    coords_by_id: dict[int, list[tuple[int, int]]] = {province_id: [] for province_id in province_ids}
+    project_counts = Counter()
+    reference_counts = Counter()
+
+    for y in range(vanilla_bmp.height):
+        for x in range(vanilla_bmp.width):
+            vanilla_id = target_colors.get(vanilla_bmp.get_pixel(x, y))
+            if vanilla_id is None:
+                continue
+            coords_by_id[vanilla_id].append((x, y))
+            project_counts[(vanilla_id, definition_by_color.get(project_bmp.get_pixel(x, y)))] += 1
+            reference_counts[(vanilla_id, definition_by_color.get(reference_bmp.get_pixel(x, y)))] += 1
+
+    results = []
+    for province_id in province_ids:
+        coords = coords_by_id[province_id]
+        color = tuple(definition_by_id[province_id]["color"])
+        project_color_count = 0
+        reference_color_count = 0
+        project_cover = Counter()
+        reference_cover = Counter()
+        terrain_cover = Counter()
+        vanilla_neighbors = Counter()
+
+        for (key_province_id, cover_id), count in project_counts.items():
+            if key_province_id == province_id:
+                project_cover[cover_id] += count
+                if cover_id == province_id:
+                    project_color_count += count
+        for (key_province_id, cover_id), count in reference_counts.items():
+            if key_province_id == province_id:
+                reference_cover[cover_id] += count
+                if cover_id == province_id:
+                    reference_color_count += count
+
+        for x, y in coords:
+            terrain_color = terrain_bmp.get_pixel(x, y)
+            terrain_cover[metadata["terrain_by_color"].get(terrain_color, color_key(terrain_color))] += 1
+            for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                nx = x + dx
+                ny = y + dy
+                if not (0 <= nx < vanilla_bmp.width and 0 <= ny < vanilla_bmp.height):
+                    continue
+                neighbor_color = vanilla_bmp.get_pixel(nx, ny)
+                if neighbor_color == color:
+                    continue
+                vanilla_neighbors[definition_by_color.get(neighbor_color)] += 1
+
+        if coords:
+            xs = [coord[0] for coord in coords]
+            ys = [coord[1] for coord in coords]
+            bbox = [min(xs), min(ys), max(xs), max(ys)]
+            centroid = [round(sum(xs) / len(xs), 2), round(sum(ys) / len(ys), 2)]
+        else:
+            bbox = None
+            centroid = None
+
+        results.append(
+            {
+                "id": province_id,
+                "name": definition_by_id[province_id]["name"],
+                "color": list(color),
+                "classification": classify_province(province_id, metadata),
+                "vanilla_pixel_count": len(coords),
+                "project_pixel_count": project_color_count,
+                "reference_pixel_count": reference_color_count,
+                "vanilla_bbox": bbox,
+                "vanilla_centroid": centroid,
+                "vanilla_terrain_by_pixel": [
+                    {
+                        "terrain": terrain,
+                        "pixels": count,
+                        "percent": round((count / len(coords)) * 100, 2) if coords else 0,
+                    }
+                    for terrain, count in terrain_cover.most_common(8)
+                ],
+                "project_covering_ids_at_vanilla_shape": province_items(project_cover, definition_by_id),
+                "reference_covering_ids_at_vanilla_shape": province_items(reference_cover, definition_by_id),
+                "vanilla_adjacent_ids": province_items(vanilla_neighbors, definition_by_id),
+            }
+        )
+
+    return {"ids": results}
+
+
+def restore_vanilla_province_ids(
+    project_path: Path,
+    vanilla_path: Path,
+    definition_path: Path,
+    province_ids: list[int],
+    output_path: Path,
+) -> dict:
+    definition_by_id, definition_by_color = load_definition(definition_path)
+    valid_colors = set(definition_by_color)
+    project_bmp = Bmp24(project_path)
+    vanilla_bmp = Bmp24(vanilla_path)
+    if (project_bmp.width, project_bmp.height) != (vanilla_bmp.width, vanilla_bmp.height):
+        raise ValueError("Project and vanilla provinces.bmp dimensions do not match")
+
+    target_colors = {tuple(definition_by_id[province_id]["color"]): province_id for province_id in province_ids}
+    before_counts = count_ids(project_bmp, province_ids, definition_by_id)
+    vanilla_counts = count_ids(vanilla_bmp, province_ids, definition_by_id)
+    changed_pixels = 0
+    overwritten_by_id: dict[int, Counter] = {province_id: Counter() for province_id in province_ids}
+
+    for y in range(vanilla_bmp.height):
+        for x in range(vanilla_bmp.width):
+            vanilla_color = vanilla_bmp.get_pixel(x, y)
+            target_id = target_colors.get(vanilla_color)
+            if target_id is None:
+                continue
+            project_color = project_bmp.get_pixel(x, y)
+            if project_color == vanilla_color:
+                continue
+
+            overwritten_by_id[target_id][definition_by_color.get(project_color)] += 1
+            project_bmp.set_pixel(x, y, vanilla_color)
+            changed_pixels += 1
+
+    after_counts = count_ids(project_bmp, province_ids, definition_by_id)
+    _, remaining_undefined = project_bmp.color_counts(valid_colors)
+    project_bmp.write(output_path)
+
+    return {
+        "restored_ids": [
+            {
+                "id": province_id,
+                "name": definition_by_id[province_id]["name"],
+                "color": list(definition_by_id[province_id]["color"]),
+                "vanilla_pixel_count": vanilla_counts[province_id],
+                "project_pixel_count_before": before_counts[province_id],
+                "project_pixel_count_after": after_counts[province_id],
+                "overwritten_project_ids": province_items(overwritten_by_id[province_id], definition_by_id),
+            }
+            for province_id in province_ids
+        ],
+        "changed_pixels": changed_pixels,
+        "undefined_pixel_count_after_restore": len(remaining_undefined),
+    }
 
 
 def import_provinces(reference_path: Path, vanilla_path: Path, definition_path: Path, output_path: Path) -> dict:
@@ -436,7 +811,22 @@ def main() -> int:
     parser.add_argument("--vanilla-eu4", type=Path, default=VANILLA_EU4)
     parser.add_argument("--project-map", type=Path, default=PROJECT_MAP)
     parser.add_argument("--summary-json", type=Path)
+    parser.add_argument(
+        "--ids",
+        nargs="*",
+        help="Province IDs for missing-ID audit or exact vanilla-shape restore. Accepts spaces or comma-separated values.",
+    )
+    parser.add_argument(
+        "--audit-missing-ids",
+        action="store_true",
+        help="Audit missing vanilla-defined province IDs against vanilla metadata and current Project Crown pixels.",
+    )
     parser.add_argument("--write", action="store_true", help="Write imported provinces.bmp and merged positions.txt")
+    parser.add_argument(
+        "--restore-province-ids",
+        action="store_true",
+        help="Overlay exact vanilla province shapes for the explicit --ids list.",
+    )
     parser.add_argument(
         "--restore-vanilla-european-impassables",
         action="store_true",
@@ -453,8 +843,46 @@ def main() -> int:
         "vanilla_eu4": str(args.vanilla_eu4),
         "project_map": str(project_map),
     }
+    province_ids = ids_from_arg(args.ids, DEFAULT_REMAINING_MISSING_IDS)
 
-    if args.restore_vanilla_european_impassables:
+    if args.audit_missing_ids:
+        summary["missing_id_audit"] = analyze_missing_province_ids(
+            project_map / "provinces.bmp",
+            vanilla_map / "provinces.bmp",
+            reference_map / "provinces.bmp",
+            definition_path,
+            vanilla_map,
+            province_ids,
+        )
+        summary["provinces"] = validate_existing(
+            project_map / "provinces.bmp",
+            vanilla_map / "provinces.bmp",
+            definition_path,
+        )
+        summary["positions"] = {
+            "project_position_blocks": len(parse_position_blocks(project_map / "positions.txt")),
+            "vanilla_position_blocks": len(parse_position_blocks(vanilla_map / "positions.txt")),
+            "reference_position_blocks": len(parse_position_blocks(reference_map / "positions.txt")),
+        }
+    elif args.restore_province_ids:
+        summary["restored_missing_ids"] = restore_vanilla_province_ids(
+            project_map / "provinces.bmp",
+            vanilla_map / "provinces.bmp",
+            definition_path,
+            province_ids,
+            project_map / "provinces.bmp",
+        )
+        summary["provinces"] = validate_existing(
+            project_map / "provinces.bmp",
+            vanilla_map / "provinces.bmp",
+            definition_path,
+        )
+        summary["positions"] = {
+            "project_position_blocks": len(parse_position_blocks(project_map / "positions.txt")),
+            "vanilla_position_blocks": len(parse_position_blocks(vanilla_map / "positions.txt")),
+            "reference_position_blocks": len(parse_position_blocks(reference_map / "positions.txt")),
+        }
+    elif args.restore_vanilla_european_impassables:
         summary["impassables"] = restore_vanilla_impassables(
             project_map / "provinces.bmp",
             vanilla_map / "provinces.bmp",

@@ -171,3 +171,18 @@ After Phase 1B.1:
 - The Pyrenees, Alps, and Caucasus vanilla impassable shapes are restored.
 - Missing vanilla colors are reduced from 14 IDs to 9 IDs: `214`, `263`, `264`, `881`, `1088`, `2292`, `2936`, `4328`, `4922`.
 - No non-map gameplay mechanics were implemented.
+
+## Phase 1B.2 Follow-Up
+
+Phase 1B.2 resolved the remaining 9 missing vanilla-defined province colors after the Personalized Borders import and Phase 1B.1 European impassable restore.
+
+See `Docs/09 - Remaining Province ID Resolution Log.md` for the detailed audit and per-ID decisions.
+
+After Phase 1B.2:
+
+- Undefined pixels remain `0`.
+- Remaining missing vanilla-defined province colors are `0`.
+- Exact vanilla province shapes restored into `Mod Build/project_crown/map/provinces.bmp`: `214`, `263`, `264`, `881`, `1088`, `2292`, `2936`, `4328`, `4922`.
+- No `definition.csv`, `default.map`, `terrain.txt`, province history, or non-map gameplay files were changed.
+- `positions.txt` was not changed; Project Crown already had all `4,941` vanilla position blocks.
+- No non-map gameplay mechanics were implemented.

@@ -158,3 +158,14 @@ The launcher descriptor was also synced to:
 ## Phase 1B.1 Non-Implementation Statement
 
 No non-map gameplay mechanics were implemented. No base EU4 files were edited. No Workshop/reference mod files were edited. No Project Pace files were touched.
+
+## Phase 1B.2 Relevant Follow-Up
+
+Phase 1B.2 resolved the two non-European impassable/wasteland IDs that remained outside the Europe-scoped Phase 1B.1 merge:
+
+| ID | Name | Continent | Result |
+|---:|---|---|---|
+| 2936 | Guyana | South America | Restored exact vanilla impassable/wasteland shape. |
+| 4328 | Chagai | Asia | Restored exact vanilla impassable/wasteland shape. |
+
+These follow-up restores were performed as part of the remaining missing province ID cleanup, not as a change to gameplay mechanics. No `climate.txt`, `terrain.txt`, `default.map`, or province history files were edited.

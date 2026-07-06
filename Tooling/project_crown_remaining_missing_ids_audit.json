@@ -1,0 +1,1507 @@
+{
+  "reference_mod": "/Users/roman/Library/Application Support/Steam/steamapps/workshop/content/236850/3418818231",
+  "vanilla_eu4": "/Users/roman/Library/Application Support/Steam/steamapps/common/Europa Universalis IV",
+  "project_map": "/Users/roman/Desktop/Project Crown/Mod Build/project_crown/map",
+  "missing_id_audit": {
+    "ids": [
+      {
+        "id": 214,
+        "name": "Zaragoza",
+        "color": [
+          30,
+          76,
+          255
+        ],
+        "classification": {
+          "type": "normal land",
+          "continents": [
+            "europe"
+          ],
+          "climates": [],
+          "area": "aragon_area",
+          "region": "iberia_region",
+          "superregion": "europe_superregion",
+          "terrain": "drylands"
+        },
+        "vanilla_pixel_count": 322,
+        "project_pixel_count": 0,
+        "reference_pixel_count": 0,
+        "vanilla_bbox": [
+          2789,
+          687,
+          2813,
+          706
+        ],
+        "vanilla_centroid": [
+          2800.13,
+          695.73
+        ],
+        "vanilla_terrain_by_pixel": [
+          {
+            "terrain": "200,214,107",
+            "pixels": 265,
+            "percent": 82.3
+          },
+          {
+            "terrain": "86,124,27",
+            "pixels": 55,
+            "percent": 17.08
+          },
+          {
+            "terrain": "112,74,31",
+            "pixels": 2,
+            "percent": 0.62
+          }
+        ],
+        "project_covering_ids_at_vanilla_shape": [
+          {
+            "id": 4557,
+            "name": "Lleida",
+            "pixels": 167,
+            "percent": 51.86
+          },
+          {
+            "id": 211,
+            "name": "Pirineo",
+            "pixels": 115,
+            "percent": 35.71
+          },
+          {
+            "id": 2987,
+            "name": "Urgell",
+            "pixels": 29,
+            "percent": 9.01
+          },
+          {
+            "id": 2990,
+            "name": "Teruel",
+            "pixels": 11,
+            "percent": 3.42
+          }
+        ],
+        "reference_covering_ids_at_vanilla_shape": [
+          {
+            "id": 4557,
+            "name": "Lleida",
+            "pixels": 167,
+            "percent": 51.86
+          },
+          {
+            "id": 211,
+            "name": "Pirineo",
+            "pixels": 115,
+            "percent": 35.71
+          },
+          {
+            "id": 2987,
+            "name": "Urgell",
+            "pixels": 29,
+            "percent": 9.01
+          },
+          {
+            "id": 2990,
+            "name": "Teruel",
+            "pixels": 11,
+            "percent": 3.42
+          }
+        ],
+        "vanilla_adjacent_ids": [
+          {
+            "id": 211,
+            "name": "Pirineo",
+            "pixels": 27,
+            "percent": 28.12
+          },
+          {
+            "id": 4557,
+            "name": "Lleida",
+            "pixels": 23,
+            "percent": 23.96
+          },
+          {
+            "id": 2988,
+            "name": "Tarragona",
+            "pixels": 21,
+            "percent": 21.88
+          },
+          {
+            "id": 2990,
+            "name": "Teruel",
+            "pixels": 15,
+            "percent": 15.62
+          },
+          {
+            "id": 4550,
+            "name": "Castellon",
+            "pixels": 10,
+            "percent": 10.42
+          }
+        ]
+      },
+      {
+        "id": 263,
+        "name": "Ratibor",
+        "color": [
+          165,
+          46,
+          192
+        ],
+        "classification": {
+          "type": "normal land",
+          "continents": [
+            "europe"
+          ],
+          "climates": [
+            "normal_winter"
+          ],
+          "area": "silesia_area",
+          "region": "poland_region",
+          "superregion": "eastern_europe_superregion",
+          "terrain": "highlands"
+        },
+        "vanilla_pixel_count": 224,
+        "project_pixel_count": 0,
+        "reference_pixel_count": 0,
+        "vanilla_bbox": [
+          3078,
+          523,
+          3105,
+          536
+        ],
+        "vanilla_centroid": [
+          3093.88,
+          529.01
+        ],
+        "vanilla_terrain_by_pixel": [
+          {
+            "terrain": "86,124,27",
+            "pixels": 203,
+            "percent": 90.62
+          },
+          {
+            "terrain": "0,86,6",
+            "pixels": 21,
+            "percent": 9.38
+          }
+        ],
+        "project_covering_ids_at_vanilla_shape": [
+          {
+            "id": 4723,
+            "name": "Opole",
+            "pixels": 92,
+            "percent": 41.07
+          },
+          {
+            "id": 255,
+            "name": "Kalisz",
+            "pixels": 81,
+            "percent": 36.16
+          },
+          {
+            "id": 2967,
+            "name": "Eger",
+            "pixels": 19,
+            "percent": 8.48
+          },
+          {
+            "id": 2960,
+            "name": "Sadecki",
+            "pixels": 17,
+            "percent": 7.59
+          },
+          {
+            "id": 4726,
+            "name": "Ostrava",
+            "pixels": 15,
+            "percent": 6.7
+          }
+        ],
+        "reference_covering_ids_at_vanilla_shape": [
+          {
+            "id": 4723,
+            "name": "Opole",
+            "pixels": 92,
+            "percent": 41.07
+          },
+          {
+            "id": 255,
+            "name": "Kalisz",
+            "pixels": 81,
+            "percent": 36.16
+          },
+          {
+            "id": 2967,
+            "name": "Eger",
+            "pixels": 19,
+            "percent": 8.48
+          },
+          {
+            "id": 2960,
+            "name": "Sadecki",
+            "pixels": 17,
+            "percent": 7.59
+          },
+          {
+            "id": 4726,
+            "name": "Ostrava",
+            "pixels": 15,
+            "percent": 6.7
+          }
+        ],
+        "vanilla_adjacent_ids": [
+          {
+            "id": 4723,
+            "name": "Opole",
+            "pixels": 35,
+            "percent": 38.89
+          },
+          {
+            "id": 4726,
+            "name": "Ostrava",
+            "pixels": 21,
+            "percent": 23.33
+          },
+          {
+            "id": 4236,
+            "name": "Trencin",
+            "pixels": 14,
+            "percent": 15.56
+          },
+          {
+            "id": 262,
+            "name": "Krakow",
+            "pixels": 10,
+            "percent": 11.11
+          },
+          {
+            "id": 4237,
+            "name": "Olomouc",
+            "pixels": 6,
+            "percent": 6.67
+          },
+          {
+            "id": 2960,
+            "name": "Sadecki",
+            "pixels": 4,
+            "percent": 4.44
+          }
+        ]
+      },
+      {
+        "id": 264,
+        "name": "Breslau",
+        "color": [
+          37,
+          48,
+          255
+        ],
+        "classification": {
+          "type": "normal land",
+          "continents": [
+            "europe"
+          ],
+          "climates": [
+            "normal_winter"
+          ],
+          "area": "silesia_area",
+          "region": "poland_region",
+          "superregion": "eastern_europe_superregion",
+          "terrain": "farmlands"
+        },
+        "vanilla_pixel_count": 301,
+        "project_pixel_count": 0,
+        "reference_pixel_count": 0,
+        "vanilla_bbox": [
+          3064,
+          497,
+          3085,
+          516
+        ],
+        "vanilla_centroid": [
+          3073.58,
+          506.44
+        ],
+        "vanilla_terrain_by_pixel": [
+          {
+            "terrain": "86,124,27",
+            "pixels": 299,
+            "percent": 99.34
+          },
+          {
+            "terrain": "0,86,6",
+            "pixels": 2,
+            "percent": 0.66
+          }
+        ],
+        "project_covering_ids_at_vanilla_shape": [
+          {
+            "id": 4238,
+            "name": "Liegnitz",
+            "pixels": 237,
+            "percent": 78.74
+          },
+          {
+            "id": 4723,
+            "name": "Opole",
+            "pixels": 61,
+            "percent": 20.27
+          },
+          {
+            "id": 2966,
+            "name": "Glogau",
+            "pixels": 3,
+            "percent": 1.0
+          }
+        ],
+        "reference_covering_ids_at_vanilla_shape": [
+          {
+            "id": 4238,
+            "name": "Liegnitz",
+            "pixels": 237,
+            "percent": 78.74
+          },
+          {
+            "id": 4723,
+            "name": "Opole",
+            "pixels": 61,
+            "percent": 20.27
+          },
+          {
+            "id": 2966,
+            "name": "Glogau",
+            "pixels": 3,
+            "percent": 1.0
+          }
+        ],
+        "vanilla_adjacent_ids": [
+          {
+            "id": 4238,
+            "name": "Liegnitz",
+            "pixels": 31,
+            "percent": 34.44
+          },
+          {
+            "id": 4723,
+            "name": "Opole",
+            "pixels": 19,
+            "percent": 21.11
+          },
+          {
+            "id": 255,
+            "name": "Kalisz",
+            "pixels": 18,
+            "percent": 20.0
+          },
+          {
+            "id": 254,
+            "name": "Poznan",
+            "pixels": 10,
+            "percent": 11.11
+          },
+          {
+            "id": 2966,
+            "name": "Glogau",
+            "pixels": 6,
+            "percent": 6.67
+          },
+          {
+            "id": 4533,
+            "name": "Wielun",
+            "pixels": 6,
+            "percent": 6.67
+          }
+        ]
+      },
+      {
+        "id": 881,
+        "name": "Piro",
+        "color": [
+          134,
+          126,
+          173
+        ],
+        "classification": {
+          "type": "normal land",
+          "continents": [
+            "north_america"
+          ],
+          "climates": [
+            "arid"
+          ],
+          "area": "new_mexico_area",
+          "region": "california_region",
+          "superregion": "central_america_superregion",
+          "terrain": null
+        },
+        "vanilla_pixel_count": 899,
+        "project_pixel_count": 0,
+        "reference_pixel_count": 0,
+        "vanilla_bbox": [
+          1120,
+          608,
+          1150,
+          654
+        ],
+        "vanilla_centroid": [
+          1134.41,
+          632.43
+        ],
+        "vanilla_terrain_by_pixel": [
+          {
+            "terrain": "206,169,99",
+            "pixels": 413,
+            "percent": 45.94
+          },
+          {
+            "terrain": "158,130,77",
+            "pixels": 304,
+            "percent": 33.82
+          },
+          {
+            "terrain": "112,74,31",
+            "pixels": 168,
+            "percent": 18.69
+          },
+          {
+            "terrain": "65,42,17",
+            "pixels": 13,
+            "percent": 1.45
+          },
+          {
+            "terrain": "ocean",
+            "pixels": 1,
+            "percent": 0.11
+          }
+        ],
+        "project_covering_ids_at_vanilla_shape": [
+          {
+            "id": 2495,
+            "name": "Acoma",
+            "pixels": 503,
+            "percent": 55.95
+          },
+          {
+            "id": 882,
+            "name": "Mescalero",
+            "pixels": 274,
+            "percent": 30.48
+          },
+          {
+            "id": 4630,
+            "name": "Natahende",
+            "pixels": 119,
+            "percent": 13.24
+          },
+          {
+            "id": 4644,
+            "name": "Jocome",
+            "pixels": 2,
+            "percent": 0.22
+          },
+          {
+            "id": 2492,
+            "name": "Chiricahua",
+            "pixels": 1,
+            "percent": 0.11
+          }
+        ],
+        "reference_covering_ids_at_vanilla_shape": [
+          {
+            "id": 2495,
+            "name": "Acoma",
+            "pixels": 503,
+            "percent": 55.95
+          },
+          {
+            "id": 882,
+            "name": "Mescalero",
+            "pixels": 274,
+            "percent": 30.48
+          },
+          {
+            "id": 4630,
+            "name": "Natahende",
+            "pixels": 119,
+            "percent": 13.24
+          },
+          {
+            "id": 4644,
+            "name": "Jocome",
+            "pixels": 2,
+            "percent": 0.22
+          },
+          {
+            "id": 2492,
+            "name": "Chiricahua",
+            "pixels": 1,
+            "percent": 0.11
+          }
+        ],
+        "vanilla_adjacent_ids": [
+          {
+            "id": 2495,
+            "name": "Acoma",
+            "pixels": 35,
+            "percent": 20.59
+          },
+          {
+            "id": 2492,
+            "name": "Chiricahua",
+            "pixels": 35,
+            "percent": 20.59
+          },
+          {
+            "id": 882,
+            "name": "Mescalero",
+            "pixels": 32,
+            "percent": 18.82
+          },
+          {
+            "id": 4644,
+            "name": "Jocome",
+            "pixels": 22,
+            "percent": 12.94
+          },
+          {
+            "id": 4630,
+            "name": "Natahende",
+            "pixels": 17,
+            "percent": 10.0
+          },
+          {
+            "id": 4631,
+            "name": "Towa",
+            "pixels": 16,
+            "percent": 9.41
+          },
+          {
+            "id": 4628,
+            "name": "Nitahende",
+            "pixels": 8,
+            "percent": 4.71
+          },
+          {
+            "id": 863,
+            "name": "Suma",
+            "pixels": 5,
+            "percent": 2.94
+          }
+        ]
+      },
+      {
+        "id": 1088,
+        "name": "Wergaia",
+        "color": [
+          36,
+          156,
+          126
+        ],
+        "classification": {
+          "type": "normal land",
+          "continents": [
+            "oceania"
+          ],
+          "climates": [],
+          "area": "southern_australia_area",
+          "region": "australia_region",
+          "superregion": "oceania_superregion",
+          "terrain": "savannah"
+        },
+        "vanilla_pixel_count": 2016,
+        "project_pixel_count": 0,
+        "reference_pixel_count": 0,
+        "vanilla_bbox": [
+          5015,
+          1909,
+          5082,
+          1952
+        ],
+        "vanilla_centroid": [
+          5045.32,
+          1933.88
+        ],
+        "vanilla_terrain_by_pixel": [
+          {
+            "terrain": "206,169,99",
+            "pixels": 964,
+            "percent": 47.82
+          },
+          {
+            "terrain": "200,214,107",
+            "pixels": 926,
+            "percent": 45.93
+          },
+          {
+            "terrain": "86,124,27",
+            "pixels": 126,
+            "percent": 6.25
+          }
+        ],
+        "project_covering_ids_at_vanilla_shape": [
+          {
+            "id": 1087,
+            "name": "Woiworung",
+            "pixels": 1102,
+            "percent": 54.66
+          },
+          {
+            "id": 4861,
+            "name": "Waveroo",
+            "pixels": 914,
+            "percent": 45.34
+          }
+        ],
+        "reference_covering_ids_at_vanilla_shape": [
+          {
+            "id": 1087,
+            "name": "Woiworung",
+            "pixels": 1102,
+            "percent": 54.66
+          },
+          {
+            "id": 4861,
+            "name": "Waveroo",
+            "pixels": 914,
+            "percent": 45.34
+          }
+        ],
+        "vanilla_adjacent_ids": [
+          {
+            "id": 4861,
+            "name": "Waveroo",
+            "pixels": 74,
+            "percent": 32.17
+          },
+          {
+            "id": 1087,
+            "name": "Woiworung",
+            "pixels": 68,
+            "percent": 29.57
+          },
+          {
+            "id": 2735,
+            "name": "Gunditjmara",
+            "pixels": 34,
+            "percent": 14.78
+          },
+          {
+            "id": 4859,
+            "name": "Gundungurra",
+            "pixels": 26,
+            "percent": 11.3
+          },
+          {
+            "id": 1791,
+            "name": "Central Australia",
+            "pixels": 20,
+            "percent": 8.7
+          },
+          {
+            "id": 2734,
+            "name": "Yuin",
+            "pixels": 8,
+            "percent": 3.48
+          }
+        ]
+      },
+      {
+        "id": 2292,
+        "name": "Moshi",
+        "color": [
+          140,
+          145,
+          232
+        ],
+        "classification": {
+          "type": "normal land",
+          "continents": [
+            "africa"
+          ],
+          "climates": [
+            "normal_monsoon",
+            "tropical"
+          ],
+          "area": "atacora_oueme_area",
+          "region": "niger_region",
+          "superregion": "africa_superregion",
+          "terrain": "savannah"
+        },
+        "vanilla_pixel_count": 743,
+        "project_pixel_count": 0,
+        "reference_pixel_count": 0,
+        "vanilla_bbox": [
+          2834,
+          1229,
+          2877,
+          1259
+        ],
+        "vanilla_centroid": [
+          2857.31,
+          1243.6
+        ],
+        "vanilla_terrain_by_pixel": [
+          {
+            "terrain": "86,124,27",
+            "pixels": 618,
+            "percent": 83.18
+          },
+          {
+            "terrain": "200,214,107",
+            "pixels": 125,
+            "percent": 16.82
+          }
+        ],
+        "project_covering_ids_at_vanilla_shape": [
+          {
+            "id": 1144,
+            "name": "Oyo",
+            "pixels": 331,
+            "percent": 44.55
+          },
+          {
+            "id": 2258,
+            "name": "Cape Coast",
+            "pixels": 319,
+            "percent": 42.93
+          },
+          {
+            "id": 1143,
+            "name": "Borgu",
+            "pixels": 93,
+            "percent": 12.52
+          }
+        ],
+        "reference_covering_ids_at_vanilla_shape": [
+          {
+            "id": 1144,
+            "name": "Oyo",
+            "pixels": 331,
+            "percent": 44.55
+          },
+          {
+            "id": 2258,
+            "name": "Cape Coast",
+            "pixels": 319,
+            "percent": 42.93
+          },
+          {
+            "id": 1143,
+            "name": "Borgu",
+            "pixels": 93,
+            "percent": 12.52
+          }
+        ],
+        "vanilla_adjacent_ids": [
+          {
+            "id": 1143,
+            "name": "Borgu",
+            "pixels": 42,
+            "percent": 26.92
+          },
+          {
+            "id": 2295,
+            "name": "Atakora",
+            "pixels": 36,
+            "percent": 23.08
+          },
+          {
+            "id": 1144,
+            "name": "Oyo",
+            "pixels": 33,
+            "percent": 21.15
+          },
+          {
+            "id": 2291,
+            "name": "Ketu",
+            "pixels": 23,
+            "percent": 14.74
+          },
+          {
+            "id": 1145,
+            "name": "Nupe",
+            "pixels": 10,
+            "percent": 6.41
+          },
+          {
+            "id": 2293,
+            "name": "Yawuri",
+            "pixels": 6,
+            "percent": 3.85
+          },
+          {
+            "id": 1140,
+            "name": "Abomey",
+            "pixels": 6,
+            "percent": 3.85
+          }
+        ]
+      },
+      {
+        "id": 2936,
+        "name": "Guyana",
+        "color": [
+          72,
+          80,
+          35
+        ],
+        "classification": {
+          "type": "impassable/wasteland",
+          "continents": [
+            "south_america"
+          ],
+          "climates": [
+            "impassable"
+          ],
+          "area": null,
+          "region": null,
+          "superregion": null,
+          "terrain": null
+        },
+        "vanilla_pixel_count": 8160,
+        "project_pixel_count": 0,
+        "reference_pixel_count": 0,
+        "vanilla_bbox": [
+          1859,
+          1114,
+          1996,
+          1211
+        ],
+        "vanilla_centroid": [
+          1925.53,
+          1161.63
+        ],
+        "vanilla_terrain_by_pixel": [
+          {
+            "terrain": "86,124,27",
+            "pixels": 8109,
+            "percent": 99.38
+          },
+          {
+            "terrain": "200,214,107",
+            "pixels": 36,
+            "percent": 0.44
+          },
+          {
+            "terrain": "75,147,174",
+            "pixels": 15,
+            "percent": 0.18
+          }
+        ],
+        "project_covering_ids_at_vanilla_shape": [
+          {
+            "id": 2933,
+            "name": "Faro",
+            "pixels": 3237,
+            "percent": 39.67
+          },
+          {
+            "id": 2935,
+            "name": "Muturu",
+            "pixels": 2712,
+            "percent": 33.24
+          },
+          {
+            "id": 746,
+            "name": "Cayenne",
+            "pixels": 730,
+            "percent": 8.95
+          },
+          {
+            "id": 2937,
+            "name": "Suriname",
+            "pixels": 726,
+            "percent": 8.9
+          },
+          {
+            "id": 744,
+            "name": "Demerara",
+            "pixels": 557,
+            "percent": 6.83
+          },
+          {
+            "id": 2931,
+            "name": "Pirara",
+            "pixels": 169,
+            "percent": 2.07
+          },
+          {
+            "id": 2938,
+            "name": "Oiapoque",
+            "pixels": 29,
+            "percent": 0.36
+          }
+        ],
+        "reference_covering_ids_at_vanilla_shape": [
+          {
+            "id": 2933,
+            "name": "Faro",
+            "pixels": 3237,
+            "percent": 39.67
+          },
+          {
+            "id": 2935,
+            "name": "Muturu",
+            "pixels": 2712,
+            "percent": 33.24
+          },
+          {
+            "id": 746,
+            "name": "Cayenne",
+            "pixels": 730,
+            "percent": 8.95
+          },
+          {
+            "id": 2937,
+            "name": "Suriname",
+            "pixels": 726,
+            "percent": 8.9
+          },
+          {
+            "id": 744,
+            "name": "Demerara",
+            "pixels": 557,
+            "percent": 6.83
+          },
+          {
+            "id": 2931,
+            "name": "Pirara",
+            "pixels": 169,
+            "percent": 2.07
+          },
+          {
+            "id": 2938,
+            "name": "Oiapoque",
+            "pixels": 29,
+            "percent": 0.36
+          }
+        ],
+        "vanilla_adjacent_ids": [
+          {
+            "id": 2937,
+            "name": "Suriname",
+            "pixels": 91,
+            "percent": 16.08
+          },
+          {
+            "id": 2935,
+            "name": "Muturu",
+            "pixels": 89,
+            "percent": 15.72
+          },
+          {
+            "id": 2930,
+            "name": "Santarem",
+            "pixels": 75,
+            "percent": 13.25
+          },
+          {
+            "id": 2933,
+            "name": "Faro",
+            "pixels": 68,
+            "percent": 12.01
+          },
+          {
+            "id": 2931,
+            "name": "Pirara",
+            "pixels": 67,
+            "percent": 11.84
+          },
+          {
+            "id": 746,
+            "name": "Cayenne",
+            "pixels": 47,
+            "percent": 8.3
+          },
+          {
+            "id": 2938,
+            "name": "Oiapoque",
+            "pixels": 46,
+            "percent": 8.13
+          },
+          {
+            "id": 2934,
+            "name": "Manaus",
+            "pixels": 34,
+            "percent": 6.01
+          },
+          {
+            "id": 747,
+            "name": "Tucujulandia",
+            "pixels": 28,
+            "percent": 4.95
+          },
+          {
+            "id": 2889,
+            "name": "Rio Branco",
+            "pixels": 12,
+            "percent": 2.12
+          },
+          {
+            "id": 744,
+            "name": "Demerara",
+            "pixels": 9,
+            "percent": 1.59
+          }
+        ]
+      },
+      {
+        "id": 4328,
+        "name": "Chagai",
+        "color": [
+          143,
+          34,
+          255
+        ],
+        "classification": {
+          "type": "impassable/wasteland",
+          "continents": [
+            "asia"
+          ],
+          "climates": [
+            "impassable"
+          ],
+          "area": null,
+          "region": null,
+          "superregion": null,
+          "terrain": null
+        },
+        "vanilla_pixel_count": 3106,
+        "project_pixel_count": 0,
+        "reference_pixel_count": 0,
+        "vanilla_bbox": [
+          3741,
+          898,
+          3849,
+          942
+        ],
+        "vanilla_centroid": [
+          3795.45,
+          921.16
+        ],
+        "vanilla_terrain_by_pixel": [
+          {
+            "terrain": "112,74,31",
+            "pixels": 1080,
+            "percent": 34.77
+          },
+          {
+            "terrain": "158,130,77",
+            "pixels": 908,
+            "percent": 29.23
+          },
+          {
+            "terrain": "206,169,99",
+            "pixels": 621,
+            "percent": 19.99
+          },
+          {
+            "terrain": "65,42,17",
+            "pixels": 372,
+            "percent": 11.98
+          },
+          {
+            "terrain": "ocean",
+            "pixels": 125,
+            "percent": 4.02
+          }
+        ],
+        "project_covering_ids_at_vanilla_shape": [
+          {
+            "id": 2232,
+            "name": "Kharan",
+            "pixels": 1757,
+            "percent": 56.57
+          },
+          {
+            "id": 434,
+            "name": "Quhistan",
+            "pixels": 709,
+            "percent": 22.83
+          },
+          {
+            "id": 2229,
+            "name": "Bust",
+            "pixels": 413,
+            "percent": 13.3
+          },
+          {
+            "id": 447,
+            "name": "Kandahar",
+            "pixels": 110,
+            "percent": 3.54
+          },
+          {
+            "id": 2230,
+            "name": "Chakhansur",
+            "pixels": 85,
+            "percent": 2.74
+          },
+          {
+            "id": 435,
+            "name": "Sistan",
+            "pixels": 32,
+            "percent": 1.03
+          }
+        ],
+        "reference_covering_ids_at_vanilla_shape": [
+          {
+            "id": 2232,
+            "name": "Kharan",
+            "pixels": 1757,
+            "percent": 56.57
+          },
+          {
+            "id": 434,
+            "name": "Quhistan",
+            "pixels": 709,
+            "percent": 22.83
+          },
+          {
+            "id": 2229,
+            "name": "Bust",
+            "pixels": 413,
+            "percent": 13.3
+          },
+          {
+            "id": 447,
+            "name": "Kandahar",
+            "pixels": 110,
+            "percent": 3.54
+          },
+          {
+            "id": 2230,
+            "name": "Chakhansur",
+            "pixels": 85,
+            "percent": 2.74
+          },
+          {
+            "id": 435,
+            "name": "Sistan",
+            "pixels": 32,
+            "percent": 1.03
+          }
+        ],
+        "vanilla_adjacent_ids": [
+          {
+            "id": 434,
+            "name": "Quhistan",
+            "pixels": 62,
+            "percent": 17.51
+          },
+          {
+            "id": 576,
+            "name": "Indus",
+            "pixels": 59,
+            "percent": 16.67
+          },
+          {
+            "id": 2232,
+            "name": "Kharan",
+            "pixels": 55,
+            "percent": 15.54
+          },
+          {
+            "id": 435,
+            "name": "Sistan",
+            "pixels": 42,
+            "percent": 11.86
+          },
+          {
+            "id": 2229,
+            "name": "Bust",
+            "pixels": 39,
+            "percent": 11.02
+          },
+          {
+            "id": 447,
+            "name": "Kandahar",
+            "pixels": 35,
+            "percent": 9.89
+          },
+          {
+            "id": 2230,
+            "name": "Chakhansur",
+            "pixels": 25,
+            "percent": 7.06
+          },
+          {
+            "id": 2220,
+            "name": "Bam",
+            "pixels": 22,
+            "percent": 6.21
+          },
+          {
+            "id": 577,
+            "name": "Quetta",
+            "pixels": 15,
+            "percent": 4.24
+          }
+        ]
+      },
+      {
+        "id": 4922,
+        "name": "Pepikokia",
+        "color": [
+          23,
+          110,
+          175
+        ],
+        "classification": {
+          "type": "normal land",
+          "continents": [
+            "north_america"
+          ],
+          "climates": [
+            "normal_winter"
+          ],
+          "area": "miami_river_area",
+          "region": "great_lakes_region",
+          "superregion": "north_america_superregion",
+          "terrain": null
+        },
+        "vanilla_pixel_count": 624,
+        "project_pixel_count": 0,
+        "reference_pixel_count": 0,
+        "vanilla_bbox": [
+          1447,
+          463,
+          1487,
+          487
+        ],
+        "vanilla_centroid": [
+          1467.7,
+          473.96
+        ],
+        "vanilla_terrain_by_pixel": [
+          {
+            "terrain": "86,124,27",
+            "pixels": 580,
+            "percent": 92.95
+          },
+          {
+            "terrain": "75,147,174",
+            "pixels": 32,
+            "percent": 5.13
+          },
+          {
+            "terrain": "255,247,0",
+            "pixels": 12,
+            "percent": 1.92
+          }
+        ],
+        "project_covering_ids_at_vanilla_shape": [
+          {
+            "id": 943,
+            "name": "Miami",
+            "pixels": 472,
+            "percent": 75.64
+          },
+          {
+            "id": 2522,
+            "name": "Mascouten",
+            "pixels": 108,
+            "percent": 17.31
+          },
+          {
+            "id": 944,
+            "name": "Potawatomi",
+            "pixels": 22,
+            "percent": 3.53
+          },
+          {
+            "id": 946,
+            "name": "Wyandot",
+            "pixels": 18,
+            "percent": 2.88
+          },
+          {
+            "id": 942,
+            "name": "Wea",
+            "pixels": 4,
+            "percent": 0.64
+          }
+        ],
+        "reference_covering_ids_at_vanilla_shape": [
+          {
+            "id": 943,
+            "name": "Miami",
+            "pixels": 472,
+            "percent": 75.64
+          },
+          {
+            "id": 2522,
+            "name": "Mascouten",
+            "pixels": 108,
+            "percent": 17.31
+          },
+          {
+            "id": 944,
+            "name": "Potawatomi",
+            "pixels": 22,
+            "percent": 3.53
+          },
+          {
+            "id": 946,
+            "name": "Wyandot",
+            "pixels": 18,
+            "percent": 2.88
+          },
+          {
+            "id": 942,
+            "name": "Wea",
+            "pixels": 4,
+            "percent": 0.64
+          }
+        ],
+        "vanilla_adjacent_ids": [
+          {
+            "id": 2522,
+            "name": "Mascouten",
+            "pixels": 35,
+            "percent": 25.0
+          },
+          {
+            "id": 942,
+            "name": "Wea",
+            "pixels": 32,
+            "percent": 22.86
+          },
+          {
+            "id": 943,
+            "name": "Miami",
+            "pixels": 32,
+            "percent": 22.86
+          },
+          {
+            "id": 1662,
+            "name": "Lake Michigan",
+            "pixels": 19,
+            "percent": 13.57
+          },
+          {
+            "id": 946,
+            "name": "Wyandot",
+            "pixels": 13,
+            "percent": 9.29
+          },
+          {
+            "id": 944,
+            "name": "Potawatomi",
+            "pixels": 9,
+            "percent": 6.43
+          }
+        ]
+      }
+    ]
+  },
+  "provinces": {
+    "imported_dimensions": [
+      5632,
+      2048
+    ],
+    "vanilla_dimensions": [
+      5632,
+      2048
+    ],
+    "imported_unique_colors": 3916,
+    "undefined_pixel_count": 0,
+    "undefined_color_counts": {},
+    "missing_vanilla_defined_ids": [
+      {
+        "id": 214,
+        "name": "Zaragoza",
+        "color": [
+          30,
+          76,
+          255
+        ],
+        "vanilla_pixel_count": 322
+      },
+      {
+        "id": 263,
+        "name": "Ratibor",
+        "color": [
+          165,
+          46,
+          192
+        ],
+        "vanilla_pixel_count": 224
+      },
+      {
+        "id": 264,
+        "name": "Breslau",
+        "color": [
+          37,
+          48,
+          255
+        ],
+        "vanilla_pixel_count": 301
+      },
+      {
+        "id": 881,
+        "name": "Piro",
+        "color": [
+          134,
+          126,
+          173
+        ],
+        "vanilla_pixel_count": 899
+      },
+      {
+        "id": 1088,
+        "name": "Wergaia",
+        "color": [
+          36,
+          156,
+          126
+        ],
+        "vanilla_pixel_count": 2016
+      },
+      {
+        "id": 2292,
+        "name": "Moshi",
+        "color": [
+          140,
+          145,
+          232
+        ],
+        "vanilla_pixel_count": 743
+      },
+      {
+        "id": 2936,
+        "name": "Guyana",
+        "color": [
+          72,
+          80,
+          35
+        ],
+        "vanilla_pixel_count": 8160
+      },
+      {
+        "id": 4328,
+        "name": "Chagai",
+        "color": [
+          143,
+          34,
+          255
+        ],
+        "vanilla_pixel_count": 3106
+      },
+      {
+        "id": 4922,
+        "name": "Pepikokia",
+        "color": [
+          23,
+          110,
+          175
+        ],
+        "vanilla_pixel_count": 624
+      }
+    ]
+  },
+  "positions": {
+    "project_position_blocks": 4941,
+    "vanilla_position_blocks": 4941,
+    "reference_position_blocks": 4789
+  }
+}
