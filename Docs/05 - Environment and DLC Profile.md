@@ -4,7 +4,7 @@
 
 **Target EU4 version:** v1.37.5.0 Inca
 
-**Supported version string:** `supported_version="1.37.*.*"`
+**Supported version string:** `supported_version="1.37.5.0"`
 
 **Profile status:** Locked before real mechanics implementation
 
