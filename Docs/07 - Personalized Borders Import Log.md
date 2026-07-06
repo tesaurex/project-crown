@@ -159,3 +159,15 @@ The launcher descriptor was also synced to:
 ## Phase 1B Non-Implementation Statement
 
 No non-map gameplay mechanics were implemented. No base EU4 files were edited. No Workshop/reference mod files were edited. No Project Pace files were touched.
+
+## Phase 1B.1 Follow-Up
+
+Phase 1B.1 restored vanilla European impassable/wasteland province shapes into the imported Personalized Borders foundation. See `Docs/08 - Vanilla European Impassables Merge Log.md` for the detailed audit.
+
+After Phase 1B.1:
+
+- Undefined pixels remain `0`.
+- European impassable/wasteland IDs restored to vanilla shape: `2425`, `4146`, `4153`, `4154`, `4155`, `4156`, `4157`, `4159`, `4160`, `4161`, `4162`, `4178`, `4763`.
+- The Pyrenees, Alps, and Caucasus vanilla impassable shapes are restored.
+- Missing vanilla colors are reduced from 14 IDs to 9 IDs: `214`, `263`, `264`, `881`, `1088`, `2292`, `2936`, `4328`, `4922`.
+- No non-map gameplay mechanics were implemented.

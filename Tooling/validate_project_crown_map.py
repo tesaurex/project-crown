@@ -124,6 +124,21 @@ def load_definition(path: Path) -> tuple[dict[int, dict], dict[tuple[int, int, i
     return by_id, by_color
 
 
+def parse_number_block(path: Path, block_name: str) -> set[int]:
+    text = path.read_text(encoding="latin-1")
+    match = re.search(rf"\b{re.escape(block_name)}\s*=\s*\{{(.*?)\n\}}", text, re.S)
+    if not match:
+        raise ValueError(f"Could not find block {block_name!r} in {path}")
+    body = "\n".join(line.split("#", 1)[0] for line in match.group(1).splitlines())
+    return {int(value) for value in re.findall(r"\b\d+\b", body)}
+
+
+def vanilla_european_impassable_ids(vanilla_map: Path) -> list[int]:
+    europe_ids = parse_number_block(vanilla_map / "continent.txt", "europe")
+    impassable_ids = parse_number_block(vanilla_map / "climate.txt", "impassable")
+    return sorted(europe_ids & impassable_ids)
+
+
 BLOCK_RE = re.compile(br"^\s*(\d+)\s*=\s*\{\s*$")
 
 
@@ -307,6 +322,112 @@ def validate_existing(imported_path: Path, vanilla_path: Path, definition_path: 
     }
 
 
+def count_ids(
+    bmp: Bmp24,
+    ids: list[int],
+    definition_by_id: dict[int, dict],
+) -> dict[int, int]:
+    colors = {tuple(definition_by_id[province_id]["color"]): province_id for province_id in ids}
+    counts = Counter()
+    for y in range(bmp.height):
+        for x in range(bmp.width):
+            province_id = colors.get(bmp.get_pixel(x, y))
+            if province_id is not None:
+                counts[province_id] += 1
+    return {province_id: counts[province_id] for province_id in ids}
+
+
+def summarize_target_ids(
+    target_ids: list[int],
+    vanilla_counts: dict[int, int],
+    project_counts: dict[int, int],
+    definition_by_id: dict[int, dict],
+) -> list[dict]:
+    return [
+        {
+            "id": province_id,
+            "name": definition_by_id[province_id]["name"],
+            "color": list(definition_by_id[province_id]["color"]),
+            "vanilla_pixel_count": vanilla_counts[province_id],
+            "project_pixel_count": project_counts[province_id],
+            "restored_to_vanilla_shape": project_counts[province_id] == vanilla_counts[province_id],
+        }
+        for province_id in target_ids
+    ]
+
+
+def restore_vanilla_impassables(
+    project_path: Path,
+    vanilla_path: Path,
+    definition_path: Path,
+    vanilla_map: Path,
+    output_path: Path,
+) -> dict:
+    definition_by_id, definition_by_color = load_definition(definition_path)
+    valid_colors = set(definition_by_color)
+    target_ids = vanilla_european_impassable_ids(vanilla_map)
+    target_colors = {tuple(definition_by_id[province_id]["color"]): province_id for province_id in target_ids}
+
+    project_bmp = Bmp24(project_path)
+    vanilla_bmp = Bmp24(vanilla_path)
+    if (project_bmp.width, project_bmp.height) != (vanilla_bmp.width, vanilla_bmp.height):
+        raise ValueError("Project and vanilla provinces.bmp dimensions do not match")
+
+    before_counts = count_ids(project_bmp, target_ids, definition_by_id)
+    vanilla_counts = count_ids(vanilla_bmp, target_ids, definition_by_id)
+    changed_pixels = 0
+    changed_by_target_id: Counter = Counter()
+    changed_to_non_target: Counter = Counter()
+
+    for y in range(project_bmp.height):
+        for x in range(project_bmp.width):
+            project_color = project_bmp.get_pixel(x, y)
+            vanilla_color = vanilla_bmp.get_pixel(x, y)
+            project_target_id = target_colors.get(project_color)
+            vanilla_target_id = target_colors.get(vanilla_color)
+            if project_target_id is None and vanilla_target_id is None:
+                continue
+            if project_color == vanilla_color:
+                continue
+
+            project_bmp.set_pixel(x, y, vanilla_color)
+            changed_pixels += 1
+            if vanilla_target_id is not None:
+                changed_by_target_id[vanilla_target_id] += 1
+            else:
+                replacement_id = definition_by_color.get(vanilla_color)
+                if replacement_id is not None:
+                    changed_to_non_target[replacement_id] += 1
+
+    after_counts = count_ids(project_bmp, target_ids, definition_by_id)
+    _, remaining_undefined = project_bmp.color_counts(valid_colors)
+    project_bmp.write(output_path)
+
+    return {
+        "identified_source": "vanilla continent.txt europe intersected with climate.txt impassable",
+        "target_ids": summarize_target_ids(target_ids, vanilla_counts, after_counts, definition_by_id),
+        "target_ids_before": summarize_target_ids(target_ids, vanilla_counts, before_counts, definition_by_id),
+        "changed_pixels": changed_pixels,
+        "changed_pixels_to_target_ids": [
+            {
+                "id": province_id,
+                "name": definition_by_id[province_id]["name"],
+                "pixels": count,
+            }
+            for province_id, count in sorted(changed_by_target_id.items())
+        ],
+        "changed_pixels_to_non_target_ids": [
+            {
+                "id": province_id,
+                "name": definition_by_id[province_id]["name"],
+                "pixels": count,
+            }
+            for province_id, count in sorted(changed_to_non_target.items())
+        ],
+        "undefined_pixel_count_after_restore": len(remaining_undefined),
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         description="Validate and import the Project Crown Personalized Borders map foundation."
@@ -316,6 +437,11 @@ def main() -> int:
     parser.add_argument("--project-map", type=Path, default=PROJECT_MAP)
     parser.add_argument("--summary-json", type=Path)
     parser.add_argument("--write", action="store_true", help="Write imported provinces.bmp and merged positions.txt")
+    parser.add_argument(
+        "--restore-vanilla-european-impassables",
+        action="store_true",
+        help="Overlay vanilla European impassable/wasteland province shapes onto the Project Crown bitmap.",
+    )
     args = parser.parse_args()
 
     reference_map = args.reference_mod / "map"
@@ -328,7 +454,25 @@ def main() -> int:
         "project_map": str(project_map),
     }
 
-    if args.write:
+    if args.restore_vanilla_european_impassables:
+        summary["impassables"] = restore_vanilla_impassables(
+            project_map / "provinces.bmp",
+            vanilla_map / "provinces.bmp",
+            definition_path,
+            vanilla_map,
+            project_map / "provinces.bmp",
+        )
+        summary["provinces"] = validate_existing(
+            project_map / "provinces.bmp",
+            vanilla_map / "provinces.bmp",
+            definition_path,
+        )
+        summary["positions"] = {
+            "project_position_blocks": len(parse_position_blocks(project_map / "positions.txt")),
+            "vanilla_position_blocks": len(parse_position_blocks(vanilla_map / "positions.txt")),
+            "reference_position_blocks": len(parse_position_blocks(reference_map / "positions.txt")),
+        }
+    elif args.write:
         summary["provinces"] = import_provinces(
             reference_map / "provinces.bmp",
             vanilla_map / "provinces.bmp",
