@@ -4,7 +4,7 @@
 
 **Target EU4 version:** v1.37.5.0 Inca
 
-**Supported version string:** `supported_version="1.37.5.0"`
+**Supported version string:** `supported_version="1.37.5"`
 
 **Profile status:** Locked before real mechanics implementation
 
@@ -26,6 +26,8 @@
 ## Launcher Note
 
 The launcher showed 9 owned content items total. Only the items listed above were visible from screenshots and are treated as confirmed for Project Crown planning.
+
+The descriptor uses the three-part string `supported_version="1.37.5"` because the Paradox Launcher appears to warn on the installed game's four-number display string, `1.37.5.0`.
 
 ## Implementation Rules
 

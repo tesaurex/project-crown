@@ -4,7 +4,9 @@ This is the local mod folder for Project Crown.
 
 Target EU4 version: v1.37.5.0 Inca.
 
-Supported version string: `1.37.5.0`.
+Supported version string: `1.37.5`.
+
+The descriptor uses the three-part version string because the Paradox Launcher warned on the installed game's four-number display string, `1.37.5.0`.
 
 Project Crown currently contains only the temporary smoke-test decision. No real gameplay mechanics are implemented yet.
 
