@@ -1,0 +1,165 @@
+{
+  "reference_mod": "/Users/roman/Library/Application Support/Steam/steamapps/workshop/content/236850/3418818231",
+  "vanilla_eu4": "/Users/roman/Library/Application Support/Steam/steamapps/common/Europa Universalis IV",
+  "project_map": "/Users/roman/Desktop/Project Crown/Mod Build/project_crown/map",
+  "provinces": {
+    "imported_dimensions": [
+      5632,
+      2048
+    ],
+    "vanilla_dimensions": [
+      5632,
+      2048
+    ],
+    "imported_unique_colors": 3911,
+    "undefined_pixel_count": 0,
+    "undefined_color_counts": {},
+    "missing_vanilla_defined_ids": [
+      {
+        "id": 214,
+        "name": "Zaragoza",
+        "color": [
+          30,
+          76,
+          255
+        ],
+        "vanilla_pixel_count": 322
+      },
+      {
+        "id": 263,
+        "name": "Ratibor",
+        "color": [
+          165,
+          46,
+          192
+        ],
+        "vanilla_pixel_count": 224
+      },
+      {
+        "id": 264,
+        "name": "Breslau",
+        "color": [
+          37,
+          48,
+          255
+        ],
+        "vanilla_pixel_count": 301
+      },
+      {
+        "id": 881,
+        "name": "Piro",
+        "color": [
+          134,
+          126,
+          173
+        ],
+        "vanilla_pixel_count": 899
+      },
+      {
+        "id": 1088,
+        "name": "Wergaia",
+        "color": [
+          36,
+          156,
+          126
+        ],
+        "vanilla_pixel_count": 2016
+      },
+      {
+        "id": 2292,
+        "name": "Moshi",
+        "color": [
+          140,
+          145,
+          232
+        ],
+        "vanilla_pixel_count": 743
+      },
+      {
+        "id": 2936,
+        "name": "Guyana",
+        "color": [
+          72,
+          80,
+          35
+        ],
+        "vanilla_pixel_count": 8160
+      },
+      {
+        "id": 4156,
+        "name": "Caucasus",
+        "color": [
+          225,
+          223,
+          27
+        ],
+        "vanilla_pixel_count": 633
+      },
+      {
+        "id": 4157,
+        "name": "The Alps",
+        "color": [
+          225,
+          223,
+          29
+        ],
+        "vanilla_pixel_count": 130
+      },
+      {
+        "id": 4160,
+        "name": "Alps3",
+        "color": [
+          224,
+          220,
+          117
+        ],
+        "vanilla_pixel_count": 173
+      },
+      {
+        "id": 4161,
+        "name": "Alps4",
+        "color": [
+          208,
+          202,
+          39
+        ],
+        "vanilla_pixel_count": 178
+      },
+      {
+        "id": 4328,
+        "name": "Chagai",
+        "color": [
+          143,
+          34,
+          255
+        ],
+        "vanilla_pixel_count": 3106
+      },
+      {
+        "id": 4763,
+        "name": "Alps6",
+        "color": [
+          238,
+          230,
+          38
+        ],
+        "vanilla_pixel_count": 69
+      },
+      {
+        "id": 4922,
+        "name": "Pepikokia",
+        "color": [
+          23,
+          110,
+          175
+        ],
+        "vanilla_pixel_count": 624
+      }
+    ]
+  },
+  "positions": {
+    "project_position_blocks": 4941,
+    "vanilla_position_blocks": 4941,
+    "reference_position_blocks": 4789
+  }
+}

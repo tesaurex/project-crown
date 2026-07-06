@@ -188,3 +188,16 @@ Project Crown will still later own some of those files for its own systems, but 
 ## Phase 1A Non-Implementation Statement
 
 No reference files were copied into Project Crown in this phase. No gameplay mechanics were implemented. No base EU4 files, Steam Workshop files, Reference Mods files, deployed user mod files, or Project Pace files were edited.
+
+## Phase 1B Follow-Up
+
+Phase 1B imported the controlled map foundation into Project Crown. See `Docs/07 - Personalized Borders Import Log.md` for the import audit.
+
+The Phase 1B import copied only:
+
+- `map/provinces.bmp`
+- `map/positions.txt`
+
+The import cleaned the 19 undefined-color pixels in `provinces.bmp` and merged vanilla EU4 v1.37.5 position blocks `4790-4941` into the reference `positions.txt`. The 14 vanilla province colors absent from the reference bitmap remain documented as launch-test warnings rather than being guessed back into the map.
+
+No non-map gameplay mechanics were implemented in Phase 1B.
