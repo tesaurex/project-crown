@@ -1,0 +1,4 @@
+l_english:
+ project_crown_loaded:0 "Project Crown Loaded"
+ project_crown_loaded_desc:0 "Confirms the Project Crown mod is active. This decision has no effect."
+ project_crown_loaded_tt:0 "Project Crown is loaded. No gameplay effects were applied."

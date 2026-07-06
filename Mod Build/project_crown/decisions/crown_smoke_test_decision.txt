@@ -1,0 +1,21 @@
+country_decisions = {
+	project_crown_loaded = {
+		major = no
+
+		potential = {
+			ai = no
+		}
+
+		allow = {
+			always = yes
+		}
+
+		effect = {
+			custom_tooltip = project_crown_loaded_tt
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
