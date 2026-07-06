@@ -1,15 +1,15 @@
 # Project Crown: Europa Ascendant — Master Design Document
 
-**Version:** 0.3 — Pre-implementation design; all owner decisions of 2026-07-04 applied (Appendix B, rounds 1–2); no open design questions remain
-**Date:** 2026-07-04
-**Status:** Approved rule set; local skeleton and temporary smoke-test decision exist; no real gameplay mechanics implemented
-**Base game:** Europa Universalis IV, vanilla map, 1444 start date
+**Version:** 0.4 - Personalized Borders foundation priority applied; owner decisions of 2026-07-04 and 2026-07-06 recorded; map compatibility gate open
+**Date:** 2026-07-06
+**Status:** Approved rule set with Phase 1A map-foundation research added; local skeleton and temporary smoke-test decision exist; no real gameplay mechanics implemented
+**Base game:** Europa Universalis IV v1.37.5.0 Inca, 1444 start date; intended province/border foundation is Personalized Borders if it can be made compatible
 
 ---
 
 ## 1. Vision
 
-Project Crown: Europa Ascendant is a full overhaul of EU4 built on the vanilla 1444 map. It reshapes the game around one central historical dynamic: **Europe projects power outward.** European nations hold a structural advantage in technology, institutions, colonization, and naval power — but no single European major is scripted to win. Instead of blobbing across Europe, the great powers compete for the world: colonies, trade dominance, and overseas empires are the victory currency. The rest of the world is not helpless, but it plays a different game — defense, frontier settlement, and survival against imperial pressure.
+Project Crown: Europa Ascendant is a full overhaul of EU4 built on a locked province/border foundation. The intended foundation is now the province and border work from **Personalized Borders: Fixes & Historical Borders** (Steam Workshop ID `3418818231`), provided it can be made compatible with EU4 v1.37.5.0 Inca. The overhaul reshapes the game around one central historical dynamic: **Europe projects power outward.** European nations hold a structural advantage in technology, institutions, colonization, and naval power — but no single European major is scripted to win. Instead of blobbing across Europe, the great powers compete for the world: colonies, trade dominance, and overseas empires are the victory currency. The rest of the world is not helpless, but it plays a different game — defense, frontier settlement, and survival against imperial pressure.
 
 ## 2. Design Pillars
 
@@ -17,11 +17,12 @@ Project Crown: Europa Ascendant is a full overhaul of EU4 built on the vanilla 1
 2. **Balanced Europe, dominant Europe.** Europe as a bloc has the upper hand globally, but internally no European major has a guaranteed day-one victory path.
 3. **Empire is a structure, not a paint bucket.** Distant conquest and colonization produce *subjects* — Colonial Administrations, Overseas Dependencies, Dominions — not directly stated provinces. Empires look and behave like empires.
 4. **Colonization is settlement, not replacement — mostly.** Colonized provinces keep native culture and religion by default. Assimilation is rare, slow, hidden, and driven by economic investment.
-5. **Vanilla map first.** No map surgery in v1. Alternate-history border support (1914 / 2026 styles) comes later through formables and decisions, within the limits of vanilla province shapes.
+5. **Province/border foundation first.** Project Crown must lock the Personalized Borders province/border foundation before no-straits, development rebalance, colonial regions, subjects, or other gameplay systems. Alternate-history border support (1914 / 2026 styles) comes later through formables and decisions, within the limits of the locked foundation.
 
 ## 3. Scope & Ground Rules
 
-- **Map:** Vanilla 1444 EU4 map. No new provinces, no redrawn terrain in v1. Map *data* files (adjacencies, colonial regions, province history) are fair game.
+- **Map:** Intended foundation is Personalized Borders: Fixes & Historical Borders (Workshop ID `3418818231`) if the EU4 v1.37.5.0 compatibility risks can be resolved. Do not continue gameplay-system implementation until this foundation is locked. See [06 - Personalized Borders Foundation Research](06%20-%20Personalized%20Borders%20Foundation%20Research.md).
+- **Map import status:** Not imported yet. Phase 1A was research/documentation only.
 - **Start date:** 1444 only. No alternate bookmarks in v1.
 - **Environment and DLC profile:** Design targets Europa Universalis IV v1.37.5.0 Inca with the confirmed DLC/content profile recorded in [05 - Environment and DLC Profile](05%20-%20Environment%20and%20DLC%20Profile.md). Future mechanics must not assume unconfirmed DLC, and any DLC-dependent mechanic must document its dependency before implementation.
 - **Compatibility:** Standalone overhaul. No compatibility patches for other overhauls in v1.
@@ -45,8 +46,20 @@ These definitions are used by every system below and must be implemented as **sc
 
 ## 5. Map & Movement
 
+### 5.0 Province/Border Foundation Gate
+Project Crown's first map priority is no longer "vanilla map first." The project should use the Personalized Borders province/border foundation if it can be made compatible with EU4 v1.37.5.0 Inca.
+
+This gate comes before every dependent world or gameplay layer:
+
+- No straits removal until the final province bitmap and positions are locked.
+- No development rebalance until province IDs and province availability are confirmed.
+- No colonial regions until the final province/border foundation is loaded cleanly.
+- No subject framework, mission, claim, event, idea, fort, assimilation, or Back War Effort work until the foundation is stable enough for those systems to target.
+
+Phase 1A found that the reference mod supplies only `map/provinces.bmp` and `map/positions.txt`. It appears to redraw borders using vanilla province colors rather than adding a new province-ID schema, but it needs a compatibility pass for undefined bitmap pixels, absent vanilla bitmap IDs, and missing 1.37.5 position entries. No import happened during Phase 1A.
+
 ### 5.1 No Straits (Rule 1)
-All strait crossings are removed. Armies cross water only by naval transport.
+After the province/border foundation is locked, all strait crossings are removed. Armies cross water only by naval transport.
 
 - **Implementation:** Full override of `map/adjacencies.csv`, deleting every sea-crossing adjacency. Canal and impassable entries are preserved.
 - **Consequences accepted by design:**
@@ -62,7 +75,7 @@ When a fort falls, the surrounding provinces should fall with it.
 
 ## 6. World Development Rebalance (Rule 2, amended)
 
-Development flattening applies **only to three designated colonial macro-regions**: the **Americas**, **Australia/Oceania**, and **all of Africa**.
+Development flattening is blocked until the Personalized Borders foundation is locked. Once the foundation is stable, flattening applies **only to three designated colonial macro-regions**: the **Americas**, **Australia/Oceania**, and **all of Africa**.
 
 - **Asia is untouched.** India, China, Japan, mainland Southeast Asia, and the rest of Asia keep vanilla development unless a later, specific balance change targets them. This explicitly includes **Anatolia** — the Ottoman heartland is never flattened.
 - **Europe is untouched** in this pass. Europe's internal balance is handled separately (§7).
@@ -147,7 +160,7 @@ Non-Europeans get exactly one path to new land: settling **directly bordering un
 - The **Ottomans** fall under Frontier Settlement rules for any colonization, like non-Europeans — they are not a colonial European power (§4).
 
 ### 8.4 Global Colonial Regions (Rule 9)
-Colonial regions are rebuilt as a **global** set with two hard constraints: every colonial region must have **ocean access**, and borders must be **clean** (follow vanilla region/area seams, no orphan pockets).
+Colonial regions are rebuilt as a **global** set only after the Personalized Borders foundation is locked. They have two hard constraints: every colonial region must have **ocean access**, and borders must be **clean** (follow the locked foundation's area/region boundaries as much as possible, no orphan pockets).
 
 Design criteria for where colonial regions exist:
 
@@ -243,7 +256,7 @@ Post-v1 goal, explicitly **after** the core systems are stable:
 - **1914 layer:** formables/decisions producing plausible 1914 borders — Germany, Italy (partly vanilla), Belgium, Romania, Serbia, Greece expansion, unified colonial empires — as close as vanilla provinces allow.
 - **2026 layer:** decisions for modern-style nations (post-colonial independence outcomes, national unifications) as an end-game flavor layer.
 - Both layers ride on the subject framework: Dominions and independence wars are the narrative machinery for decolonization-era borders.
-- Accuracy is bounded by the vanilla map; "accurate-looking," not exact.
+- Accuracy is bounded by the locked province/border foundation; "accurate-looking," not exact.
 
 ## 14. AI Behavior Charter
 
@@ -272,6 +285,7 @@ One scheduled future decision remains by design (not an open question): the **tr
 - [02 - Hardcoded Risk Register](02%20-%20Hardcoded%20Risk%20Register.md) — every place EU4's engine fights this design, with mitigations
 - [03 - File & Folder Map](03%20-%20File%20and%20Folder%20Map.md) — mod structure and tooling layout
 - [04 - Implementation Order](04%20-%20Implementation%20Order.md) — what to build first, what to defer, and why
+- [06 - Personalized Borders Foundation Research](06%20-%20Personalized%20Borders%20Foundation%20Research.md) — Phase 1A research on the intended province/border foundation
 
 ## Appendix A — Rule Traceability
 
@@ -328,3 +342,8 @@ Overrides to the original rule set and resolutions of open questions. Where this
 9. **Northern Ireland approximation:** exact vanilla provinces are not guessed in design — they are chosen during the province-ID mapping phase as the best modern-Northern-Ireland approximation. UK permanent claims = Great Britain + that approximation; the rest of Ireland is not a default UK claim (optional alternate-history path only, if ever added). (§7.3)
 10. **Ottoman Exploration:** the bar on normal Exploration Ideas is permanent unless a later design decision explicitly changes it. Ottomans use Frontier Settlement where valid and Overseas Dependencies for disconnected conquest; they must not become a normal Western European-style colonial empire by default. (§4, §8.2–8.3)
 11. **Pre-Germany Alsace-Lorraine:** normal German unifier candidates get no automatic contested-zone content before Germany forms. The full Franco-German contested-zone system activates when Germany forms, or through a clearly defined late-game German nationalism path. France's modern-border permanent claims (incl. Alsace-Lorraine) apply from the start per the approved France rule. (§7.3–7.4)
+
+**Round 3 — province/border foundation priority (2026-07-06):**
+
+12. **Personalized Borders foundation:** Project Crown should use the province/border foundation from Personalized Borders: Fixes & Historical Borders (Workshop ID `3418818231`) if it can be made compatible with EU4 v1.37.5.0 Inca. This priority supersedes the earlier "vanilla map first" premise. (§5.0)
+13. **Foundation sequencing:** Province/border foundation work comes before no-straits, development rebalance, colonial regions, subjects, missions, claims, events, ideas, fort work, Back War Effort, assimilation, and all other gameplay systems. Permission/credit tracking is required before publication or redistribution. (§5.0)

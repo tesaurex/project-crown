@@ -1,18 +1,20 @@
 # Project Crown: Europa Ascendant — Implementation Order
 
-The ordering principle: **data before systems, risky before safe, engine-verified before built.** Anything sitting on an unverified engine assumption gets a Phase 0 spike before a single real file is written for it.
+The ordering principle: **province/border foundation before everything, data before systems, risky before safe, engine-verified before built.** Anything sitting on an unverified engine assumption gets a Phase 0 spike before a single real file is written for it.
 
 ## Build first
 
 | # | System | Why first |
 |---|---|---|
-| 1 | **Mod skeleton + tooling pipeline** | Everything else flows through it; the province-history generator is the project's backbone. |
-| 2 | **Phase 0 research spikes** (on_actions inventory, war-join effects, subject_type attributes, triggered-modifier colonists, idea gating, colonial-region routing) | Six cheap experiments that de-risk five major systems. Highest information-per-hour in the whole project. |
-| 3 | **Straits removal** | One file, enormous gameplay impact, and every AI/balance observation afterward must include it — testing anything on a straits map is testing the wrong mod. |
-| 4 | **Colonial-zone dev rebalance (Americas, Africa, Oceania — Asia and Europe untouched)** | The colonial world's economic baseline. Colonial income, institution flow, and military balance all read differently on top of it; do it before tuning anything that depends on it. |
-| 5 | **Global colonial regions** | The routing switch for the entire subject framework (what becomes a Colonial Administration vs. an Overseas Dependency). Must exist before colonization or subjects can be tested honestly. |
-| 6 | **Exploration gate + European/colonizer triggers (incl. the Ottoman carve-out) + colonial head start** | Cheap to build, defines who plays which game; needed for any meaningful observer run. |
-| 7 | **Subject types v1 (CA tuning, Overseas Dependency, skeleton Dominion)** | Long-lead, spike-dependent, and the mod's identity. Start early even if numbers stay rough. |
+| 1 | **Personalized Borders foundation research and lock** | The user has made the province/border map the top priority. Project Crown should target Personalized Borders (Workshop ID `3418818231`) if compatible, and every province-list system depends on that decision. |
+| 2 | **Controlled foundation import/port** | Only after research approval: validate/repair `map/provinces.bmp`, merge `map/positions.txt` against vanilla 1.37.5, launch-test the foundation alone, and do not edit the Workshop copy. |
+| 3 | **Mod skeleton + tooling pipeline** | Everything else flows through it; the province-history generator and validators must target the locked foundation. |
+| 4 | **Phase 0 research spikes** (on_actions inventory, war-join effects, subject_type attributes, triggered-modifier colonists, idea gating, colonial-region routing) | Six cheap experiments that de-risk five major systems. Highest information-per-hour in the whole project, but gameplay systems still wait on the map foundation. |
+| 5 | **Straits removal** | One file, enormous gameplay impact, and every AI/balance observation afterward must include it. It now waits until the final province bitmap/positions are locked. |
+| 6 | **Colonial-zone dev rebalance (Americas, Africa, Oceania — Asia and Europe untouched)** | The colonial world's economic baseline. It must be generated from the locked foundation so province coverage is not stale. |
+| 7 | **Global colonial regions** | The routing switch for the entire subject framework (what becomes a Colonial Administration vs. an Overseas Dependency). Must be drawn after the foundation is stable. |
+| 8 | **Exploration gate + European/colonizer triggers (incl. the Ottoman carve-out) + colonial head start** | Cheap to build, defines who plays which game; needed for any meaningful observer run after world data is stable. |
+| 9 | **Subject types v1 (CA tuning, Overseas Dependency, skeleton Dominion)** | Long-lead, spike-dependent, and the mod's identity. Start only after the map/world-data layer stops moving. |
 
 ## Build mid (after the above stabilizes)
 
@@ -35,7 +37,8 @@ The ordering principle: **data before systems, risky before safe, engine-verifie
 | **1914 / 2026 formables** | Explicitly the long-term layer (Rule 28). Rides on the finished subject/independence framework; touching it earlier means reworking it later. Phase 8. |
 | **Localization polish, icons, UI art** | Ship-quality concerns. English placeholder text is fine until Phase 9. |
 
-## The two hard sequencing rules
+## The three hard sequencing rules
 
-1. **No spike, no system.** Back War Effort, the CN colonist modifier, disconnected-conquest enforcement, and every on_action-dependent hook wait for their Phase 0 verdict — fallbacks are already named in the Risk Register, so a negative verdict changes the plan, not the schedule.
-2. **World data freezes before balance opens.** Dev rebalance and colonial regions must stop moving before anyone tunes economy, AI, or subject contribution numbers — every balance observation on shifting world data is wasted.
+1. **Foundation first.** Personalized Borders research/lock and the controlled map import/port come before no-straits, development rebalance, colonial regions, subjects, missions, claims, events, ideas, fort work, Back War Effort, assimilation, and all other gameplay systems.
+2. **No spike, no system.** Back War Effort, the CN colonist modifier, disconnected-conquest enforcement, and every on_action-dependent hook wait for their Phase 0 verdict — fallbacks are already named in the Risk Register, so a negative verdict changes the plan, not the schedule.
+3. **World data freezes before balance opens.** Dev rebalance and colonial regions must stop moving before anyone tunes economy, AI, or subject contribution numbers — every balance observation on shifting world data is wasted.

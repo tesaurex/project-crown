@@ -19,15 +19,28 @@ Phases are ordered by dependency and risk: engine-risk research first, world dat
 
 **Exit criterion:** Mechanics-empty mod loads; all six spike verdicts written; Risk Register updated with findings.
 
-## Phase 1 — Map & World Data
-**Goal:** The world itself matches the design before any system logic exists.
+## Phase 1A — Personalized Borders Foundation Research & Lock
+**Goal:** Lock the province/border foundation before Project Crown builds any dependent world data or gameplay systems.
 
+- Locate and inspect the downloaded Workshop/reference copy of **Personalized Borders: Fixes & Historical Borders** (Workshop ID `3418818231`).
+- Document descriptor/version data, folder structure, map files changed, province-ID implications, compatibility risks, permission/credit note, import plan, and test plan.
+- Do not import the reference map during the research pass.
+- Before any later import, validate/repair the reference `map/provinces.bmp` and merge `map/positions.txt` against vanilla EU4 v1.37.5.0 where needed.
+- Update all sequencing docs so no-straits, development rebalance, colonial regions, subjects, and other gameplay systems wait on the foundation.
+
+**Exit criterion:** Research document committed; owner approves moving from research to a controlled import/port pass.
+
+## Phase 1 — Map & World Data
+**Goal:** The locked province/border foundation and world data match the design before any system logic exists.
+
+- Controlled import/port of the Personalized Borders foundation if approved after Phase 1A.
+- Map validation: `provinces.bmp` colors, province ID coverage, `positions.txt` coverage, logs, and launch behavior on EU4 v1.37.5.0 Inca.
 - Straits removal (`map/adjacencies.csv` full override).
 - Development rebalance of the **Americas, Africa, and Australia/Oceania only** via tooling → generated `history/provinces/` overrides (1/1/1, 1/2/1, 1/2/2 classes). Asia and Europe untouched (Anatolia included).
 - Global colonial regions v1, including the combined **Colonial Philippines & Spice Islands** region (validator-checked: ocean access, clean borders, zero trade-company overlap).
 - Trade company region audit against the new colonial regions (trade companies stay vanilla as interim scaffolding — final disposition is the Phase 7 decision point, R-19).
 
-**Exit criterion:** Game loads with new map data; observer run to 1500 with no crashes; dev totals per continent reviewed.
+**Exit criterion:** Game loads with the locked province/border foundation and new map data; observer run to 1500 with no crashes; dev totals per continent reviewed.
 
 ## Phase 2 — Colonization Core
 **Goal:** Who colonizes, how, and what colonies become.
