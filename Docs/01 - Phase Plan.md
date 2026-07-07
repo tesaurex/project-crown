@@ -46,11 +46,12 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
 - Culture extraction tooling (spike 9 productionized): culture→province tables for all Tier A regions from the locked foundation's 1444 history, with the manual override table for bad vanilla culture data (R-35).
 - Eligibility pass (Doc 10 E-rules): eligible culture list, micro-culture merge table, vanilla-tag reuse map, new-tag needs list — reviewed per region.
 - **Staple-country designation** (`Tooling/culture_states/staple_countries`, Doc 10 E8) and **multi-country partition tables** for large cultures (E9), honoring the §4A granularity rules (HRE at vanilla-style density, Japan mostly vanilla, Ottomans as Turkish staple, India strong-regional).
+- **Border-cleanliness validator (Doc 10 O7):** tooling checks every proposed culture-state for connectivity, exclaves, and province snakes against the locked foundation's adjacency data; violations are fixed by reassignment (O2) or same-culture splits (E9), or justified in the exception list (`Tooling/culture_states/border_exceptions` — islands, historic enclaves, trade ports, chokepoints only).
 - Formation-set definitions (`Tooling/culture_states/formation_sets`) for Waves 1–4 at minimum.
 - Flag mapping table (`Tooling/culture_states/flag_map`): design-time flag assignment per tag (modern national for formables, modern regional for culture-states). **No flag files imported.**
 - Tag/content budget estimate per wave (how many new tags, history files, localization entries).
 
-**Exit criterion:** Iberia's complete data package (culture table, tag map, formation set, flag map, ownership diff vs. vanilla) reviewed and approved by the owner; global eligible-culture census committed.
+**Exit criterion:** Iberia's complete data package (culture table, tag map, formation set, flag map, ownership diff vs. vanilla, **border-cleanliness validator report**) reviewed and approved by the owner; global eligible-culture census committed.
 
 ## Phase 2 — Iberia Proof of Concept (Wave 1) ⬜
 **Goal:** The full unification ladder working in one region — the pivot's go/no-go gate.
@@ -62,7 +63,7 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
 - Vanilla-content audit for Iberia: Iberian Wedding, Reconquista content, Granada war setup — disable/replace as needed (R-31 pattern).
 - Placeholder or wave-1 flags per the flag map (modern regional; St George's Cross/tricolor are later waves).
 
-**Exit criterion:** Loads clean; observer runs show Iberia consolidating to 2–4 states by ~1550 and Spain forming in most runs by ~1650; no vanilla Iberian event misfires in the log; owner reviews and approves scaling the pattern.
+**Exit criterion:** Loads clean; **starting borders pass the O7 cleanliness review** (validator clean or exceptions justified, plus an in-game visual check); observer runs show Iberia consolidating to 2–4 states by ~1550 and Spain forming in most runs by ~1650; no vanilla Iberian event misfires in the log; owner reviews and approves scaling the pattern.
 
 ## Phase 3 — European Rollout (Waves 2–5) ⬜
 **Goal:** The fractured Europe, wave by wave, each on the proven Iberia pattern.
@@ -71,7 +72,7 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
 - **Wave 3 — Britain & Ireland** (staple England with St George's Cross, Scotland, Wales, unified Ireland, Highlands → Great Britain/UK formable; Union Jack; modern-UK claims per §7.3).
 - **Wave 4 — Italy & Germany** (Italian subculture states → Italy formable; **HRE at vanilla-style density per Doc 10 §4A** — nation count close to vanilla, members tweaked for culture coherence, subculture staples like Bavaria/Saxony/Brandenburg designated, Germany formable above the sandbox; Alsace-Lorraine contested zone activates with Germany per §7.4).
 - **Wave 5 — Rest of Europe** (Scandinavia, Balkans, Eastern Europe; East Slavic mapping decides which state inherits the Russia special case; horde decision D-6).
-- Each wave ships: tags, ownership, cores/claims, formation set, AI weights, vanilla-content audit, wave flags, observer pace test.
+- Each wave ships: tags, ownership, cores/claims, formation set, AI weights, vanilla-content audit, wave flags, border-cleanliness validation + visual review (O7), observer pace test.
 
 **Exit criterion:** Full-Europe observer run to 1650: unification proceeds at target pace in every wave region, no runaway pan-European blob, no crash, audited vanilla content quiet in logs.
 

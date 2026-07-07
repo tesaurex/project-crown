@@ -1,6 +1,6 @@
 # Project Crown: Europa Ascendant — Culture-State World Design
 
-**Version:** 1.1 — owner clarifications of 2026-07-06 (round 2) applied: staple countries, multi-country cultures, HRE density, Japan/Ottoman/China/India granularity rules
+**Version:** 1.2 — owner border cleanliness rule added (O7); ownership and split rules amended accordingly
 **Date:** 2026-07-06
 **Status:** Approved design pivot (owner directive 2026-07-06). Design only — no countries created, no gameplay files edited, no flags imported, no map files changed.
 **Authority:** This document defines the Culture-State World layer. Where it conflicts with pre-pivot text in [00 - Master Design Document](00%20-%20Master%20Design%20Document.md), this document and Appendix B Round 4 of the MDD win.
@@ -9,7 +9,7 @@
 
 ## 1. Concept
 
-Project Crown's 1444 world is **fractured along culture lines**. Instead of the vanilla political map, every eligible culture and subculture starts as its own country where possible. "Its own country" does not always mean *exactly one*: every major culture is anchored by a **staple country** that always exists (England for English, Castile for Castilian, the Ottomans for the Turkish group…), and a culture too large for one balanced state may be split into several same-culture countries (E8–E9). Anchor examples:
+Project Crown's 1444 world is **fractured along culture lines**. Instead of the vanilla political map, every eligible culture and subculture starts as its own country where possible. "Its own country" does not always mean *exactly one*: every major culture is anchored by a **staple country** that always exists (England for English, Castile for Castilian, the Ottomans for the Turkish group…), and a culture too large for one balanced state may be split into several same-culture countries (E8–E9). Starting borders must read as **intentional, clean, and playable** — compact, connected countries, no border gore (O7). Anchor examples:
 
 - Castilian, Aragonese, Leonese, Catalan, Galician, Basque, Portuguese, and Andalusian states in Iberia.
 - French subcultures (Francien, Norman, Gascon, Occitan, Burgundian, etc.) that can form **France**.
@@ -71,7 +71,7 @@ Tier A vs. B boundary notes:
 - **E6 — Special-case guard.** Single-culture civilizations that already have an internal-unification mechanic (Japan's Sengoku/shogunate system) are **not** auto-unified by E1. Japan is resolved by owner rule (§4A): keep the vanilla daimyo setup, never a unified 1444 Japan.
 - **E7 — Culture data source of truth.** Culture assignments come from vanilla 1444 province history read against the locked Personalized Borders foundation, with a manual override table in tooling for known-bad vanilla assignments (Risk R-35).
 - **E8 — Staple country rule (owner rule, 2026-07-06).** Every major eligible culture/subculture has a designated **staple (anchor) country** that always exists at start: **England** for English, **Castile** for Castilian, **Aragon** for Aragonese, the **Ottomans** for the Turkish culture group. **France** is the Francien staple unless a specific region plan reserves France strictly as the formable (Open Decision D-8). The staple list lives in `Tooling/culture_states/staple_countries` and is reviewed per wave.
-- **E9 — Multi-country cultures (owner rule, 2026-07-06).** A culture too large for one balanced country may start as **2, 3, or more same-culture countries** where balance or regional density needs it — but the staple country (E8) must exist among them and starts as the strongest. Partition tables live in tooling per wave.
+- **E9 — Multi-country cultures (owner rule, 2026-07-06).** A culture too large for one balanced country — **or too geographically awkward for one clean, connected country (O7)** — may start as **2, 3, or more same-culture countries** where balance, regional density, or border cleanliness needs it. The staple country (E8) must exist among them and starts as the strongest. Partition tables live in tooling per wave.
 
 ## 4A. Regional Granularity Rules (owner rules, 2026-07-06)
 
@@ -86,11 +86,16 @@ The E-rules set the default; these regional rules override the default where the
 ## 5. Starting Ownership (O-rules)
 
 - **O1 — Culture defines the border.** Each culture-state starts owning the Tier A provinces whose 1444 primary culture is its culture. For multi-country cultures (E9), the culture area is partitioned among the same-culture states per the tooling partition table, with the staple (E8) taking the strongest share.
-- **O2 — Exclave and edge handling.** Tooling flags exclaves and awkward pockets; a manual override list reassigns them for border cleanliness (an exclave may go to the surrounding culture-state). Overrides are logged.
+- **O2 — Exclave and edge handling.** Tooling flags exclaves and awkward pockets; a manual override list reassigns them for border cleanliness (an exclave may go to the surrounding culture-state). Overrides are logged. O7 is the governing principle.
 - **O3 — Empires dissolve.** Existing multi-culture states in Tier A (the 1444 Ottoman, Mamluk, Timurid, Ming, etc. setups) are dissolved into culture-states. Survivor exceptions require an explicit owner decision (D-1, D-3, D-5).
 - **O4 — Untouched land.** Uncolonized/native provinces, wastelands, and the restored vanilla European impassables are unchanged. Tier B keeps its mostly-uncolonized state.
 - **O5 — History layer only.** Starting ownership is implemented purely in `history/provinces/` and `history/countries/` overrides generated by tooling. **No `map/` file changes.**
 - **O6 — Capitals.** Each culture-state's capital is the historically strongest own-culture province (curated per wave; default = highest-development own-culture province).
+- **O7 — Border cleanliness rule (owner rule, 2026-07-06).** Starting borders must look **intentional, clean, and playable**:
+  - Culture-state ownership prefers **compact, connected, readable countries**. No weird, ugly, or disconnected borders unless there is a clear strategic, historical, geographic, or gameplay reason — and that reason is logged.
+  - **Culture purity never outranks readability.** Do not assign every same-culture province to one country if that creates disconnected exclaves or border gore; reassign edge provinces (O2) or split the culture into multiple same-culture countries (E9) instead — one of which must still be the staple tag (E8).
+  - **Disconnected land is acceptable only for strategic cases:** islands, historically meaningful enclaves, trade ports, chokepoints, and later overseas/colonial holdings.
+  - **No random exclaves and no ugly province snakes** in the 1444 start. Tooling enforces this with a border-cleanliness validator (connectivity check per country + exclave/snake detection); every surviving exception carries a justification in the exception list (`Tooling/culture_states/border_exceptions`).
 
 ## 6. Cores and Claims (C-rules)
 
@@ -168,7 +173,7 @@ Implementation proceeds in **waves**, each shipping: tags + starting ownership +
 
 **Why Iberia first:** it exercises the entire ladder in the smallest package. ~8 culture-states of which **7 reuse existing vanilla tags** (`CAS`, `ARA`, `GAL`, `LON`, `NAV`, `GRA`, `POR`) and only ~1 new tag is needed (Catalonia); a clean peninsula boundary; a vanilla formable target (`SPA`) with an owner-decided rule already in place (Spain excludes Portugal); a competing formable (`ADU`) to test rival formation; and the flagship colonizers (Castile, Portugal) to later test the unification-then-colonization sequence end to end.
 
-**Wave 1 exit criteria:** mod loads with the Iberian culture-states; Iberian vanilla content audited (Iberian Wedding, Reconquista-era events disabled/reworked as needed); observer runs show Iberia consolidating to 2–4 states by ~1550 and Spain forming in most runs by ~1650; no crashes; log clean.
+**Wave 1 exit criteria:** mod loads with the Iberian culture-states; **starting borders pass the O7 cleanliness review** (validator clean or exceptions justified, visual in-game check); Iberian vanilla content audited (Iberian Wedding, Reconquista-era events disabled/reworked as needed); observer runs show Iberia consolidating to 2–4 states by ~1550 and Spain forming in most runs by ~1650; no crashes; log clean.
 
 ## 13. Interactions with Existing Systems
 
