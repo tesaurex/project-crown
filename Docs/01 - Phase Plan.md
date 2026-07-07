@@ -59,7 +59,7 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
 ## Phase 2 — Iberia Proof of Concept (Wave 1) ⬜
 **Goal:** The full unification ladder working in one region — the pivot's go/no-go gate.
 
-- Culture-states: Castile, Aragon, Catalonia (new tag), Galicia, León, Navarra (Basque), Granada (Andalusian), Portugal — tooling-generated province/country history, cores per C-rules.
+- Culture-states: Castile, Aragon, Catalonia (`CAT` exists in vanilla per Phase 1B audit), Galicia, León, Navarra (Basque), Granada (Andalusian), Portugal — tooling-generated province/country history, cores per C-rules. Aragon (`ARA`) exists but its vanilla country history primary culture is Catalan, so Phase 2 must review/override that history data.
 - Cores/claims: own-culture cores day one; Tier 1 "United <Culture>" rank-up; mission-gated group claims.
 - Spain formable (`SPA`, excludes Portugal) with formation-set cores + modern-border permanent claims on formation; Andalusia (`ADU`) as competing formable.
 - AI weights: formation decision `ai_importance`, mission sequencing, outside-group deterrent v0 scoped to Iberia.

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Project Crown Contested Region Definition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contested_region_id",
+    "display_name",
+    "province_ids",
+    "clean_starting_owner",
+    "opposing_claimants",
+    "claim_type_recommendation",
+    "reason",
+    "escalation_rule",
+    "border_cleanliness_note",
+    "implementation_phase"
+  ],
+  "properties": {
+    "contested_region_id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "display_name": { "type": "string" },
+    "province_ids": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "uniqueItems": true },
+    "clean_starting_owner": { "type": "string" },
+    "opposing_claimants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["tag_or_group", "claimant_type"],
+        "properties": {
+          "tag_or_group": { "type": "string" },
+          "claimant_type": { "type": "string", "enum": ["tag", "culture_group", "formable", "culture_state"] }
+        }
+      }
+    },
+    "claim_type_recommendation": {
+      "type": "string",
+      "enum": ["permanent_claim", "core", "mission_claim", "event_claim", "post_formation_claim"]
+    },
+    "reason": { "type": "string" },
+    "escalation_rule": { "type": "string" },
+    "border_cleanliness_note": { "type": "string" },
+    "implementation_phase": { "type": "string" },
+    "notes": { "type": "string" }
+  }
+}

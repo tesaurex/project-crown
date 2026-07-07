@@ -1,0 +1,70 @@
+{
+  "audit": "iberia_formable_audit",
+  "entries": [
+    {
+      "decision_names_found": [
+        "spanish_nation",
+        "spanish_nation_diplomatically"
+      ],
+      "exists": true,
+      "expected_decisions": [
+        "spanish_nation",
+        "spanish_nation_diplomatically"
+      ],
+      "expected_decisions_found": [
+        "spanish_nation",
+        "spanish_nation_diplomatically"
+      ],
+      "file": "decisions/SpanishNation.txt",
+      "province_ids_mentioned": [
+        213,
+        214,
+        215,
+        216,
+        219,
+        220,
+        223,
+        224
+      ],
+      "risk_note": "Must be disabled, replaced, or re-scoped during Iberia POC because vanilla formation assumes vanilla 1444 politics."
+    },
+    {
+      "decision_names_found": [
+        "andalusian_nation"
+      ],
+      "exists": true,
+      "expected_decisions": [
+        "andalusian_nation"
+      ],
+      "expected_decisions_found": [
+        "andalusian_nation"
+      ],
+      "file": "decisions/AndalusianNation.txt",
+      "province_ids_mentioned": [
+        218,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        229,
+        230,
+        1747,
+        1748,
+        1749,
+        1750,
+        4547,
+        4548,
+        4549
+      ],
+      "risk_note": "Must be disabled, replaced, or re-scoped during Iberia POC because vanilla formation assumes vanilla 1444 politics."
+    }
+  ],
+  "summary": {
+    "implementation_status": "audit_only_no_decisions_changed",
+    "vanilla_andalusia_decision_found": true,
+    "vanilla_spain_decisions_found": true
+  }
+}

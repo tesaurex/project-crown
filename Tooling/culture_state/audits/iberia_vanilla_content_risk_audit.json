@@ -1,0 +1,568 @@
+{
+  "audit": "iberia_vanilla_content_risk_audit",
+  "entries": [
+    {
+      "exists": true,
+      "file": "events/FlavorSPA.txt",
+      "keywords_checked": [
+        "flavor_spa.3716",
+        "Iberian Wedding",
+        "catalan",
+        "portugese"
+      ],
+      "risk": "review_required_before_Iberia_POC",
+      "sample_hits": [
+        {
+          "keyword": "Iberian Wedding",
+          "line": 8,
+          "text": "# The Iberian Wedding"
+        },
+        {
+          "keyword": "flavor_spa.3716",
+          "line": 10,
+          "text": "id = flavor_spa.3716"
+        },
+        {
+          "keyword": "catalan",
+          "line": 1140,
+          "text": "NOT = { primary_culture = catalan }"
+        },
+        {
+          "keyword": "catalan",
+          "line": 1142,
+          "text": "culture = catalan"
+        },
+        {
+          "keyword": "catalan",
+          "line": 1155,
+          "text": "culture = catalan"
+        },
+        {
+          "keyword": "catalan",
+          "line": 1164,
+          "text": "culture = catalan"
+        },
+        {
+          "keyword": "portugese",
+          "line": 1189,
+          "text": "NOT = { primary_culture = portugese }"
+        },
+        {
+          "keyword": "portugese",
+          "line": 1191,
+          "text": "culture = portugese"
+        },
+        {
+          "keyword": "portugese",
+          "line": 1203,
+          "text": "culture = portugese"
+        },
+        {
+          "keyword": "portugese",
+          "line": 1212,
+          "text": "culture = portugese"
+        }
+      ]
+    },
+    {
+      "exists": true,
+      "file": "missions/GC_Spanish_Missions.txt",
+      "keywords_checked": [
+        "primary_culture = catalan",
+        "catalonia_area",
+        "flavor_spa"
+      ],
+      "risk": "review_required_before_Iberia_POC",
+      "sample_hits": [
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 17,
+          "text": "NOT = { primary_culture = catalan }"
+        },
+        {
+          "keyword": "flavor_spa",
+          "line": 91,
+          "text": "country_event = { id = flavor_spa.3153 }"
+        },
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 117,
+          "text": "NOT = { primary_culture = catalan }"
+        },
+        {
+          "keyword": "flavor_spa",
+          "line": 200,
+          "text": "country_event = { id = flavor_spa.1003 }"
+        },
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 326,
+          "text": "NOT = { primary_culture = catalan }"
+        },
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 470,
+          "text": "NOT = { primary_culture = catalan }"
+        },
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 762,
+          "text": "NOT = { primary_culture = catalan }"
+        },
+        {
+          "keyword": "flavor_spa",
+          "line": 828,
+          "text": "id = flavor_spa.8"
+        },
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 969,
+          "text": "NOT = { primary_culture = catalan }"
+        },
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 1432,
+          "text": "NOT = { primary_culture = catalan }"
+        },
+        {
+          "keyword": "catalonia_area",
+          "line": 1447,
+          "text": "area = catalonia_area"
+        },
+        {
+          "keyword": "catalonia_area",
+          "line": 1458,
+          "text": "catalonia_area = {"
+        },
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 1723,
+          "text": "NOT = { primary_culture = catalan }"
+        },
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 1929,
+          "text": "NOT = { primary_culture = catalan }"
+        },
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 1982,
+          "text": "NOT = { primary_culture = catalan }"
+        },
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 2165,
+          "text": "NOT = { primary_culture = catalan }"
+        },
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 2221,
+          "text": "NOT = { primary_culture = catalan }"
+        },
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 2405,
+          "text": "NOT = { primary_culture = catalan }"
+        }
+      ]
+    },
+    {
+      "exists": true,
+      "file": "missions/Spanish_Missions.txt",
+      "keywords_checked": [
+        "catalonia_area",
+        "iberia_region"
+      ],
+      "risk": "review_required_before_Iberia_POC",
+      "sample_hits": [
+        {
+          "keyword": "iberia_region",
+          "line": 536,
+          "text": "region = iberia_region"
+        },
+        {
+          "keyword": "iberia_region",
+          "line": 540,
+          "text": "iberia_region = {"
+        },
+        {
+          "keyword": "catalonia_area",
+          "line": 695,
+          "text": "catalonia_area = {"
+        },
+        {
+          "keyword": "catalonia_area",
+          "line": 721,
+          "text": "area = catalonia_area"
+        },
+        {
+          "keyword": "catalonia_area",
+          "line": 732,
+          "text": "catalonia_area = {"
+        }
+      ]
+    },
+    {
+      "exists": true,
+      "file": "missions/GC_Aragonese_Missions.txt",
+      "keywords_checked": [
+        "primary_culture = catalan",
+        "gc_ara_portugal"
+      ],
+      "risk": "review_required_before_Iberia_POC",
+      "sample_hits": [
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 18,
+          "text": "primary_culture = catalan"
+        },
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 187,
+          "text": "primary_culture = catalan"
+        },
+        {
+          "keyword": "gc_ara_portugal",
+          "line": 411,
+          "text": "gc_ara_portugal = {"
+        },
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 460,
+          "text": "primary_culture = catalan"
+        },
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 771,
+          "text": "primary_culture = catalan"
+        },
+        {
+          "keyword": "primary_culture = catalan",
+          "line": 1097,
+          "text": "primary_culture = catalan"
+        }
+      ]
+    },
+    {
+      "exists": true,
+      "file": "missions/Portuguese_Missions.txt",
+      "keywords_checked": [
+        "portugal_discovers",
+        "colonial",
+        "india"
+      ],
+      "risk": "review_required_before_Iberia_POC",
+      "sample_hits": [
+        {
+          "keyword": "colonial",
+          "line": 42,
+          "text": "icon = mission_colonial"
+        },
+        {
+          "keyword": "portugal_discovers",
+          "line": 247,
+          "text": "portugal_discovers_south_america = {"
+        },
+        {
+          "keyword": "colonial",
+          "line": 254,
+          "text": "colonial_region = colonial_brazil"
+        },
+        {
+          "keyword": "colonial",
+          "line": 262,
+          "text": "colonial_brazil = {"
+        },
+        {
+          "keyword": "colonial",
+          "line": 270,
+          "text": "colonial_region = colonial_brazil"
+        },
+        {
+          "keyword": "colonial",
+          "line": 278,
+          "text": "name = \"por_brazil_colonial\""
+        },
+        {
+          "keyword": "portugal_discovers",
+          "line": 287,
+          "text": "portugal_discovers_south_america"
+        },
+        {
+          "keyword": "colonial",
+          "line": 293,
+          "text": "colonial_region = colonial_brazil"
+        },
+        {
+          "keyword": "colonial",
+          "line": 301,
+          "text": "colonial_region = colonial_brazil"
+        },
+        {
+          "keyword": "portugal_discovers",
+          "line": 438,
+          "text": "portugal_discovers_india = {"
+        },
+        {
+          "keyword": "portugal_discovers",
+          "line": 445,
+          "text": "tooltip = portugal_discovers_india.tooltip"
+        },
+        {
+          "keyword": "portugal_discovers",
+          "line": 466,
+          "text": "required_missions = { portugal_discovers_india }"
+        },
+        {
+          "keyword": "portugal_discovers",
+          "line": 499,
+          "text": "portugal_discovers_the_far_east = {"
+        }
+      ]
+    },
+    {
+      "exists": true,
+      "file": "missions/GC_Granadan_Missions.txt",
+      "keywords_checked": [
+        "andalusia",
+        "catalonia_area",
+        "adu_conquer_portugal"
+      ],
+      "risk": "review_required_before_Iberia_POC",
+      "sample_hits": [
+        {
+          "keyword": "andalusia",
+          "line": 81,
+          "text": "andalusia_slot_1_missions = {"
+        },
+        {
+          "keyword": "andalusia",
+          "line": 470,
+          "text": "gra_restore_the_andalusian_caliphate = { #art"
+        },
+        {
+          "keyword": "andalusia",
+          "line": 554,
+          "text": "required_missions = { gra_restore_the_andalusian_caliphate }"
+        },
+        {
+          "keyword": "catalonia_area",
+          "line": 632,
+          "text": "catalonia_area = {"
+        },
+        {
+          "keyword": "adu_conquer_portugal",
+          "line": 645,
+          "text": "required_missions = { gra_restore_caliphate_cordoba adu_conquer_portugal }"
+        },
+        {
+          "keyword": "catalonia_area",
+          "line": 655,
+          "text": "area = catalonia_area"
+        },
+        {
+          "keyword": "catalonia_area",
+          "line": 690,
+          "text": "catalonia_area = {"
+        },
+        {
+          "keyword": "andalusia",
+          "line": 973,
+          "text": "andalusia_slot_3_missions = {"
+        },
+        {
+          "keyword": "adu_conquer_portugal",
+          "line": 987,
+          "text": "adu_conquer_portugal = {"
+        },
+        {
+          "keyword": "andalusia",
+          "line": 1038,
+          "text": "andalusia_slot_3_missions_b = {"
+        },
+        {
+          "keyword": "adu_conquer_portugal",
+          "line": 1054,
+          "text": "required_missions = { adu_conquer_portugal }"
+        },
+        {
+          "keyword": "andalusia",
+          "line": 1089,
+          "text": "andalusia_slot_3_missions_c = {"
+        },
+        {
+          "keyword": "andalusia",
+          "line": 1216,
+          "text": "andalusia_slot_4_missions = {"
+        },
+        {
+          "keyword": "andalusia",
+          "line": 1408,
+          "text": "andalusia_slot_4_missions_b = {"
+        },
+        {
+          "keyword": "adu_conquer_portugal",
+          "line": 1425,
+          "text": "required_missions = { adu_conquer_portugal }"
+        },
+        {
+          "keyword": "andalusia",
+          "line": 1451,
+          "text": "andalusia_slot_4_missions_c = {"
+        },
+        {
+          "keyword": "andalusia",
+          "line": 1760,
+          "text": "andalusia_slot_5_missions = {"
+        }
+      ]
+    },
+    {
+      "exists": true,
+      "file": "decisions/SpanishNation.txt",
+      "keywords_checked": [
+        "spanish_nation",
+        "spanish_nation_diplomatically",
+        "NOT = { tag = POR }"
+      ],
+      "risk": "review_required_before_Iberia_POC",
+      "sample_hits": [
+        {
+          "keyword": "spanish_nation",
+          "line": 3,
+          "text": "spanish_nation = {"
+        },
+        {
+          "keyword": "NOT = { tag = POR }",
+          "line": 47,
+          "text": "NOT = { tag = POR }"
+        },
+        {
+          "keyword": "spanish_nation",
+          "line": 182,
+          "text": "spanish_nation_diplomatically = {"
+        }
+      ]
+    },
+    {
+      "exists": true,
+      "file": "decisions/AndalusianNation.txt",
+      "keywords_checked": [
+        "andalusian_nation",
+        "add_permanent_claim"
+      ],
+      "risk": "review_required_before_Iberia_POC",
+      "sample_hits": [
+        {
+          "keyword": "andalusian_nation",
+          "line": 3,
+          "text": "andalusian_nation = {"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 173,
+          "text": "add_permanent_claim = ADU"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 179,
+          "text": "add_permanent_claim = ADU"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 187,
+          "text": "add_permanent_claim = ADU"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 189,
+          "text": "add_permanent_claim = 218"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 190,
+          "text": "add_permanent_claim = 220"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 191,
+          "text": "add_permanent_claim = 1750"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 192,
+          "text": "add_permanent_claim = 1747"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 206,
+          "text": "add_permanent_claim = ROOT"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 215,
+          "text": "add_permanent_claim = ROOT"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 230,
+          "text": "add_permanent_claim = ROOT"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 239,
+          "text": "add_permanent_claim = ROOT"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 254,
+          "text": "add_permanent_claim = ROOT"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 263,
+          "text": "add_permanent_claim = ROOT"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 272,
+          "text": "add_permanent_claim = ROOT"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 281,
+          "text": "add_permanent_claim = ROOT"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 290,
+          "text": "add_permanent_claim = ROOT"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 299,
+          "text": "add_permanent_claim = ROOT"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 308,
+          "text": "add_permanent_claim = ROOT"
+        },
+        {
+          "keyword": "add_permanent_claim",
+          "line": 325,
+          "text": "add_permanent_claim = ROOT"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "headline_risks": [
+      "Iberian Wedding in events/FlavorSPA.txt assumes vanilla Castile-Aragon setup.",
+      "Spanish and Aragonese missions branch on Catalan primary culture and vanilla Spain/Aragon assumptions.",
+      "SpanishNation.txt and AndalusianNation.txt provide useful formable references but need Project Crown re-scope.",
+      "Portugal colonial mission content should be preserved later without allowing Spain to absorb Portugal by default."
+    ],
+    "implementation_status": "audit_only_no_vanilla_content_changed"
+  }
+}

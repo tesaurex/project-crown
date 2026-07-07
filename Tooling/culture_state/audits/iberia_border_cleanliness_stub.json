@@ -1,0 +1,130 @@
+{
+  "audit": "iberia_border_cleanliness_stub",
+  "candidate_groups": [
+    {
+      "candidate_owner_tag": "GRA",
+      "culture": "andalucian",
+      "province_ids": [
+        218,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        1748,
+        1749,
+        4546,
+        4547,
+        4548
+      ],
+      "review_note": "Andalucian area is split between vanilla Granada and Castile; clean owner plus claims should be reviewed."
+    },
+    {
+      "candidate_owner_tag": "ARA",
+      "culture": "aragonese",
+      "province_ids": [
+        211,
+        214,
+        2990,
+        4557
+      ],
+      "review_note": "Aragonese and Valencian edge provinces need human review against Catalan/Andalusian contested-frontier plans."
+    },
+    {
+      "candidate_owner_tag": "NAV",
+      "culture": "basque",
+      "province_ids": [
+        209,
+        210
+      ],
+      "review_note": "Basque cluster is small and compact; Navarra/Navarre naming and cross-Pyrenees claims need later review."
+    },
+    {
+      "candidate_owner_tag": "CAS",
+      "culture": "castillian",
+      "province_ids": [
+        215,
+        217,
+        219,
+        1745,
+        1746,
+        2751,
+        2754,
+        2755,
+        2989,
+        4551,
+        4552,
+        4789
+      ],
+      "review_note": "clean culture cluster candidate"
+    },
+    {
+      "candidate_owner_tag": "CAT",
+      "culture": "catalan",
+      "province_ids": [
+        197,
+        212,
+        213,
+        220,
+        333,
+        1750,
+        2987,
+        2988,
+        4549,
+        4550,
+        4559,
+        4560
+      ],
+      "review_note": "Catalan land is compact; Balearic adjacency needs island exception if assigned to Catalonia or Aragon."
+    },
+    {
+      "candidate_owner_tag": "GAL",
+      "culture": "galician",
+      "province_ids": [
+        206,
+        4554,
+        4555,
+        4558
+      ],
+      "review_note": "clean culture cluster candidate"
+    },
+    {
+      "candidate_owner_tag": "LON",
+      "culture": "leonese",
+      "province_ids": [
+        207,
+        208,
+        216,
+        1747,
+        4553,
+        4788
+      ],
+      "review_note": "clean culture cluster candidate"
+    },
+    {
+      "candidate_owner_tag": "POR",
+      "culture": "portugese",
+      "province_ids": [
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        1851,
+        4150,
+        4556,
+        4787
+      ],
+      "review_note": "Portuguese mainland cluster is clean; overseas Atlantic islands are outside iberia_region and excluded from this POC stub."
+    }
+  ],
+  "global_exclusions_for_poc": [
+    "No province ownership changes in Phase 1B.",
+    "No Canaries/Ceuta/Melilla modern-border implementation in this technical foundation phase.",
+    "No claims, cores, natural rivals, events, missions, or formables implemented."
+  ],
+  "note": "Run validate_border_cleanliness.py --mock-iberia-from-cultures for bitmap adjacency validation. This file records design-review targets only.",
+  "status": "prototype_stub"
+}

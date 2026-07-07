@@ -1,0 +1,1924 @@
+{
+  "audit": "iberia_province_culture_audit",
+  "culture_groups": [
+    {
+      "area_counts": {
+        "extremadura_area": 1,
+        "lower_andalucia_area": 5,
+        "toledo_area": 2,
+        "upper_andalucia_area": 4
+      },
+      "culture": "andalucian",
+      "culture_group": "iberian",
+      "land_province_count": 12,
+      "province_ids": [
+        218,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        1748,
+        1749,
+        4546,
+        4547,
+        4548
+      ],
+      "province_names": [
+        "Badajoz",
+        "Murcia",
+        "Almer\u00eda",
+        "Granada",
+        "Andaluc\u00eda",
+        "C\u00f3rdoba",
+        "Gibraltar",
+        "La Mancha",
+        "Cadiz",
+        "Malaga",
+        "Albacete",
+        "Huelva"
+      ],
+      "vanilla_owner_counts": {
+        "CAS": 8,
+        "GRA": 4
+      }
+    },
+    {
+      "area_counts": {
+        "aragon_area": 4
+      },
+      "culture": "aragonese",
+      "culture_group": "iberian",
+      "land_province_count": 4,
+      "province_ids": [
+        211,
+        214,
+        2990,
+        4557
+      ],
+      "province_names": [
+        "Pirineo",
+        "Zaragoza",
+        "Teruel",
+        "Lleida"
+      ],
+      "vanilla_owner_counts": {
+        "ARA": 4
+      }
+    },
+    {
+      "area_counts": {
+        "basque_country": 2
+      },
+      "culture": "basque",
+      "culture_group": "iberian",
+      "land_province_count": 2,
+      "province_ids": [
+        209,
+        210
+      ],
+      "province_names": [
+        "Vizcaya",
+        "Navarra"
+      ],
+      "vanilla_owner_counts": {
+        "CAS": 1,
+        "NAV": 1
+      }
+    },
+    {
+      "area_counts": {
+        "asturias_area": 4,
+        "basque_country": 1,
+        "castille_area": 4,
+        "toledo_area": 3
+      },
+      "culture": "castillian",
+      "culture_group": "iberian",
+      "land_province_count": 12,
+      "province_ids": [
+        215,
+        217,
+        219,
+        1745,
+        1746,
+        2751,
+        2754,
+        2755,
+        2989,
+        4551,
+        4552,
+        4789
+      ],
+      "province_names": [
+        "Castilla La Vieja",
+        "Madrid",
+        "Toledo",
+        "Cantabria",
+        "Burgos",
+        "Cuenca",
+        "La Mancha",
+        "Soria",
+        "Rioja",
+        "Avila",
+        "Palencia",
+        "Segovia"
+      ],
+      "vanilla_owner_counts": {
+        "CAS": 12
+      }
+    },
+    {
+      "area_counts": {
+        "baleares_area": 3,
+        "catalonia_area": 5,
+        "valencia_area": 4
+      },
+      "culture": "catalan",
+      "culture_group": "iberian",
+      "land_province_count": 12,
+      "province_ids": [
+        197,
+        212,
+        213,
+        220,
+        333,
+        1750,
+        2987,
+        2988,
+        4549,
+        4550,
+        4559,
+        4560
+      ],
+      "province_names": [
+        "Roussillon",
+        "Girona",
+        "Barcelona",
+        "Val\u00e8ncia",
+        "The Baleares",
+        "Alicante",
+        "Urgell",
+        "Tarragona",
+        "Xativa",
+        "Castellon",
+        "Minorca",
+        "Ibiza"
+      ],
+      "vanilla_owner_counts": {
+        "ARA": 12
+      }
+    },
+    {
+      "area_counts": {
+        "galicia_area": 4
+      },
+      "culture": "galician",
+      "culture_group": "iberian",
+      "land_province_count": 4,
+      "province_ids": [
+        206,
+        4554,
+        4555,
+        4558
+      ],
+      "province_names": [
+        "Galicia",
+        "Lugo",
+        "Vigo",
+        "Orense"
+      ],
+      "vanilla_owner_counts": {
+        "CAS": 4
+      }
+    },
+    {
+      "area_counts": {
+        "extremadura_area": 2,
+        "leon_area": 4
+      },
+      "culture": "leonese",
+      "culture_group": "iberian",
+      "land_province_count": 6,
+      "province_ids": [
+        207,
+        208,
+        216,
+        1747,
+        4553,
+        4788
+      ],
+      "province_names": [
+        "Asturias",
+        "Le\u00f3n",
+        "Salamanca",
+        "Caceres",
+        "Zamora",
+        "Plasencia"
+      ],
+      "vanilla_owner_counts": {
+        "CAS": 6
+      }
+    },
+    {
+      "area_counts": {
+        "alentejo_area": 5,
+        "beieras_area": 5
+      },
+      "culture": "portugese",
+      "culture_group": "iberian",
+      "land_province_count": 10,
+      "province_ids": [
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        1851,
+        4150,
+        4556,
+        4787
+      ],
+      "province_names": [
+        "Lisboa",
+        "Beira",
+        "Beja",
+        "Algarve",
+        "Porto",
+        "Bragan\u00e7a",
+        "Ribatejo",
+        "\u00c9vora",
+        "Aviero",
+        "Ribatejo"
+      ],
+      "vanilla_owner_counts": {
+        "POR": 10
+      }
+    }
+  ],
+  "provinces": [
+    {
+      "area": "catalonia_area",
+      "continent": "europe",
+      "culture": "catalan",
+      "culture_group": "iberian",
+      "history_file": "197 - Roussillon.txt",
+      "map_color_rgb": [
+        156,
+        42,
+        128
+      ],
+      "present_in_project_map": true,
+      "province_id": 197,
+      "province_name": "Roussillon",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "ARA",
+      "vanilla_cores": [
+        "ARA",
+        "CAT",
+        "TOU"
+      ],
+      "vanilla_owner": "ARA"
+    },
+    {
+      "area": "galicia_area",
+      "continent": "europe",
+      "culture": "galician",
+      "culture_group": "iberian",
+      "history_file": "206 - Galicia.txt",
+      "map_color_rgb": [
+        29,
+        60,
+        64
+      ],
+      "present_in_project_map": true,
+      "province_id": 206,
+      "province_name": "Galicia",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "woods",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS",
+        "GAL"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "leon_area",
+      "continent": "europe",
+      "culture": "leonese",
+      "culture_group": "iberian",
+      "history_file": "207 - Asturias.txt",
+      "map_color_rgb": [
+        157,
+        62,
+        128
+      ],
+      "present_in_project_map": true,
+      "province_id": 207,
+      "province_name": "Asturias",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "ASU",
+        "CAS",
+        "LON"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "leon_area",
+      "continent": "europe",
+      "culture": "leonese",
+      "culture_group": "iberian",
+      "history_file": "208 - Leon.txt",
+      "map_color_rgb": [
+        29,
+        64,
+        192
+      ],
+      "present_in_project_map": true,
+      "province_id": 208,
+      "province_name": "Le\u00f3n",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS",
+        "LON"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "basque_country",
+      "continent": "europe",
+      "culture": "basque",
+      "culture_group": "iberian",
+      "history_file": "209 - Vizcaya.txt",
+      "map_color_rgb": [
+        157,
+        66,
+        255
+      ],
+      "present_in_project_map": true,
+      "province_id": 209,
+      "province_name": "Vizcaya",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "ASU",
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "basque_country",
+      "continent": "europe",
+      "culture": "basque",
+      "culture_group": "iberian",
+      "history_file": "210 - Navarra.txt",
+      "map_color_rgb": [
+        30,
+        68,
+        0
+      ],
+      "present_in_project_map": true,
+      "province_id": 210,
+      "province_name": "Navarra",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "mountain",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "NAV",
+      "vanilla_cores": [
+        "NAV"
+      ],
+      "vanilla_owner": "NAV"
+    },
+    {
+      "area": "aragon_area",
+      "continent": "europe",
+      "culture": "aragonese",
+      "culture_group": "iberian",
+      "history_file": "211 - Pirineo.txt",
+      "map_color_rgb": [
+        158,
+        70,
+        64
+      ],
+      "present_in_project_map": true,
+      "province_id": 211,
+      "province_name": "Pirineo",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "ARA",
+      "vanilla_cores": [
+        "ARA"
+      ],
+      "vanilla_owner": "ARA"
+    },
+    {
+      "area": "catalonia_area",
+      "continent": "europe",
+      "culture": "catalan",
+      "culture_group": "iberian",
+      "history_file": "212 - Girona.txt",
+      "map_color_rgb": [
+        30,
+        72,
+        128
+      ],
+      "present_in_project_map": true,
+      "province_id": 212,
+      "province_name": "Girona",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "ARA",
+      "vanilla_cores": [
+        "ARA",
+        "CAT"
+      ],
+      "vanilla_owner": "ARA"
+    },
+    {
+      "area": "catalonia_area",
+      "continent": "europe",
+      "culture": "catalan",
+      "culture_group": "iberian",
+      "history_file": "213 - Barcelona.txt",
+      "map_color_rgb": [
+        158,
+        74,
+        192
+      ],
+      "present_in_project_map": true,
+      "province_id": 213,
+      "province_name": "Barcelona",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "grasslands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "ARA",
+      "vanilla_cores": [
+        "ARA",
+        "CAT"
+      ],
+      "vanilla_owner": "ARA"
+    },
+    {
+      "area": "aragon_area",
+      "continent": "europe",
+      "culture": "aragonese",
+      "culture_group": "iberian",
+      "history_file": "214 - Aragon.txt",
+      "map_color_rgb": [
+        30,
+        76,
+        255
+      ],
+      "present_in_project_map": true,
+      "province_id": 214,
+      "province_name": "Zaragoza",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "drylands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "ARA",
+      "vanilla_cores": [
+        "ARA"
+      ],
+      "vanilla_owner": "ARA"
+    },
+    {
+      "area": "asturias_area",
+      "continent": "europe",
+      "culture": "castillian",
+      "culture_group": "iberian",
+      "history_file": "215 - Castilla La Vieja.txt",
+      "map_color_rgb": [
+        158,
+        78,
+        0
+      ],
+      "present_in_project_map": true,
+      "province_id": 215,
+      "province_name": "Castilla La Vieja",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "leon_area",
+      "continent": "europe",
+      "culture": "leonese",
+      "culture_group": "iberian",
+      "history_file": "216 - Salamanca.txt",
+      "map_color_rgb": [
+        30,
+        80,
+        64
+      ],
+      "present_in_project_map": true,
+      "province_id": 216,
+      "province_name": "Salamanca",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "highlands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS",
+        "LON"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "castille_area",
+      "continent": "europe",
+      "culture": "castillian",
+      "culture_group": "iberian",
+      "history_file": "217 - Madrid.txt",
+      "map_color_rgb": [
+        159,
+        82,
+        128
+      ],
+      "present_in_project_map": true,
+      "province_id": 217,
+      "province_name": "Madrid",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "extremadura_area",
+      "continent": "europe",
+      "culture": "andalucian",
+      "culture_group": "iberian",
+      "history_file": "218 - Badajoz.txt",
+      "map_color_rgb": [
+        31,
+        84,
+        192
+      ],
+      "present_in_project_map": true,
+      "province_id": 218,
+      "province_name": "Badajoz",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "grasslands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "toledo_area",
+      "continent": "europe",
+      "culture": "castillian",
+      "culture_group": "iberian",
+      "history_file": "219 - Toledo.txt",
+      "map_color_rgb": [
+        159,
+        86,
+        255
+      ],
+      "present_in_project_map": true,
+      "province_id": 219,
+      "province_name": "Toledo",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "grasslands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "valencia_area",
+      "continent": "europe",
+      "culture": "catalan",
+      "culture_group": "iberian",
+      "history_file": "220 - Valencia.txt",
+      "map_color_rgb": [
+        31,
+        88,
+        0
+      ],
+      "present_in_project_map": true,
+      "province_id": 220,
+      "province_name": "Val\u00e8ncia",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "drylands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "ARA",
+      "vanilla_cores": [
+        "ARA",
+        "VAL"
+      ],
+      "vanilla_owner": "ARA"
+    },
+    {
+      "area": "toledo_area",
+      "continent": "europe",
+      "culture": "andalucian",
+      "culture_group": "iberian",
+      "history_file": "221 - Murcia.txt",
+      "map_color_rgb": [
+        159,
+        90,
+        64
+      ],
+      "present_in_project_map": true,
+      "province_id": 221,
+      "province_name": "Murcia",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "drylands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "upper_andalucia_area",
+      "continent": "europe",
+      "culture": "andalucian",
+      "culture_group": "iberian",
+      "history_file": "222 - Almeria.txt",
+      "map_color_rgb": [
+        31,
+        92,
+        128
+      ],
+      "present_in_project_map": true,
+      "province_id": 222,
+      "province_name": "Almer\u00eda",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "sunni",
+      "superregion": "europe_superregion",
+      "terrain": "mountain",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "GRA",
+      "vanilla_cores": [
+        "GRA"
+      ],
+      "vanilla_owner": "GRA"
+    },
+    {
+      "area": "upper_andalucia_area",
+      "continent": "europe",
+      "culture": "andalucian",
+      "culture_group": "iberian",
+      "history_file": "223 - Granada.txt",
+      "map_color_rgb": [
+        159,
+        94,
+        192
+      ],
+      "present_in_project_map": true,
+      "province_id": 223,
+      "province_name": "Granada",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "sunni",
+      "superregion": "europe_superregion",
+      "terrain": "mountain",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "GRA",
+      "vanilla_cores": [
+        "GRA"
+      ],
+      "vanilla_owner": "GRA"
+    },
+    {
+      "area": "lower_andalucia_area",
+      "continent": "europe",
+      "culture": "andalucian",
+      "culture_group": "iberian",
+      "history_file": "224 - Andalucia.txt",
+      "map_color_rgb": [
+        32,
+        96,
+        255
+      ],
+      "present_in_project_map": true,
+      "province_id": 224,
+      "province_name": "Andaluc\u00eda",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "drylands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "lower_andalucia_area",
+      "continent": "europe",
+      "culture": "andalucian",
+      "culture_group": "iberian",
+      "history_file": "225 - Cordoba.txt",
+      "map_color_rgb": [
+        160,
+        98,
+        0
+      ],
+      "present_in_project_map": true,
+      "province_id": 225,
+      "province_name": "C\u00f3rdoba",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "drylands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "upper_andalucia_area",
+      "continent": "europe",
+      "culture": "andalucian",
+      "culture_group": "iberian",
+      "history_file": "226 - Gibraltar.txt",
+      "map_color_rgb": [
+        32,
+        100,
+        64
+      ],
+      "present_in_project_map": true,
+      "province_id": 226,
+      "province_name": "Gibraltar",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "sunni",
+      "superregion": "europe_superregion",
+      "terrain": "mountain",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "GRA",
+      "vanilla_cores": [
+        "GRA"
+      ],
+      "vanilla_owner": "GRA"
+    },
+    {
+      "area": "alentejo_area",
+      "continent": "europe",
+      "culture": "portugese",
+      "culture_group": "iberian",
+      "history_file": "227 - Lisboa.txt",
+      "map_color_rgb": [
+        160,
+        102,
+        128
+      ],
+      "present_in_project_map": true,
+      "province_id": 227,
+      "province_name": "Lisboa",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "POR",
+      "vanilla_cores": [
+        "POR"
+      ],
+      "vanilla_owner": "POR"
+    },
+    {
+      "area": "beieras_area",
+      "continent": "europe",
+      "culture": "portugese",
+      "culture_group": "iberian",
+      "history_file": "228 - Beira.txt",
+      "map_color_rgb": [
+        32,
+        104,
+        192
+      ],
+      "present_in_project_map": true,
+      "province_id": 228,
+      "province_name": "Beira",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "highlands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "POR",
+      "vanilla_cores": [
+        "POR"
+      ],
+      "vanilla_owner": "POR"
+    },
+    {
+      "area": "alentejo_area",
+      "continent": "europe",
+      "culture": "portugese",
+      "culture_group": "iberian",
+      "history_file": "229 - Beja.txt",
+      "map_color_rgb": [
+        160,
+        106,
+        255
+      ],
+      "present_in_project_map": true,
+      "province_id": 229,
+      "province_name": "Beja",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "grasslands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "POR",
+      "vanilla_cores": [
+        "POR"
+      ],
+      "vanilla_owner": "POR"
+    },
+    {
+      "area": "alentejo_area",
+      "continent": "europe",
+      "culture": "portugese",
+      "culture_group": "iberian",
+      "history_file": "230 - Algarve.txt",
+      "map_color_rgb": [
+        32,
+        108,
+        0
+      ],
+      "present_in_project_map": true,
+      "province_id": 230,
+      "province_name": "Algarve",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "POR",
+      "vanilla_cores": [
+        "POR"
+      ],
+      "vanilla_owner": "POR"
+    },
+    {
+      "area": "beieras_area",
+      "continent": "europe",
+      "culture": "portugese",
+      "culture_group": "iberian",
+      "history_file": "231 - Porto.txt",
+      "map_color_rgb": [
+        161,
+        110,
+        64
+      ],
+      "present_in_project_map": true,
+      "province_id": 231,
+      "province_name": "Porto",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "POR",
+      "vanilla_cores": [
+        "POR"
+      ],
+      "vanilla_owner": "POR"
+    },
+    {
+      "area": "beieras_area",
+      "continent": "europe",
+      "culture": "portugese",
+      "culture_group": "iberian",
+      "history_file": "232 - Braganca.txt",
+      "map_color_rgb": [
+        33,
+        112,
+        128
+      ],
+      "present_in_project_map": true,
+      "province_id": 232,
+      "province_name": "Bragan\u00e7a",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "hills",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "POR",
+      "vanilla_cores": [
+        "POR"
+      ],
+      "vanilla_owner": "POR"
+    },
+    {
+      "area": "baleares_area",
+      "continent": "europe",
+      "culture": "catalan",
+      "culture_group": "iberian",
+      "history_file": "333 - The Baleares.txt",
+      "map_color_rgb": [
+        175,
+        58,
+        192
+      ],
+      "present_in_project_map": true,
+      "province_id": 333,
+      "province_name": "The Baleares",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "coastline",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "ARA",
+      "vanilla_cores": [
+        "ARA",
+        "MJO"
+      ],
+      "vanilla_owner": "ARA"
+    },
+    {
+      "area": "asturias_area",
+      "continent": "europe",
+      "culture": "castillian",
+      "culture_group": "iberian",
+      "history_file": "1745 - Cantabria.txt",
+      "map_color_rgb": [
+        195,
+        74,
+        79
+      ],
+      "present_in_project_map": true,
+      "province_id": 1745,
+      "province_name": "Cantabria",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "ASU",
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "asturias_area",
+      "continent": "europe",
+      "culture": "castillian",
+      "culture_group": "iberian",
+      "history_file": "1746 - Burgos.txt",
+      "map_color_rgb": [
+        67,
+        76,
+        126
+      ],
+      "present_in_project_map": true,
+      "province_id": 1746,
+      "province_name": "Burgos",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "hills",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "extremadura_area",
+      "continent": "europe",
+      "culture": "leonese",
+      "culture_group": "iberian",
+      "history_file": "1747 - Caceres.txt",
+      "map_color_rgb": [
+        195,
+        78,
+        173
+      ],
+      "present_in_project_map": true,
+      "province_id": 1747,
+      "province_name": "Caceres",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "grasslands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS",
+        "LON"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "lower_andalucia_area",
+      "continent": "europe",
+      "culture": "andalucian",
+      "culture_group": "iberian",
+      "history_file": "1748 - La Mancha.txt",
+      "map_color_rgb": [
+        67,
+        80,
+        32
+      ],
+      "present_in_project_map": true,
+      "province_id": 1748,
+      "province_name": "La Mancha",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "drylands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "lower_andalucia_area",
+      "continent": "europe",
+      "culture": "andalucian",
+      "culture_group": "iberian",
+      "history_file": "1749 - Cadiz.txt",
+      "map_color_rgb": [
+        195,
+        82,
+        79
+      ],
+      "present_in_project_map": true,
+      "province_id": 1749,
+      "province_name": "Cadiz",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "drylands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "valencia_area",
+      "continent": "europe",
+      "culture": "catalan",
+      "culture_group": "iberian",
+      "history_file": "1750 - Alicante.txt",
+      "map_color_rgb": [
+        67,
+        84,
+        126
+      ],
+      "present_in_project_map": true,
+      "province_id": 1750,
+      "province_name": "Alicante",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "drylands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "ARA",
+      "vanilla_cores": [
+        "ARA",
+        "VAL"
+      ],
+      "vanilla_owner": "ARA"
+    },
+    {
+      "area": "beieras_area",
+      "continent": "europe",
+      "culture": "portugese",
+      "culture_group": "iberian",
+      "history_file": "1851 - Ribatejo.txt",
+      "map_color_rgb": [
+        82,
+        32,
+        32
+      ],
+      "present_in_project_map": true,
+      "province_id": 1851,
+      "province_name": "Ribatejo",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "woods",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "POR",
+      "vanilla_cores": [
+        "POR"
+      ],
+      "vanilla_owner": "POR"
+    },
+    {
+      "area": "toledo_area",
+      "continent": "europe",
+      "culture": "castillian",
+      "culture_group": "iberian",
+      "history_file": "2751 - Cuenca.txt",
+      "map_color_rgb": [
+        68,
+        230,
+        179
+      ],
+      "present_in_project_map": true,
+      "province_id": 2751,
+      "province_name": "Cuenca",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "toledo_area",
+      "continent": "europe",
+      "culture": "castillian",
+      "culture_group": "iberian",
+      "history_file": "2754 - La Mancha.txt",
+      "map_color_rgb": [
+        231,
+        35,
+        179
+      ],
+      "present_in_project_map": true,
+      "province_id": 2754,
+      "province_name": "La Mancha",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "drylands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "castille_area",
+      "continent": "europe",
+      "culture": "castillian",
+      "culture_group": "iberian",
+      "history_file": "2755 - Soria.txt",
+      "map_color_rgb": [
+        68,
+        8,
+        179
+      ],
+      "present_in_project_map": true,
+      "province_id": 2755,
+      "province_name": "Soria",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "highlands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "catalonia_area",
+      "continent": "europe",
+      "culture": "catalan",
+      "culture_group": "iberian",
+      "history_file": "2987 - Urgell.txt",
+      "map_color_rgb": [
+        220,
+        251,
+        47
+      ],
+      "present_in_project_map": true,
+      "province_id": 2987,
+      "province_name": "Urgell",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "ARA",
+      "vanilla_cores": [
+        "ARA",
+        "CAT"
+      ],
+      "vanilla_owner": "ARA"
+    },
+    {
+      "area": "catalonia_area",
+      "continent": "europe",
+      "culture": "catalan",
+      "culture_group": "iberian",
+      "history_file": "2988 - Tarragona.txt",
+      "map_color_rgb": [
+        232,
+        11,
+        11
+      ],
+      "present_in_project_map": true,
+      "province_id": 2988,
+      "province_name": "Tarragona",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "ARA",
+      "vanilla_cores": [
+        "ARA",
+        "CAT"
+      ],
+      "vanilla_owner": "ARA"
+    },
+    {
+      "area": "basque_country",
+      "continent": "europe",
+      "culture": "castillian",
+      "culture_group": "iberian",
+      "history_file": "2989 - Rioja.txt",
+      "map_color_rgb": [
+        200,
+        58,
+        78
+      ],
+      "present_in_project_map": true,
+      "province_id": 2989,
+      "province_name": "Rioja",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "highlands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "aragon_area",
+      "continent": "europe",
+      "culture": "aragonese",
+      "culture_group": "iberian",
+      "history_file": "2990 - Teruel.txt",
+      "map_color_rgb": [
+        181,
+        150,
+        96
+      ],
+      "present_in_project_map": true,
+      "province_id": 2990,
+      "province_name": "Teruel",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "ARA",
+      "vanilla_cores": [
+        "ARA"
+      ],
+      "vanilla_owner": "ARA"
+    },
+    {
+      "area": "alentejo_area",
+      "continent": "europe",
+      "culture": "portugese",
+      "culture_group": "iberian",
+      "history_file": "4150 - Evora.txt",
+      "map_color_rgb": [
+        145,
+        151,
+        212
+      ],
+      "present_in_project_map": true,
+      "province_id": 4150,
+      "province_name": "\u00c9vora",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "grasslands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "POR",
+      "vanilla_cores": [
+        "POR"
+      ],
+      "vanilla_owner": "POR"
+    },
+    {
+      "area": "upper_andalucia_area",
+      "continent": "europe",
+      "culture": "andalucian",
+      "culture_group": "iberian",
+      "history_file": "4546 - Malaga.txt",
+      "map_color_rgb": [
+        121,
+        225,
+        48
+      ],
+      "present_in_project_map": true,
+      "province_id": 4546,
+      "province_name": "Malaga",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "sunni",
+      "superregion": "europe_superregion",
+      "terrain": "mountain",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "GRA",
+      "vanilla_cores": [
+        "GRA"
+      ],
+      "vanilla_owner": "GRA"
+    },
+    {
+      "area": "toledo_area",
+      "continent": "europe",
+      "culture": "andalucian",
+      "culture_group": "iberian",
+      "history_file": "4547 - Albacete.txt",
+      "map_color_rgb": [
+        155,
+        170,
+        197
+      ],
+      "present_in_project_map": true,
+      "province_id": 4547,
+      "province_name": "Albacete",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "drylands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "lower_andalucia_area",
+      "continent": "europe",
+      "culture": "andalucian",
+      "culture_group": "iberian",
+      "history_file": "4548 - Huelva.txt",
+      "map_color_rgb": [
+        242,
+        90,
+        38
+      ],
+      "present_in_project_map": true,
+      "province_id": 4548,
+      "province_name": "Huelva",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "valencia_area",
+      "continent": "europe",
+      "culture": "catalan",
+      "culture_group": "iberian",
+      "history_file": "4549 - Xativa.txt",
+      "map_color_rgb": [
+        7,
+        115,
+        1
+      ],
+      "present_in_project_map": true,
+      "province_id": 4549,
+      "province_name": "Xativa",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "drylands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "ARA",
+      "vanilla_cores": [
+        "ARA",
+        "VAL"
+      ],
+      "vanilla_owner": "ARA"
+    },
+    {
+      "area": "valencia_area",
+      "continent": "europe",
+      "culture": "catalan",
+      "culture_group": "iberian",
+      "history_file": "4550 -Castellon.txt",
+      "map_color_rgb": [
+        217,
+        244,
+        86
+      ],
+      "present_in_project_map": true,
+      "province_id": 4550,
+      "province_name": "Castellon",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "ARA",
+      "vanilla_cores": [
+        "ARA",
+        "VAL"
+      ],
+      "vanilla_owner": "ARA"
+    },
+    {
+      "area": "castille_area",
+      "continent": "europe",
+      "culture": "castillian",
+      "culture_group": "iberian",
+      "history_file": "4551 - Avila.txt",
+      "map_color_rgb": [
+        73,
+        146,
+        227
+      ],
+      "present_in_project_map": true,
+      "province_id": 4551,
+      "province_name": "Avila",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "asturias_area",
+      "continent": "europe",
+      "culture": "castillian",
+      "culture_group": "iberian",
+      "history_file": "4552 - Palencia.txt",
+      "map_color_rgb": [
+        130,
+        85,
+        172
+      ],
+      "present_in_project_map": true,
+      "province_id": 4552,
+      "province_name": "Palencia",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "hills",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "leon_area",
+      "continent": "europe",
+      "culture": "leonese",
+      "culture_group": "iberian",
+      "history_file": "4553 - Zamora.txt",
+      "map_color_rgb": [
+        43,
+        46,
+        167
+      ],
+      "present_in_project_map": true,
+      "province_id": 4553,
+      "province_name": "Zamora",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "highlands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS",
+        "LON"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "galicia_area",
+      "continent": "europe",
+      "culture": "galician",
+      "culture_group": "iberian",
+      "history_file": "4554 - Lugo.txt",
+      "map_color_rgb": [
+        146,
+        111,
+        28
+      ],
+      "present_in_project_map": true,
+      "province_id": 4554,
+      "province_name": "Lugo",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS",
+        "GAL"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "galicia_area",
+      "continent": "europe",
+      "culture": "galician",
+      "culture_group": "iberian",
+      "history_file": "4555 - Vigo.txt",
+      "map_color_rgb": [
+        183,
+        26,
+        10
+      ],
+      "present_in_project_map": true,
+      "province_id": 4555,
+      "province_name": "Vigo",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "woods",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS",
+        "GAL"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "beieras_area",
+      "continent": "europe",
+      "culture": "portugese",
+      "culture_group": "iberian",
+      "history_file": "4556 - Aviero.txt",
+      "map_color_rgb": [
+        184,
+        42,
+        69
+      ],
+      "present_in_project_map": true,
+      "province_id": 4556,
+      "province_name": "Aviero",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "POR",
+      "vanilla_cores": [
+        "POR"
+      ],
+      "vanilla_owner": "POR"
+    },
+    {
+      "area": "aragon_area",
+      "continent": "europe",
+      "culture": "aragonese",
+      "culture_group": "iberian",
+      "history_file": "4557 - Lleida.txt",
+      "map_color_rgb": [
+        240,
+        89,
+        1
+      ],
+      "present_in_project_map": true,
+      "province_id": 4557,
+      "province_name": "Lleida",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "drylands",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "ARA",
+      "vanilla_cores": [
+        "ARA"
+      ],
+      "vanilla_owner": "ARA"
+    },
+    {
+      "area": "galicia_area",
+      "continent": "europe",
+      "culture": "galician",
+      "culture_group": "iberian",
+      "history_file": "4558 - Orense.txt",
+      "map_color_rgb": [
+        155,
+        55,
+        22
+      ],
+      "present_in_project_map": true,
+      "province_id": 4558,
+      "province_name": "Orense",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": "woods",
+      "terrain_source": "terrain.txt override",
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS",
+        "GAL"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "baleares_area",
+      "continent": "europe",
+      "culture": "catalan",
+      "culture_group": "iberian",
+      "history_file": "4559 - Minorca.txt",
+      "map_color_rgb": [
+        0,
+        63,
+        140
+      ],
+      "present_in_project_map": true,
+      "province_id": 4559,
+      "province_name": "Minorca",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "ARA",
+      "vanilla_cores": [
+        "ARA",
+        "MJO"
+      ],
+      "vanilla_owner": "ARA"
+    },
+    {
+      "area": "baleares_area",
+      "continent": "europe",
+      "culture": "catalan",
+      "culture_group": "iberian",
+      "history_file": "4560 - Ibiza.txt",
+      "map_color_rgb": [
+        118,
+        241,
+        78
+      ],
+      "present_in_project_map": true,
+      "province_id": 4560,
+      "province_name": "Ibiza",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "ARA",
+      "vanilla_cores": [
+        "ARA",
+        "MJO"
+      ],
+      "vanilla_owner": "ARA"
+    },
+    {
+      "area": "alentejo_area",
+      "continent": "europe",
+      "culture": "portugese",
+      "culture_group": "iberian",
+      "history_file": "4787 - Ribatejo.txt",
+      "map_color_rgb": [
+        91,
+        178,
+        26
+      ],
+      "present_in_project_map": true,
+      "province_id": 4787,
+      "province_name": "Ribatejo",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "POR",
+      "vanilla_cores": [
+        "POR"
+      ],
+      "vanilla_owner": "POR"
+    },
+    {
+      "area": "extremadura_area",
+      "continent": "europe",
+      "culture": "leonese",
+      "culture_group": "iberian",
+      "history_file": "4788 - Plasencia.txt",
+      "map_color_rgb": [
+        168,
+        196,
+        4
+      ],
+      "present_in_project_map": true,
+      "province_id": 4788,
+      "province_name": "Plasencia",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS",
+        "LON"
+      ],
+      "vanilla_owner": "CAS"
+    },
+    {
+      "area": "castille_area",
+      "continent": "europe",
+      "culture": "castillian",
+      "culture_group": "iberian",
+      "history_file": "4789 - Segovia.txt",
+      "map_color_rgb": [
+        254,
+        145,
+        124
+      ],
+      "present_in_project_map": true,
+      "province_id": 4789,
+      "province_name": "Segovia",
+      "province_type": "land",
+      "region": "iberia_region",
+      "religion": "catholic",
+      "superregion": "europe_superregion",
+      "terrain": null,
+      "terrain_source": null,
+      "vanilla_controller": "CAS",
+      "vanilla_cores": [
+        "CAS"
+      ],
+      "vanilla_owner": "CAS"
+    }
+  ],
+  "scope": "vanilla iberia_region, annotated against Project Crown provinces.bmp",
+  "sources": {
+    "history_source": "vanilla history/provinces/*.txt at 1444.11.11",
+    "project_bmp": "/Users/roman/Desktop/Project Crown/Mod Build/project_crown/map/provinces.bmp",
+    "region_source": "vanilla map/region.txt -> iberia_region",
+    "vanilla_root": "/Users/roman/Library/Application Support/Steam/steamapps/common/Europa Universalis IV"
+  },
+  "summary": {
+    "all_region_provinces_present_in_project_map": true,
+    "cultures_present": [
+      "andalucian",
+      "aragonese",
+      "basque",
+      "castillian",
+      "catalan",
+      "galician",
+      "leonese",
+      "portugese"
+    ],
+    "land_province_count": 62,
+    "project_map_missing_province_ids": [],
+    "province_count": 62
+  }
+}

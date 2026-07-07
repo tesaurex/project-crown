@@ -1,0 +1,219 @@
+{
+  "audit": "iberia_tag_audit",
+  "entries": [
+    {
+      "culture": "castillian",
+      "culture_display": "Castile",
+      "expected_reuse_tag": "CAS",
+      "history_primary_culture_matches_target": true,
+      "iberia_region_land_province_ids": [
+        215,
+        217,
+        219,
+        1745,
+        1746,
+        2751,
+        2754,
+        2755,
+        2989,
+        4551,
+        4552,
+        4789
+      ],
+      "tag_country_file": "countries/Castille.txt",
+      "tag_country_file_exists": true,
+      "tag_exists_in_common_country_tags": true,
+      "tag_history_file": "CAS - Castile.txt",
+      "tag_primary_culture": "castillian",
+      "tag_reuse_status": "usable_vanilla_tag_found",
+      "vanilla_culture_primary_tag": "CAS"
+    },
+    {
+      "culture": "aragonese",
+      "culture_display": "Aragon",
+      "expected_reuse_tag": "ARA",
+      "history_primary_culture_matches_target": false,
+      "iberia_region_land_province_ids": [
+        211,
+        214,
+        2990,
+        4557
+      ],
+      "tag_country_file": "countries/Aragon.txt",
+      "tag_country_file_exists": true,
+      "tag_exists_in_common_country_tags": true,
+      "tag_history_file": "ARA - Aragon.txt",
+      "tag_primary_culture": "catalan",
+      "tag_reuse_status": "usable_vanilla_tag_found_history_primary_culture_review",
+      "vanilla_culture_primary_tag": "ARA"
+    },
+    {
+      "culture": "catalan",
+      "culture_display": "Catalonia",
+      "expected_reuse_tag": "CAT",
+      "history_primary_culture_matches_target": true,
+      "iberia_region_land_province_ids": [
+        197,
+        212,
+        213,
+        220,
+        333,
+        1750,
+        2987,
+        2988,
+        4549,
+        4550,
+        4559,
+        4560
+      ],
+      "tag_country_file": "countries/Catalunya.txt",
+      "tag_country_file_exists": true,
+      "tag_exists_in_common_country_tags": true,
+      "tag_history_file": "CAT - Catalunya.txt",
+      "tag_primary_culture": "catalan",
+      "tag_reuse_status": "usable_vanilla_tag_found",
+      "vanilla_culture_primary_tag": "CAT"
+    },
+    {
+      "culture": "leonese",
+      "culture_display": "Leon",
+      "expected_reuse_tag": "LON",
+      "history_primary_culture_matches_target": true,
+      "iberia_region_land_province_ids": [
+        207,
+        208,
+        216,
+        1747,
+        4553,
+        4788
+      ],
+      "tag_country_file": "countries/Leon.txt",
+      "tag_country_file_exists": true,
+      "tag_exists_in_common_country_tags": true,
+      "tag_history_file": "LON - Leon.txt",
+      "tag_primary_culture": "leonese",
+      "tag_reuse_status": "usable_vanilla_tag_found",
+      "vanilla_culture_primary_tag": "LON"
+    },
+    {
+      "culture": "galician",
+      "culture_display": "Galicia",
+      "expected_reuse_tag": "GAL",
+      "history_primary_culture_matches_target": true,
+      "iberia_region_land_province_ids": [
+        206,
+        4554,
+        4555,
+        4558
+      ],
+      "tag_country_file": "countries/Galicia.txt",
+      "tag_country_file_exists": true,
+      "tag_exists_in_common_country_tags": true,
+      "tag_history_file": "GAL - Galicia.txt",
+      "tag_primary_culture": "galician",
+      "tag_reuse_status": "usable_vanilla_tag_found",
+      "vanilla_culture_primary_tag": "GAL"
+    },
+    {
+      "culture": "basque",
+      "culture_display": "Navarre/Basque",
+      "expected_reuse_tag": "NAV",
+      "history_primary_culture_matches_target": true,
+      "iberia_region_land_province_ids": [
+        209,
+        210
+      ],
+      "tag_country_file": "countries/Navarra.txt",
+      "tag_country_file_exists": true,
+      "tag_exists_in_common_country_tags": true,
+      "tag_history_file": "NAV - Navarra.txt",
+      "tag_primary_culture": "basque",
+      "tag_reuse_status": "usable_vanilla_tag_found",
+      "vanilla_culture_primary_tag": "NAV"
+    },
+    {
+      "culture": "andalucian",
+      "culture_display": "Granada/Andalusia",
+      "expected_reuse_tag": "GRA",
+      "history_primary_culture_matches_target": true,
+      "iberia_region_land_province_ids": [
+        218,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        1748,
+        1749,
+        4546,
+        4547,
+        4548
+      ],
+      "tag_country_file": "countries/Granada.txt",
+      "tag_country_file_exists": true,
+      "tag_exists_in_common_country_tags": true,
+      "tag_history_file": "GRA - Granada.txt",
+      "tag_primary_culture": "andalucian",
+      "tag_reuse_status": "usable_vanilla_tag_found",
+      "vanilla_culture_primary_tag": "GRA"
+    },
+    {
+      "culture": "portugese",
+      "culture_display": "Portugal",
+      "expected_reuse_tag": "POR",
+      "history_primary_culture_matches_target": true,
+      "iberia_region_land_province_ids": [
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        1851,
+        4150,
+        4556,
+        4787
+      ],
+      "tag_country_file": "countries/Portugal.txt",
+      "tag_country_file_exists": true,
+      "tag_exists_in_common_country_tags": true,
+      "tag_history_file": "POR - Portugal.txt",
+      "tag_primary_culture": "portugese",
+      "tag_reuse_status": "usable_vanilla_tag_found",
+      "vanilla_culture_primary_tag": "POR"
+    }
+  ],
+  "related_existing_formable_or_regional_tags": [
+    {
+      "primary_culture": "castillian",
+      "tag": "SPA",
+      "tag_country_file": "countries/Spain.txt",
+      "tag_country_file_exists": true,
+      "tag_history_file": "SPA - Spain.txt"
+    },
+    {
+      "primary_culture": "andalucian",
+      "tag": "ADU",
+      "tag_country_file": "countries/Andalusia.txt",
+      "tag_country_file_exists": true,
+      "tag_history_file": "ADU - Andalusia.txt"
+    },
+    {
+      "primary_culture": "catalan",
+      "tag": "VAL",
+      "tag_country_file": "countries/Valencia.txt",
+      "tag_country_file_exists": true,
+      "tag_history_file": "VAL - Valencia.txt"
+    }
+  ],
+  "summary": {
+    "all_target_cultures_have_reuse_tags": true,
+    "catalonia_tag_status": "CAT exists in vanilla as countries/Catalunya.txt with CAT - Catalunya.txt history",
+    "new_tag_need_from_vanilla_audit": [],
+    "note": "This is an audit finding only. It does not create, rename, or implement tags.",
+    "tags_requiring_history_primary_culture_review": [
+      "ARA"
+    ]
+  }
+}

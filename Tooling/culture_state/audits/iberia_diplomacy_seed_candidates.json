@@ -1,0 +1,62 @@
+{
+  "audit": "iberia_diplomacy_seed_candidates",
+  "entries": [
+    {
+      "notes": "Audit candidate only; do not seed until Phase 2 controlled diplomacy slice.",
+      "reason": "Reconquista frontier and Granada/Andalusia formable clash.",
+      "relationship_type": "rival",
+      "rollout_wave": "Iberia POC review",
+      "source": "CAS",
+      "strength_priority": "high",
+      "supporting_basis": [
+        "contested province",
+        "religion",
+        "history",
+        "formable clash"
+      ],
+      "target": "GRA"
+    },
+    {
+      "notes": "Do not implement rare dynastic event in Phase 1B or Phase 2 initial foundation.",
+      "reason": "Spain formation race can be rivalry or rare-dynastic/friendly path later.",
+      "relationship_type": "opinion_modifier",
+      "rollout_wave": "Iberia POC review",
+      "source": "CAS",
+      "strength_priority": "medium",
+      "supporting_basis": [
+        "formable clash",
+        "history",
+        "balance"
+      ],
+      "target": "ARA"
+    },
+    {
+      "notes": "Avoid making Portugal an automatic Castilian annexation target.",
+      "reason": "Vanilla friendship exists, but Portugal exclusion from Spain means it needs independence-safe tuning.",
+      "relationship_type": "friend",
+      "rollout_wave": "Iberia POC review",
+      "source": "POR",
+      "strength_priority": "medium",
+      "supporting_basis": [
+        "history",
+        "geography",
+        "balance"
+      ],
+      "target": "CAS"
+    },
+    {
+      "notes": "Potential alliance/friendship with Aragon or France-side states is later wave-sensitive.",
+      "reason": "Small Basque/Navarre culture-state bordered by larger Iberian unifiers.",
+      "relationship_type": "threat_hint",
+      "rollout_wave": "Iberia POC review",
+      "source": "NAV",
+      "strength_priority": "low",
+      "supporting_basis": [
+        "geography",
+        "balance"
+      ],
+      "target": "CAS"
+    }
+  ],
+  "status": "candidate_seed_table_only"
+}

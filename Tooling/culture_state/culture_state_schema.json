@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Project Crown Culture-State Definition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "culture_state_id",
+    "display_name",
+    "tag",
+    "staple_anchor",
+    "culture",
+    "culture_group",
+    "starting_province_ids",
+    "core_province_ids",
+    "claim_province_ids",
+    "flag_source_policy",
+    "notes"
+  ],
+  "properties": {
+    "culture_state_id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+    "display_name": { "type": "string" },
+    "tag": { "type": "string", "pattern": "^[A-Z0-9]{3}$" },
+    "staple_anchor": { "type": "boolean" },
+    "culture": { "type": "string" },
+    "culture_group": { "type": "string" },
+    "starting_province_ids": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "uniqueItems": true },
+    "core_province_ids": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "uniqueItems": true },
+    "claim_province_ids": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "uniqueItems": true },
+    "formable_target": { "type": ["string", "null"], "pattern": "^[A-Z0-9]{3}$" },
+    "contested_provinces": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["province_id", "contested_region_id", "claim_type", "reason"],
+        "properties": {
+          "province_id": { "type": "integer", "minimum": 1 },
+          "contested_region_id": { "type": "string" },
+          "claim_type": {
+            "type": "string",
+            "enum": ["permanent_claim", "core", "mission_claim", "event_claim", "post_formation_claim"]
+          },
+          "reason": { "type": "string" }
+        }
+      }
+    },
+    "border_cleanliness_exceptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["province_ids", "exception_type", "justification"],
+        "properties": {
+          "province_ids": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "uniqueItems": true },
+          "exception_type": { "type": "string", "enum": ["island", "historic_enclave", "trade_port", "chokepoint", "colonial_holding"] },
+          "justification": { "type": "string" }
+        }
+      }
+    },
+    "natural_rivals": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "natural_friends": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "colonization": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tier": { "type": "string", "enum": ["none", "head_start", "coastal_minor", "formable_upgrade", "frontier_only"] },
+        "gating": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "flag_source_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy", "source", "implementation_phase"],
+      "properties": {
+        "policy": { "type": "string", "enum": ["modern_national", "modern_regional", "placeholder_until_wave", "vanilla_temporary"] },
+        "source": { "type": "string" },
+        "implementation_phase": { "type": "string" }
+      }
+    },
+    "notes": { "type": "string" }
+  }
+}

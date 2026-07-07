@@ -1,0 +1,91 @@
+{
+  "audit": "iberia_contested_region_candidates",
+  "entries": [
+    {
+      "border_cleanliness_note": "Keep one clean owner per province and express dispute via claims/cores later.",
+      "claim_type_recommendation": "mission_claim_or_permanent_claim",
+      "clean_starting_owner": "TBD in Iberia POC; audit-only candidate",
+      "contested_region_id": "iberia_granada_frontier_candidate",
+      "display_name": "Granada frontier",
+      "escalation_rule": "review during Phase 2; no escalation implemented in Phase 1B",
+      "implementation_phase": "Phase 2 Iberia POC or later",
+      "opposing_claimants": [
+        "GRA",
+        "CAS",
+        "SPA",
+        "ADU"
+      ],
+      "province_ids": [
+        222,
+        223,
+        224,
+        225,
+        226,
+        1748,
+        1749,
+        4546,
+        4548
+      ],
+      "reason": "Reconquista and Andalusian restoration tension should be claims/mission content, not messy starting borders."
+    },
+    {
+      "border_cleanliness_note": "Do not split awkward pockets for dispute representation.",
+      "claim_type_recommendation": "permanent_claim",
+      "clean_starting_owner": "TBD in Iberia POC; audit-only candidate",
+      "contested_region_id": "iberia_valencia_murcia_candidate",
+      "display_name": "Valencia-Murcia frontier",
+      "escalation_rule": "review after ownership proposal exists",
+      "implementation_phase": "Phase 2 Iberia POC or later",
+      "opposing_claimants": [
+        "ARA",
+        "CAS",
+        "GRA",
+        "SPA",
+        "ADU"
+      ],
+      "province_ids": [
+        219,
+        221,
+        2751,
+        2754,
+        4547
+      ],
+      "reason": "Potential Crown of Aragon / Castile / Granada border tension."
+    },
+    {
+      "border_cleanliness_note": "Portugal should remain a clean separate culture-state/formable-adjacent power.",
+      "claim_type_recommendation": "event_claim_or_mission_claim",
+      "clean_starting_owner": "TBD in Iberia POC; audit-only candidate",
+      "contested_region_id": "iberia_portugal_border_candidate",
+      "display_name": "Portuguese-Castilian border",
+      "escalation_rule": "no Spain-on-Portugal sanctioned annexation in initial POC",
+      "implementation_phase": "Phase 2 Iberia POC or later",
+      "opposing_claimants": [
+        "POR",
+        "CAS",
+        "LON"
+      ],
+      "province_ids": [
+        207,
+        208,
+        216,
+        218,
+        227,
+        228,
+        229,
+        230,
+        231,
+        232,
+        1747,
+        1851,
+        4150,
+        4553,
+        4556,
+        4787,
+        4788
+      ],
+      "reason": "Portugal is excluded from Spain by owner rule; any pressure should be restrained and reviewed."
+    }
+  ],
+  "status": "candidate_registry_only"
+}
