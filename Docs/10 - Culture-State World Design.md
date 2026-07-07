@@ -2,7 +2,7 @@
 
 **Version:** 1.3 — owner rules of 2026-07-06 (round 3) added: contested provinces (CP-rules), natural rivals & friends (N-rules), rare dynastic/diplomatic unification (U-rules), system synergy; hostile intervention and colonial-nation wars specified in MDD §11.1 and §9.4
 **Date:** 2026-07-06
-**Status:** Approved design pivot (owner directive 2026-07-06). Design only — no countries created, no gameplay files edited, no flags imported, no map files changed.
+**Status:** Approved design pivot (owner directive 2026-07-06). Wave 1 Phase 2A Iberia proof-of-concept implementation is logged in [12 - Iberia Culture-State POC Log](12%20-%20Iberia%20Culture-State%20POC%20Log.md). No flags imported and no map files changed.
 **Authority:** This document defines the Culture-State World layer. Where it conflicts with pre-pivot text in [00 - Master Design Document](00%20-%20Master%20Design%20Document.md), this document and Appendix B Round 4 of the MDD win.
 
 ---

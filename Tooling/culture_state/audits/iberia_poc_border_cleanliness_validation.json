@@ -1,0 +1,238 @@
+{
+  "adjacency_source": "/Users/roman/Desktop/Project Crown/Mod Build/project_crown/map/provinces.bmp",
+  "audit": "border_cleanliness_validation",
+  "limits": [
+    "Sea crossings are not treated as land adjacency.",
+    "Historical enclave, island, trade-port, and chokepoint exceptions are flagged as hints, not approved.",
+    "This validator does not implement gameplay or edit ownership."
+  ],
+  "ownership_source": "Tooling/culture_state/audits/iberia_poc_ownership.json",
+  "results": [
+    {
+      "component_count": 1,
+      "components": [
+        [
+          211,
+          214,
+          2990,
+          4557
+        ]
+      ],
+      "exception_hints": [],
+      "isolated_province_ids": [],
+      "land_province_count": 4,
+      "largest_component_size": 4,
+      "low_internal_adjacency_province_ids": [],
+      "snake_score": 0.0,
+      "tag": "ARA",
+      "warnings": []
+    },
+    {
+      "component_count": 1,
+      "components": [
+        [
+          215,
+          217,
+          219,
+          1745,
+          1746,
+          1747,
+          2751,
+          2754,
+          2755,
+          2989,
+          4551,
+          4552,
+          4789
+        ]
+      ],
+      "exception_hints": [],
+      "isolated_province_ids": [],
+      "land_province_count": 13,
+      "largest_component_size": 13,
+      "low_internal_adjacency_province_ids": [],
+      "snake_score": 0.0,
+      "tag": "CAS",
+      "warnings": []
+    },
+    {
+      "component_count": 4,
+      "components": [
+        [
+          197,
+          212,
+          213,
+          220,
+          1750,
+          2987,
+          2988,
+          4549,
+          4550
+        ],
+        [
+          333
+        ],
+        [
+          4559
+        ],
+        [
+          4560
+        ]
+      ],
+      "exception_hints": [
+        "island_exception_candidate_baleares",
+        "island_exception_candidate_baleares",
+        "island_exception_candidate_baleares"
+      ],
+      "isolated_province_ids": [
+        333,
+        4559,
+        4560
+      ],
+      "land_province_count": 12,
+      "largest_component_size": 9,
+      "low_internal_adjacency_province_ids": [
+        197,
+        333,
+        1750,
+        4559,
+        4560
+      ],
+      "snake_score": 0.417,
+      "tag": "CAT",
+      "warnings": [
+        "disconnected_ownership",
+        "isolated_component"
+      ]
+    },
+    {
+      "component_count": 1,
+      "components": [
+        [
+          206,
+          4554,
+          4555,
+          4558
+        ]
+      ],
+      "exception_hints": [],
+      "isolated_province_ids": [],
+      "land_province_count": 4,
+      "largest_component_size": 4,
+      "low_internal_adjacency_province_ids": [],
+      "snake_score": 0.0,
+      "tag": "GAL",
+      "warnings": []
+    },
+    {
+      "component_count": 1,
+      "components": [
+        [
+          218,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          1748,
+          1749,
+          4546,
+          4547,
+          4548
+        ]
+      ],
+      "exception_hints": [],
+      "isolated_province_ids": [],
+      "land_province_count": 12,
+      "largest_component_size": 12,
+      "low_internal_adjacency_province_ids": [
+        226
+      ],
+      "snake_score": 0.083,
+      "tag": "GRA",
+      "warnings": []
+    },
+    {
+      "component_count": 1,
+      "components": [
+        [
+          207,
+          208,
+          216,
+          4553,
+          4788
+        ]
+      ],
+      "exception_hints": [],
+      "isolated_province_ids": [],
+      "land_province_count": 5,
+      "largest_component_size": 5,
+      "low_internal_adjacency_province_ids": [
+        207,
+        4788
+      ],
+      "snake_score": 0.4,
+      "tag": "LON",
+      "warnings": []
+    },
+    {
+      "component_count": 1,
+      "components": [
+        [
+          209,
+          210
+        ]
+      ],
+      "exception_hints": [],
+      "isolated_province_ids": [],
+      "land_province_count": 2,
+      "largest_component_size": 2,
+      "low_internal_adjacency_province_ids": [
+        209,
+        210
+      ],
+      "snake_score": 1.0,
+      "tag": "NAV",
+      "warnings": []
+    },
+    {
+      "component_count": 1,
+      "components": [
+        [
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          1851,
+          4150,
+          4556,
+          4787
+        ]
+      ],
+      "exception_hints": [],
+      "isolated_province_ids": [],
+      "land_province_count": 10,
+      "largest_component_size": 10,
+      "low_internal_adjacency_province_ids": [
+        230
+      ],
+      "snake_score": 0.1,
+      "tag": "POR",
+      "warnings": []
+    }
+  ],
+  "rules_checked": [
+    "same-owner land connectivity by Project Crown bitmap pixel adjacency",
+    "isolated one-province components",
+    "rough province-snake warning via low internal adjacency ratio"
+  ],
+  "status": "prototype",
+  "summary": {
+    "countries_checked": 8,
+    "countries_with_disconnected_ownership": 1,
+    "countries_with_snake_warning": 0
+  }
+}

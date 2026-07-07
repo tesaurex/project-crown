@@ -1,0 +1,106 @@
+{
+  "audit": "iberia_poc_ownership",
+  "border_exceptions": [
+    {
+      "exception_type": "island",
+      "justification": "Balearic island components are accepted as a Catalan island exception.",
+      "owner": "CAT",
+      "province_ids": [
+        333,
+        4559,
+        4560
+      ]
+    }
+  ],
+  "manual_overrides": [
+    {
+      "additional_core": "LON",
+      "culture": "leonese",
+      "owner": "CAS",
+      "province_id": 1747,
+      "province_name": "Caceres",
+      "reason": "Assigned to Castile to avoid an isolated Leonese component; Leon keeps a core."
+    }
+  ],
+  "ownership": {
+    "ARA": [
+      211,
+      214,
+      2990,
+      4557
+    ],
+    "CAS": [
+      215,
+      217,
+      219,
+      1745,
+      1746,
+      1747,
+      2751,
+      2754,
+      2755,
+      2989,
+      4551,
+      4552,
+      4789
+    ],
+    "CAT": [
+      197,
+      212,
+      213,
+      220,
+      333,
+      1750,
+      2987,
+      2988,
+      4549,
+      4550,
+      4559,
+      4560
+    ],
+    "GAL": [
+      206,
+      4554,
+      4555,
+      4558
+    ],
+    "GRA": [
+      218,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      1748,
+      1749,
+      4546,
+      4547,
+      4548
+    ],
+    "LON": [
+      207,
+      208,
+      216,
+      4553,
+      4788
+    ],
+    "NAV": [
+      209,
+      210
+    ],
+    "POR": [
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      1851,
+      4150,
+      4556,
+      4787
+    ]
+  },
+  "status": "implemented_phase_2a"
+}

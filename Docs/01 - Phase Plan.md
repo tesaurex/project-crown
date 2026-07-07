@@ -56,8 +56,10 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
 
 **Exit criterion:** Iberia's complete data package (culture table, tag map, formation set, flag map, ownership diff vs. vanilla, **border-cleanliness validator report**) reviewed and approved by the owner; global eligible-culture census committed.
 
-## Phase 2 — Iberia Proof of Concept (Wave 1) ⬜
+## Phase 2 — Iberia Proof of Concept (Wave 1) 🔶
 **Goal:** The full unification ladder working in one region — the pivot's go/no-go gate.
+
+**Phase 2A status (2026-07-07):** Iberian province/country history overrides, Aragon primary-culture correction, conservative Spain formation, Iberian Wedding disable, ownership audit, and border-cleanliness validation are implemented. See [12 - Iberia Culture-State POC Log](12%20-%20Iberia%20Culture-State%20POC%20Log.md). Launch/visual QA and observer pacing are still pending.
 
 - Culture-states: Castile, Aragon, Catalonia (`CAT` exists in vanilla per Phase 1B audit), Galicia, León, Navarra (Basque), Granada (Andalusian), Portugal — tooling-generated province/country history, cores per C-rules. Aragon (`ARA`) exists but its vanilla country history primary culture is Catalan, so Phase 2 must review/override that history data.
 - Cores/claims: own-culture cores day one; Tier 1 "United <Culture>" rank-up; mission-gated group claims.

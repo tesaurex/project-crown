@@ -2,7 +2,7 @@
 
 **Version:** 0.5 - Culture-State World pivot applied (owner directive 2026-07-06); Personalized Borders foundation imported, validated, and locked; owner decisions of 2026-07-04 and 2026-07-06 recorded
 **Date:** 2026-07-06
-**Status:** Approved rule set, pivoted to a fractured culture-state 1444 world (design pivot, not a restart — see §3A and [10 - Culture-State World Design](10%20-%20Culture-State%20World%20Design.md)); no countries created, no gameplay mechanics implemented, no flags imported
+**Status:** Approved rule set, pivoted to a fractured culture-state 1444 world (design pivot, not a restart — see §3A and [10 - Culture-State World Design](10%20-%20Culture-State%20World%20Design.md)); Iberia Phase 2A proof of concept implemented in history/decision/event files (see [12 - Iberia Culture-State POC Log](12%20-%20Iberia%20Culture-State%20POC%20Log.md)); no flags imported
 **Base game:** Europa Universalis IV v1.37.5.0 Inca, 1444 start date; province/border foundation is the imported Personalized Borders map (Docs 07–09)
 
 ---
