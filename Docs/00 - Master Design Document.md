@@ -50,6 +50,11 @@ This is a **design pivot, not a restart**: the map foundation, impassables, colo
 - **AI:** claims and missions sequence AI expansion culture-first, group-second; the Balance of Power deterrent is re-scoped to punish *outside-culture-group* conquest in Tier A (§7.2).
 - **Colonization:** existing colonizer triggers and head-start architecture kept; membership re-expressed for culture-states; unification-first gating plus coastal/naval requirements stop tiny inland minors from colonizing early; forming the nation upgrades colonization strength (§8).
 - **Flags:** modern national flags for formables, modern regional flags for culture-states; ET Modern Flags is a possible later source (not imported); flags ship per rollout wave.
+- **Contested provinces (owner rule 2026-07-06; Doc 10 CP-rules):** historical disputes are expressed through curated claims/cores/missions/events on one clean owner — never through ugly or disconnected borders. Alsace-Lorraine is the model case. Tool ladder: permanent claims for moderate disputes, cores for identity-defining ones, mission/event claims for later-stage disputes, escalating claims after formation.
+- **Natural diplomacy (owner rule 2026-07-06; Doc 10 N-rules):** historical rivals and friends are seeded where logical — grounded in contested provinces, claims, formable competition, trade, geography, religion, or history; restrained, per-wave reviewed, never "every neighbor hates every neighbor."
+- **Rare dynastic/diplomatic unification (owner rule 2026-07-06; Doc 10 U-rules):** cultural nations can also form via royal marriages, rare personal unions, inheritance, federation, and diplomatic integration — rare, condition-gated, never early blob-collapse; war stays a major path but not the only one.
+- **Hostile intervention (owner rule 2026-07-06; §11.1):** the Back War Effort concept gains an enemy-of-my-enemy path — joining wars *against* rivals and severe enemies without liking the side being helped; Great Powers intervene most freely. Future system, later warfare phase.
+- **Colonial nation wars & parent escalation (owner rule 2026-07-06; §9.4):** colonial nations of different empires can fight each other, parents can join, and the opposing parent is automatically pulled in. Future system, after colonial subjects are stable.
 
 ## 4. Key Definitions
 
@@ -156,8 +161,8 @@ Under the culture-state world, the cheap sanctioned expansion inside Europe is t
 
 Other European majors receive home regions in the same spirit during implementation (e.g., Portugal = modern Portugal; Austria/HRE handling stays close to vanilla in v1). Home zone province lists live in tooling as the single source of truth.
 
-### 7.4 Contested Core Zone: Alsace-Lorraine
-Alsace-Lorraine belongs to **both** the French and German modern-border claim sets and is a permanent Franco-German flashpoint:
+### 7.4 Contested Core Zone: Alsace-Lorraine (model contested region)
+Alsace-Lorraine belongs to **both** the French and German modern-border claim sets and is a permanent Franco-German flashpoint. Under the Culture-State pivot it is also the **flagship contested region** (Doc 10, CP4): it starts under **one clean French-side or German-side owner** (chosen in the Wave 2/4 regional setup, O7-compliant — never split into border gore), the opposing side receives permanent claims or cores from the contested-region registry, and the France/Germany formation paths preserve or escalate the dispute:
 
 - If **France** gets/owns/forms into its modern borders first, **Germany gains (or retains) cores** on Alsace-Lorraine.
 - If **Germany** gets/owns/forms into its modern borders first, **France gains (or retains) cores** on Alsace-Lorraine.
@@ -238,6 +243,18 @@ Vanilla trade companies are **not** the final Project Crown system — they are 
 - **Long-term goal:** disconnected overseas land lives in the subject taxonomy — Colonial Administrations, Overseas Dependencies, Dominions — or in a later custom **Trade Post Charter** system.
 - **Scheduled decision point (Phase 7; Risk R-19):** trade companies are ultimately **disabled, replaced, or converted** into the custom overseas subject/trade-post system, decided against stable observer-run data. If the Trade Post Charter system is chosen, building it is Phase 8+/post-v1 scope.
 
+### 9.4 Colonial Nation Wars & Parent Escalation (owner rule 2026-07-06 — future system)
+
+Colonial nations from **different parent empires** can declare war on each other: colonial border wars, colonial rivalries, trade disputes, frontier conflicts — empire-vs-empire proxy wars.
+
+- **War rights:** a colonial nation may declare on another colonial nation **only if they belong to different parent empires.** Same-parent colonial nations never use this system against each other unless a later civil-war/internal-colony system is designed. If a colonial nation is independent or has no parent, normal war rules apply.
+- **Parent joining:** either parent may join its subject's side — defensive or offensive.
+- **Automatic opposing-parent escalation:** if Parent A joins a colonial war, **Parent B is automatically added on the opposite side** — no manual acceptance needed. This applies in both directions and only when both colonial nations have valid parent overlords. It exists so one empire can never freely crush another empire's colonial subject while the other parent sits out.
+- **Worked example:** Colonial Canada (France) attacks Colonial New England (England). France may join Canada's side; the moment France joins, England is automatically added on New England's side — and vice versa if England joins first.
+- **Design goals:** active, competitive colonial nations; colonial borders that shift without parents starting every war; local conflicts that can escalate into major empire wars; rival colonial empires that feel dangerous; overseas drama after colonization begins; colonial empires that feel connected to their subjects.
+- **AI parent escalation weighting** considers: rival status, colonial region importance, trade value, relative strength, debt, manpower, current wars, naval access, and whether the enemy parent is a rival or major threat. Parents are **especially** likely to join when their colonial nation is defending, the enemy parent is a rival, the region is strategically important, the disputed provinces are valuable trade/port provinces, or the colony is central to empire strategy. Great Powers escalate more willingly. Escalation must stay serious and infrequent — not constant.
+- **Sequencing:** shares design logic with Back War Effort / hostile intervention (§11.1); **implemented later**, only after colonial nations and the subject framework are stable (Phases 6+ complete). It does not block the Iberia proof of concept and is not implemented now. Engine feasibility of forced parent participation is a research item (Risk R-47; peace treaties and war-joining are heavily hardcoded, R-1/R-2).
+
 ## 10. The Disconnected Conquest Rule (Rules 13, 15)
 
 **Overseas disconnected land cannot be held directly.** If a country takes ownership of land outside its capital continent/area that does not border connected owned land, that land is packaged into a subject:
@@ -250,14 +267,37 @@ Implementation reality (Risk R-1): peace treaties cannot be modded to produce su
 
 ## 11. Warfare & Diplomacy
 
-### 11.1 Back War Effort (Rule 20)
-A limited "join someone else's war" system:
+### 11.1 Back War Effort & Hostile Intervention (Rule 20, extended by owner rule 2026-07-06)
+A limited "join someone else's war" system with **two entry paths**: backing a friend, or intervening against an enemy.
+
+**Path 1 — Friendly backing (original rule):**
 
 - **Eligibility:** the backer must have **+50 opinion** of the country it backs; the war must be active; the backer must not already be in the war.
 - **Defensive backing (joining the defender's side): easier.** Lower cost (design target: modest prestige + ducat cost, no stability hit).
 - **Offensive backing (joining the attacker's side): more expensive.** Higher cost (design target: significant ducats + prestige, possible stability cost) and stricter eligibility.
-- **AI usage is allowed but strait-jacketed:** no active loans/low debt, healthy manpower (>50%), war exhaustion below a low threshold, not already at war beyond the target war, and a long per-country cooldown after any backing. All thresholds are tunables.
-- **Implementation reality (Risk R-2):** diplomatic actions are hardcoded — this cannot be a real diplo-action button. It ships as a decision/event interface. Scripted war-joining effects are limited and coarse (`join_all_offensive_wars`-style effects join *all* of a target's wars); Phase 0 must prototype whether per-war joining is achievable, with a declared fallback design (backing = subsidies + military access + war-taxes package) if true joining proves impossible.
+
+**Path 2 — Hostile intervention (enemy-of-my-enemy, owner rule 2026-07-06):**
+A country may join a war **against** a nation it severely dislikes, even without the usual positive opinion of the side it helps. Country A attacks Country B; Country C hates Country A; Country C may join B's side against A without especially liking B.
+
+- **Rival rule:** if the target enemy is a **rival**, the intervener is **always eligible** to join a war against it. Rival status bypasses both the +50-opinion requirement toward the helped side and the severe-negative-opinion threshold. Eligibility only — the AI is never *forced* to join a rival war; it still weighs strength, distance, strategic interest, current wars, war goals, and whether intervening helps its own aims.
+- **Non-rival hostile intervention:** stricter — opinion of the target enemy at **−80 or worse**, *plus* at least one strategic factor: target owns the intervener's core; target owns the intervener's permanent claim; target is a regional threat; target is a historical enemy; target blocks the intervener's formable path; target is a direct neighbor; target is a major trade competitor; target is a same-culture / same-culture-group unification rival; target controls a contested province (Doc 10 CP-rules); or target threatens a friendly or strategically important buffer state.
+- **Seeded diplomacy feeds this system:** the natural rivals/friends layer (Doc 10 N-rules) is the primary source of rival status and historical-enemy factors.
+
+**Great Power intervention (owner rule 2026-07-06):**
+Great Powers behave like real power brokers.
+
+- **No intervention cooldown** and minimal restrictions when joining wars through this system.
+- Intervene freely against rivals, regional threats, and countries holding their cores or permanent claims; **no positive-opinion requirement** toward the defender when intervening against a rival or severe enemy.
+- **Hard blockers only:** game-rule impossibility; truce restrictions (unless a future system intentionally allows truce-breaking); extreme collapse (overwhelming rebels/bankruptcy) if needed for AI sanity; and implementation limitations discovered in the engine spike.
+- **DLC note:** the vanilla Great Power ranking (Rights of Man) is **not** in the confirmed DLC profile ([05 - Environment and DLC Profile](05%20-%20Environment%20and%20DLC%20Profile.md)). Great Power status is therefore a scripted trigger (`crown_is_great_power`, e.g. top-N by development/rank among independent nations) — defined at implementation, never assuming the DLC mechanic.
+
+**Normal-country guardrails (non-Great-Power interveners):**
+higher diplomatic/military cost than normal defensive backing; debt check; manpower check; war-exhaustion check; distance/strategic-interest check; truce restrictions; a cooldown; AI sanity checks; and stronger weighting when the enemy is a rival, neighbor, historical enemy, regional threat, or owner of claimed/core land. All thresholds are tunables.
+
+**Design goals:** regional drama, believable power politics, rivals that matter, Great Powers that feel like Great Powers — **without** constant world-war dogpiles (Risk R-43).
+
+- **AI usage is allowed but strait-jacketed** (normal countries): no active loans/low debt, healthy manpower (>50%), war exhaustion below a low threshold, not already at war beyond the target war, and a long per-country cooldown after any backing. Great Powers are exempt from the cooldown per the rules above. All thresholds are tunables.
+- **Implementation reality (Risk R-2):** diplomatic actions are hardcoded — this cannot be a real diplo-action button. It ships as a decision/event interface. Scripted war-joining effects are limited and coarse (`join_all_offensive_wars`-style effects join *all* of a target's wars); Phase 0 must prototype whether per-war joining is achievable, with a declared fallback design (backing = subsidies + military access + war-taxes package) if true joining proves impossible. The hostile-intervention path and colonial parent auto-join (§9.4) inherit this same constraint (R-47).
 
 ### 11.2 Fort Capture
 See §5.2.
@@ -301,6 +341,10 @@ Every system above carries AI requirements. Summarized in one place:
 | Dominions | Convert high-LD colonies **late game only** | Create Dominions early |
 | Independence | Fight independence wars | Peacefully release colonial subjects |
 | Back War Effort | Use it under strict debt/manpower/WE/cooldown limits | Suicide-join wars |
+| Hostile intervention | Weigh strength, distance, strategic interest, current wars, and war goals before joining against rivals/severe enemies | Dogpile every rival war just because it's eligible |
+| Great Power intervention | Act as a power broker — intervene against rivals, regional threats, and holders of its cores/claims | Trigger constant world wars; ignore truces or collapse states |
+| Rare dynastic unification | Take union/federation events rarely, under the U-rule conditions | Snowball the fractured world early; erode HRE density via inheritance chains |
+| Colonial parent escalation | Weigh rival status, region value, trade, strength, debt, manpower, wars, naval access before joining a colonial war | Overcommit to low-value colonial wars; escalate constantly |
 
 AI control in EU4 is coarse (event `ai_chance`, defines, mission weights); every "AI must" above is a playtest commitment, not just a script commitment.
 
@@ -413,3 +457,12 @@ Overrides to the original rule set and resolutions of open questions. Where this
 **Round 6 — border cleanliness (2026-07-06):**
 
 28. **Border cleanliness rule:** starting borders must look intentional, clean, and playable. Culture-state ownership prefers compact, connected, readable countries; no weird, ugly, or disconnected borders without a clear strategic, historical, geographic, or gameplay reason. Same-culture provinces are not forced into one country at the cost of exclaves or border gore — edge provinces are reassigned or the culture is split into multiple same-culture countries (the staple tag must exist among them). Disconnected land is acceptable only for strategic cases: islands, historically meaningful enclaves, trade ports, chokepoints, later overseas/colonial holdings. No random exclaves or ugly province snakes at the 1444 start. (Doc 10 O7, E9 amended; §3A; R-41)
+
+**Round 7 — contested provinces, diplomacy, and colonial wars (2026-07-06):**
+
+29. **Contested provinces:** historical/geographic drama comes from curated contested regions — one clean owner plus opposing-side permanent claims, cores, missions, or events; the tool ladder is claims (moderate) → cores (identity-defining) → mission/event claims (later-stage) → escalating claims after formation. Alsace-Lorraine is the model contested region and may start under a French-side or German-side owner. Never border gore to represent a dispute. (Doc 10 CP-rules; §7.4; R-42)
+30. **Natural rivals and friends:** seeded historical rivals/friends where logical — grounded in contested provinces, cores, claims, formable competition, trade, geography, religion, historical patterns, regional balance, or unification competition; restrained, per-wave reviewed, supportive of unification gameplay. (Doc 10 N-rules; R-44)
+31. **Hostile intervention:** Back War Effort gains an enemy-of-my-enemy path. Rival status always grants eligibility to join wars against that rival (bypassing opinion requirements, without forcing the AI); non-rival intervention needs −80 opinion of the target plus a strategic factor. Great Powers get no cooldown and minimal restrictions (hard blockers: game rules, truces, extreme collapse, engine limits); normal countries keep full guardrails. Great Power status via scripted trigger — Rights of Man is not in the confirmed DLC profile. (§11.1; R-43, R-47)
+32. **Rare dynastic/diplomatic unification:** cultural nations can form via war, diplomacy, royal marriages, rare personal unions, succession/inheritance, peaceful federation, and diplomatic integration — rare, condition-gated (same group, compatible religion, proximity, high relations, no active war, no collapse, region-appropriate, O7-compliant), never early blob-collapse. Iberia gets a rare Castile–Aragon style union path; HRE density protected; Japan keeps Sengoku; the Ottomans are never removed by a random union. (Doc 10 U-rules; R-45, R-46)
+33. **System synergy:** clean borders → contested claims → natural rivalries → interventions and blocs → rare peaceful unifications → formables → stronger colonization. The layers must reinforce each other; a world that feels alive without random chaos. (Doc 10 §13A)
+34. **Colonial nation wars & parent escalation:** colonial nations of different parent empires may war each other; parents may join either side; if one parent joins, the opposing parent is automatically added (both directions, only with valid parent overlords on both sides; same-parent colonial wars excluded pending a future internal-colony system). Future system — after colonial nations and the subject framework are stable; never blocks the Iberia POC. (§9.4; R-47, R-48)

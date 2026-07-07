@@ -15,11 +15,11 @@
 
 | # | System | Why first |
 |---|---|---|
-| 1 | **Phase 0 research spikes, including the three new pivot spikes** (tag pipeline, formable tag-switch behavior, culture extraction) | Cheap experiments that de-risk the entire rollout pattern. The tag-pipeline spike (one dummy tag loads with history/loc/flag) is the recipe every culture-state repeats; the formable spike covers the FRA/ENG "target tag exists at start" case (R-34). |
+| 1 | **Phase 0 research spikes, including the four new pivot spikes** (tag pipeline, formable tag-switch behavior, culture extraction, forced war-joining) | Cheap experiments that de-risk the entire rollout pattern. The tag-pipeline spike (one dummy tag loads with history/loc/flag) is the recipe every culture-state repeats; the formable spike covers the FRA/ENG "target tag exists at start" case (R-34); the forced war-joining spike (10) gates both hostile intervention and colonial parent auto-join (R-47). |
 | 2 | **Culture extraction tooling + world tier map + border-cleanliness validator** | The data layer everything in Doc 10 keys off: culture→province tables from the locked foundation, Tier A/B/C assignment per province, and the O7 validator (connectivity, exclave, and snake detection against foundation adjacency data). Pure tooling, zero game files. |
 | 3 | **Phase 1B data packages: eligibility pass, staple-country list, multi-country partition tables, tag reuse map, formation sets, flag map, border-cleanliness report** | Generated and owner-reviewed *before* any country file exists, honoring the §4A granularity rules (HRE at vanilla density, staples per major culture) and the O7 border rule (compact connected countries; exceptions justified). The Iberia package is the approval gate for the whole pivot. |
 | 4 | **Straits removal** | One file, enormous gameplay impact, unblocked by the foundation lock. Every observer run afterward includes it, so it must land before pace-tuning observations begin. |
-| 5 | **Iberia Proof of Concept (Wave 1)** | The pivot's go/no-go: ~8 culture-states (7 reused vanilla tags + Catalonia), Spain formable excluding Portugal, the full cores/claims ladder, AI weights, Iberian vanilla-content audit. Smallest region that exercises everything. |
+| 5 | **Iberia Proof of Concept (Wave 1)** | The pivot's go/no-go: ~8 culture-states (7 reused vanilla tags + Catalonia), Spain formable excluding Portugal, the full cores/claims ladder, AI weights, Iberian vanilla-content audit — plus a **controlled diplomacy slice only**: Iberian local rivalries/friendships and contested-frontier claims where useful (Doc 10 §12). No intervention, dynastic-event, or colonial-war systems here. Smallest region that exercises everything. |
 | 6 | **Colonial-zone dev rebalance + Tier B "mostly uncolonized" pass (D-4)** | The colonial world's economic baseline, generated from the locked foundation. Sequenced here so the Sub-Saharan decision (D-4) is made once, not patched later. |
 | 7 | **Global colonial regions** | The routing switch for the subject framework. Drawn after world data is stable, before colonization systems test against it. |
 | 8 | **European rollout Waves 2–5 (France → Britain → Italy/Germany → rest of Europe)** | Scales the proven Iberia pattern. Wave 4 keeps the HRE at vanilla-style density per Doc 10 §4A (members tweaked, count preserved); D-8 (France staple vs. formable-only) resolves in Wave 2; each wave ships its own audit, flags, and pace test. |
@@ -30,7 +30,8 @@
 
 - North Africa / Middle East / Asia rollout (Waves 6–7; Ottomans ship as the staple Turkish power per Doc 10 §4A; Japan stays mostly vanilla; China regional-states-first per D-3/R-39; India strong-regional with the Bharat/Hindustan path per R-40).
 - Disconnected-conquest enforcement v1 (needs subject types).
-- Modern-border permanent claim rewards + Alsace-Lorraine contested-zone system (attach to the formables built in Waves 2–4).
+- Modern-border permanent claim rewards + Alsace-Lorraine contested-zone system (attach to the formables built in Waves 2–4; Alsace-Lorraine is the model contested region, Doc 10 CP4).
+- Contested-region registry + diplomacy seed tables shipping with each wave's data package (Doc 10 CP5/N4), each with its per-wave audit that disputed claims and seeded relationships support clean culture-state gameplay.
 - Balance of Power outside-group deterrent full version + mission-ladder passes.
 - Lucky nations replacement (curated culture-state/formable list).
 
@@ -38,7 +39,9 @@
 
 | System | Why delayed |
 |---|---|
-| **Back War Effort** | Highest engine risk (hardcoded diplomacy, coarse war-join effects), zero other systems depend on it. Build in Phase 8 against the spike verdict. |
+| **Back War Effort + hostile intervention (MDD §11.1)** | Highest engine risk (hardcoded diplomacy, coarse war-join effects — spikes 2 and 10), zero other systems depend on it. The full package — friendly backing, enemy-of-my-enemy path, rival rule, Great Power freedoms via the `crown_is_great_power` scripted trigger — builds in Phase 8 against the spike verdicts. Documented now, implemented later. |
+| **Rare dynastic & diplomatic unification package (Doc 10 U-rules)** | The classic blob accelerant (R-45/R-46) — only safe to build once the country setup is stable and unification pace is observable. Phase 7. Documented now, implemented later. |
+| **Colonial nation war rights + parent escalation/auto-join (MDD §9.4)** | Needs colonial nations (Phase 4) and the subject framework (Phase 6) stable, plus spike 10's forced-participation verdict (R-47). Phase 8, with its dedicated proxy-war balance pass in Phase 10 (R-48). Documented now, implemented later. Never blocks the Iberia POC. |
 | **Assimilation suite** | Pure long-horizon flavor; needs native retention, colonial nations, and liberty-desire behavior working first. Phase 9. |
 | **Dominion AI behavior & tuning** | "AI converts at LD > 50, late game only" is meaningless before liberty-desire dynamics are observable in long runs. Phases 8–10. |
 | **Fort capture completion** | Vanilla ZoC covers ~90% of the intent; polish. Phase 8. |

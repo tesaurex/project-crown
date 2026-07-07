@@ -21,8 +21,9 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
   7. **NEW — Tag pipeline:** one dummy custom tag (country file, country history, localization, placeholder flag) loads cleanly and appears in-game. This validates the per-tag file recipe the whole culture-state rollout scales on.
   8. **NEW — Formable behavior:** a test formation decision tag-switches into an *already-existing* tag (the `FRA`-exists-at-start case) — verify subjects, truces, HRE membership, and missions survive the switch sanely.
   9. **NEW — Culture extraction:** tooling reads 1444 primary culture per province from the locked foundation's history and emits a culture→province table matching in-game observation for a sample region (Iberia).
+  10. **NEW — Forced war-joining:** can a third country be scripted into an *ongoing* war on a *specific* side without its acceptance? Verdict covers both hostile intervention (MDD §11.1) and automatic opposing-parent escalation in colonial wars (MDD §9.4, R-47). Fallback designs named in advance if the engine refuses.
 
-**Exit criterion:** Mechanics-empty mod loads; all nine spike verdicts written; Risk Register updated with findings.
+**Exit criterion:** Mechanics-empty mod loads; all ten spike verdicts written; Risk Register updated with findings.
 
 ## Phase 1A — Personalized Borders Foundation Research & Lock ✅
 **Complete (2026-07-06).** Research documented in [06](06%20-%20Personalized%20Borders%20Foundation%20Research.md); controlled import, vanilla European impassables restoration, and remaining province-ID resolution logged in [07](07%20-%20Personalized%20Borders%20Import%20Log.md)/[08](08%20-%20Vanilla%20European%20Impassables%20Merge%20Log.md)/[09](09%20-%20Remaining%20Province%20ID%20Resolution%20Log.md). The province/border foundation is imported, validated, and **locked**.
@@ -47,6 +48,8 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
 - Eligibility pass (Doc 10 E-rules): eligible culture list, micro-culture merge table, vanilla-tag reuse map, new-tag needs list — reviewed per region.
 - **Staple-country designation** (`Tooling/culture_states/staple_countries`, Doc 10 E8) and **multi-country partition tables** for large cultures (E9), honoring the §4A granularity rules (HRE at vanilla-style density, Japan mostly vanilla, Ottomans as Turkish staple, India strong-regional).
 - **Border-cleanliness validator (Doc 10 O7):** tooling checks every proposed culture-state for connectivity, exclaves, and province snakes against the locked foundation's adjacency data; violations are fixed by reassignment (O2) or same-culture splits (E9), or justified in the exception list (`Tooling/culture_states/border_exceptions` — islands, historic enclaves, trade ports, chokepoints only).
+- **Contested-region registry** (`Tooling/culture_states/contested_regions`, Doc 10 CP-rules): curated dispute entries per region — clean owner, claiming side(s), tool tier (permanent claim / core / mission-event / post-formation escalation) — Iberia and the Wave 2–4 anchor disputes (incl. Alsace-Lorraine) at minimum.
+- **Diplomacy seed tables** (`Tooling/culture_states/diplomacy_seed`, Doc 10 N-rules): per-region historical rival/friend entries, each with its justification (contested province, claim, formable clash, trade, geography, religion, history); regionally reviewed before shipping.
 - Formation-set definitions (`Tooling/culture_states/formation_sets`) for Waves 1–4 at minimum.
 - Flag mapping table (`Tooling/culture_states/flag_map`): design-time flag assignment per tag (modern national for formables, modern regional for culture-states). **No flag files imported.**
 - Tag/content budget estimate per wave (how many new tags, history files, localization entries).
@@ -61,6 +64,7 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
 - Spain formable (`SPA`, excludes Portugal) with formation-set cores + modern-border permanent claims on formation; Andalusia (`ADU`) as competing formable.
 - AI weights: formation decision `ai_importance`, mission sequencing, outside-group deterrent v0 scoped to Iberia.
 - Vanilla-content audit for Iberia: Iberian Wedding, Reconquista content, Granada war setup — disable/replace as needed (R-31 pattern).
+- **Controlled diplomacy slice only (Doc 10 §12):** Iberian local rivalries/friendships from the diplomacy seed, and contested-frontier claims where useful. **No** full hostile-intervention system, **no** full rare-dynastic-event package, **no** colonial proxy-war system — those are later mechanics phases (8+) and must not block the Iberia technical foundation.
 - Placeholder or wave-1 flags per the flag map (modern regional; St George's Cross/tricolor are later waves).
 
 **Exit criterion:** Loads clean; **starting borders pass the O7 cleanliness review** (validator clean or exceptions justified, plus an in-game visual check); observer runs show Iberia consolidating to 2–4 states by ~1550 and Spain forming in most runs by ~1650; no vanilla Iberian event misfires in the log; owner reviews and approves scaling the pattern.
@@ -72,7 +76,7 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
 - **Wave 3 — Britain & Ireland** (staple England with St George's Cross, Scotland, Wales, unified Ireland, Highlands → Great Britain/UK formable; Union Jack; modern-UK claims per §7.3).
 - **Wave 4 — Italy & Germany** (Italian subculture states → Italy formable; **HRE at vanilla-style density per Doc 10 §4A** — nation count close to vanilla, members tweaked for culture coherence, subculture staples like Bavaria/Saxony/Brandenburg designated, Germany formable above the sandbox; Alsace-Lorraine contested zone activates with Germany per §7.4).
 - **Wave 5 — Rest of Europe** (Scandinavia, Balkans, Eastern Europe; East Slavic mapping decides which state inherits the Russia special case; horde decision D-6).
-- Each wave ships: tags, ownership, cores/claims, formation set, AI weights, vanilla-content audit, wave flags, border-cleanliness validation + visual review (O7), observer pace test.
+- Each wave ships: tags, ownership, cores/claims, formation set, AI weights, vanilla-content audit, wave flags, border-cleanliness validation + visual review (O7), **contested-region audit (CP-rules) + diplomacy-seed review (N-rules)** — verifying disputed claims and seeded relationships support clean culture-state gameplay — and an observer pace test.
 
 **Exit criterion:** Full-Europe observer run to 1650: unification proceeds at target pace in every wave region, no runaway pan-European blob, no crash, audited vanilla content quiet in logs.
 
@@ -114,17 +118,20 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
 - Modern-border permanent claim sets finalized for UK/France/Spain/Germany formation rewards; Alsace-Lorraine contested-zone system verified live.
 - Mission tree passes: ladder sequencing (culture → group → outward) for all major formation sets; colonial/naval redirects for formables.
 - Lucky nations replacement (curated culture-state/formable list).
+- **Rare dynastic & diplomatic unification package (Doc 10 U-rules):** royal-marriage/union/inheritance/federation event suite per region — rare chance, condition gates (same group, religion, proximity, relations, no war, no collapse), strong AI weighting restrictions, O7-compliant outcomes; Castile–Aragon style Iberian path, British Isles paths, HRE-density-safe German/Italian/French events. Built here, **after** the country setup is stable (R-45, R-46).
 - Unification pace tuning against observer targets per wave region (R-32).
 
 **Exit criterion:** Three observer runs to 1700 — formables form at plausible dates across Europe, no state consistently snowballs across culture-group lines, colonial empires visibly form.
 
 ## Phase 8 — Warfare & Diplomacy ⬜
-**Goal:** The interventionist layer. (Unchanged.)
+**Goal:** The interventionist layer.
 
-- Back War Effort (decision/event interface, +50 opinion gate, defensive-cheap/offensive-expensive, AI restrictions) — built against the Phase 0 spike verdict; fallback design if per-war joining is impossible.
+- Back War Effort — friendly-backing path (decision/event interface, +50 opinion gate, defensive-cheap/offensive-expensive, AI restrictions) — built against the Phase 0 spike verdicts (2 and 10); fallback design if per-war joining is impossible.
+- **Hostile intervention path (MDD §11.1):** rival-rule eligibility, non-rival −80-plus-strategic-factor gate, Great Power freedoms (`crown_is_great_power` scripted trigger — Rights of Man not in the confirmed DLC profile) with hard blockers only, normal-country guardrails and cooldowns (R-43).
+- **Colonial nation war rights + parent escalation v1 (MDD §9.4):** different-parent war rights, parent joining, automatic opposing-parent addition per spike 10's verdict, AI escalation weighting (rivals, region value, trade, strength, naval access) — requires Phases 4 and 6 stable (R-47, R-48).
 - Fort capture completion (on_siege_won hook or control-sweep).
 
-**Exit criterion:** Back War Effort demonstrably used by AI within its restrictions in a hands-off run; fort falls flip surrounding control reliably.
+**Exit criterion:** Back War Effort and hostile intervention demonstrably used by AI within their restrictions in a hands-off run (no dogpile pattern); colonial war/escalation flow demonstrated in a scripted test save; fort falls flip surrounding control reliably.
 
 ## Phase 9 — Culture & Assimilation ⬜
 **Goal:** Colonies that look colonial. (Unchanged.)
@@ -139,6 +146,8 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
 
 - Naval invasion competence review (England/Denmark/Japan behavior without straits).
 - Unification stall/snowball review across all Tier A regions (R-32): pace levers re-tuned against full campaigns.
+- **Intervention & diplomacy balance:** war-frequency review — hostile intervention and Great Power behavior checked for dogpile/world-war patterns (R-43); contested-claim aggression pace (R-42); dynastic-event frequency vs. snowball/HRE-density targets (R-45); diplomacy seed sanity per region (R-44).
+- **Colonial proxy-war balance testing:** escalation frequency, parent overcommitment to low-value colonial wars, colonial-nation aggression, and naval powers dragged into constant overseas conflicts (R-48).
 - Flattened-region stability pass (rebel pressure in the 1/1/1 zones).
 - Economy pass: trade value, tariffs, subject income flows.
 - HRE monitoring per the vanilla-density rule (Doc 10 §4A): blobbing/passivity at near-vanilla member counts, R-33.

@@ -1,6 +1,6 @@
 # Project Crown: Europa Ascendant — Culture-State World Design
 
-**Version:** 1.2 — owner border cleanliness rule added (O7); ownership and split rules amended accordingly
+**Version:** 1.3 — owner rules of 2026-07-06 (round 3) added: contested provinces (CP-rules), natural rivals & friends (N-rules), rare dynastic/diplomatic unification (U-rules), system synergy; hostile intervention and colonial-nation wars specified in MDD §11.1 and §9.4
 **Date:** 2026-07-06
 **Status:** Approved design pivot (owner directive 2026-07-06). Design only — no countries created, no gameplay files edited, no flags imported, no map files changed.
 **Authority:** This document defines the Culture-State World layer. Where it conflicts with pre-pivot text in [00 - Master Design Document](00%20-%20Master%20Design%20Document.md), this document and Appendix B Round 4 of the MDD win.
@@ -105,6 +105,20 @@ The E-rules set the default; these regional rules override the default where the
 - **C4 — Formation reward.** Forming the group nation grants cores/permanent claims on the full formation-set area, and — for UK, France, Spain, and Germany — the existing **modern-border permanent claims** from MDD §7.3 attach at this moment. The Alsace-Lorraine contested-zone rules are unchanged.
 - **C5 — No sanctioned cross-group expansion.** No claims outside your own culture group in Tier A. Conquest outside the group triggers the Balance of Power deterrent (§8, A3).
 
+## 6A. Contested Provinces (CP-rules, owner rule 2026-07-06)
+
+Historical/geographic drama comes from **curated contested provinces**, never from ugly borders. Tension lives in claims, cores, missions, and events — the map itself stays clean.
+
+- **CP1 — One clean owner.** A historically contested province or region is usually assigned to **one clean owner** consistent with O7. The opposing culture group, staple country, or future formable receives permanent claims, cores, missions, or events on it instead. Never create weird or disconnected borders just to represent a historical dispute.
+- **CP2 — Escalation ladder.** Pick the tool by dispute weight:
+  - **Permanent claims** — moderate disputes.
+  - **Cores** — only major, identity-defining disputes.
+  - **Mission/event claims** — later-stage disputes where the early game should stay cleaner.
+  - **Escalating claims after formation** — where the dispute properly belongs to the formable (attach on Tier 2 formation), per C4.
+- **CP3 — Border gore is never the answer.** CP content must not violate O7; the contested layer exists precisely so it doesn't have to.
+- **CP4 — Flagship: Alsace-Lorraine.** The model contested region (MDD §7.4). It **starts under one clean French-side or German-side owner** (chosen in the Wave 2/4 regional setup); the opposing side receives permanent claims or cores; the France and Germany formation paths **preserve or escalate** the dispute (reciprocal cores per §7.4). Natural Franco-German tension, zero ugly starting borders.
+- **CP5 — Curated registry, per wave.** Contested regions live in `Tooling/culture_states/contested_regions` and ship with each rollout wave's data package. Indicative candidates: French/German borderlands, Iberian frontier zones, British Isles contested zones, Balkan borderlands, Anatolian/Balkan frontiers, Persian/Arab/Turkish frontier areas, Indian regional frontier zones, and Chinese regional frontiers later (per D-3 pacing).
+
 ## 7. The Unification Ladder & Formable Nations (F-rules)
 
 - **F1 — Tier 1: unify the culture.** Owning ~90–100% of the culture area fires a "United <Culture>" event/decision: government rank up, small national buffs, and it unlocks Tier 2 mission content. In multi-country cultures (E9) this is a race between the same-culture states — whoever unifies the culture takes the rank-up. Tunable threshold.
@@ -125,6 +139,32 @@ The E-rules set the default; these regional rules override the default where the
 
 Equivalent sets are defined per rollout wave for the rest of Tier A (Scandinavia, the Balkans, North Africa, the Middle East, Asia).
 
+## 7A. Rare Dynastic & Diplomatic Unification (U-rules, owner rule 2026-07-06)
+
+Cultural nations can form through **more than conquest**. War remains a major unification path — but not the only one.
+
+- **U1 — The paths.** War, diplomacy, royal marriages, **rare** personal unions, succession/inheritance events, peaceful federation, and diplomatic integration decisions where appropriate.
+- **U2 — Rare and controlled.** These events help form cultural/formable nations but must not collapse the fractured world into large blobs early. Rare base chance, strong AI weighting restrictions, player choice where practical.
+- **U3 — Standard conditions** for a rare marriage/union/inheritance event (region-tunable):
+  - same culture group or approved formation set;
+  - compatible religion;
+  - geographic proximity or same formation region;
+  - a royal marriage in place if both are monarchies;
+  - high relations;
+  - no major active war between the two;
+  - neither side in severe collapse;
+  - the event makes sense for that specific region;
+  - border cleanliness (O7) not violated unless strategically/historically justified.
+- **U4 — Regional applications.**
+  - **Iberia:** a rare Castile–Aragon style dynastic union path toward Spain (the reworked, slow, conditional descendant of the Iberian Wedding — never a day-one snowball).
+  - **British Isles:** rare dynastic/federation paths toward Great Britain / the UK.
+  - **Germany/Italy/France:** rare same-culture inheritance or diplomatic-unification events — but **HRE density (§4A) must not be destroyed too quickly**.
+  - **Japan:** keeps its vanilla-style Sengoku unification flow unless later tweaks are needed (§4A).
+  - **Ottomans:** never removed by a random union event (staple guarantee, §4A).
+  - **India:** regional diplomatic/federation paths later — never instant unification (R-40).
+  - **China:** regional dynastic paths later only, high-risk, delayed until China-specific design (D-3, R-39).
+- **U5 — Guardrails.** No disconnected unions unless strategically/historically justified (O7 applies to event outcomes too); no massive early snowballing; these events never bypass the clean-border rule; great-power dynastic events can exist later but carefully controlled; HRE dynastic events must respect vanilla-style density; Japan is not forced into a new dynastic system unless later testing supports it.
+
 ## 8. AI Unification Behavior (A-rules)
 
 - **A1 — Claims steer the AI.** EU4's AI strongly prefers cored/claimed targets. C2 cores (own culture) plus C3 mission claims (group, unlocked later) naturally sequence AI expansion: own culture first, group second.
@@ -132,6 +172,21 @@ Equivalent sets are defined per rollout wave for the rest of Tier A (Scandinavia
 - **A3 — Outside-group deterrent.** The MDD's Balance of Power opinion/coalition deterrent is **re-scoped**: it now punishes taking Tier A land *outside your culture group*, instead of "European land from Europeans." Inside-group conquest is the sanctioned path.
 - **A4 — Pace targets, not scripts.** Unification pace is tuned against observer targets per wave (e.g., Iberia consolidates to 2–4 states by ~1550; Spain forms between ~1550–1650 in most runs). Levers: mission gating, claim timing, AE/truce natural pacing, deterrent strength. (Risk R-32.)
 - **A5 — Unify before you colonize.** AI weighting and the colonization gates in §9 keep culture-states focused on the ladder before overseas play.
+
+## 8A. Natural Rivals & Friends (N-rules, owner rule 2026-07-06)
+
+Project Crown seeds **natural historical rivals and friends** where they make sense — restrained and logical, for diplomatic tension and regional flavor, never constant chaos.
+
+- **N1 — Every seeded relationship has a reason.** Rival/friend setup must derive from at least one of: contested provinces (CP-rules), cores, permanent claims, formable ambition clashes, trade competition, geographic rivalry, religious rivalry where appropriate, historical alliance/rivalry patterns where appropriate, regional balance, or same-culture / same-culture-group unification competition. No arbitrary drama.
+- **N2 — Examples of the pattern.**
+  - French-side and German-side states carry rivalry tension over Alsace-Lorraine (CP4).
+  - English and French staple/successor states are natural rivals.
+  - Iberian states hold local rivalries driven by claims and the race for the Spain formable.
+  - Neighboring culture-states can be **friends** where history/geography makes it plausible.
+  - Same-culture states can be **rivals** when competing to be the unifier — or **friendly** when geographically aligned, dynastically linked, or needed for regional balance.
+- **N3 — Guardrails.** No excessive arbitrary rivalries; not every neighbor hates every neighbor; the setup must *support* culture-state unification gameplay, never break clean borders (O7), and every wave's diplomacy seed is **regionally reviewed** before it ships.
+- **N4 — Data home.** Seeded relationships live in `Tooling/culture_states/diplomacy_seed`, one reviewed table per rollout wave, emitted to country history (`historical_rival` / `historical_friend`) at implementation time.
+- **N5 — Diplomacy feeds the war layer.** Seeded rivals are a primary input to hostile intervention (MDD §11.1) and colonial parent escalation (MDD §9.4) — which is exactly why N1's "every relationship has a reason" rule matters.
 
 ## 9. Colonization Behavior (K-rules)
 
@@ -173,14 +228,18 @@ Implementation proceeds in **waves**, each shipping: tags + starting ownership +
 
 **Why Iberia first:** it exercises the entire ladder in the smallest package. ~8 culture-states of which **7 reuse existing vanilla tags** (`CAS`, `ARA`, `GAL`, `LON`, `NAV`, `GRA`, `POR`) and only ~1 new tag is needed (Catalonia); a clean peninsula boundary; a vanilla formable target (`SPA`) with an owner-decided rule already in place (Spain excludes Portugal); a competing formable (`ADU`) to test rival formation; and the flagship colonizers (Castile, Portugal) to later test the unification-then-colonization sequence end to end.
 
-**Wave 1 exit criteria:** mod loads with the Iberian culture-states; **starting borders pass the O7 cleanliness review** (validator clean or exceptions justified, visual in-game check); Iberian vanilla content audited (Iberian Wedding, Reconquista-era events disabled/reworked as needed); observer runs show Iberia consolidating to 2–4 states by ~1550 and Spain forming in most runs by ~1650; no crashes; log clean.
+**Wave 1 diplomacy scope (controlled slice only):** the POC may include **Iberian local rivalries/friendships** (N-rules) and **contested-frontier claims where useful** (CP-rules). It does **not** include the full hostile-intervention system, the full rare-dynastic-event package, or any colonial proxy-war system — those are later mechanics phases and must not block the Iberia technical foundation.
+
+**Wave 1 exit criteria:** mod loads with the Iberian culture-states; **starting borders pass the O7 cleanliness review** (validator clean or exceptions justified, visual in-game check); Iberian vanilla content audited (Iberian Wedding, Reconquista-era events disabled/reworked as needed); Iberian diplomacy seed and contested-region entries regionally reviewed (N3, CP5); observer runs show Iberia consolidating to 2–4 states by ~1550 and Spain forming in most runs by ~1650; no crashes; log clean.
 
 ## 13. Interactions with Existing Systems
 
 | Existing system | Effect of the pivot |
 |---|---|
 | MDD §7.3 modern-border claims | Become the Tier 2 formation reward (C4). Province lists still tooling-maintained. |
-| MDD §7.4 Alsace-Lorraine | Unchanged; activates on German formation exactly as decided. |
+| MDD §7.4 Alsace-Lorraine | Promoted to the **model contested region** (CP4): one clean starting owner, opposing-side claims/cores, dispute preserved/escalated on formation. Reciprocal-core activation on German formation unchanged. |
+| MDD §11.1 Back War Effort | Extended with the **hostile intervention / enemy-of-my-enemy path** and Great Power intervention rules — specified in MDD §11.1, built in the later warfare phase. Seeded rivals (N-rules) are its main input. |
+| MDD §9.4 Colonial nation wars (new) | Future system: colonial nations of different empires can war each other, with parent joining and automatic opposing-parent escalation. Documented now, implemented after colonial subjects are stable; never blocks the Iberia POC. |
 | MDD §7.2 Burgundian Inheritance / Iberian Wedding rework | Largely superseded — the vanilla setups those events assume no longer exist. Each rollout wave's audit disables or replaces them (R-31). |
 | Lucky nations replacement | Still needed; the curated list now names culture-states/formables. |
 | HRE "mostly vanilla in v1" | **Resolved (owner rule 2026-07-06, §4A):** HRE nation count stays close to vanilla; members tweaked, sandbox density preserved; vanilla HRE mechanics kept in v1. Residual mechanical risk tracked as R-33. |
@@ -188,6 +247,21 @@ Implementation proceeds in **waves**, each shipping: tags + starting ownership +
 | Russia special case (owner decision 6) | Unchanged in substance; which culture-state(s) inherit it depends on the East Slavic fragmentation mapping (Wave 5). |
 | 1914 alt-history layer (Rule 28) | Largely **absorbed** by the formable ladder; the 2026 layer stays post-v1. |
 | No-straits, dev flattening, colonial regions, subject taxonomy, assimilation | Unchanged. |
+
+## 13A. System Synergy (owner rule, 2026-07-06)
+
+The layers are designed to reinforce each other — a world that feels alive without becoming random chaos:
+
+1. **Clean borders** (O7) create readable starting states.
+2. **Contested provinces** (CP-rules) create claims and tension on top of those clean borders.
+3. **Claims and cores** create natural rivalries (N-rules).
+4. **Natural rivals** create war-intervention opportunities (hostile intervention, MDD §11.1).
+5. **Natural friends** create diplomatic blocs.
+6. **Royal marriages and rare events** (U-rules) create occasional peaceful unifications.
+7. **Formables** (F-rules) convert regional success into larger nations.
+8. **Colonization** (K-rules) becomes stronger after consolidation — and colonial rivalry eventually feeds back into parent-empire drama (MDD §9.4).
+
+Every new mechanic should be checked against this chain: if it doesn't reinforce a neighboring layer, it probably doesn't belong.
 
 ## 14. Decisions — Resolved and Open
 
