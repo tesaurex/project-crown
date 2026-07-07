@@ -15,7 +15,7 @@
     "Vanilla ADU, GRA, and ALG were not reused because they represent Andalusia, Granada, and Algiers rather than a southern Portuguese Algarve/Gharb rival.",
     "AGH was free in vanilla country_tags and Project Crown country_tags at implementation time.",
     "Primary culture is portugese to keep the state a Portuguese mirror first, not a North African transplant.",
-    "Only the southern Portuguese block was converted to Sunni; Lisboa and northern Portugal remain Catholic under Portugal.",
+    "Beja and Algarve were converted to Sunni; Evora remains Catholic while owned by Al-Gharb; Lisboa and northern Portugal remain Catholic under Portugal.",
     "Portugal receives regular claims, not cores, on the southern rival block.",
     "Al-Gharb receives a single regular claim on Lisboa and no claims on northern Portugal."
   ],
@@ -50,8 +50,8 @@
     {
       "province_id": 4150,
       "province_name": "Evora",
-      "religion": "sunni"
+      "religion": "catholic"
     }
   ],
-  "status": "implemented_phase_2a_1"
+  "status": "implemented_phase_2a_2"
 }

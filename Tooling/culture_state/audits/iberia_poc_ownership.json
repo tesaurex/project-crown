@@ -53,8 +53,12 @@
         "Algarve",
         "Evora"
       ],
-      "religion": "sunni",
-      "reason": "Southern Portuguese Muslim rival state split from Portugal while Lisboa and northern Portugal remain Catholic under Portugal."
+      "religion_by_province": {
+        "229": "sunni",
+        "230": "sunni",
+        "4150": "catholic"
+      },
+      "reason": "Southern Portuguese Muslim rival state split from Portugal while Lisboa, Evora, and northern Portugal remain Catholic."
     }
   ],
   "ownership": {
@@ -139,5 +143,5 @@
       4787
     ]
   },
-  "status": "implemented_phase_2a_1"
+  "status": "implemented_phase_2a_2"
 }

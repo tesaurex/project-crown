@@ -1,7 +1,7 @@
 # Project Crown: Iberia Culture-State POC Log
 
 **Date:** 2026-07-07
-**Status:** Phase 2A implemented for Iberia only. Phase 2A.1 polish added a southern Portuguese Muslim rival and cleaned up Caceres.
+**Status:** Phase 2A implemented for Iberia only. Phase 2A.1 polish added a southern Portuguese Muslim rival and cleaned up Caceres. Phase 2A.2 fixed Al-Gharb localisation and Evora religion after visual QA.
 
 ## Scope
 
@@ -53,6 +53,8 @@ Each culture-state has 1444 cores on its starting provinces. Caceres (`1747`) is
 
 Restrained regular claims were added only for the Portuguese split: Portugal has claims on Beja, Algarve, and Evora; Al-Gharb has a single claim on Lisboa and no claims on northern Portugal. No broad permanent-claim layer, mission ladder, contested-region system, or group-claim system was implemented in this phase. Spain formation grants permanent claims on the vanilla `iberia_region` except `alentejo_area` and `beieras_area`, preserving the owner rule that Portugal is not required for Spain and should not be casually absorbed.
 
+Phase 2A.2 fixed the AGH country localisation so the tag displays as Al-Gharb with adjective Al-Gharbi. The Iberia localisation file uses the EU4-compatible `l_english:` header, one-space entries, and UTF-8 BOM encoding.
+
 ## Southern Portuguese Rival Decision
 
 Vanilla was checked first. `ADU`, `GRA`, and `ALG` exist, but they represent Andalusia, Granada, and Algiers rather than a southern Portuguese Algarve/Gharb state. Project Crown therefore adds custom tag `AGH`, localized as Al-Gharb.
@@ -63,7 +65,7 @@ Al-Gharb is a Portuguese-culture Muslim rival, not a North African transplant:
 - Religion: `sunni`
 - Capital: Algarve (`230`)
 - Starting provinces: Beja (`229`), Algarve (`230`), Evora (`4150`)
-- Converted to Sunni: Beja, Algarve, Evora
+- Religion in the southern block: Beja and Algarve are Sunni; Evora remains Catholic while owned and cored by Al-Gharb.
 - Lisboa (`227`) remains Portuguese, Catholic, and owned by Portugal.
 - Northern Portugal remains Catholic and owned by Portugal: Beira (`228`), Porto (`231`), Braganca (`232`), Coimbra (`1851`), Aviero (`4556`), Ribatejo (`4787`).
 
