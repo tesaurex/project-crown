@@ -12,6 +12,60 @@
       ]
     }
   ],
+  "owner_controller_validation": {
+    "cat_owned_province_ids_checked": [
+      197,
+      212,
+      213,
+      220,
+      333,
+      1750,
+      2987,
+      2988,
+      4549,
+      4550,
+      4559,
+      4560
+    ],
+    "mismatches_after_fix": [],
+    "mismatches_fixed": [
+      {
+        "correct_controller": "CAT",
+        "previous_1444_controller": "ARA",
+        "province_id": 197,
+        "province_name": "Roussillon"
+      },
+      {
+        "correct_controller": "CAT",
+        "previous_1444_controller": "ARA",
+        "province_id": 212,
+        "province_name": "Girona"
+      },
+      {
+        "correct_controller": "CAT",
+        "previous_1444_controller": "ARA",
+        "province_id": 213,
+        "province_name": "Barcelona"
+      },
+      {
+        "correct_controller": "CAT",
+        "previous_1444_controller": "ARA",
+        "province_id": 2987,
+        "province_name": "Urgell"
+      },
+      {
+        "correct_controller": "CAT",
+        "previous_1444_controller": "ARA",
+        "province_id": 2988,
+        "province_name": "Tarragona"
+      }
+    ],
+    "summary": {
+      "iberian_province_history_files_checked": 62,
+      "owner_controller_mismatches_after_fix": 0,
+      "starting_occupations_intentional": false
+    }
+  },
   "claims": [
     {
       "claimant": "POR",
@@ -143,5 +197,5 @@
       4787
     ]
   },
-  "status": "implemented_phase_2a_2"
+  "status": "implemented_phase_2a_3"
 }

@@ -1,7 +1,7 @@
 # Project Crown: Iberia Culture-State POC Log
 
 **Date:** 2026-07-07
-**Status:** Phase 2A implemented for Iberia only. Phase 2A.1 polish added a southern Portuguese Muslim rival and cleaned up Caceres. Phase 2A.2 fixed Al-Gharb localisation and Evora religion after visual QA.
+**Status:** Phase 2A implemented for Iberia only. Phase 2A.1 polish added a southern Portuguese Muslim rival and cleaned up Caceres. Phase 2A.2 fixed Al-Gharb localisation and Evora religion after visual QA. Phase 2A.3 fixed Catalonia's country-selection occupation preview.
 
 ## Scope
 
@@ -85,6 +85,20 @@ Vanilla `ARA - Aragon.txt` uses `primary_culture = catalan` and `capital = 213`.
 
 Catalonia keeps the Balearic island provinces (`333`, `4559`, `4560`). The border validator reports them as disconnected land components, but this is accepted as an O7 island exception: the islands are Catalan-culture, historically/geographically reasonable, and do not create mainland border gore.
 
+## Catalonia Starting Controller Fix
+
+Phase 2A.3 fixed the country-selection preview where Catalonia appeared occupied by Aragon. The cause was not the top-level 1444 owner/controller lines, which already said `owner = CAT` and `controller = CAT`; it was pre-1444 dated vanilla history that reset the effective 1444 controller back to Aragon in five Catalan mainland provinces.
+
+Fixed files:
+
+- Roussillon (`197`)
+- Girona (`212`)
+- Barcelona (`213`)
+- Urgell (`2987`)
+- Tarragona (`2988`)
+
+Each now resolves to `owner = CAT`, `controller = CAT`, and `add_core = CAT` at the 1444 start. The rest of the CAT-owned mainland provinces and Balearic island provinces were checked and already matched. A full Iberian owner/controller consistency check found 62 Iberian province history overrides and 0 remaining owner/controller mismatches at the 1444 start. No Iberian starting occupations are intentional in this POC.
+
 ## Caceres Decision
 
 Caceres (`1747`) is Leonese culture but creates an isolated Leonese component under raw culture ownership. The tested alternatives were:
@@ -150,7 +164,7 @@ Border-cleanliness validation of the implemented table reports:
 
 The Project Crown map validator was run after implementation. It reports zero undefined province pixels and no missing vanilla-defined province IDs in `provinces.bmp`.
 
-All 14 culture-state audit JSON files parsed successfully. Nine touched EU4 `.txt` files passed lightweight brace-balance validation. `crown_iberia_l_english.yml` passed localisation header and one-space indentation validation.
+All 14 culture-state audit JSON files parsed successfully. Touched EU4 `.txt` files passed lightweight brace-balance validation. `crown_iberia_l_english.yml` passed localisation header and one-space indentation validation. Phase 2A.3 added and ran an Iberian owner/controller consistency check: 62 province history overrides checked, 0 remaining 1444 owner/controller mismatches.
 
 ## Intentionally Not Implemented
 
@@ -160,6 +174,7 @@ All 14 culture-state audit JSON files parsed successfully. Nine touched EU4 `.tx
 - No Tier 1 culture-unification events or missions.
 - No broad contested-province registry implementation.
 - No broad diplomacy system.
+- No diplomacy-history or active-war edits.
 - No hostile intervention / Back War Effort.
 - No rare dynastic or diplomatic unification events.
 - No colonial proxy wars or parent-escalation system.
