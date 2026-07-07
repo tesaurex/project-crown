@@ -1,32 +1,54 @@
 # Project Crown: Europa Ascendant — Master Design Document
 
-**Version:** 0.4 - Personalized Borders foundation priority applied; owner decisions of 2026-07-04 and 2026-07-06 recorded; map compatibility gate open
+**Version:** 0.5 - Culture-State World pivot applied (owner directive 2026-07-06); Personalized Borders foundation imported, validated, and locked; owner decisions of 2026-07-04 and 2026-07-06 recorded
 **Date:** 2026-07-06
-**Status:** Approved rule set with Phase 1A map-foundation research added; local skeleton and temporary smoke-test decision exist; no real gameplay mechanics implemented
-**Base game:** Europa Universalis IV v1.37.5.0 Inca, 1444 start date; intended province/border foundation is Personalized Borders if it can be made compatible
+**Status:** Approved rule set, pivoted to a fractured culture-state 1444 world (design pivot, not a restart — see §3A and [10 - Culture-State World Design](10%20-%20Culture-State%20World%20Design.md)); no countries created, no gameplay mechanics implemented, no flags imported
+**Base game:** Europa Universalis IV v1.37.5.0 Inca, 1444 start date; province/border foundation is the imported Personalized Borders map (Docs 07–09)
 
 ---
 
 ## 1. Vision
 
-Project Crown: Europa Ascendant is a full overhaul of EU4 built on a locked province/border foundation. The intended foundation is now the province and border work from **Personalized Borders: Fixes & Historical Borders** (Steam Workshop ID `3418818231`), provided it can be made compatible with EU4 v1.37.5.0 Inca. The overhaul reshapes the game around one central historical dynamic: **Europe projects power outward.** European nations hold a structural advantage in technology, institutions, colonization, and naval power — but no single European major is scripted to win. Instead of blobbing across Europe, the great powers compete for the world: colonies, trade dominance, and overseas empires are the victory currency. The rest of the world is not helpless, but it plays a different game — defense, frontier settlement, and survival against imperial pressure.
+Project Crown: Europa Ascendant is a full overhaul of EU4 built on a locked province/border foundation — the imported and validated province/border work from **Personalized Borders: Fixes & Historical Borders** (Steam Workshop ID `3418818231`) on EU4 v1.37.5.0 Inca. The overhaul reshapes the game around two stacked dynamics:
+
+1. **A fractured culture-state world.** The 1444 Old World starts broken into culture-states: every eligible culture or subculture is its own country where possible. Each culture-state's game is a ladder — unify your own culture area, then unify your culture group into the larger formable nation (Castile, Aragon, León, Catalonia, Galicia, and the Basque state contest **Spain**; French subcultures form **France**; German subcultures form **Germany**; Italian subcultures form **Italy**; the British Isles cultures form **Great Britain/the UK**), and only then look outward. This applies globally where appropriate — North Africa included — not only in Europe. Full rules in [10 - Culture-State World Design](10%20-%20Culture-State%20World%20Design.md).
+2. **Europe projects power outward.** European nations hold a structural advantage in technology, institutions, colonization, and naval power — but no single European state is scripted to win. Coastal and Western European states become the strongest early colonizers, and formed nations out-colonize small culture-states. The victory currency is colonies, trade dominance, and overseas empire. The rest of the world plays a different game — defense, frontier settlement, and survival against imperial pressure — and the Americas, Sub-Saharan Africa, Australia/Oceania, and the Philippines start mostly uncolonized.
+
+Project Crown also replaces vanilla medieval heraldry with **modern and regional flags**: formables fly modern national flags (France's tricolor, England's St George's Cross), culture-states fly modern regional/cultural flags.
 
 ## 2. Design Pillars
 
-1. **Europe outward, not inward.** European majors should find overseas expansion cheaper, safer, and more rewarding than conquering each other. Intra-European conquest is discouraged except for historical formation paths (Great Britain, Spain, France consolidation, etc.).
+1. **Europe outward, not inward.** European states should find overseas expansion cheaper, safer, and more rewarding than conquering each other. Intra-European conquest is discouraged **except along the unification ladder**: unifying your own culture, then your culture group into its formable nation (Great Britain, Spain, France, Germany, Italy, etc.), is the sanctioned path.
 2. **Balanced Europe, dominant Europe.** Europe as a bloc has the upper hand globally, but internally no European major has a guaranteed day-one victory path.
 3. **Empire is a structure, not a paint bucket.** Distant conquest and colonization produce *subjects* — Colonial Administrations, Overseas Dependencies, Dominions — not directly stated provinces. Empires look and behave like empires.
 4. **Colonization is settlement, not replacement — mostly.** Colonized provinces keep native culture and religion by default. Assimilation is rare, slow, hidden, and driven by economic investment.
 5. **Province/border foundation first.** Project Crown must lock the Personalized Borders province/border foundation before no-straits, development rebalance, colonial regions, subjects, or other gameplay systems. Alternate-history border support (1914 / 2026 styles) comes later through formables and decisions, within the limits of the locked foundation.
+6. **A world of nations-in-waiting.** The Old World starts fractured into culture-states; formable nations are the mid-game destination, not alt-history flavor. Cores and claims make own-culture unification cheap, group unification the sanctioned ambition, and cross-group conquest deterred. ([10 - Culture-State World Design](10%20-%20Culture-State%20World%20Design.md))
+7. **Modern flags, modern identity.** No vanilla medieval flags: formables use modern national flags, culture-states use modern regional/cultural flags. The anachronism is deliberate.
 
 ## 3. Scope & Ground Rules
 
-- **Map:** Intended foundation is Personalized Borders: Fixes & Historical Borders (Workshop ID `3418818231`) if the EU4 v1.37.5.0 compatibility risks can be resolved. Do not continue gameplay-system implementation until this foundation is locked. See [06 - Personalized Borders Foundation Research](06%20-%20Personalized%20Borders%20Foundation%20Research.md).
-- **Map import status:** Not imported yet. Phase 1A was research/documentation only.
+- **Map:** Foundation is Personalized Borders: Fixes & Historical Borders (Workshop ID `3418818231`) on EU4 v1.37.5.0. See [06 - Personalized Borders Foundation Research](06%20-%20Personalized%20Borders%20Foundation%20Research.md).
+- **Map import status:** **Imported, validated, and locked** — controlled import, vanilla European impassables restored, remaining province IDs resolved (Docs [07](07%20-%20Personalized%20Borders%20Import%20Log.md)/[08](08%20-%20Vanilla%20European%20Impassables%20Merge%20Log.md)/[09](09%20-%20Remaining%20Province%20ID%20Resolution%20Log.md)). The Culture-State World pivot does **not** touch map files — starting ownership is a history-file layer (Doc 10, O5).
+- **Starting political setup:** The vanilla 1444 political map is replaced in Tier A (Europe, North Africa, Middle East, Asia) by culture-states per [10 - Culture-State World Design](10%20-%20Culture-State%20World%20Design.md). The Americas, Sub-Saharan Africa, Australia/Oceania, and the Philippines start mostly uncolonized (Tier B). Rollout is region-by-region, starting with Iberia.
 - **Start date:** 1444 only. No alternate bookmarks in v1.
 - **Environment and DLC profile:** Design targets Europa Universalis IV v1.37.5.0 Inca with the confirmed DLC/content profile recorded in [05 - Environment and DLC Profile](05%20-%20Environment%20and%20DLC%20Profile.md). Future mechanics must not assume unconfirmed DLC, and any DLC-dependent mechanic must document its dependency before implementation.
 - **Compatibility:** Standalone overhaul. No compatibility patches for other overhauls in v1.
 - **No real gameplay mechanics yet.** The mod currently contains only the local skeleton and temporary smoke-test decision. This document and its companions are the contract for implementation. Implementation begins with the Phase Plan (see [01 - Phase Plan](01%20-%20Phase%20Plan.md)).
+
+## 3A. The Culture-State World Layer (2026-07-06 pivot)
+
+This is a **design pivot, not a restart**: the map foundation, impassables, colonial/global framework, and subject taxonomy all survive unchanged; only design text assuming the vanilla 1444 political map is superseded. The layer is fully specified in [10 - Culture-State World Design](10%20-%20Culture-State%20World%20Design.md); the contract in brief:
+
+- **World tiers:** Tier A (Europe, North Africa, Middle East, Asia) fragments into culture-states; Tier B (Americas, Sub-Saharan Africa, Australia/Oceania, Philippines) starts mostly uncolonized with no culture-states; Tier C holds explicit special cases (Russia/Siberia, Japan, hordes).
+- **Eligibility:** one culture, at least one country; ≥3-province contiguous homeland threshold; micro-cultures merge into siblings; vanilla tags reused wherever plausible. Every major culture has a **staple (anchor) country** that always exists (England, Castile, Aragon, the Ottomans; France pending D-8), and large cultures may split into 2, 3, or more same-culture countries with the staple strongest.
+- **Regional granularity (owner rules 2026-07-06):** the HRE keeps roughly its vanilla nation count (dense sandbox preserved, members tweakable); Japan stays mostly vanilla Sengoku, never unified at start; the Ottomans exist as the staple Turkish power holding all or most Turkish culture land, still never a Western colonial country; China fragmentation is deferred and high-risk — regional states first, never one-province dust; India fragments into strong regional/culture states plus some smaller ones (not steamrollable) with a future India/Bharat/Hindustan unification path. (Doc 10 §4A)
+- **Ownership:** each culture-state starts owning its own-culture provinces (tooling-generated history files; manual override table for exclaves).
+- **Cores/claims:** cores on the whole own-culture area from day one; group-area claims arrive via missions after own-culture unification; the formable grants formation-set cores plus the §7.3 modern-border permanent claims.
+- **Formables:** curated formation sets per group (Spain — excluding Portugal per owner decision —, France, Great Britain/UK, Germany, Italy, and equivalents worldwide); Tier 1 "unify the culture" rank-up precedes Tier 2 formation.
+- **AI:** claims and missions sequence AI expansion culture-first, group-second; the Balance of Power deterrent is re-scoped to punish *outside-culture-group* conquest in Tier A (§7.2).
+- **Colonization:** existing colonizer triggers and head-start architecture kept; membership re-expressed for culture-states; unification-first gating plus coastal/naval requirements stop tiny inland minors from colonizing early; forming the nation upgrades colonization strength (§8).
+- **Flags:** modern national flags for formables, modern regional flags for culture-states; ET Modern Flags is a possible later source (not imported); flags ship per rollout wave.
 
 ## 4. Key Definitions
 
@@ -43,6 +65,12 @@ These definitions are used by every system below and must be implemented as **sc
 | **Connected land** | A province that can reach the owner's capital through a chain of provinces owned by the same country, using land adjacency only (no strait or sea hops — there are no straits). | Approximated in script; exact algorithm defined during implementation of §10. |
 | **Overseas disconnected land** | Owned land outside the capital's continent that does not border connected owned land. | Drives the forced-subject rule (§10). |
 | **Colonial region** | A map zone (moddable file) where cored overseas provinces automatically aggregate into a colonial nation. | Rebuilt globally per §8.4. |
+| **Culture-state** | A starting country representing one culture in a Tier A zone; owns and cores its own-culture provinces (or its partition of them) at 1444. Large cultures may have several same-culture countries. | Doc 10 E/O/C-rules; tooling-generated history files. |
+| **Staple country** | The designated anchor country of a major culture — always exists at start and starts strongest in its culture area (England, Castile, Aragon, the Ottomans; France pending D-8). | Doc 10 E8; `Tooling/culture_states/staple_countries`. |
+| **Culture area** | All provinces whose 1444 primary culture (per the locked foundation's history) is a given culture. | Extracted by tooling; manual override table for bad vanilla data. |
+| **Formation set** | The curated list of cultures + area belonging to one formable nation (may cross vanilla culture-group lines). | `Tooling/culture_states/formation_sets`; Doc 10 F-rules. |
+| **Unification ladder** | Tier 1: unify your culture area → Tier 2: form the group nation → outward colonization/global play. | Doc 10 §1, F-rules, K-rules. |
+| **World tier (A/B/C)** | Routing classification: A = fragmented Old World, B = uncolonized frontier (no culture-states), C = explicit special cases. | `Tooling/culture_states/world_tiers`; Doc 10 §3. |
 
 ## 5. Map & Movement
 
@@ -106,17 +134,17 @@ Europe's advantage comes from four stacked levers, none of which is "Europe gets
 3. **Technology** — vanilla tech groups already encode this; audited, not rebuilt, in v1.
 4. **Naval & colonial monopoly** — Exploration Ideas are Europe-only (§8.2); everyone else gets Frontier Settlement (§8.3).
 
-### 7.2 Internal European Balance (Premise)
-No European major gets a guaranteed win. Concretely:
+### 7.2 Internal European Balance (Premise — amended by the Culture-State pivot)
+No European state gets a guaranteed win. Concretely:
 
-- **PU/inheritance mega-events are reined in.** The Burgundian Inheritance and Iberian Wedding are reworked to be slower, conditional, or compensated — no day-one snowball chains. (Historical formations still possible: Spain via Castile+Aragon remains a supported path.)
-- **Lucky nations** are replaced with a curated, balanced list (or disabled) so the AI field stays competitive.
-- **Mission trees of European majors are redirected outward:** claims and rewards point at colonial regions, trade nodes, and naval targets, not at each other's cores — except historical formation steps.
-- **Intra-European conquest deterrent:** aggressive expansion, coalition, and opinion consequences for taking European land from Europeans are sharply increased via an event-driven "Balance of Power" opinion system (AE itself is only globally tunable — see Risk R-11). Historical formation paths (GB, Spain, France's home region, Italy, Germany-era formables) are exempted via decision/mission framing.
-- **HRE: mostly vanilla in v1.** No HRE overhaul until the core colonial, subject, development, and claim systems are stable. Observer games are monitored for HRE blobbing or passivity (Phase 7); findings feed a post-v1 decision.
+- **PU/inheritance mega-events are largely superseded.** The vanilla setups that the Burgundian Inheritance and Iberian Wedding assume no longer exist under the culture-state start; each rollout wave's vanilla-content audit disables or replaces them (Risk R-31). Spain still forms — through the unification ladder, never a day-one PU chain, and always **excluding Portugal**.
+- **Lucky nations** are replaced with a curated, balanced list (or disabled) so the AI field stays competitive; the list names culture-states/formables.
+- **Mission content follows the ladder:** culture-state missions target own-culture unification first, then unlock group-formation claims, then colonial/naval rewards. Formables' missions point outward at colonial regions, trade nodes, and naval targets.
+- **Outside-group conquest deterrent (re-scoped):** the event-driven "Balance of Power" opinion/coalition system now punishes taking Tier A land **outside your culture group** (AE itself is only globally tunable — see Risk R-11). The unification ladder — own culture, then formation set — is exempt by construction: it runs on cores and sanctioned claims.
+- **HRE: vanilla-style density preserved (owner rule 2026-07-06; Doc 10 §4A).** The HRE nation count stays relatively close to vanilla — members may be tweaked for culture coherence, but the HRE is neither collapsed nor massively expanded, and vanilla HRE mechanics stay in v1. German subcultures are multi-country cultures with staples; Germany remains the formable above the sandbox. Observer games still monitored for blobbing/passivity (R-33).
 
-### 7.3 Home Claims — Permanent Modern-Border Claims (Rules 3–5, amended)
-"Home claims" are the only cheap, sanctioned expansion inside Europe: **permanent claims**, mission claims, and reduced coring/AE treatment, strictly limited to a defined home region per nation. Owner decision (2026-07-04): the four anchor nations below receive permanent claims matching their **modern (present-day) borders**.
+### 7.3 Home Claims — Permanent Modern-Border Claims (Rules 3–5, amended; re-anchored by the Culture-State pivot)
+Under the culture-state world, the cheap sanctioned expansion inside Europe is the **unification ladder** (Doc 10 C-rules): culture-states core their whole culture area from day one and earn group-area claims via missions. The modern-border permanent claims below are the **Tier 2 formation reward** — they attach when the formable forms (Doc 10, C4). Owner decision (2026-07-04): the four anchor nations receive permanent claims matching their **modern (present-day) borders**.
 
 | Nation | Permanent claim zone | Notes |
 |---|---|---|
@@ -138,7 +166,9 @@ Alsace-Lorraine belongs to **both** the French and German modern-border claim se
 
 ## 8. Colonization Systems
 
-### 8.1 Western European Colonial Head Start (Rules 6–7)
+### 8.1 Western European Colonial Head Start (Rules 6–7, amended by the Culture-State pivot)
+Membership is re-expressed for the culture-state world (Doc 10 K-rules): the head start attaches to a **curated set of coastal Western European culture-states and their formables** (Portugal, Castile, Galicia, England, Brittany, Normandy, Netherlands-precursors, plus the existing secondary list). Two gates keep the ladder first: Exploration/head-start content additionally requires a coastal capital with minimum port/naval presence, and colonization strength is tiered — culture-states get modest range, formed nations get the full package (extra colonist, range, naval force limit). Tiny inland minors can never rush colonization; formed nations out-colonize culture-states by design.
+
 Western European colonial powers open the game already leaning overseas:
 
 - Starting bonuses at 1444 (via country history / startup flags): bonus colonial range, an early explorer or conquistador event chain, and a national "Age of Discovery Impulse" modifier (colonist chance, range, naval force limit — initial values set in implementation, tuned in balance phase).
@@ -251,9 +281,9 @@ See §5.2.
 
 ## 13. Long-Term: Alternate-History Border Support (Rule 28)
 
-Post-v1 goal, explicitly **after** the core systems are stable:
+Post-v1 goal, explicitly **after** the core systems are stable. **Note (2026-07-06):** the Culture-State pivot absorbs most of the 1914 layer — Germany, Italy, and national unifications are now core mid-game formables (Doc 10), not post-v1 flavor. What remains here:
 
-- **1914 layer:** formables/decisions producing plausible 1914 borders — Germany, Italy (partly vanilla), Belgium, Romania, Serbia, Greece expansion, unified colonial empires — as close as vanilla provinces allow.
+- **1914 layer (residual):** formables/decisions for borders the unification ladder doesn't produce — Belgium, Romania, Serbia, Greece expansion, unified colonial empires — as close as the locked foundation allows.
 - **2026 layer:** decisions for modern-style nations (post-colonial independence outcomes, national unifications) as an end-game flavor layer.
 - Both layers ride on the subject framework: Dominions and independence wars are the narrative machinery for decolonization-era borders.
 - Accuracy is bounded by the locked province/border foundation; "accurate-looking," not exact.
@@ -275,9 +305,18 @@ AI control in EU4 is coarse (event `ai_chance`, defines, mission weights); every
 
 ## 15. Open Design Questions
 
-**None currently open.** Every question raised during design has been resolved by the owner decisions of 2026-07-04 and recorded in Appendix B (rounds 1–2). New questions that surface during implementation are logged here before work on the affected system begins.
+Decision log **D-1 through D-8** lives in [10 - Culture-State World Design](10%20-%20Culture-State%20World%20Design.md) §14 (single source of truth). Status after the owner rules of 2026-07-06 (round 2):
 
-One scheduled future decision remains by design (not an open question): the **trade company disposition** — disable, replace, or convert into a Trade Post Charter system — decided at the Phase 7 checkpoint against observer-run data (§9.3, Risk R-19).
+- **D-1 Ottomans — RESOLVED:** the Ottomans survive as the staple Turkish-group country (all or most Turkish culture land, balance-tunable); major regional power, never a Western colonial country.
+- **D-2 HRE — RESOLVED:** nation count stays close to vanilla; members tweakable; dense sandbox preserved; vanilla mechanics in v1.
+- **D-5 Japan — RESOLVED:** mostly vanilla Sengoku; tweak only as needed; never a unified 1444 Japan.
+- **D-3** China/Ming — open, refined: fragmentation allowed later but **high-risk** (R-39); regional Chinese states first, never one-province fragmentation.
+- **D-4** Sub-Saharan Africa "mostly uncolonized" — clear colonial-region zones only (recommended) or the whole subcontinent.
+- **D-6** Steppe hordes — keep as hordes in v1 (recommended) or fragment.
+- **D-7** Naming for non-staple culture-states — regional names (recommended); staples and formables carry the national names.
+- **D-8** France at start — Francien staple named France (recommended default per E8) vs. `FRA` reserved strictly as the formable; decide in Wave 2.
+
+One scheduled future decision remains by design (not an open question): the **trade company disposition** — disable, replace, or convert into a Trade Post Charter system — decided at the AI & Balance checkpoint against observer-run data (§9.3, Risk R-19).
 
 ## 16. Companion Documents
 
@@ -286,6 +325,8 @@ One scheduled future decision remains by design (not an open question): the **tr
 - [03 - File & Folder Map](03%20-%20File%20and%20Folder%20Map.md) — mod structure and tooling layout
 - [04 - Implementation Order](04%20-%20Implementation%20Order.md) — what to build first, what to defer, and why
 - [06 - Personalized Borders Foundation Research](06%20-%20Personalized%20Borders%20Foundation%20Research.md) — Phase 1A research on the intended province/border foundation
+- [07 - Personalized Borders Import Log](07%20-%20Personalized%20Borders%20Import%20Log.md) / [08 - Vanilla European Impassables Merge Log](08%20-%20Vanilla%20European%20Impassables%20Merge%20Log.md) / [09 - Remaining Province ID Resolution Log](09%20-%20Remaining%20Province%20ID%20Resolution%20Log.md) — foundation import and validation record
+- [10 - Culture-State World Design](10%20-%20Culture-State%20World%20Design.md) — the Culture-State World layer: tiers, eligibility, ownership, cores/claims, formables, AI, colonization gating, flags, rollout order, open decisions
 
 ## Appendix A — Rule Traceability
 
@@ -347,3 +388,23 @@ Overrides to the original rule set and resolutions of open questions. Where this
 
 12. **Personalized Borders foundation:** Project Crown should use the province/border foundation from Personalized Borders: Fixes & Historical Borders (Workshop ID `3418818231`) if it can be made compatible with EU4 v1.37.5.0 Inca. This priority supersedes the earlier "vanilla map first" premise. (§5.0)
 13. **Foundation sequencing:** Province/border foundation work comes before no-straits, development rebalance, colonial regions, subjects, missions, claims, events, ideas, fort work, Back War Effort, assimilation, and all other gameplay systems. Permission/credit tracking is required before publication or redistribution. (§5.0)
+
+**Round 4 — Culture-State World pivot (2026-07-06):**
+
+14. **Design pivot, not restart:** Project Crown keeps the repo, the imported Personalized Borders foundation, vanilla European impassables, and the colonial/global framework, and is redesigned around a fractured culture-state 1444 world. (§1, §3A, Doc 10)
+15. **Culture-state start:** every eligible culture/subculture in Tier A (Europe, North Africa, Middle East, Asia unless later excluded) starts as its own country where possible; each first unifies its culture area, then its culture group into a formable nation (Spain excl. Portugal, France, Great Britain/UK, Germany, Italy, and equivalents globally). (Doc 10 §1, §4–§7)
+16. **Uncolonized frontier:** the Americas, Sub-Saharan Africa, Australia/Oceania, and the Philippines start mostly uncolonized; no culture-states there. North Africa is explicitly *not* excluded — it fragments. (Doc 10 §3, §11)
+17. **Colonization under the pivot:** culture-states can colonize eventually, but local/group unification comes first; coastal and Western European states are the strongest early colonizers; formed nations out-colonize culture-states; no absurd early colonization by tiny inland minors. Existing colonizer triggers/carve-outs (Ottoman, Russia) survive re-expressed. (§8.1, Doc 10 §9)
+18. **Modern flags:** formables use modern national flags (England = St George's Cross, France = tricolor), culture-states use modern regional/cultural flags; ET Modern Flags may serve as a later reference/source but is not imported yet. (§2 pillar 7, Doc 10 §10)
+19. **Rollout order:** Iberia proof of concept first, then France, Britain, Italy/Germany, rest of Europe, then North Africa/Middle East, then Asia. (Doc 10 §12)
+20. **No implementation yet:** the pivot is design-only at this date — no countries created, no gameplay files edited, no flag files imported, no map file changes.
+
+**Round 5 — Culture-State clarifications (2026-07-06):**
+
+21. **Multi-country cultures:** "culture-state" does not always mean exactly one country per subculture — a culture too large for one balanced state may start as 2, 3, or more same-culture countries. (Doc 10 E9)
+22. **Staple countries:** every major eligible culture/subculture has a designated staple/anchor country that always exists at start and starts strongest: England (English), Castile (Castilian), Aragon (Aragonese), the Ottomans (Turkish group); France is the Francien staple unless a region plan reserves it strictly as the formable (D-8). (Doc 10 E8)
+23. **HRE density:** the HRE nation count stays relatively close to vanilla EU4 — members may be tweaked, but the HRE is neither collapsed nor massively expanded; the vanilla-style dense HRE political sandbox is preserved. (Doc 10 §4A; supersedes the round-4 working assumption of a consolidated ~8–12-state Germany region)
+24. **Japan:** Japanese nations stay mostly vanilla; tweak only what is needed; break up further only if testing/design shows a need; never a unified 1444 Japan. (Doc 10 §4A; resolves D-5)
+25. **Ottomans:** the Ottomans still exist as the staple Turkish/Turkish-group country, controlling all or the majority of Turkish culture land depending on later balance; a major regional power, still never treated as a Western colonial country. (Doc 10 §4A; resolves D-1; carve-out decisions 1 and 10 unchanged)
+26. **China:** may still be fragmented later, but marked high-risk (Mandate of Heaven, Ming/Qing content, tributaries, dense development, AI snowball — R-39); regional Chinese states first, never extreme one-province fragmentation. (Doc 10 §4A; refines D-3)
+27. **India:** broken up a lot but not steamrollable — strong regional/culture states plus some smaller states, not hundreds of weak minors; future India/Bharat/Hindustan unification path required. (Doc 10 §4A; R-40)
