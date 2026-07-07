@@ -1,11 +1,11 @@
 # Project Crown: Iberia Culture-State POC Log
 
 **Date:** 2026-07-07
-**Status:** Phase 2A implemented for Iberia only. Phase 2A.1 polish added a southern Portuguese Muslim rival and cleaned up Caceres. Phase 2A.2 fixed Al-Gharb localisation and Evora religion after visual QA. Phase 2A.3 fixed Catalonia's country-selection occupation preview.
+**Status:** Phase 2A implemented for Iberia only. Phase 2A.1 polish added a southern Portuguese Muslim rival and cleaned up Caceres. Phase 2A.2 fixed Al-Gharb localisation and Evora religion after visual QA. Phase 2A.3 fixed Catalonia's country-selection occupation preview. Phase 2A.4 removed a tiny Catalonia/Pyrenees visual sliver.
 
 ## Scope
 
-This phase implements the first playable Culture-State World region: Iberia. It uses vanilla reuse tags where available, one Project Crown custom tag for the southern Portuguese rival, and Project Crown history-file overrides. No map files, imported flags, non-Iberian province histories, hostile intervention mechanics, rare dynastic unification events, or colonial proxy-war systems were implemented.
+This phase implements the first playable Culture-State World region: Iberia. It uses vanilla reuse tags where available, one Project Crown custom tag for the southern Portuguese rival, and Project Crown history-file overrides. Phase 2A.4 makes one targeted four-pixel `provinces.bmp` cleanup at the Pyrenees/Catalonia/Foix boundary; no province IDs, `definition.csv`, imported flags, non-Iberian province histories, hostile intervention mechanics, rare dynastic unification events, or colonial proxy-war systems were implemented.
 
 ## Pre-Flight
 
@@ -99,6 +99,14 @@ Fixed files:
 
 Each now resolves to `owner = CAT`, `controller = CAT`, and `add_core = CAT` at the 1444 start. The rest of the CAT-owned mainland provinces and Balearic island provinces were checked and already matched. A full Iberian owner/controller consistency check found 62 Iberian province history overrides and 0 remaining owner/controller mismatches at the 1444 start. No Iberian starting occupations are intentional in this POC.
 
+## Pyrenees/Catalonia Sliver Fix
+
+Phase 2A.4 visual QA found a tiny Catalonia-colored sliver north of the Pyrenees wasteland near the Foix/Urgell boundary. Programmatic bitmap inspection identified it as a detached four-pixel component of Urgell (`2987`, color `[220, 251, 47]`) at pixels `(2813,670)`, `(2814,670)`, `(2815,670)`, and `(2813,671)`.
+
+Those exact pixels are Foix (`4694`, color `[172, 194, 112]`) in vanilla and sit on the French side of the Pyrenees barrier. The fix replaces only those four pixels with Foix. Urgell now has one bitmap component, Pyrenees (`4154`) remains unchanged at 259 pixels, and the immediate sliver neighborhood has no remaining differences from vanilla. No province IDs, `definition.csv`, country history, province history, diplomacy, or gameplay systems were changed.
+
+The audit is saved at `Tooling/culture_state/audits/pyrenees_catalonia_sliver_fix.json`.
+
 ## Caceres Decision
 
 Caceres (`1747`) is Leonese culture but creates an isolated Leonese component under raw culture ownership. The tested alternatives were:
@@ -162,13 +170,13 @@ Border-cleanliness validation of the implemented table reports:
 - 0 province-snake warnings.
 - `AGH`, `CAS`, `ARA`, `LON`, `GAL`, `NAV`, `GRA`, and `POR` are connected by land under the validator.
 
-The Project Crown map validator was run after implementation. It reports zero undefined province pixels and no missing vanilla-defined province IDs in `provinces.bmp`.
+The Project Crown map validator was run after implementation and again after the Phase 2A.4 sliver cleanup. It reports zero undefined province pixels and no missing vanilla-defined province IDs in `provinces.bmp`.
 
-All 14 culture-state audit JSON files parsed successfully. Touched EU4 `.txt` files passed lightweight brace-balance validation. `crown_iberia_l_english.yml` passed localisation header and one-space indentation validation. Phase 2A.3 added and ran an Iberian owner/controller consistency check: 62 province history overrides checked, 0 remaining 1444 owner/controller mismatches.
+All culture-state audit JSON files parsed successfully. Touched EU4 `.txt` files passed lightweight brace-balance validation. `crown_iberia_l_english.yml` passed localisation header and one-space indentation validation. Phase 2A.3 added and ran an Iberian owner/controller consistency check: 62 province history overrides checked, 0 remaining 1444 owner/controller mismatches.
 
 ## Intentionally Not Implemented
 
-- No map edits.
+- No broad map edits; Phase 2A.4 changed only four `provinces.bmp` pixels at the Pyrenees/Catalonia/Foix boundary.
 - No outside flag imports; `AGH` uses an original placeholder flag.
 - No non-Iberian region overhaul.
 - No Tier 1 culture-unification events or missions.

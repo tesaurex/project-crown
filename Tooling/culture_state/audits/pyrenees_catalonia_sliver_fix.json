@@ -1,0 +1,50 @@
+{
+  "audit": "pyrenees_catalonia_sliver_fix",
+  "date": "2026-07-07",
+  "status": "fixed",
+  "target_area": "Pyrenees wasteland / Catalonia / Foix boundary",
+  "source_province_before_fix": {
+    "id": 2987,
+    "name": "Urgell",
+    "color": [220, 251, 47],
+    "component_before_fix": {
+      "pixel_count": 4,
+      "bbox": [2813, 670, 2815, 671],
+      "coords": [
+        [2813, 670],
+        [2814, 670],
+        [2815, 670],
+        [2813, 671]
+      ]
+    }
+  },
+  "replacement_province": {
+    "id": 4694,
+    "name": "Foix",
+    "color": [172, 194, 112]
+  },
+  "changed_pixels": 4,
+  "reason": "A detached four-pixel Urgell component sat north of the Pyrenees barrier on pixels that are Foix in vanilla. Replacing only those pixels removes the Catalonia-colored sliver without changing province IDs, definition.csv, history, country setup, diplomacy, or gameplay systems.",
+  "validation": {
+    "map_validator": {
+      "undefined_pixel_count": 0,
+      "missing_vanilla_defined_ids": []
+    },
+    "component_check": {
+      "urgell_components_after_fix": [
+        {
+          "pixel_count": 328,
+          "bbox": [2809, 674, 2831, 699]
+        }
+      ],
+      "pyrenees_components_after_fix": [
+        {
+          "pixel_count": 259,
+          "bbox": [2785, 665, 2841, 681]
+        }
+      ],
+      "sliver_neighborhood_remaining_diffs_against_vanilla": 0
+    },
+    "json_parse": "passed"
+  }
+}
