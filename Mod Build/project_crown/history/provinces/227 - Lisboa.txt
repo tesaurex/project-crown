@@ -3,6 +3,7 @@
 owner = POR
 controller = POR
 add_core = POR
+add_claim = AGH
 culture = portugese
 religion = catholic
 capital = "Lisboa"

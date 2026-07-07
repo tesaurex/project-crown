@@ -6,8 +6,29 @@
     "Historical enclave, island, trade-port, and chokepoint exceptions are flagged as hints, not approved.",
     "This validator does not implement gameplay or edit ownership."
   ],
-  "ownership_source": "mock Iberia ownership generated from vanilla province culture primary tags",
+  "ownership_source": "Tooling/culture_state/audits/iberia_ownership_implemented.json",
   "results": [
+    {
+      "component_count": 1,
+      "components": [
+        [
+          229,
+          230,
+          4150
+        ]
+      ],
+      "exception_hints": [],
+      "isolated_province_ids": [],
+      "land_province_count": 3,
+      "largest_component_size": 3,
+      "low_internal_adjacency_province_ids": [
+        230,
+        4150
+      ],
+      "snake_score": 0.667,
+      "tag": "AGH",
+      "warnings": []
+    },
     {
       "component_count": 1,
       "components": [
@@ -36,6 +57,7 @@
           219,
           1745,
           1746,
+          1747,
           2751,
           2754,
           2755,
@@ -47,12 +69,10 @@
       ],
       "exception_hints": [],
       "isolated_province_ids": [],
-      "land_province_count": 12,
-      "largest_component_size": 12,
-      "low_internal_adjacency_province_ids": [
-        2989
-      ],
-      "snake_score": 0.083,
+      "land_province_count": 13,
+      "largest_component_size": 13,
+      "low_internal_adjacency_province_ids": [],
+      "snake_score": 0.0,
       "tag": "CAS",
       "warnings": []
     },
@@ -155,7 +175,7 @@
       "warnings": []
     },
     {
-      "component_count": 2,
+      "component_count": 1,
       "components": [
         [
           207,
@@ -163,30 +183,19 @@
           216,
           4553,
           4788
-        ],
-        [
-          1747
         ]
       ],
-      "exception_hints": [
-        "single_province_component_review:Caceres"
-      ],
-      "isolated_province_ids": [
-        1747
-      ],
-      "land_province_count": 6,
+      "exception_hints": [],
+      "isolated_province_ids": [],
+      "land_province_count": 5,
       "largest_component_size": 5,
       "low_internal_adjacency_province_ids": [
         207,
-        1747,
         4788
       ],
-      "snake_score": 0.5,
+      "snake_score": 0.4,
       "tag": "LON",
-      "warnings": [
-        "disconnected_ownership",
-        "isolated_component"
-      ]
+      "warnings": []
     },
     {
       "component_count": 1,
@@ -214,24 +223,19 @@
         [
           227,
           228,
-          229,
-          230,
           231,
           232,
           1851,
-          4150,
           4556,
           4787
         ]
       ],
       "exception_hints": [],
       "isolated_province_ids": [],
-      "land_province_count": 10,
-      "largest_component_size": 10,
-      "low_internal_adjacency_province_ids": [
-        230
-      ],
-      "snake_score": 0.1,
+      "land_province_count": 7,
+      "largest_component_size": 7,
+      "low_internal_adjacency_province_ids": [],
+      "snake_score": 0.0,
       "tag": "POR",
       "warnings": []
     }
@@ -243,8 +247,8 @@
   ],
   "status": "prototype",
   "summary": {
-    "countries_checked": 8,
-    "countries_with_disconnected_ownership": 2,
+    "countries_checked": 9,
+    "countries_with_disconnected_ownership": 1,
     "countries_with_snake_warning": 0
   }
 }

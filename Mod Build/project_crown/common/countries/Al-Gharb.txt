@@ -1,0 +1,67 @@
+# Country Name: Please see filename.
+
+graphical_culture = muslimgfx
+
+color = { 36 130 82 }
+revolutionary_colors = { 1 9 4 }
+
+historical_idea_groups = {
+	defensive_ideas
+	maritime_ideas
+	trade_ideas
+	religious_ideas
+	diplomatic_ideas
+	economic_ideas
+	quality_ideas
+	exploration_ideas
+}
+
+historical_units = {
+	mamluk_archer
+	mamluk_cavalry_charge
+	mamluk_duel
+	mamluk_musket_charge
+	muslim_mass_infantry
+	muslim_dragoon
+	ali_bey_reformed_infantry
+}
+
+monarch_names = {
+	"Yahya #0" = 80
+	"Muhammad #0" = 70
+	"Yusuf #0" = 60
+	"Ali #0" = 30
+	"Ahmad #0" = 20
+	"Hasan #0" = 20
+	"Umar #0" = 10
+	"Aisha #0" = -1
+	"Fatima #0" = -1
+}
+
+leader_names = {
+	"al-Gharbi"
+	"Ibn Faru"
+	"Ibn Beja"
+	"Ibn Evora"
+	"Ibn Algarve"
+}
+
+ship_names = {
+	"Al-Gharb"
+	"Faru"
+	"Beja"
+	"Evora"
+	"Al-Bahr"
+	"Al-Qasr"
+}
+
+army_names = {
+	"Jaish al-Gharb"
+	"Jaish al $PROVINCE$"
+}
+
+fleet_names = {
+	"Armada al-Gharb"
+	"Armada al $PROVINCE$"
+	"Atlantic Squadron"
+}

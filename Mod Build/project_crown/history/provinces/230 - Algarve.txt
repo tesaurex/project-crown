@@ -1,10 +1,11 @@
 #230 - Algarve
 
-owner = POR
-controller = POR
-add_core = POR
+owner = AGH
+controller = AGH
+add_core = AGH
+add_claim = POR
 culture = portugese
-religion = catholic
+religion = sunni
 capital = "Faro"
 trade_goods = salt
 hre = no

@@ -12,6 +12,27 @@
       "component_count": 1,
       "components": [
         [
+          229,
+          230,
+          4150
+        ]
+      ],
+      "exception_hints": [],
+      "isolated_province_ids": [],
+      "land_province_count": 3,
+      "largest_component_size": 3,
+      "low_internal_adjacency_province_ids": [
+        230,
+        4150
+      ],
+      "snake_score": 0.667,
+      "tag": "AGH",
+      "warnings": []
+    },
+    {
+      "component_count": 1,
+      "components": [
+        [
           211,
           214,
           2990,
@@ -202,24 +223,19 @@
         [
           227,
           228,
-          229,
-          230,
           231,
           232,
           1851,
-          4150,
           4556,
           4787
         ]
       ],
       "exception_hints": [],
       "isolated_province_ids": [],
-      "land_province_count": 10,
-      "largest_component_size": 10,
-      "low_internal_adjacency_province_ids": [
-        230
-      ],
-      "snake_score": 0.1,
+      "land_province_count": 7,
+      "largest_component_size": 7,
+      "low_internal_adjacency_province_ids": [],
+      "snake_score": 0.0,
       "tag": "POR",
       "warnings": []
     }
@@ -231,7 +247,7 @@
   ],
   "status": "prototype",
   "summary": {
-    "countries_checked": 8,
+    "countries_checked": 9,
     "countries_with_disconnected_ownership": 1,
     "countries_with_snake_warning": 0
   }

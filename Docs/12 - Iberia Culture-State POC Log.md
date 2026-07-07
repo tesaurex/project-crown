@@ -1,16 +1,17 @@
 # Project Crown: Iberia Culture-State POC Log
 
 **Date:** 2026-07-07
-**Status:** Phase 2A implemented for Iberia only.
+**Status:** Phase 2A implemented for Iberia only. Phase 2A.1 polish added a southern Portuguese Muslim rival and cleaned up Caceres.
 
 ## Scope
 
-This phase implements the first playable Culture-State World region: Iberia. It uses vanilla reuse tags and Project Crown history-file overrides only. No map files, flags, non-Iberian province histories, hostile intervention mechanics, rare dynastic unification events, or colonial proxy-war systems were implemented.
+This phase implements the first playable Culture-State World region: Iberia. It uses vanilla reuse tags where available, one Project Crown custom tag for the southern Portuguese rival, and Project Crown history-file overrides. No map files, imported flags, non-Iberian province histories, hostile intervention mechanics, rare dynastic unification events, or colonial proxy-war systems were implemented.
 
 ## Pre-Flight
 
 - Working folder confirmed: `/Users/roman/Desktop/Project Crown`
-- Branch confirmed: `iberia-poc`
+- Phase 2A branch confirmed: `iberia-poc`
+- Phase 2A.1 polish branch confirmed: `iberia-poc-polish`
 - Git working tree was clean before work started.
 - Vanilla EU4 was read read-only from `/Users/roman/Library/Application Support/Steam/steamapps/common/Europa Universalis IV`
 
@@ -26,15 +27,17 @@ This phase implements the first playable Culture-State World region: Iberia. It 
 | `NAV` | Navarre / Basque state | `basque` | Navarra (`210`) |
 | `GRA` | Granada / Andalusian state | `andalucian` | Granada (`223`) |
 | `POR` | Portugal / Portuguese state | `portugese` | Lisboa (`227`) |
+| `AGH` | Al-Gharb / southern Portuguese Muslim rival | `portugese` | Algarve (`230`) |
 
 ## Province Ownership Approach
 
-Ownership follows the Phase 1B Iberia culture audit for all Iberian land provinces except Caceres. Each Iberian province history override preserves vanilla development, trade goods, religion, culture, discovery, and future dated bookmark history while replacing the 1444 top-level `owner`, `controller`, and core setup.
+Ownership follows the Phase 1B Iberia culture audit for all Iberian land provinces except Caceres and the Phase 2A.1 southern Portuguese split. Each Iberian province history override preserves vanilla development, trade goods, discovery, and future dated bookmark history while replacing the 1444 top-level `owner`, `controller`, and core setup where needed.
 
 Summary:
 
 | Tag | Province count | Province IDs |
 |---|---:|---|
+| `AGH` | 3 | 229, 230, 4150 |
 | `CAS` | 13 | 215, 217, 219, 1745, 1746, 1747, 2751, 2754, 2755, 2989, 4551, 4552, 4789 |
 | `ARA` | 4 | 211, 214, 2990, 4557 |
 | `CAT` | 12 | 197, 212, 213, 220, 333, 1750, 2987, 2988, 4549, 4550, 4559, 4560 |
@@ -42,13 +45,29 @@ Summary:
 | `GAL` | 4 | 206, 4554, 4555, 4558 |
 | `NAV` | 2 | 209, 210 |
 | `GRA` | 12 | 218, 221, 222, 223, 224, 225, 226, 1748, 1749, 4546, 4547, 4548 |
-| `POR` | 10 | 227, 228, 229, 230, 231, 232, 1851, 4150, 4556, 4787 |
+| `POR` | 7 | 227, 228, 231, 232, 1851, 4556, 4787 |
 
 ## Cores and Claims
 
-Each culture-state has 1444 cores on its starting provinces. Caceres (`1747`) is owned and cored by Castile but also keeps a Leonese core to represent the cultural dispute without creating a disconnected Leonese start.
+Each culture-state has 1444 cores on its starting provinces. Caceres (`1747`) is owned and cored by Castile and no longer carries a Leon core. Al-Gharb (`AGH`) cores Beja (`229`), Algarve (`230`), and Evora (`4150`). Portugal keeps cores on Lisboa and northern Portugal, but not on the southern rival block.
 
-No broad permanent-claim layer, mission ladder, contested-region system, or group-claim system was implemented in this phase. Spain formation grants permanent claims on the vanilla `iberia_region` except `alentejo_area` and `beieras_area`, preserving the owner rule that Portugal is not required for Spain and should not be casually absorbed.
+Restrained regular claims were added only for the Portuguese split: Portugal has claims on Beja, Algarve, and Evora; Al-Gharb has a single claim on Lisboa and no claims on northern Portugal. No broad permanent-claim layer, mission ladder, contested-region system, or group-claim system was implemented in this phase. Spain formation grants permanent claims on the vanilla `iberia_region` except `alentejo_area` and `beieras_area`, preserving the owner rule that Portugal is not required for Spain and should not be casually absorbed.
+
+## Southern Portuguese Rival Decision
+
+Vanilla was checked first. `ADU`, `GRA`, and `ALG` exist, but they represent Andalusia, Granada, and Algiers rather than a southern Portuguese Algarve/Gharb state. Project Crown therefore adds custom tag `AGH`, localized as Al-Gharb.
+
+Al-Gharb is a Portuguese-culture Muslim rival, not a North African transplant:
+
+- Primary culture: `portugese`
+- Religion: `sunni`
+- Capital: Algarve (`230`)
+- Starting provinces: Beja (`229`), Algarve (`230`), Evora (`4150`)
+- Converted to Sunni: Beja, Algarve, Evora
+- Lisboa (`227`) remains Portuguese, Catholic, and owned by Portugal.
+- Northern Portugal remains Catholic and owned by Portugal: Beira (`228`), Porto (`231`), Braganca (`232`), Coimbra (`1851`), Aviero (`4556`), Ribatejo (`4787`).
+
+`AGH` and `POR` are seeded as historical rivals. `AGH` uses an original placeholder flag generated for this custom tag; no outside flag pack was imported.
 
 ## Aragon Primary Culture Decision
 
@@ -72,7 +91,7 @@ Caceres (`1747`) is Leonese culture but creates an isolated Leonese component un
 - Granada ownership: disconnected Granadan component.
 - Castile ownership: all mainland Iberian countries connected except the accepted Catalan islands.
 
-The POC assigns Caceres to Castile and gives Leon a core.
+Phase 2A.1 keeps Caceres owned by Castile, changes its culture to `castillian`, and removes the Leon core. This is a border-cleanliness and culture-readability fix: Caceres does not border Leon in the current setup and should not imply a stranded Leonese component.
 
 ## Spain Formation Decision
 
@@ -108,7 +127,7 @@ Required key provinces:
 
 ## Diplomacy
 
-Diplomacy changes are intentionally minimal. Vanilla Castile-Granada rivalry and Castile-Portugal friendship are preserved through copied country history. Granada now has `historical_rival = CAS` for a mutual Reconquista frontier rivalry. No broader diplomacy system was added.
+Diplomacy changes are intentionally minimal. Vanilla Castile-Granada rivalry and Castile-Portugal friendship are preserved through copied country history. Granada has `historical_rival = CAS` for a mutual Reconquista frontier rivalry. Phase 2A.1 adds only the local `POR`/`AGH` historical rivalry. No broader diplomacy system was added.
 
 ## Vanilla Content Risks
 
@@ -118,24 +137,23 @@ Spanish, Aragonese, Portuguese, and Granadan mission-tree assumptions remain a k
 
 ## Validation Result
 
-The implemented ownership table is saved at `Tooling/culture_state/audits/iberia_poc_ownership.json`.
+The implemented ownership table is saved at `Tooling/culture_state/audits/iberia_ownership_implemented.json` and mirrored in `Tooling/culture_state/audits/iberia_poc_ownership.json`.
 
 Border-cleanliness validation of the implemented table reports:
 
-- 8 countries checked.
+- 9 countries checked.
 - 1 country with disconnected ownership: `CAT`, due only to the accepted Balearic island exception.
 - 0 province-snake warnings.
-- `CAS`, `ARA`, `LON`, `GAL`, `NAV`, `GRA`, and `POR` are connected by land under the validator.
+- `AGH`, `CAS`, `ARA`, `LON`, `GAL`, `NAV`, `GRA`, and `POR` are connected by land under the validator.
 
-The Project Crown map validator was run after implementation. It still reports zero undefined province pixels and no missing province IDs in `provinces.bmp`.
+The Project Crown map validator was run after implementation. It reports zero undefined province pixels and no missing vanilla-defined province IDs in `provinces.bmp`.
 
-JSON audit files were parsed successfully. EU4 text files received lightweight brace-balance validation.
+All 14 culture-state audit JSON files parsed successfully. Nine touched EU4 `.txt` files passed lightweight brace-balance validation. `crown_iberia_l_english.yml` passed localisation header and one-space indentation validation.
 
 ## Intentionally Not Implemented
 
 - No map edits.
-- No flag import.
-- No new tags.
+- No outside flag imports; `AGH` uses an original placeholder flag.
 - No non-Iberian region overhaul.
 - No Tier 1 culture-unification events or missions.
 - No broad contested-province registry implementation.
@@ -149,7 +167,7 @@ JSON audit files were parsed successfully. EU4 text files received lightweight b
 ## Test Plan
 
 1. Run `python3 Tooling/validate_project_crown_map.py --summary-json Tooling/project_crown_map_validation_summary.json`.
-2. Run `python3 Tooling/culture_state/validate_border_cleanliness.py --ownership-json Tooling/culture_state/audits/iberia_poc_ownership.json --output Tooling/culture_state/audits/iberia_poc_border_cleanliness_validation.json`.
+2. Run `python3 Tooling/culture_state/validate_border_cleanliness.py --ownership-json Tooling/culture_state/audits/iberia_ownership_implemented.json --output Tooling/culture_state/audits/iberia_border_cleanliness_validation.json`.
 3. Parse all JSON audit files under `Tooling/culture_state/audits/`.
 4. Run lightweight brace validation for changed EU4 `.txt` files.
 5. Launch EU4 with Project Crown and verify the 1444 Iberian map visually.

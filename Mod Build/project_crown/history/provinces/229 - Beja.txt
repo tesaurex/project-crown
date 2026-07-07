@@ -1,10 +1,11 @@
 #229 - Baixo Alentejo
 
-owner = POR
-controller = POR
-add_core = POR
+owner = AGH
+controller = AGH
+add_core = AGH
+add_claim = POR
 culture = portugese
-religion = catholic
+religion = sunni
 capital = "Beja"
 trade_goods = livestock
 hre = no

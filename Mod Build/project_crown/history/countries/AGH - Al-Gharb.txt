@@ -1,0 +1,46 @@
+government = monarchy
+add_government_reform = iqta
+primary_culture = portugese
+religion = sunni
+technology_group = muslim
+historical_rival = POR
+capital = 230 # Algarve
+government_rank = 1
+religious_school = maliki_school
+
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 8
+}
+change_estate_land_share = {
+	estate = estate_church
+	share = -10
+}
+change_estate_land_share = {
+	estate = estate_burghers
+	share = 6
+}
+
+1444.1.1 = {
+	monarch = {
+		name = "Yahya I"
+		dynasty = "al-Gharbi"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+	add_piety = -0.1
+}
+
+1444.1.1 = {
+	heir = {
+		name = "Muhammad"
+		monarch_name = "Muhammad II"
+		dynasty = "al-Gharbi"
+		birth_date = 1428.1.1
+		claim = 75
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
