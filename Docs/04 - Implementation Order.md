@@ -2,6 +2,8 @@
 
 **Revised 2026-07-06 for the Culture-State World pivot.** The ordering principle is unchanged: **province/border foundation before everything, data before systems, risky before safe, engine-verified before built.** The foundation is now locked (Docs 07–09), so the front of the queue is the culture-state political layer — proven in one region before it scales.
 
+**Amended 2026-07-07:** the **Automatic Province Development System** (MDD §6A) joins the delay list — documented now, built in the economic-simulation phase (Phase 9A) after the Tier A rollout is stable.
+
 ## Already done
 
 | System | Status |
@@ -43,6 +45,7 @@
 | **Rare dynastic & diplomatic unification package (Doc 10 U-rules)** | The classic blob accelerant (R-45/R-46) — only safe to build once the country setup is stable and unification pace is observable. Phase 7. Documented now, implemented later. |
 | **Colonial nation war rights + parent escalation/auto-join (MDD §9.4)** | Needs colonial nations (Phase 4) and the subject framework (Phase 6) stable, plus spike 10's forced-participation verdict (R-47). Phase 8, with its dedicated proxy-war balance pass in Phase 10 (R-48). Documented now, implemented later. Never blocks the Iberia POC. |
 | **Assimilation suite** | Pure long-horizon flavor; needs native retention, colonial nations, and liberty-desire behavior working first. Phase 9. |
+| **Automatic Province Development System (MDD §6A)** | Future economic simulation: manual development disabled — or made prohibitively expensive if the develop button is hardcoded (spike 11, R-53) — and development grows/declines automatically from long-term province conditions (loss keyed to *high* devastation; 0 = healthy, 100 = ruined). Needs the Tier A political map stable (Waves 1–7) and long observer runs to be testable; performance-sensitive by design (yearly/multi-year pulses, low chances, cooldowns — R-49). Phase 9A, drift-tuned in Phase 10 (R-50/R-51/R-54/R-55). Documented now, implemented later. Never blocks the Iberia POC or wave rollout. |
 | **Dominion AI behavior & tuning** | "AI converts at LD > 50, late game only" is meaningless before liberty-desire dynamics are observable in long runs. Phases 8–10. |
 | **Fort capture completion** | Vanilla ZoC covers ~90% of the intent; polish. Phase 8. |
 | **Unification pace & deterrent tuning** | The levers ship with each wave, but the numbers can only be tuned against Phase 10 full-campaign observer data (R-32). |
@@ -54,6 +57,6 @@
 ## The four hard sequencing rules
 
 1. **Foundation first — satisfied.** The Personalized Borders foundation is imported, validated, and locked; it stays frozen. The culture-state layer is history-file work only and never touches `map/` files (Doc 10, O5).
-2. **No spike, no system.** Back War Effort, the CN colonist modifier, on_action-dependent hooks, the tag pipeline, and formable tag-switching all wait for their Phase 0 verdicts — fallbacks are named in the Risk Register, so a negative verdict changes the plan, not the schedule.
+2. **No spike, no system.** Back War Effort, the CN colonist modifier, on_action-dependent hooks, the tag pipeline, formable tag-switching, and the manual-development lock (spike 11) all wait for their Phase 0 verdicts — fallbacks are named in the Risk Register, so a negative verdict changes the plan, not the schedule.
 3. **Data before countries, Iberia before the world.** No country file is written before its Phase 1B data package is reviewed — including a clean (or justified-exception) border-cleanliness report per Doc 10 O7 — and no wave beyond Iberia starts before the Iberia POC exit criteria are met and the owner approves scaling the pattern.
 4. **World data freezes before balance opens.** Dev rebalance, colonial regions, and the Tier A political map must stop moving before anyone tunes economy, AI, unification pace, or subject contribution numbers — every balance observation on shifting world data is wasted.

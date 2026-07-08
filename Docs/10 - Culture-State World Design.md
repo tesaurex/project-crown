@@ -1,7 +1,7 @@
 # Project Crown: Europa Ascendant — Culture-State World Design
 
-**Version:** 1.3 — owner rules of 2026-07-06 (round 3) added: contested provinces (CP-rules), natural rivals & friends (N-rules), rare dynastic/diplomatic unification (U-rules), system synergy; hostile intervention and colonial-nation wars specified in MDD §11.1 and §9.4
-**Date:** 2026-07-06
+**Version:** 1.4 — cross-references to the future **Automatic Province Development System** (MDD §6A, owner directive 2026-07-07) added in §13/§13A; 1.3 content (owner rules of 2026-07-06 round 3: CP-rules, N-rules, U-rules, system synergy; hostile intervention and colonial-nation wars in MDD §11.1 and §9.4) unchanged
+**Date:** 2026-07-07
 **Status:** Approved design pivot (owner directive 2026-07-06). Wave 1 Phase 2A Iberia proof-of-concept implementation is logged in [12 - Iberia Culture-State POC Log](12%20-%20Iberia%20Culture-State%20POC%20Log.md). No flags imported and no map files changed.
 **Authority:** This document defines the Culture-State World layer. Where it conflicts with pre-pivot text in [00 - Master Design Document](00%20-%20Master%20Design%20Document.md), this document and Appendix B Round 4 of the MDD win.
 
@@ -247,6 +247,7 @@ Implementation proceeds in **waves**, each shipping: tags + starting ownership +
 | Russia special case (owner decision 6) | Unchanged in substance; which culture-state(s) inherit it depends on the East Slavic fragmentation mapping (Wave 5). |
 | 1914 alt-history layer (Rule 28) | Largely **absorbed** by the formable ladder; the 2026 layer stays post-v1. |
 | No-straits, dev flattening, colonial regions, subject taxonomy, assimilation | Unchanged. |
+| MDD §6A Automatic Province Development (new, **future** system — documented 2026-07-07) | Future economic simulation, built in Phase 9A after the Tier A rollout is stable: manual development disabled (or prohibitively expensive if hardcoded — R-53), development drifting slowly with long-term province conditions. Under the pivot it makes the ladder economically legible — unification wars create devastation that can cost development (loss keyed to *high* devastation; 0 = healthy, 100 = ruined), and long post-unification peace regrows it. Contested regions (CP-rules) and intervention wars (MDD §11.1) are exactly the zones the permanent-ruin risk watches (R-55). Never blocks the Iberia POC or any rollout wave. (R-49–R-56) |
 
 ## 13A. System Synergy (owner rule, 2026-07-06)
 
@@ -262,6 +263,8 @@ The layers are designed to reinforce each other — a world that feels alive wit
 8. **Colonization** (K-rules) becomes stronger after consolidation — and colonial rivalry eventually feeds back into parent-empire drama (MDD §9.4).
 
 Every new mechanic should be checked against this chain: if it doesn't reinforce a neighboring layer, it probably doesn't belong.
+
+The future **Automatic Province Development System** (MDD §6A, documented 2026-07-07) passes this check at both ends of the chain: clean, consolidated, peaceful realms slowly grow richer — rewarding layers 1–7 — while repeated war zones and contested frontiers risk slow decline, making the choice between ladder wars and long peace an economic decision, not just a map-painting one. It is built only in the later economic-systems phase (Phase 9A), never during the rollout waves.
 
 ## 14. Decisions — Resolved and Open
 

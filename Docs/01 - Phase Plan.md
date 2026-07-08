@@ -2,6 +2,8 @@
 
 **Revised 2026-07-06 for the Culture-State World pivot.** Phases are ordered by dependency and risk: engine-risk research first, world data second, the culture-state political layer third (Iberia proof of concept before any global rollout), systems fourth, balance and flavor last. Each phase has an exit criterion — do not start the next phase's systems until the current one's criterion is met (parallel *research* is always fine).
 
+**Amended 2026-07-07:** the **Automatic Province Development System** (MDD §6A) is scheduled as **Phase 9A** — a future economic-simulation phase after the Tier A rollout is stable — and Phase 0 gains research spike 11 (manual-development lock). Documentation only at this date; nothing is implemented.
+
 Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not started.
 
 ---
@@ -22,8 +24,9 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
   8. **NEW — Formable behavior:** a test formation decision tag-switches into an *already-existing* tag (the `FRA`-exists-at-start case) — verify subjects, truces, HRE membership, and missions survive the switch sanely.
   9. **NEW — Culture extraction:** tooling reads 1444 primary culture per province from the locked foundation's history and emits a culture→province table matching in-game observation for a sample region (Iberia).
   10. **NEW — Forced war-joining:** can a third country be scripted into an *ongoing* war on a *specific* side without its acceptance? Verdict covers both hostile intervention (MDD §11.1) and automatic opposing-parent escalation in colonial wars (MDD §9.4, R-47). Fallback designs named in advance if the engine refuses.
+  11. **NEW — Manual development lock:** can the vanilla develop-province action be disabled outright (defines / interface / scripted means), or only discouraged via extreme development-cost modifiers? Verdict decides the manual-development rule of the future Automatic Province Development System (MDD §6A, R-53); the prohibitive-cost fallback is pre-accepted.
 
-**Exit criterion:** Mechanics-empty mod loads; all ten spike verdicts written; Risk Register updated with findings.
+**Exit criterion:** Mechanics-empty mod loads; all eleven spike verdicts written; Risk Register updated with findings.
 
 ## Phase 1A — Personalized Borders Foundation Research & Lock ✅
 **Complete (2026-07-06).** Research documented in [06](06%20-%20Personalized%20Borders%20Foundation%20Research.md); controlled import, vanilla European impassables restoration, and remaining province-ID resolution logged in [07](07%20-%20Personalized%20Borders%20Import%20Log.md)/[08](08%20-%20Vanilla%20European%20Impassables%20Merge%20Log.md)/[09](09%20-%20Remaining%20Province%20ID%20Resolution%20Log.md). The province/border foundation is imported, validated, and **locked**.
@@ -143,6 +146,18 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
 
 **Exit criterion:** 1700 observer save shows colonial nations with majority native-culture interiors, converted capitals, and rare scattered assimilation.
 
+## Phase 9A — Automatic Province Development (Economic Simulation) ⬜
+**Goal:** Development becomes an outcome of the simulation, not a monarch-point purchase. (MDD §6A — documented 2026-07-07 as a **future** system; scheduled here so the culture-state map and major region rollout are stable and enough regions exist to test long-term economy behavior. Never blocks Iberia POC, Iberia QA, or country setup.)
+
+- Manual development lock per the spike-11 verdict (R-53): disable the develop action if possible; otherwise prohibitive development-cost modifiers plus strong discouragement, with matching AI discouragement.
+- Growth pulse: yearly or multi-year pulse (never monthly), low base chance, evaluating the MDD §6A.4 growth conditions (long peace, low devastation, prosperity, capital, Centers of Trade, estuaries/ports, valuable trade nodes, manufactories, economic buildings, universities, accepted culture, true faith, low unrest, high stability, institutions, stated cores, strong local trade, long-term security).
+- Loss pulse: prolonged-damage detection per the MDD §6A.3 devastation ladder (above 40 / 60 / 80 — **high** devastation triggers loss; 0 is healthy) plus the §6A.5 loss conditions (prolonged occupation, repeated sieges, looting, scorched earth, high unrest, rebel occupation, blockaded ports, bankruptcy, disasters, repeated war zones, religious/cultural turmoil, failed recovery).
+- Cooldown flags/modifiers on every automatic change — no province gains or loses development repeatedly in a short period (extreme scripted conditions excepted).
+- Player-facing framing: visible momentum-style province modifiers and notifications so growth and decline read as a mechanic, not random noise (R-56).
+- Performance budget: pulse cost measured on hands-off late-game saves before/after (R-49); no heavy global loops.
+
+**Exit criterion:** Long observer runs show healthy provinces gaining +1 occasionally over decades, capitals/major trade centers modestly faster, war-torn provinces losing development only after prolonged high devastation, and stable world development totals (no inflation, no permanently ruined regions absent extreme conditions); no measurable late-game performance regression.
+
 ## Phase 10 — AI & Balance Passes ⬜
 **Goal:** The design survives contact with the AI.
 
@@ -152,6 +167,7 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
 - **Colonial proxy-war balance testing:** escalation frequency, parent overcommitment to low-value colonial wars, colonial-nation aggression, and naval powers dragged into constant overseas conflicts (R-48).
 - Flattened-region stability pass (rebel pressure in the 1/1/1 zones).
 - Economy pass: trade value, tariffs, subject income flows.
+- **Automatic development drift review (MDD §6A):** world development totals tracked across full campaigns — inflation (R-50), permanent-ruin regions (R-55), long-campaign economy drift (R-54), and war-loss frequency (R-51) checked against the §6A.6 pacing targets.
 - HRE monitoring per the vanilla-density rule (Doc 10 §4A): blobbing/passivity at near-vanilla member counts, R-33.
 - **Trade company decision point (R-19):** disable, replace, or convert into a custom Trade Post Charter system, decided against this phase's observer data.
 - Full-campaign observer runs (1444→1821) with issue log.
@@ -164,7 +180,7 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
 - Flag completeness pass: every tag on the modern/regional flag standard; ET Modern Flags source decision (permission/credit per R-36) or original flag set.
 - Residual alt-history layer: formables the ladder doesn't produce (Belgium, Romania, etc.); the 2026 layer stays post-v1.
 - Localization pass (all custom systems and new tags fully localized in English).
-- Subject-type icons / minimal UI art; performance pass (event pulse budgets).
+- Subject-type icons / minimal UI art; performance pass (event pulse budgets, including the §6A automatic-development pulses).
 - README, changelog, credits/permissions audit (R-29/R-36), Steam Workshop packaging.
 
 **Exit criterion:** Clean playtest feedback cycle; release candidate tagged.

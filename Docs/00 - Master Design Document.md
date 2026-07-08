@@ -1,8 +1,8 @@
 # Project Crown: Europa Ascendant — Master Design Document
 
-**Version:** 0.5 - Culture-State World pivot applied (owner directive 2026-07-06); Personalized Borders foundation imported, validated, and locked; owner decisions of 2026-07-04 and 2026-07-06 recorded
-**Date:** 2026-07-06
-**Status:** Approved rule set, pivoted to a fractured culture-state 1444 world (design pivot, not a restart — see §3A and [10 - Culture-State World Design](10%20-%20Culture-State%20World%20Design.md)); Iberia Phase 2A proof of concept implemented in history/decision/event files (see [12 - Iberia Culture-State POC Log](12%20-%20Iberia%20Culture-State%20POC%20Log.md)); no flags imported
+**Version:** 0.6 - Automatic Province Development System (§6A) documented as a future economic simulation system (owner directive 2026-07-07); Culture-State World pivot applied (owner directive 2026-07-06); Personalized Borders foundation imported, validated, and locked; owner decisions of 2026-07-04 through 2026-07-07 recorded
+**Date:** 2026-07-07
+**Status:** Approved rule set, pivoted to a fractured culture-state 1444 world (design pivot, not a restart — see §3A and [10 - Culture-State World Design](10%20-%20Culture-State%20World%20Design.md)); Iberia Phase 2A proof of concept implemented in history/decision/event files (see [12 - Iberia Culture-State POC Log](12%20-%20Iberia%20Culture-State%20POC%20Log.md)); no flags imported; Automatic Province Development documented as a **future** system (§6A) — design only, not implemented
 **Base game:** Europa Universalis IV v1.37.5.0 Inca, 1444 start date; province/border foundation is the imported Personalized Borders map (Docs 07–09)
 
 ---
@@ -129,6 +129,63 @@ Within the flattened regions, provinces are set in history files (not startup ev
   - Because Asia keeps vanilla development, Europe's upper hand over Asia comes from technology, institutions, naval power, and the subject framework — not from a dev gap. Asian majors remain real obstacles, which is intended.
   - Very low manpower in flattened regions may leave local AI unable to suppress rebels → watch for regional instability; a stability pass is budgeted in the balance phase.
   - Institution spawn/growth conditions that key off development must be audited so institutions stay Europe-born (§7.1).
+
+## 6A. Automatic Province Development (future economic simulation system)
+
+**Status: future system — documented 2026-07-07, implemented later.** This system belongs to a dedicated economic-systems phase (Phase 9A in [01 - Phase Plan](01%20-%20Phase%20Plan.md)) scheduled **after** the culture-state map and the major Tier A region rollout are stable — it needs enough live regions to test long-term economy behavior. It never blocks the Iberia POC, Iberia QA, or the immediate country-setup phases. Risks R-49 through R-56 in [02 - Hardcoded Risk Register](02%20-%20Hardcoded%20Risk%20Register.md).
+
+### 6A.1 Concept
+
+Province development stops being something the player buys with monarch points and becomes something the world *does*: provinces grow or decline slowly and automatically from their **long-term conditions**. Decades of peace, prosperity, and trade make a province richer; prolonged war, occupation, and devastation make it poorer. The system is deliberately **subtle, slow, and performance-safe** — background economic history, not a mechanic firing in the player's face.
+
+Design goals: make war, devastation, occupation, prosperity, trade, peace, buildings, stability, and recovery matter more; keep the world's development distribution alive over a full campaign; avoid both runaway development inflation and permanently ruined continents; avoid late-game lag.
+
+### 6A.2 Manual development rule
+
+- **First preference: disable manual development entirely**, if the engine allows it.
+- **Hardcoding risk (R-53, VERIFY — Phase 0 spike 11):** the develop-province action is engine UI and may not be fully disableable by script. If it cannot be removed, the fallback is accepted in advance: manual development is made **prohibitively expensive** (extreme development-cost modifiers) and clearly framed as discouraged.
+- **AI** is discouraged from manual development as far as the coarse AI control surface allows (modifiers, defines, weights — R-18 applies).
+- Either way, **automatic development becomes the main development system** of Project Crown.
+
+### 6A.3 Devastation semantics and thresholds (correction on record)
+
+EU4's devastation scale runs **0 = healthy/fully recovered** to **100 = ruined**. All development-loss triggers in this system key off **high** devastation, never low. Prosperity — vanilla's opposite of devastation — is a growth driver.
+
+| Devastation | Effect in this system |
+|---|---|
+| Above 40 | Growth blocked; minor loss risk |
+| Above 60 | Moderate loss risk if prolonged |
+| Above 80 | Serious loss risk when combined with occupation, active war, rebels, or looting |
+
+### 6A.4 Growth conditions
+
+Automatic growth favors provinces with (indicative list; exact weights are implementation tunables): long peace; low devastation; prosperity; being the capital province; Centers of Trade; estuaries and important ports; membership in valuable trade nodes; manufactories; economic buildings; universities; accepted culture; true faith; low unrest; high stability; institutions present; stated/core provinces; strong local trade; long-term security.
+
+### 6A.5 Loss conditions
+
+Automatic loss targets provinces suffering from (indicative list): prolonged occupation; repeated sieges; high devastation (per the §6A.3 ladder); having been looted; scorched earth; high unrest; rebel occupation; blockaded ports; bankruptcy; disasters; sitting in a repeated war zone; religious turmoil; cultural unrest; repeated inability to recover from war.
+
+### 6A.6 Pacing
+
+- Normal healthy provinces gain **+1 development only occasionally over decades**.
+- Capitals and major trade centers may grow faster — but still slowly.
+- War-torn provinces lose development **only after prolonged damage**, never from one bad month.
+- **No rapid development swings.** No province gains or loses development repeatedly in a short period unless under extreme scripted conditions.
+
+### 6A.7 Performance rules
+
+- **Never check every province too often:** yearly or multi-year pulses, not monthly pulses.
+- Low random chances per pulse; development changes stay **rare**.
+- **Cooldown flags/modifiers** on every automatic change prevent repeated rapid development changes on the same province.
+- Avoid heavy global loops wherever possible.
+- The system must be subtle enough to avoid late-game lag; its pulse cost is measured against hands-off late-game saves (R-49) and counted in the Phase 11 performance pass.
+
+### 6A.8 Interactions with existing systems
+
+- **§6 flattening sets the starting baseline** in the colonial macro-regions; this system is the ongoing simulation on top of it. Automatic growth must not silently erase the Europe-vs-colonial-zone development gap that §7.1 relies on (watched under R-50).
+- **The culture-state ladder becomes economically legible** (Doc 10): unification wars create devastation that can cost development; long post-unification peace regrows it. Contested regions and intervention wars are exactly the zones the permanent-ruin risk watches (R-55).
+- **Buildings, prosperity, stability, and trade** gain a long-term payoff beyond their immediate effects — investment and good governance are how a player steers growth once the develop button is gone.
+- **Player-facing framing (R-56):** growth and decline must be visible — momentum-style province modifiers and notifications for significant changes — so the system reads as a mechanic, not random noise.
 
 ## 7. The European Power Framework
 
@@ -345,6 +402,7 @@ Every system above carries AI requirements. Summarized in one place:
 | Great Power intervention | Act as a power broker — intervene against rivals, regional threats, and holders of its cores/claims | Trigger constant world wars; ignore truces or collapse states |
 | Rare dynastic unification | Take union/federation events rarely, under the U-rule conditions | Snowball the fractured world early; erode HRE density via inheritance chains |
 | Colonial parent escalation | Weigh rival status, region value, trade, strength, debt, manpower, wars, naval access before joining a colonial war | Overcommit to low-value colonial wars; escalate constantly |
+| Automatic development (§6A, future) | Leave development to the simulation; spend monarch points elsewhere | Buy manual development if the button survives disabling — the prohibitive cost must deter the AI too |
 
 AI control in EU4 is coarse (event `ai_chance`, defines, mission weights); every "AI must" above is a playtest commitment, not just a script commitment.
 
@@ -466,3 +524,7 @@ Overrides to the original rule set and resolutions of open questions. Where this
 32. **Rare dynastic/diplomatic unification:** cultural nations can form via war, diplomacy, royal marriages, rare personal unions, succession/inheritance, peaceful federation, and diplomatic integration — rare, condition-gated (same group, compatible religion, proximity, high relations, no active war, no collapse, region-appropriate, O7-compliant), never early blob-collapse. Iberia gets a rare Castile–Aragon style union path; HRE density protected; Japan keeps Sengoku; the Ottomans are never removed by a random union. (Doc 10 U-rules; R-45, R-46)
 33. **System synergy:** clean borders → contested claims → natural rivalries → interventions and blocs → rare peaceful unifications → formables → stronger colonization. The layers must reinforce each other; a world that feels alive without random chaos. (Doc 10 §13A)
 34. **Colonial nation wars & parent escalation:** colonial nations of different parent empires may war each other; parents may join either side; if one parent joins, the opposing parent is automatically added (both directions, only with valid parent overlords on both sides; same-parent colonial wars excluded pending a future internal-colony system). Future system — after colonial nations and the subject framework are stable; never blocks the Iberia POC. (§9.4; R-47, R-48)
+
+**Round 8 — Automatic Province Development (2026-07-07):**
+
+35. **Automatic province development (future system):** manual province development is disabled if technically possible; if the develop button is hardcoded, it is made prohibitively expensive and strongly discouraged, and the AI is discouraged from using it. Development instead grows or declines **automatically from long-term province conditions** — growth from long peace, low devastation, prosperity, capitals, trade centers/ports/nodes, manufactories and economic buildings, universities, accepted culture, true faith, low unrest, high stability, institutions, stated cores, strong local trade, and long-term security; loss from prolonged occupation, repeated sieges, high devastation, looting, scorched earth, high unrest, rebel occupation, blockaded ports, bankruptcy, disasters, repeated war zones, religious/cultural turmoil, and repeated failure to recover from war. Devastation semantics corrected on record: **0 = healthy, 100 = ruined** — loss triggers from *high* devastation (above 40: growth blocked, minor loss risk; above 60: moderate loss risk if prolonged; above 80: serious loss risk combined with occupation/war/rebels/looting). Subtle, slow, and performance-safe: yearly or multi-year pulses (never monthly), low random chances, cooldown modifiers, rare changes (+1 over decades for healthy provinces; capitals/trade centers modestly faster; no rapid swings). Scheduled as a future economic-systems phase (Phase 9A) after the culture-state map and major region rollout are stable; never blocks Iberia POC, Iberia QA, or country setup. Design-only at this date. (§6A; R-49–R-56)
