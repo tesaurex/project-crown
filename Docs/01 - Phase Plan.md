@@ -4,6 +4,8 @@
 
 **Amended 2026-07-07:** the **Automatic Province Development System** (MDD §6A) is scheduled as **Phase 9A** — a future economic-simulation phase after the Tier A rollout is stable — and Phase 0 gains research spike 11 (manual-development lock). Documentation only at this date; nothing is implemented.
 
+**Amended 2026-07-08:** Phase 2C.3 recorded the successful post-crash Iberia observer result and added the vanilla-unowned region audit. The audit confirms Project Crown currently has **0 non-Iberian province ownership/controller overrides**; future Americas, Sub-Saharan Africa, Australia/Oceania, and Philippines clearing must be based on audit data, not visual guessing.
+
 Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not started.
 
 ---
@@ -38,7 +40,7 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
 - ⬜ Straits removal (`map/adjacencies.csv` full override) — unblocked now that the foundation is locked.
 - ⬜ **World tier map (NEW):** Tier A / B / C assignment for every land province (`Tooling/culture_states/world_tiers`), per Doc 10 §3. This is the routing input for both the culture-state layer and the D-4 Sub-Saharan decision.
 - ⬜ Development rebalance of the **Americas, Africa, and Australia/Oceania only** via tooling → generated `history/provinces/` overrides (1/1/1, 1/2/1, 1/2/2 classes). Asia and Europe untouched (Anatolia included).
-- ⬜ Tier B "mostly uncolonized" pass design: execute owner decision **D-4** for Sub-Saharan Africa's organized states before generating.
+- ⬜ Tier B "mostly uncolonized" pass design: use [16 - Vanilla Unowned Region Audit](16%20-%20Vanilla%20Unowned%20Region%20Audit.md) as the source of truth, preserve vanilla-unowned provinces by default, and execute owner decision **D-4** for Sub-Saharan Africa's organized states before generating any ownership changes.
 - ⬜ Global colonial regions v1, including the combined **Colonial Philippines & Spice Islands** region (validator-checked: ocean access, clean borders, zero trade-company overlap).
 - ⬜ Trade company region audit against the new colonial regions.
 
@@ -63,6 +65,8 @@ Status legend: ✅ complete · 🔶 in progress / partially complete · ⬜ not 
 **Goal:** The full unification ladder working in one region — the pivot's go/no-go gate.
 
 **Phase 2A status (2026-07-07):** Iberian province/country history overrides, Aragon primary-culture correction, conservative Spain formation, Iberian Wedding disable, ownership audit, and border-cleanliness validation are implemented. See [12 - Iberia Culture-State POC Log](12%20-%20Iberia%20Culture-State%20POC%20Log.md). Launch/visual QA and observer pacing are still pending.
+
+**Phase 2C.3 status (2026-07-08):** The post-crash observer run reached 1489 without reproducing the crash; Castile and Granada expanded quickly and Andalusia formed by 1489. This is logged as evidence only, with no immediate rebalance. See [15 - Iberia Observer Test Log](15%20-%20Iberia%20Observer%20Test%20Log.md).
 
 - Culture-states: Castile, Aragon, Catalonia (`CAT` exists in vanilla per Phase 1B audit), Galicia, León, Navarra (Basque), Granada (Andalusian), Portugal — tooling-generated province/country history, cores per C-rules. Aragon (`ARA`) exists but its vanilla country history primary culture is Catalan, so Phase 2 must review/override that history data.
 - Cores/claims: own-culture cores day one; Tier 1 "United <Culture>" rank-up; mission-gated group claims.

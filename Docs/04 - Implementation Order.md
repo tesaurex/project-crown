@@ -4,6 +4,8 @@
 
 **Amended 2026-07-07:** the **Automatic Province Development System** (MDD §6A) joins the delay list — documented now, built in the economic-simulation phase (Phase 9A) after the Tier A rollout is stable.
 
+**Amended 2026-07-08:** Phase 2C.3 added the vanilla-unowned region audit and observer-result log. Future Americas, Sub-Saharan Africa, Australia/Oceania, and Philippines opening/clearing must use the audit data as the source of truth; Project Crown currently has 0 non-Iberian ownership/controller overrides.
+
 ## Already done
 
 | System | Status |
@@ -22,7 +24,7 @@
 | 3 | **Phase 1B data packages: eligibility pass, staple-country list, multi-country partition tables, tag reuse map, formation sets, flag map, border-cleanliness report** | Generated and owner-reviewed *before* any country file exists, honoring the §4A granularity rules (HRE at vanilla density, staples per major culture) and the O7 border rule (compact connected countries; exceptions justified). The Iberia package is the approval gate for the whole pivot. |
 | 4 | **Straits removal** | One file, enormous gameplay impact, unblocked by the foundation lock. Every observer run afterward includes it, so it must land before pace-tuning observations begin. |
 | 5 | **Iberia Proof of Concept (Wave 1)** | 🔶 Phase 2A implemented 2026-07-07: Iberian history overrides, Aragon primary-culture correction, conservative Spain formation, Iberian Wedding disable, ownership audit, and border validation are in place (Doc 12). Launch/visual QA, observer pacing, broader missions, and later ladder systems remain pending. |
-| 6 | **Colonial-zone dev rebalance + Tier B "mostly uncolonized" pass (D-4)** | The colonial world's economic baseline, generated from the locked foundation. Sequenced here so the Sub-Saharan decision (D-4) is made once, not patched later. |
+| 6 | **Colonial-zone dev rebalance + Tier B "mostly uncolonized" pass (D-4)** | The colonial world's economic baseline, generated from the locked foundation and [16 - Vanilla Unowned Region Audit](16%20-%20Vanilla%20Unowned%20Region%20Audit.md). Vanilla-unowned provinces stay unowned by default; clearing vanilla-owned provinces requires an approved exception list. Sequenced here so the Sub-Saharan decision (D-4) is made once, not patched later. |
 | 7 | **Global colonial regions** | The routing switch for the subject framework. Drawn after world data is stable, before colonization systems test against it. |
 | 8 | **European rollout Waves 2–5 (France → Britain → Italy/Germany → rest of Europe)** | Scales the proven Iberia pattern. Wave 4 keeps the HRE at vanilla-style density per Doc 10 §4A (members tweaked, count preserved); D-8 (France staple vs. formable-only) resolves in Wave 2; each wave ships its own audit, flags, and pace test. |
 | 9 | **Colonization core (exploration gate, colonizer triggers, head start, formation upgrade, Frontier Settlement, CN hooks)** | Built once the European colonizer cast exists, so the unification-first gates (K-rules) are testable end to end. |
@@ -59,4 +61,5 @@
 1. **Foundation first — satisfied.** The Personalized Borders foundation is imported, validated, and locked; it stays frozen. The culture-state layer is history-file work only and never touches `map/` files (Doc 10, O5).
 2. **No spike, no system.** Back War Effort, the CN colonist modifier, on_action-dependent hooks, the tag pipeline, formable tag-switching, and the manual-development lock (spike 11) all wait for their Phase 0 verdicts — fallbacks are named in the Risk Register, so a negative verdict changes the plan, not the schedule.
 3. **Data before countries, Iberia before the world.** No country file is written before its Phase 1B data package is reviewed — including a clean (or justified-exception) border-cleanliness report per Doc 10 O7 — and no wave beyond Iberia starts before the Iberia POC exit criteria are met and the owner approves scaling the pattern.
-4. **World data freezes before balance opens.** Dev rebalance, colonial regions, and the Tier A political map must stop moving before anyone tunes economy, AI, unification pace, or subject contribution numbers — every balance observation on shifting world data is wasted.
+4. **Audit before clearing.** Do not clear or assign Americas, Sub-Saharan Africa, Australia/Oceania, or Philippines ownership from visual inspection. Use the vanilla-unowned audit outputs to distinguish vanilla-owned, vanilla-unowned, Project Crown overridden, and untouched provinces. North Africa remains populated and is not part of Sub-Saharan clearing; Asia remains generally populated except the Philippines special case.
+5. **World data freezes before balance opens.** Dev rebalance, colonial regions, and the Tier A political map must stop moving before anyone tunes economy, AI, unification pace, or subject contribution numbers — every balance observation on shifting world data is wasted.

@@ -1,8 +1,8 @@
 # Project Crown: Europa Ascendant — Culture-State World Design
 
-**Version:** 1.4 — cross-references to the future **Automatic Province Development System** (MDD §6A, owner directive 2026-07-07) added in §13/§13A; 1.3 content (owner rules of 2026-07-06 round 3: CP-rules, N-rules, U-rules, system synergy; hostile intervention and colonial-nation wars in MDD §11.1 and §9.4) unchanged
-**Date:** 2026-07-07
-**Status:** Approved design pivot (owner directive 2026-07-06). Wave 1 Phase 2A Iberia proof-of-concept implementation is logged in [12 - Iberia Culture-State POC Log](12%20-%20Iberia%20Culture-State%20POC%20Log.md). No flags imported and no map files changed.
+**Version:** 1.5 — vanilla-unowned preservation and Phase 2C.3 audit guardrails added (owner directive 2026-07-08); cross-references to the future **Automatic Province Development System** (MDD §6A, owner directive 2026-07-07) retained
+**Date:** 2026-07-08
+**Status:** Approved design pivot (owner directive 2026-07-06). Wave 1 Phase 2A Iberia proof-of-concept implementation is logged in [12 - Iberia Culture-State POC Log](12%20-%20Iberia%20Culture-State%20POC%20Log.md). Phase 2C.3 observer/audit documentation is logged in [15 - Iberia Observer Test Log](15%20-%20Iberia%20Observer%20Test%20Log.md) and [16 - Vanilla Unowned Region Audit](16%20-%20Vanilla%20Unowned%20Region%20Audit.md). No flags imported and no map files changed in Phase 2C.3.
 **Authority:** This document defines the Culture-State World layer. Where it conflicts with pre-pivot text in [00 - Master Design Document](00%20-%20Master%20Design%20Document.md), this document and Appendix B Round 4 of the MDD win.
 
 ---
@@ -60,6 +60,7 @@ Tier A vs. B boundary notes:
 - **Sub-Saharan Africa is Tier B**: it should start *mostly* uncolonized. How existing organized states (Mali, Songhai, Ethiopia, Kongo, the Swahili coast) are handled is Open Decision D-4.
 - The Philippines' Tier B status matches the existing **Colonial Philippines & Spice Islands** region (MDD owner decision 5).
 - Siberia stays a Tier C land frontier per the existing Russia rule — never a colonial region, never fragmented into culture-states by default.
+- **Vanilla-unowned preservation:** Any province that starts unowned/uncolonized in vanilla remains unowned/uncolonized unless Project Crown explicitly assigns it later. Future Tier B clearing/opening must use the Phase 2C.3 audit data, not map-view guessing.
 
 ## 4. Eligible Culture-Countries (E-rules)
 
@@ -96,6 +97,7 @@ The E-rules set the default; these regional rules override the default where the
   - **Culture purity never outranks readability.** Do not assign every same-culture province to one country if that creates disconnected exclaves or border gore; reassign edge provinces (O2) or split the culture into multiple same-culture countries (E9) instead — one of which must still be the staple tag (E8).
   - **Disconnected land is acceptable only for strategic cases:** islands, historically meaningful enclaves, trade ports, chokepoints, and later overseas/colonial holdings.
   - **No random exclaves and no ugly province snakes** in the 1444 start. Tooling enforces this with a border-cleanliness validator (connectivity check per country + exclave/snake detection); every surviving exception carries a justification in the exception list (`Tooling/culture_states/border_exceptions`).
+- **O8 — Vanilla-unowned preservation rule (owner rule, 2026-07-08).** A province that is unowned/uncolonized in vanilla EU4 remains unowned/uncolonized in Project Crown unless a later, explicit design decision assigns it. For Tier B clearing/opening, start from the vanilla-unowned audit: distinguish vanilla-owned provinces, vanilla-unowned provinces, Project Crown overrides, and untouched provinces before generating any history edit.
 
 ## 6. Cores and Claims (C-rules)
 
@@ -213,6 +215,8 @@ Restating the Tier B rule as hard requirements:
 - Colonial regions (MDD §8.4) and development flattening (MDD §6) apply there unchanged.
 - Native/tribal presence: the Americas and Oceania keep their (already mostly-uncolonized) vanilla native setup. Sub-Saharan Africa's organized states are Open Decision D-4.
 - **North Africa is not excluded** — it is Tier A and fragments into culture-based countries (Maghrebi and Egyptian-area cultures).
+- **Asia is generally populated** and stays Tier A, except the Philippines special case. Do not include mainland or island Asia in a broad clearing pass without a separate approved exception.
+- **Audit status (2026-07-08):** Project Crown currently has 0 non-Iberian ownership/controller overrides. The Phase 2C.3 audit found these vanilla 1444 counts: Americas 221 owned / 562 unowned, Sub-Saharan Africa 261 owned / 89 unowned, North Africa 87 owned / 1 unowned, Australia/Oceania 27 owned / 60 unowned, Philippines 13 owned / 10 unowned, Asia excluding Philippines 1035 owned / 74 unowned. Future clearing/opening must be based on this audit and an approved exception list.
 
 ## 12. Rollout Order & Iberia Proof of Concept
 
