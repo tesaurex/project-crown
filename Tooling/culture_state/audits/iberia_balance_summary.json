@@ -1,0 +1,546 @@
+{
+  "audit": "iberia_balance_summary",
+  "date": "2026-07-08",
+  "scope": "Project Crown Iberia Culture-State POC starting balance at 1444.11.11",
+  "sources": [
+    "Mod Build/project_crown/history/provinces/",
+    "Mod Build/project_crown/history/countries/",
+    "Mod Build/project_crown/decisions/SpanishNation.txt",
+    "Tooling/culture_state/audits/iberia_ownership_implemented.json",
+    "Tooling/culture_state/audits/iberia_border_cleanliness_validation.json"
+  ],
+  "summary": {
+    "iberian_tags_checked": 9,
+    "iberian_province_overrides_checked": 62,
+    "total_starting_development": 556,
+    "technical_balance_verdict": "No emergency rebalance recommended. The POC is suitable for observer testing before changing province distribution or development.",
+    "headline_findings": [
+      "Castile is strong but not uniquely dominant by raw development; Granada and Catalonia are near peers.",
+      "Granada is a credible southern rival, balanced by Muslim technology group, Sunni state religion, mixed Catholic/Sunni provinces, and only one explicit fort.",
+      "Portugal remains viable after the Al-Gharb split due to 89 development, Lisboa and Porto trade centers, a Lisboa fort, and friendly Castile history.",
+      "Al-Gharb is viable as a local spoiler but not overpowered at 24 development, three provinces, no center of trade, and one defensive fort.",
+      "Catalonia is much stronger than Aragon in the current split; this is not a technical bug, but Aragon's staple role should be watched in observer runs.",
+      "Leon, Galicia, and Navarre are viable as minor culture-states only if diplomacy and AI pacing do not collapse them too quickly."
+    ]
+  },
+  "development_ranking": [
+    {
+      "tag": "CAS",
+      "total_development": 110
+    },
+    {
+      "tag": "GRA",
+      "total_development": 109
+    },
+    {
+      "tag": "CAT",
+      "total_development": 101
+    },
+    {
+      "tag": "POR",
+      "total_development": 89
+    },
+    {
+      "tag": "LON",
+      "total_development": 46
+    },
+    {
+      "tag": "ARA",
+      "total_development": 36
+    },
+    {
+      "tag": "GAL",
+      "total_development": 28
+    },
+    {
+      "tag": "AGH",
+      "total_development": 24
+    },
+    {
+      "tag": "NAV",
+      "total_development": 13
+    }
+  ],
+  "country_summaries": [
+    {
+      "tag": "CAS",
+      "display_name": "Castile",
+      "role": "Castilian staple and Spain contender",
+      "primary_culture": "castillian",
+      "state_religion": "catholic",
+      "technology_group": "western",
+      "capital_province_id": 219,
+      "capital_name": "Toledo",
+      "starting_province_count": 13,
+      "starting_province_ids": [
+        215,
+        217,
+        219,
+        1745,
+        1746,
+        1747,
+        2751,
+        2754,
+        2755,
+        2989,
+        4551,
+        4552,
+        4789
+      ],
+      "development": {
+        "tax": 40,
+        "production": 39,
+        "manpower": 31,
+        "total": 110
+      },
+      "province_cultures": {
+        "castillian": 13
+      },
+      "province_religions": {
+        "catholic": 13
+      },
+      "explicit_starting_forts": [
+        219,
+        1746
+      ],
+      "centers_of_trade": [
+        {
+          "province_id": 219,
+          "level": 1
+        },
+        {
+          "province_id": 1745,
+          "level": 1
+        },
+        {
+          "province_id": 1746,
+          "level": 1
+        }
+      ],
+      "historical_rivals": [
+        "GRA"
+      ],
+      "historical_friends": [
+        "POR"
+      ],
+      "outgoing_starting_claims": {},
+      "incoming_starting_claims": {},
+      "rough_force_limit_implication": "high",
+      "balance_read": "Strong central contender, but checked by Granada and Catalonia being near peers in development."
+    },
+    {
+      "tag": "ARA",
+      "display_name": "Aragon",
+      "role": "Aragonese staple and Spain contender",
+      "primary_culture": "aragonese",
+      "state_religion": "catholic",
+      "technology_group": "western",
+      "capital_province_id": 214,
+      "capital_name": "Zaragoza",
+      "starting_province_count": 4,
+      "starting_province_ids": [
+        211,
+        214,
+        2990,
+        4557
+      ],
+      "development": {
+        "tax": 14,
+        "production": 12,
+        "manpower": 10,
+        "total": 36
+      },
+      "province_cultures": {
+        "aragonese": 4
+      },
+      "province_religions": {
+        "catholic": 4
+      },
+      "explicit_starting_forts": [
+        211
+      ],
+      "centers_of_trade": [
+        {
+          "province_id": 214,
+          "level": 1
+        }
+      ],
+      "historical_rivals": [],
+      "historical_friends": [],
+      "outgoing_starting_claims": {},
+      "incoming_starting_claims": {},
+      "rough_force_limit_implication": "medium_low",
+      "balance_read": "Compact and defensible, but far weaker than Catalonia; watch whether the Aragonese staple can matter in observer games."
+    },
+    {
+      "tag": "CAT",
+      "display_name": "Catalonia",
+      "role": "Catalan state and Spain contender",
+      "primary_culture": "catalan",
+      "state_religion": "catholic",
+      "technology_group": "western",
+      "capital_province_id": 213,
+      "capital_name": "Barcelona",
+      "starting_province_count": 12,
+      "starting_province_ids": [
+        197,
+        212,
+        213,
+        220,
+        333,
+        1750,
+        2987,
+        2988,
+        4549,
+        4550,
+        4559,
+        4560
+      ],
+      "development": {
+        "tax": 39,
+        "production": 36,
+        "manpower": 26,
+        "total": 101
+      },
+      "province_cultures": {
+        "catalan": 12
+      },
+      "province_religions": {
+        "catholic": 12
+      },
+      "explicit_starting_forts": [
+        197,
+        220
+      ],
+      "centers_of_trade": [
+        {
+          "province_id": 213,
+          "level": 1
+        },
+        {
+          "province_id": 220,
+          "level": 2
+        }
+      ],
+      "historical_rivals": [],
+      "historical_friends": [],
+      "outgoing_starting_claims": {},
+      "incoming_starting_claims": {},
+      "rough_force_limit_implication": "high",
+      "balance_read": "A major eastern contender. The Balearics are the only accepted disconnected-start exception."
+    },
+    {
+      "tag": "LON",
+      "display_name": "Leon",
+      "role": "Leonese state and Spain contender",
+      "primary_culture": "leonese",
+      "state_religion": "catholic",
+      "technology_group": "western",
+      "capital_province_id": 208,
+      "capital_name": "Leon",
+      "starting_province_count": 5,
+      "starting_province_ids": [
+        207,
+        208,
+        216,
+        4553,
+        4788
+      ],
+      "development": {
+        "tax": 17,
+        "production": 17,
+        "manpower": 12,
+        "total": 46
+      },
+      "province_cultures": {
+        "leonese": 5
+      },
+      "province_religions": {
+        "catholic": 5
+      },
+      "explicit_starting_forts": [],
+      "centers_of_trade": [
+        {
+          "province_id": 208,
+          "level": 1
+        }
+      ],
+      "historical_rivals": [],
+      "historical_friends": [],
+      "outgoing_starting_claims": {},
+      "incoming_starting_claims": {},
+      "rough_force_limit_implication": "medium_low",
+      "balance_read": "A playable minor, but no explicit fort makes it vulnerable between Castile, Galicia, and Portugal."
+    },
+    {
+      "tag": "GAL",
+      "display_name": "Galicia",
+      "role": "Galician state and Spain contender",
+      "primary_culture": "galician",
+      "state_religion": "catholic",
+      "technology_group": "western",
+      "capital_province_id": 206,
+      "capital_name": "Galicia",
+      "starting_province_count": 4,
+      "starting_province_ids": [
+        206,
+        4554,
+        4555,
+        4558
+      ],
+      "development": {
+        "tax": 11,
+        "production": 10,
+        "manpower": 7,
+        "total": 28
+      },
+      "province_cultures": {
+        "galician": 4
+      },
+      "province_religions": {
+        "catholic": 4
+      },
+      "explicit_starting_forts": [],
+      "centers_of_trade": [],
+      "historical_rivals": [],
+      "historical_friends": [],
+      "outgoing_starting_claims": {},
+      "incoming_starting_claims": {},
+      "rough_force_limit_implication": "low",
+      "balance_read": "Small but coherent. Needs observer testing for survival rather than immediate development changes."
+    },
+    {
+      "tag": "NAV",
+      "display_name": "Navarre",
+      "role": "Basque state and Spain contender",
+      "primary_culture": "basque",
+      "state_religion": "catholic",
+      "technology_group": "western",
+      "capital_province_id": 210,
+      "capital_name": "Navarra",
+      "starting_province_count": 2,
+      "starting_province_ids": [
+        209,
+        210
+      ],
+      "development": {
+        "tax": 5,
+        "production": 4,
+        "manpower": 4,
+        "total": 13
+      },
+      "province_cultures": {
+        "basque": 2
+      },
+      "province_religions": {
+        "catholic": 2
+      },
+      "explicit_starting_forts": [],
+      "centers_of_trade": [],
+      "historical_rivals": [],
+      "historical_friends": [],
+      "outgoing_starting_claims": {},
+      "incoming_starting_claims": {},
+      "rough_force_limit_implication": "very_low",
+      "balance_read": "A fragile minor by design. If it disappears too quickly in observer runs, diplomacy or fort tuning is safer than province redistribution."
+    },
+    {
+      "tag": "GRA",
+      "display_name": "Granada",
+      "role": "Andalusian state and non-Spain Iberian rival",
+      "primary_culture": "andalucian",
+      "state_religion": "sunni",
+      "technology_group": "muslim",
+      "capital_province_id": 223,
+      "capital_name": "Granada",
+      "starting_province_count": 12,
+      "starting_province_ids": [
+        218,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        1748,
+        1749,
+        4546,
+        4547,
+        4548
+      ],
+      "development": {
+        "tax": 42,
+        "production": 39,
+        "manpower": 28,
+        "total": 109
+      },
+      "province_cultures": {
+        "andalucian": 12
+      },
+      "province_religions": {
+        "catholic": 8,
+        "sunni": 4
+      },
+      "explicit_starting_forts": [
+        4546
+      ],
+      "centers_of_trade": [
+        {
+          "province_id": 224,
+          "level": 2
+        },
+        {
+          "province_id": 1749,
+          "level": 1
+        }
+      ],
+      "historical_rivals": [
+        "CAS"
+      ],
+      "historical_friends": [],
+      "outgoing_starting_claims": {},
+      "incoming_starting_claims": {},
+      "rough_force_limit_implication": "high",
+      "balance_read": "Strong enough to create a real southern pole; religious mix and Muslim tech group should keep it from being an unchecked winner."
+    },
+    {
+      "tag": "POR",
+      "display_name": "Portugal",
+      "role": "Portuguese state, excluded from Spain",
+      "primary_culture": "portugese",
+      "state_religion": "catholic",
+      "technology_group": "western",
+      "capital_province_id": 227,
+      "capital_name": "Lisboa",
+      "starting_province_count": 7,
+      "starting_province_ids": [
+        227,
+        228,
+        231,
+        232,
+        1851,
+        4556,
+        4787
+      ],
+      "development": {
+        "tax": 34,
+        "production": 34,
+        "manpower": 21,
+        "total": 89
+      },
+      "province_cultures": {
+        "portugese": 7
+      },
+      "province_religions": {
+        "catholic": 7
+      },
+      "explicit_starting_forts": [
+        227
+      ],
+      "centers_of_trade": [
+        {
+          "province_id": 227,
+          "level": 2
+        },
+        {
+          "province_id": 231,
+          "level": 1
+        }
+      ],
+      "historical_rivals": [
+        "AGH"
+      ],
+      "historical_friends": [
+        "SPA",
+        "CAS"
+      ],
+      "outgoing_starting_claims": {
+        "AGH": [
+          229,
+          230,
+          4150
+        ]
+      },
+      "incoming_starting_claims": {
+        "AGH": [
+          227
+        ]
+      },
+      "rough_force_limit_implication": "medium_high",
+      "balance_read": "Still robust after losing the south; the Al-Gharb rivalry gives local drama without making Portugal a Spain requirement."
+    },
+    {
+      "tag": "AGH",
+      "display_name": "Al-Gharb",
+      "role": "Southern Portuguese Muslim rival",
+      "primary_culture": "portugese",
+      "state_religion": "sunni",
+      "technology_group": "muslim",
+      "capital_province_id": 230,
+      "capital_name": "Algarve",
+      "starting_province_count": 3,
+      "starting_province_ids": [
+        229,
+        230,
+        4150
+      ],
+      "development": {
+        "tax": 9,
+        "production": 8,
+        "manpower": 7,
+        "total": 24
+      },
+      "province_cultures": {
+        "portugese": 3
+      },
+      "province_religions": {
+        "catholic": 1,
+        "sunni": 2
+      },
+      "explicit_starting_forts": [
+        4150
+      ],
+      "centers_of_trade": [],
+      "historical_rivals": [
+        "POR"
+      ],
+      "historical_friends": [],
+      "outgoing_starting_claims": {
+        "POR": [
+          227
+        ]
+      },
+      "incoming_starting_claims": {
+        "POR": [
+          229,
+          230,
+          4150
+        ]
+      },
+      "rough_force_limit_implication": "low",
+      "balance_read": "Viable enough to survive an opening war in some runs, but not positioned to dominate Portugal without outside help."
+    }
+  ],
+  "observer_testing_watchlist": [
+    "Does Castile reliably beat the field, or do Granada and Catalonia keep it honest?",
+    "Does Granada collapse from Catholic province pressure or become too strong from southern development?",
+    "Does Portugal survive and continue to have a future colonial role after fighting Al-Gharb?",
+    "Does Al-Gharb survive long enough to matter without blocking Portugal too often?",
+    "Does Aragon remain relevant despite being much smaller than Catalonia?",
+    "Do Leon, Galicia, and Navarre disappear before contributing to Iberian consolidation?"
+  ],
+  "recommended_small_fixes": [],
+  "recommended_deferred_tuning": [
+    "If Aragon underperforms repeatedly, consider a later diplomacy, mission, or minor fort adjustment before moving provinces.",
+    "If Navarre dies instantly in most observer runs, consider a restrained defensive or diplomatic seed rather than a map edit.",
+    "If Granada is unstable because of religious mix, tune religion/rebel pressure only after observing actual in-game behavior.",
+    "If Portugal is blocked too often by Al-Gharb, adjust claims, diplomacy, or fort placement after observer evidence."
+  ],
+  "intentionally_not_changed": [
+    "No major development rebalance.",
+    "No province redistribution.",
+    "No map edits.",
+    "No non-Iberian overhaul.",
+    "No hostile intervention, rare dynastic events, colonial proxy wars, or automatic province development."
+  ]
+}

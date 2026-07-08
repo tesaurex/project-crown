@@ -1,0 +1,164 @@
+{
+  "audit": "iberia_spain_formation_review",
+  "date": "2026-07-08",
+  "scope": "Project Crown SpanishNation decision review for Iberia POC",
+  "source_file": "Mod Build/project_crown/decisions/SpanishNation.txt",
+  "summary": {
+    "decision_reviewed": "spanish_nation",
+    "technical_verdict": "pass",
+    "balance_verdict": "Conservative and suitable for observer testing.",
+    "headline_findings": [
+      "The decision is available only to the intended non-Portuguese, non-Granadan Iberian culture-states.",
+      "Portugal is excluded as intended.",
+      "Granada and Andalusian-to-Spain formation are deferred as intended.",
+      "The requirements are demanding but not impossible: ten key provinces across Galicia, Navarre, Catalonia, Aragon, Castile, Leon, Valencia, and Granada must be owned as cores at adm tech 10 while at peace.",
+      "The permanent claims granted on formation cover the non-Portuguese Iberia region and exclude the Portuguese/Al-Gharb areas.",
+      "Localisation exists for the Project Crown decision title and description."
+    ]
+  },
+  "potential_review": {
+    "eligible_tags": [
+      "CAS",
+      "ARA",
+      "CAT",
+      "LON",
+      "GAL",
+      "NAV"
+    ],
+    "eligible_primary_cultures": [
+      "castillian",
+      "aragonese",
+      "catalan",
+      "leonese",
+      "galician",
+      "basque"
+    ],
+    "explicitly_excluded_tags": [
+      "SPA",
+      "POR",
+      "GRA",
+      "ADU",
+      "PAP",
+      "HLR"
+    ],
+    "portugal_excluded": true,
+    "granada_to_spain_deferred": true,
+    "diplomatic_spain_path_present": false,
+    "notes": [
+      "The vanilla diplomatic Spain path is not present in the Project Crown override.",
+      "ADU remains excluded from Spain in this POC review.",
+      "The decision preserves the normal-or-historical nation, end-game tag, subject, and former-colonial safeguards."
+    ]
+  },
+  "requirements_review": {
+    "required_adm_tech": 10,
+    "must_be_at_war": false,
+    "must_be_free_or_tributary": true,
+    "must_not_be_nomad": true,
+    "required_owned_core_provinces": [
+      {
+        "province_id": 206,
+        "name": "Galicia",
+        "starting_owner": "GAL",
+        "purpose": "Galician representation"
+      },
+      {
+        "province_id": 210,
+        "name": "Navarra",
+        "starting_owner": "NAV",
+        "purpose": "Basque/Navarre representation"
+      },
+      {
+        "province_id": 213,
+        "name": "Barcelona",
+        "starting_owner": "CAT",
+        "purpose": "Catalan capital"
+      },
+      {
+        "province_id": 214,
+        "name": "Zaragoza",
+        "starting_owner": "ARA",
+        "purpose": "Aragonese capital"
+      },
+      {
+        "province_id": 215,
+        "name": "Castilla La Vieja",
+        "starting_owner": "CAS",
+        "purpose": "Castilian core center"
+      },
+      {
+        "province_id": 216,
+        "name": "Salamanca",
+        "starting_owner": "LON",
+        "purpose": "Leonese representation"
+      },
+      {
+        "province_id": 219,
+        "name": "Toledo",
+        "starting_owner": "CAS",
+        "purpose": "Castilian capital"
+      },
+      {
+        "province_id": 220,
+        "name": "Valencia",
+        "starting_owner": "CAT",
+        "purpose": "Eastern Iberian key province"
+      },
+      {
+        "province_id": 223,
+        "name": "Granada",
+        "starting_owner": "GRA",
+        "purpose": "Granadan capital"
+      },
+      {
+        "province_id": 224,
+        "name": "Andalucia",
+        "starting_owner": "GRA",
+        "purpose": "Lower Andalusian key province"
+      }
+    ],
+    "impossibility_review": "No impossible requirement found. All required provinces exist in the implemented Iberian setup and can be owned and cored by an eligible tag through normal play.",
+    "difficulty_review": "Not too easy for a POC: an eligible tag must defeat or integrate several Iberian competitors and be at adm tech 10 before forming Spain."
+  },
+  "effect_review": {
+    "tag_switch": "SPA",
+    "government_rank_floor": 2,
+    "prestige_gain": 25,
+    "country_modifier": "centralization_modifier",
+    "country_modifier_duration_days": 7300,
+    "permanent_claim_scope": {
+      "base_scope": "iberia_region",
+      "excluded_areas": [
+        "alentejo_area",
+        "beieras_area"
+      ],
+      "claimed_province_count": 52,
+      "claimed_development": 443,
+      "portugal_or_al_gharb_provinces_claimed": [],
+      "review": "Claims are broad enough to consolidate non-Portuguese Spain but do not give Spain sanctioned claims on Portugal or Al-Gharb."
+    },
+    "modern_border_claim_review": "Canaries, Ceuta, and Melilla style modern-border extras remain outside this POC; this decision grants only the current non-Portuguese Iberia-region claim layer."
+  },
+  "localisation_review": {
+    "file": "Mod Build/project_crown/localisation/english/crown_iberia_l_english.yml",
+    "required_keys_present": [
+      "spanish_nation_title",
+      "spanish_nation_desc"
+    ],
+    "status": "pass"
+  },
+  "recommended_small_fixes": [],
+  "observer_testing_questions": [
+    "Does Spain form between the target 1550-1650 window in most hands-off runs?",
+    "Do requirements lead to a plausible 2-4 state Iberia before Spain forms?",
+    "Does excluding Portugal keep Portugal independent often enough?",
+    "Does the non-Portuguese permanent-claim scope produce reasonable post-formation cleanup without pulling Spain into Portugal by default?"
+  ],
+  "intentionally_not_implemented": [
+    "No Portuguese Spain path.",
+    "No Granadan or Andalusian-to-Spain path.",
+    "No rare dynastic Castile-Aragon union path.",
+    "No mission-gated group-claim ladder.",
+    "No hostile intervention or colonial proxy-war system."
+  ]
+}

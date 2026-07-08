@@ -1,0 +1,149 @@
+{
+  "audit": "iberia_qa_checklist",
+  "date": "2026-07-08",
+  "scope": "Phase 2B Iberia QA and Balance Pass",
+  "preflight": {
+    "project_root": "/Users/roman/Desktop/Project Crown",
+    "expected_branch": "iberia-poc-polish",
+    "actual_branch": "iberia-poc-polish",
+    "working_tree_clean_before_work": true,
+    "preflight_result": "pass"
+  },
+  "technical_checks": [
+    {
+      "check": "Iberian owner/controller pairs match at 1444",
+      "status": "pass",
+      "evidence": "62 Iberian province history overrides checked; 0 owner/controller mismatches."
+    },
+    {
+      "check": "Iberian owners have cores on starting provinces",
+      "status": "pass",
+      "evidence": "62 Iberian province history overrides checked; every starting owner has a core."
+    },
+    {
+      "check": "No extra starting cores on Iberian POC provinces",
+      "status": "pass",
+      "evidence": "Starting core sets match starting owners in the implemented province overrides."
+    },
+    {
+      "check": "Al-Gharb tag, country, history, localisation, and flag files exist",
+      "status": "pass",
+      "evidence": "AGH is declared in 00_project_crown_tags.txt, has common/countries and history/countries files, AGH localisation keys, and gfx/flags/AGH.tga."
+    },
+    {
+      "check": "Project Crown SpanishNation decision exists and excludes Portugal",
+      "status": "pass",
+      "evidence": "SpanishNation.txt contains spanish_nation, eligible tags CAS/ARA/CAT/LON/GAL/NAV, and NOT = { tag = POR }."
+    },
+    {
+      "check": "Granada and Andalusian-to-Spain path deferred",
+      "status": "pass",
+      "evidence": "SpanishNation.txt excludes GRA and ADU; no alternate Granadan Spain path was added."
+    },
+    {
+      "check": "Iberian localisation format",
+      "status": "pass",
+      "evidence": "crown_iberia_l_english.yml has UTF-8 BOM, l_english header, one-space entries, and required AGH/spanish_nation keys."
+    },
+    {
+      "check": "EU4 text brace validation",
+      "status": "pass",
+      "evidence": "77 Project Crown EU4 .txt files checked; 0 brace-balance errors."
+    },
+    {
+      "check": "Audit JSON parse validation",
+      "status": "pass",
+      "evidence": "18 audit JSON files parsed successfully after the Phase 2B audit files were added."
+    },
+    {
+      "check": "Map validator",
+      "status": "pass",
+      "evidence": "validate_project_crown_map.py reported dimensions 5632x2048, undefined_pixel_count 0, and missing_vanilla_defined_ids []."
+    },
+    {
+      "check": "Border-cleanliness validator",
+      "status": "pass_with_documented_exception",
+      "evidence": "9 countries checked; 1 disconnected country, CAT, due only to accepted Balearic island components; 0 province-snake warnings."
+    },
+    {
+      "check": "Iberian diplomacy seed restraint",
+      "status": "pass",
+      "evidence": "Only CAS/GRA rivalry, CAS/POR friendship, POR/AGH rivalry, and POR/SPA historical friendship are present in starting country history."
+    },
+    {
+      "check": "Forbidden systems absent",
+      "status": "pass",
+      "evidence": "No hostile intervention, rare dynastic events, colonial proxy wars, or automatic province development were implemented in this pass."
+    },
+    {
+      "check": "Map files untouched in Phase 2B",
+      "status": "pass",
+      "evidence": "This QA pass made no map edits."
+    },
+    {
+      "check": "Non-Iberian regions untouched",
+      "status": "pass",
+      "evidence": "This QA pass did not overhaul or edit non-Iberian regional setup."
+    }
+  ],
+  "validation_commands": [
+    {
+      "command": "python3 Tooling/validate_project_crown_map.py --summary-json Tooling/project_crown_map_validation_summary.json",
+      "result": "pass"
+    },
+    {
+      "command": "python3 Tooling/culture_state/validate_border_cleanliness.py --ownership-json Tooling/culture_state/audits/iberia_ownership_implemented.json --output Tooling/culture_state/audits/iberia_border_cleanliness_validation.json",
+      "result": "pass_with_documented_cat_baleares_exception"
+    },
+    {
+      "command": "custom lightweight Python checks for braces, localisation keys, JSON parsing, owner/controller consistency, and owner cores",
+      "result": "pass"
+    }
+  ],
+  "balance_checks": {
+    "castile_too_dominant": {
+      "status": "watch",
+      "finding": "Castile has 110 development, only 1 more than Granada and 9 more than Catalonia. It is not obviously too dominant from static setup alone."
+    },
+    "granada_too_strong_or_weak": {
+      "status": "watch",
+      "finding": "Granada has 109 development and good trade centers, but Muslim tech, Sunni state religion, eight Catholic provinces, and one explicit fort constrain it."
+    },
+    "portugal_survival_with_al_gharb": {
+      "status": "likely_ok_static",
+      "finding": "Portugal keeps 89 development, Lisboa/Porto trade centers, a Lisboa fort, and Castile friendship; observer runs should confirm."
+    },
+    "al_gharb_viability": {
+      "status": "likely_ok_static",
+      "finding": "Al-Gharb has 24 development, three provinces, a defensive fort, and limited claims. It is viable but not overpowered."
+    },
+    "catalonia_aragon_split": {
+      "status": "watch",
+      "finding": "Catalonia at 101 development greatly exceeds Aragon at 36. This may be acceptable but should be observed because Aragon is the Aragonese staple."
+    },
+    "leon_galicia_navarre_viability": {
+      "status": "watch",
+      "finding": "Leon is medium-small at 46 development; Galicia at 28 and Navarre at 13 are fragile. Tune only after observer evidence."
+    }
+  },
+  "phase_2b_changes": {
+    "gameplay_files_changed": false,
+    "docs_or_audits_changed_only": true,
+    "deployment_required": false,
+    "project_crown_mod_synced_to_user_mod_folder": false,
+    "map_files_edited": false,
+    "flags_imported": false,
+    "non_iberian_region_overhauled": false
+  },
+  "known_limits": [
+    "No EU4 launch or visual in-game pass was performed during this Phase 2B audit.",
+    "No observer run was performed; balance conclusions are static-data findings only.",
+    "Spanish, Aragonese, Portuguese, and Granadan mission assumptions remain a known later-content risk from the existing POC log."
+  ],
+  "recommended_next_steps": [
+    "Run at least one Iberia-focused observer game to 1550 and one to 1650.",
+    "Track whether Iberia consolidates to 2-4 states by about 1550.",
+    "Track whether Spain forms in most runs by about 1650 while Portugal usually remains outside Spain.",
+    "Review mission-tree assumptions only after the static POC setup has observer evidence."
+  ]
+}
