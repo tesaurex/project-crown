@@ -1,0 +1,75 @@
+{
+  "audit": "iberia_dynastic_balance_patch",
+  "date": "2026-07-09",
+  "branch": "iberia-poc-polish",
+  "scope": "Phase 2F narrow dynastic balance patch for early Iberian personal unions",
+  "gameplay_files_changed": true,
+  "changes_applied": [
+    {
+      "file": "Mod Build/project_crown/history/countries/CAS - Castile.txt",
+      "change": "Removed add_heir_personality = infertile_personality from the 1425.1.5 Enrique heir block.",
+      "before": "The 1444 Castilian heir Enrique de Trastamara was forced to have infertile_personality.",
+      "after": "The 1444 Castilian heir Enrique de Trastamara keeps his dynasty, claim, stats, birth date, death date, and surrounding ruler setup, but is no longer forced infertile as an heir.",
+      "intent": "Reduce early no-heir dynastic collapse risk after the Iberian Wedding was disabled, while preserving normal monarchy succession variance."
+    }
+  ],
+  "unchanged": {
+    "dynasties": [
+      "CAS remains de Trastamara.",
+      "POR remains de Avis.",
+      "ARA and NAV remain in their vanilla Trastamara context.",
+      "CAT, LON, and GAL generated dynastic setup was left untouched."
+    ],
+    "starting_heirs": [
+      "No new heirs were added.",
+      "No heir claim, stat, birth-date, or death-date values were changed."
+    ],
+    "diplomacy": [
+      "No Castile-Portugal royal marriage was added or removed.",
+      "No Castile-Portugal alliance was added.",
+      "Historical friendships and rivalries were left unchanged."
+    ],
+    "scripted_content": [
+      "No new event was added.",
+      "No on_action was added.",
+      "No mission file was overridden.",
+      "No decision file was changed."
+    ],
+    "map_and_balance": [
+      "No province ownership changed.",
+      "No province controller changed.",
+      "No cores or claims changed.",
+      "No development changed.",
+      "No forts changed.",
+      "No map files changed."
+    ]
+  },
+  "why_this_patch": [
+    "It targets the highest-confidence cause of the observed POR-over-CAS superpower without blocking all dynastic play.",
+    "It leaves Portugal friendly enough to survive and interact with Castile without being turned into an early forced union engine.",
+    "It avoids prematurely implementing Project Crown's future rare dynastic unification package."
+  ],
+  "expected_effect": [
+    "Castile should be less likely to enter an early heirless succession crisis after Enrique ascends in a 1444 observer run.",
+    "Natural Iberian marriages and ordinary rare succession accidents remain possible, but the forced early no-heir amplifier is removed.",
+    "If early PUs still recur, the next escalation should be a documented time-limited Iberian PU guardrail or bespoke rare-dynasty design, not broad province tuning."
+  ],
+  "validation_required": [
+    "EU4 brace validation over changed script files.",
+    "JSON parse validation for both Phase 2F audit files.",
+    "Iberia border-cleanliness validation.",
+    "Project Crown map validator quick check.",
+    "Verify no map files changed.",
+    "Sync gameplay file to the local EU4 mod deployment."
+  ],
+  "validation_results": {
+    "json_parse": "pass: both Phase 2F audit JSON files parsed successfully",
+    "eu4_braces": "pass: CAS history, FlavorSPA override, and Project Crown Iberia diplomacy have balanced braces",
+    "owner_controller": "pass: date-aware check over 62 Iberian ownership provinces found no owner/controller mismatches at 1444.11.11",
+    "border_cleanliness": "pass_with_known_exception: 9 tags checked; only CAT has disconnected island components, matching the accepted Balearic island exception",
+    "map_validator": "pass: dimensions match vanilla, undefined pixels 0, missing vanilla-defined ids 0",
+    "localisation": "not_applicable: no localisation files changed",
+    "map_files_changed": false,
+    "deployment_sync": "pass: CAS country history copied to the local EU4 mod deployment and cmp matched"
+  }
+}

@@ -93,7 +93,6 @@ change_estate_land_share = {
 		mil = 1
 	}
 	clear_scripted_personalities = yes
-	add_heir_personality = infertile_personality
 	add_ruler_personality = naive_personality
 	add_ruler_personality = zealot_personality
 	add_ruler_personality = well_advised_personality

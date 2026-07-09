@@ -1,0 +1,158 @@
+{
+  "audit": "iberia_early_pu_risk_review",
+  "date": "2026-07-09",
+  "branch": "iberia-poc-polish",
+  "scope": "Phase 2F early Iberian personal-union risk after observer report of Portugal over Castile by 1497",
+  "preflight": {
+    "project_root": "/Users/roman/Desktop/Project Crown",
+    "expected_branch": "iberia-poc-polish",
+    "actual_branch": "iberia-poc-polish",
+    "working_tree_clean_before_work": true,
+    "result": "pass"
+  },
+  "design_constraints": [
+    "Aggressive Iberian consolidation is acceptable.",
+    "Random early Portugal-Castile or Castile-Portugal personal unions are not intended before the rare dynastic system exists.",
+    "Do not implement the full rare dynastic system in this phase.",
+    "Prefer the smallest safe dynastic setup fix over broad event, mission, or diplomacy rewrites."
+  ],
+  "source_review": {
+    "project_crown_diplomacy": {
+      "file": "Mod Build/project_crown/history/diplomacy/project_crown_iberia.txt",
+      "finding": "Project Crown only seeds the Phase 2E GRA-AGH alliance. It does not start Castile and Portugal in an alliance, royal marriage, or union."
+    },
+    "vanilla_iberian_diplomacy": {
+      "file": "/Users/roman/Library/Application Support/Steam/steamapps/common/Europa Universalis IV/history/diplomacy/Iberian_alliances.txt",
+      "finding": "Vanilla contains historical later-start unions and royal marriages involving CAS, POR, ARA, NAV, SPA, and NAP. These are bookmark-history entries rather than a Project Crown 1444 seed.",
+      "notable_entries": [
+        "ARA-NAP union active for vanilla 1444 starts.",
+        "ARA-NAV union dated 1458.6.29 to 1479.1.20.",
+        "CAS-ARA union dated 1479.9.4 to 1516.1.23.",
+        "SPA-POR union dated 1580.8.26 to 1640.12.1.",
+        "CAS/POR historical royal marriages begin after 1455 in vanilla diplomacy history."
+      ]
+    },
+    "project_crown_events": {
+      "file": "Mod Build/project_crown/events/FlavorSPA.txt",
+      "finding": "The Iberian Wedding event flavor_spa.3716 is overridden with always = no. The later Portuguese Crown event remains a Spain-over-Portugal path after 1550 and does not explain a Portugal-over-Castile union by 1497."
+    },
+    "vanilla_events": {
+      "finding": "No inspected vanilla flavor event directly creates a Portugal-over-Castile union. EU4 does support break_union, but adding an automatic early Iberian union breaker would be a larger scripted guardrail than needed for this phase."
+    },
+    "vanilla_missions": {
+      "finding": "Spanish, Aragonese, and Navarrese missions include restore-personal-union CB rewards. They do not directly create a Portugal-over-Castile union and Project Crown has no mission overrides."
+    },
+    "vanilla_decisions": {
+      "finding": "No inspected decision creates a Portugal-over-Castile union."
+    }
+  },
+  "probable_observer_cause": {
+    "confidence": "medium_high",
+    "cause": "Standard EU4 dynastic succession mechanics after natural AI royal marriage, most likely enabled by CAS/POR historical friendship and amplified by Castile's scripted infertile starting heir personality.",
+    "evidence": [
+      "CAS and POR are Catholic monarchies and historical friends, making an early royal marriage plausible without Project Crown seeding one.",
+      "CAS started 1444 with Enrique de Trastamara as heir and a forced add_heir_personality = infertile_personality.",
+      "Project Crown disables the Iberian Wedding, so Castile's vanilla dynastic instability is no longer channelled into the intended Castile-Aragon event path.",
+      "No direct Project Crown or vanilla script was found that creates POR over CAS by 1497."
+    ],
+    "limits": "No observer save log was available in this pass, so the exact succession tick cannot be proven from script alone."
+  },
+  "tag_risk_review": {
+    "CAS": {
+      "religion": "catholic",
+      "government": "monarchy",
+      "starting_dynasty": "de Trastamara",
+      "starting_heir": "Enrique de Trastamara, claim 95",
+      "risk_before_patch": "high",
+      "risk_after_patch": "medium",
+      "notes": "Historical_friend = POR plus the forced infertile heir personality created the most plausible early superpower PU path."
+    },
+    "POR": {
+      "religion": "catholic",
+      "government": "monarchy",
+      "starting_dynasty": "de Avis",
+      "starting_heir": "Afonso de Avis, claim 95",
+      "risk_before_patch": "medium",
+      "risk_after_patch": "medium",
+      "notes": "Has historical_friend = CAS and SPA, so natural royal marriages are likely. It has a valid heir and no forced infertility setup."
+    },
+    "ARA": {
+      "religion": "catholic",
+      "government": "monarchy",
+      "starting_dynasty": "de Trastamara",
+      "starting_heir": "Joan de Trastamara, claim 95",
+      "risk_before_patch": "medium",
+      "risk_after_patch": "medium",
+      "notes": "Shared Trastamara dynasty and vanilla ARA-NAP union context are watch items, but the disabled Iberian Wedding already blocks the main scripted CAS-ARA union."
+    },
+    "CAT": {
+      "religion": "catholic",
+      "government": "monarchy",
+      "starting_dynasty": "generated",
+      "starting_heir": "generated_or_none",
+      "risk_before_patch": "medium",
+      "risk_after_patch": "medium",
+      "notes": "Sparse released-state history means random dynastic setup. Watch, but not the observed superpower path."
+    },
+    "LON": {
+      "religion": "catholic",
+      "government": "monarchy",
+      "starting_dynasty": "generated",
+      "starting_heir": "generated_or_none",
+      "risk_before_patch": "medium",
+      "risk_after_patch": "medium",
+      "notes": "Sparse released-state history means random dynastic setup. Small-country PU risk remains acceptable to observe before inventing heirs."
+    },
+    "GAL": {
+      "religion": "catholic",
+      "government": "monarchy",
+      "starting_dynasty": "generated",
+      "starting_heir": "generated_or_none",
+      "risk_before_patch": "medium",
+      "risk_after_patch": "medium",
+      "notes": "Sparse released-state history means random dynastic setup. It is not a likely early Iberian superpower source by itself."
+    },
+    "NAV": {
+      "religion": "catholic",
+      "government": "monarchy",
+      "starting_dynasty": "de Trastamara",
+      "starting_heir": "none_explicit_at_1444",
+      "risk_before_patch": "medium_high",
+      "risk_after_patch": "medium_high",
+      "notes": "Shared dynasty with CAS/ARA and no explicit 1444 heir make Navarre a watch item. Its size keeps this below the immediate CAS/POR risk."
+    },
+    "GRA": {
+      "religion": "sunni",
+      "government": "iqta monarchy",
+      "starting_dynasty": "Nasrid",
+      "starting_heir": "none_explicit_alive_at_1444",
+      "risk_before_patch": "low",
+      "risk_after_patch": "low",
+      "notes": "Different religion blocks normal Catholic royal-marriage PU paths with CAS/POR/ARA/CAT/LON/GAL/NAV."
+    },
+    "AGH": {
+      "religion": "sunni",
+      "government": "iqta monarchy",
+      "starting_dynasty": "al-Gharbi",
+      "starting_heir": "Muhammad al-Gharbi, claim 75",
+      "risk_before_patch": "low",
+      "risk_after_patch": "low",
+      "notes": "Has a valid heir and different religion from the Catholic PU web."
+    }
+  },
+  "recommendation": {
+    "selected": "Remove Castile's forced 1444 heir infertility personality.",
+    "not_selected": [
+      "Do not add starting Castile-Portugal rivalry or remove their historical friendship.",
+      "Do not seed new royal marriages or alliances.",
+      "Do not add a scripted break_union on_action yet.",
+      "Do not override missions or the Portuguese Crown event for this observer-specific issue.",
+      "Do not invent full dynastic histories for all Iberian minors in Phase 2F."
+    ],
+    "next_observer_focus": [
+      "Does Portugal still get an early PU over Castile before 1500?",
+      "Does Castile still collapse into a different early Catholic PU before 1500?",
+      "Do CAT/LON/GAL/NAV become frequent unintended PU subjects, or is the risk isolated to normal minor-state variance?"
+    ]
+  }
+}
