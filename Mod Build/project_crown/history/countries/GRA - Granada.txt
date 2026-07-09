@@ -5,6 +5,7 @@ religion = sunni
 add_accepted_culture = berber
 technology_group = muslim
 historical_rival = CAS
+historical_friend = AGH
 capital = 223	# Granada
 government_rank = 1
 religious_school = maliki_school

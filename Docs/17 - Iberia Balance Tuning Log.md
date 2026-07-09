@@ -96,3 +96,9 @@ Do not tune Iberian province ownership, development values, minor forts, broad d
 Do not touch Africa, Asia, Australia, the Americas, or the Philippines in this phase. Those remain future open-region work.
 
 No map files were edited, no non-Iberian region was overhauled, and no Africa/Asia/Australia/Philippines files were changed.
+
+## Phase 2E Follow-Up
+
+Phase 2E relaxed the Phase 2D Andalusia gate. The broad east-west flank path remains, but Granada can also form Andalusia after eliminating Al-Gharb and owning/coreing Beja, Algarve, and Evora, while Al-Gharb can form Andalusia if it eliminates Granada and conquers the required Andalusian core block. This reflects the user's clarification that early Andalusia is acceptable when it represents earned Muslim-Iberian dominance.
+
+Phase 2E also added a Granada-Al-Gharb cooperation seed and unowned 1444 starts for the Canarias, Tenerife, the Azores, and Madeira.

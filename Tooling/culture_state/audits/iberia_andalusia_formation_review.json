@@ -1,0 +1,71 @@
+{
+  "audit": "iberia_andalusia_formation_review",
+  "date": "2026-07-09",
+  "branch": "iberia-poc-polish",
+  "source_file": "Mod Build/project_crown/decisions/AndalusianNation.txt",
+  "context": {
+    "phase_2d_rule": "Required Granada or another eligible Muslim former to own and core both the western pair Beja/Algarve and the eastern pair Alicante/Xativa.",
+    "phase_2e_feedback": "User clarified that early Andalusia is acceptable if it reflects earned Muslim-Iberian dominance and should not be made impossible."
+  },
+  "decision_review": {
+    "eligible_tags_or_cultures": [
+      "primary_culture = andalucian",
+      "culture_group = maghrebi",
+      "tag = AGH"
+    ],
+    "required_core_andalusian_block": [
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      1748,
+      1749,
+      4547,
+      4548
+    ],
+    "required_state": 225,
+    "formation_paths": [
+      {
+        "name": "broad_east_west_consolidation",
+        "requires_owned_core_provinces": [
+          229,
+          230,
+          1750,
+          4549
+        ],
+        "intent": "Keeps the Phase 2D broad territorial path available."
+      },
+      {
+        "name": "granada_muslim_iberian_dominance",
+        "tag": "GRA",
+        "requires_absent_tag": "AGH",
+        "requires_owned_core_provinces": [
+          229,
+          230,
+          4150
+        ],
+        "intent": "Allows Granada to form Andalusia after eliminating or absorbing Al-Gharb, without requiring an eastern Catalan war."
+      },
+      {
+        "name": "al_gharb_muslim_iberian_dominance",
+        "tag": "AGH",
+        "requires_absent_tag": "GRA",
+        "requires_owned_core_provinces": [
+          229,
+          230,
+          4150
+        ],
+        "intent": "Allows Al-Gharb to become Andalusia if it conquers and cores the Granadan Andalusian block and Granada no longer exists."
+      }
+    ]
+  },
+  "balance_read": "The Phase 2E rule is softer than Phase 2D but still prevents forming Andalusia from only one loose province grab. The former must hold the core Andalusian block and either broad flanks or clear dominance over Muslim Iberia.",
+  "spain_formation_changed": false,
+  "risks": [
+    "Granada can form Andalusia earlier if it fully defeats Al-Gharb.",
+    "Al-Gharb remains a long-shot Andalusia former because it must conquer and core Granada's key block first.",
+    "Observer testing should check whether ADU forms by conquest rather than opportunistic isolated border snips."
+  ]
+}

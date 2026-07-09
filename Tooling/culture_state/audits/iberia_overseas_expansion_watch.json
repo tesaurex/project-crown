@@ -1,0 +1,47 @@
+{
+  "audit": "iberia_overseas_expansion_watch",
+  "date": "2026-07-09",
+  "branch": "iberia-poc-polish",
+  "scope": "Phase 2E watch note for early Iberian overseas expansion",
+  "observer_feedback": {
+    "castile_colonized_africa": true,
+    "portugal_colonized_brazil": true,
+    "portugal_conquered_morocco": true
+  },
+  "diagnosis": {
+    "castile_africa": {
+      "likely_sources": [
+        "Vanilla Spanish/Castilian mission and exploration behavior.",
+        "Vanilla colonial range and AI idea choices.",
+        "Inherited 1444 Atlantic island ownership before Phase 2E may have helped range."
+      ],
+      "phase_2e_change": "Removed Castile's 1444 ownership of Canarias and Tenerife."
+    },
+    "portugal_brazil": {
+      "likely_sources": [
+        "Vanilla Portuguese mission tree explicitly supports South America and Brazil expansion.",
+        "Vanilla exploration behavior.",
+        "Inherited 1444 Madeira/Azores ownership before Phase 2E may have helped Atlantic range."
+      ],
+      "phase_2e_change": "Removed Portugal's 1444 ownership of Madeira and Azores. No Brazil or global colonization system was changed."
+    },
+    "portugal_morocco": {
+      "likely_sources": [
+        "Vanilla Portuguese mission tree includes Tangiers and Moroccan follow-up claims.",
+        "Portugal has nearby naval access and can wage normal overseas wars."
+      ],
+      "phase_2e_change": "No Morocco mission or mainland Africa ownership changes were made. Morocco remains a normal Portuguese strategic direction for now."
+    }
+  },
+  "future_work": [
+    "Design a proper colonization-gating system before changing global Exploration behavior.",
+    "Review Portuguese and Castilian mission trees only after more observer saves identify specific too-early completions.",
+    "Run the future open-region phase separately before clearing mainland Africa, the Americas, Australia, Asia, or the Philippines."
+  ],
+  "no_change_confirmation": [
+    "No mainland Africa province history was edited.",
+    "No Brazil or Americas province history was edited.",
+    "No global colonization defines or idea groups were changed.",
+    "No mission files were changed in Phase 2E."
+  ]
+}

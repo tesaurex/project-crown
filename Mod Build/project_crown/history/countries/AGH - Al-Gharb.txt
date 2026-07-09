@@ -4,6 +4,7 @@ primary_culture = portugese
 religion = sunni
 technology_group = muslim
 historical_rival = POR
+historical_friend = GRA
 capital = 230 # Algarve
 government_rank = 1
 religious_school = maliki_school

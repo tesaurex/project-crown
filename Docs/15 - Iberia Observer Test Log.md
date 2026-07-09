@@ -37,3 +37,17 @@ The successful 1489 run is a useful stability signal after the crash investigati
 - No province ownership was changed.
 - No map files were edited.
 - No non-Iberian region was touched.
+
+## Follow-Up Observer Feedback
+
+A later observer run after the Phase 2D Andalusia requirement patch remained stable but showed continued balance and border concerns:
+
+- Castile still dominated much of Iberia.
+- Portugal took some southern Spanish land.
+- Castile took some Portuguese land.
+- Some borders looked ugly.
+- Castile and Portugal inherited Atlantic island ownership from vanilla history.
+- Castile began colonizing in Africa.
+- Portugal colonized Brazil and conquered Morocco.
+
+Phase 2E responds with limited Atlantic-island start cleanup, a Granada/Al-Gharb cooperation seed, and an Andalusia formation rule that allows Muslim-Iberian dominance without restoring the one-small-war flank shortcut.

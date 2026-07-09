@@ -1,0 +1,72 @@
+{
+  "audit": "iberia_atlantic_island_start_audit",
+  "date": "2026-07-09",
+  "branch": "iberia-poc-polish",
+  "scope": "Limited Atlantic-island 1444 start cleanup for Project Crown",
+  "area_reviewed": {
+    "area": "macaronesia_area",
+    "province_ids": [
+      366,
+      367,
+      368,
+      4565
+    ],
+    "note": "Cape Verde is province 1096 and is audited separately because it is nearby and relevant to Portuguese Atlantic expansion."
+  },
+  "islands": [
+    {
+      "province_id": 366,
+      "name": "The Canarias",
+      "vanilla_1444_owner": "CAS",
+      "project_crown_before_owner": "CAS",
+      "project_crown_after_owner": null,
+      "changed": true,
+      "change": "Added Project Crown province-history override with no 1444 owner/controller/core. Preserved uncolonized culture/religion/native setup and future dated Castile/Spain ownership for later bookmarks."
+    },
+    {
+      "province_id": 4565,
+      "name": "Tenerife",
+      "vanilla_1444_owner": "CAS",
+      "project_crown_before_owner": "CAS",
+      "project_crown_after_owner": null,
+      "changed": true,
+      "change": "Added Project Crown province-history override with no 1444 owner/controller/core. Preserved uncolonized culture/religion/native setup and future dated Castile/Spain ownership for later bookmarks."
+    },
+    {
+      "province_id": 367,
+      "name": "The Azores",
+      "vanilla_1444_owner": "POR",
+      "project_crown_before_owner": "POR",
+      "project_crown_after_owner": null,
+      "changed": true,
+      "change": "Added Project Crown province-history override with no 1444 owner/controller/core. Preserved uncolonized culture/religion/native setup and a future dated Portugal ownership block for later bookmarks."
+    },
+    {
+      "province_id": 368,
+      "name": "Madeira",
+      "vanilla_1444_owner": "POR",
+      "project_crown_before_owner": "POR",
+      "project_crown_after_owner": null,
+      "changed": true,
+      "change": "Added Project Crown province-history override with no 1444 owner/controller/core. Preserved uncolonized culture/religion/native setup and a future dated Portugal ownership block for later bookmarks."
+    },
+    {
+      "province_id": 1096,
+      "name": "Cape Verde",
+      "vanilla_1444_owner": null,
+      "project_crown_before_owner": null,
+      "project_crown_after_owner": null,
+      "changed": false,
+      "change": "No Project Crown override added; vanilla already has Cape Verde unowned at the 1444 start."
+    }
+  ],
+  "policy": {
+    "limited_exception": "This is a user-approved Atlantic-island start cleanup, not a full open-region phase.",
+    "not_changed": [
+      "No mainland Africa province history was changed.",
+      "No Americas province history was changed.",
+      "No Asia, Australia, or Philippines province history was changed.",
+      "No map files were edited."
+    ]
+  }
+}

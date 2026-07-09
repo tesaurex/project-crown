@@ -30,6 +30,7 @@ country_decisions = {
 			OR = {
 				primary_culture = andalucian
 				culture_group = maghrebi
+				tag = AGH
 			}
 			religion_group = muslim
 			OR = {
@@ -60,6 +61,7 @@ country_decisions = {
 				province_id = 4548	# Huelva
 				province_id = 229	# Beja
 				province_id = 230	# Algarve
+				province_id = 4150	# Evora
 				province_id = 1750	# Alicante
 				province_id = 4549	# Xativa
 			}
@@ -87,12 +89,30 @@ country_decisions = {
 			225 = { 							# Cordoba
 				is_state = yes
 			}
-			# Project Crown: Granada starts with the core Andalusian block, so the
-			# vanilla west-or-east flank gate allowed Andalusia after one small war.
-			owns_core_province = 230			# Algarve
-			owns_core_province = 229			# Beja
-			owns_core_province = 1750			# Alicante
-			owns_core_province = 4549			# Xativa
+			# Project Crown: formation should reward either broad east-west
+			# consolidation or clear dominance over Muslim Iberia.
+			OR = {
+				AND = {
+					owns_core_province = 230			# Algarve
+					owns_core_province = 229			# Beja
+					owns_core_province = 1750			# Alicante
+					owns_core_province = 4549			# Xativa
+				}
+				AND = {
+					tag = GRA
+					NOT = { exists = AGH }
+					owns_core_province = 230			# Algarve
+					owns_core_province = 229			# Beja
+					owns_core_province = 4150			# Evora
+				}
+				AND = {
+					tag = AGH
+					NOT = { exists = GRA }
+					owns_core_province = 230			# Algarve
+					owns_core_province = 229			# Beja
+					owns_core_province = 4150			# Evora
+				}
+			}
 		}
 		effect = {
 			225 = {	#Cordoba

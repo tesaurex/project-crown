@@ -85,3 +85,9 @@ Asia excluding the Philippines is overwhelmingly populated: 1035 owned land prov
 Run a dedicated open-region design phase before any ownership edits. That phase should use these JSON audits as the source of truth, decide approved exceptions for each excluded region, then generate a reviewable clearing plan before touching province history.
 
 No province ownership changes were made in this audit phase.
+
+## Phase 2E Addendum
+
+Phase 2E added a limited Atlantic-island start cleanup at the user's request. Project Crown now overrides the Canarias (`366`), Tenerife (`4565`), the Azores (`367`), and Madeira (`368`) so they are unowned at the 1444 start. Cape Verde (`1096`) was audited and left unchanged because it already starts unowned in vanilla 1444.
+
+This is a narrow Atlantic-island exception, not the full open-region phase. No mainland Africa, Americas, Asia, Australia, or Philippines province history was cleared or overhauled.

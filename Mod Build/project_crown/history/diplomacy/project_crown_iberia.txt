@@ -1,0 +1,8 @@
+# Phase 2E: restrained Muslim Iberian cooperation seed.
+# This gives Al-Gharb a chance to survive Portugal without freezing Iberian wars.
+alliance = {
+	first = GRA
+	second = AGH
+	start_date = 1444.11.11
+	end_date = 1821.1.1
+}

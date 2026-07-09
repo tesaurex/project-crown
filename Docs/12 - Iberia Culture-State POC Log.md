@@ -1,7 +1,7 @@
 # Project Crown: Iberia Culture-State POC Log
 
 **Date:** 2026-07-07
-**Status:** Phase 2A implemented for Iberia only. Phase 2A.1 polish added a southern Portuguese Muslim rival and cleaned up Caceres. Phase 2A.2 fixed Al-Gharb localisation and Evora religion after visual QA. Phase 2A.3 fixed Catalonia's country-selection occupation preview. Phase 2A.4 removed a tiny Catalonia/Pyrenees visual sliver.
+**Status:** Phase 2A implemented for Iberia only. Phase 2A.1 polish added a southern Portuguese Muslim rival and cleaned up Caceres. Phase 2A.2 fixed Al-Gharb localisation and Evora religion after visual QA. Phase 2A.3 fixed Catalonia's country-selection occupation preview. Phase 2A.4 removed a tiny Catalonia/Pyrenees visual sliver. Phase 2E later added limited Atlantic-island start cleanup and small Iberian balance tuning.
 
 ## Scope
 
@@ -197,3 +197,9 @@ All culture-state audit JSON files parsed successfully. Touched EU4 `.txt` files
 4. Run lightweight brace validation for changed EU4 `.txt` files.
 5. Launch EU4 with Project Crown and verify the 1444 Iberian map visually.
 6. Run an observer game to check Iberian consolidation pace and vanilla-content misfires.
+
+## Phase 2E Addendum
+
+Phase 2E added a limited Atlantic-island exception after observer feedback. The Canarias (`366`), Tenerife (`4565`), the Azores (`367`), and Madeira (`368`) now have Project Crown province-history overrides that leave them unowned at the 1444 start. Cape Verde (`1096`) was audited and left unchanged because vanilla already starts it unowned in 1444.
+
+Phase 2E also added mutual Granada/Al-Gharb historical friendship, a starting Granada-Al-Gharb alliance, and a softer Andalusia formation path based on Muslim-Iberian dominance. No Iberian mainland ownership, development, forts, map files, flags, mission files, or non-Iberian mainland regions were changed.

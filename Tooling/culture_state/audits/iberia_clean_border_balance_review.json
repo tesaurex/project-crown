@@ -1,0 +1,80 @@
+{
+  "audit": "iberia_clean_border_balance_review",
+  "date": "2026-07-09",
+  "branch": "iberia-poc-polish",
+  "scope": "Phase 2E Iberia clean-border balance review after observer feedback",
+  "observer_feedback": [
+    "Castile still dominated much of Iberia after the Phase 2D Andalusia requirement patch.",
+    "Portugal took some southern Spanish land.",
+    "Castile took some Portuguese land.",
+    "Some Iberian borders looked ugly after early wars.",
+    "Castile and Portugal started with Atlantic islands in vanilla-inherited province history.",
+    "Castile began colonizing some of Africa.",
+    "Portugal colonized Brazil and conquered Morocco."
+  ],
+  "diagnosis": {
+    "project_crown_starting_claims": {
+      "CAS": [],
+      "GRA": [],
+      "POR": [
+        229,
+        230,
+        4150
+      ],
+      "AGH": [
+        227
+      ],
+      "finding": "Project Crown does not give Castile, Granada, or Portugal broad southern-Spain or Portuguese-land starting claims. Portugal and Al-Gharb only have local split claims."
+    },
+    "castile_portugal_border": {
+      "finding": "Castile has no Project Crown claim on Portugal, and Project Crown Spain formation still excludes alentejo_area and beieras_area from permanent claims. Castile taking Portuguese land is most likely opportunistic AI conquest after wars, not a Project Crown claim incentive.",
+      "tuning": "No Castile claim was added and no Portugal claim was added. A starting Castile-Portugal alliance was intentionally not added because it could pull Portugal into Castile's offensive wars and worsen Portuguese land-taking in southern Spain."
+    },
+    "portugal_southern_spain": {
+      "finding": "Portugal starts with claims on Al-Gharb only. After conquering Al-Gharb or joining wars, normal AI conquest/fabrication can carry Portugal into Granadan southern Spain. Vanilla Portuguese missions also include later Iberian intervention logic.",
+      "tuning": "No new Portuguese southern-Spain claims were added. The Portugal-Al-Gharb local claims remain because they support the intended Portuguese/Al-Gharb contest."
+    },
+    "muslim_iberian_viability": {
+      "finding": "Granada is strong but Al-Gharb is small and isolated against Portugal. The observer feedback asks for Muslim nations to have a real chance without freezing aggression.",
+      "tuning": "Added mutual GRA/AGH historical friendship and a starting GRA-AGH alliance. POR/AGH and CAS/GRA rivalries remain, so wars are still likely."
+    },
+    "vanilla_mission_leakage": {
+      "finding": "Project Crown has no mission overrides. Vanilla Portuguese and Spanish/Granadan mission trees still provide colonial, Moroccan, Iberian, and post-formation claim incentives.",
+      "tuning": "No broad mission rewrite was applied in Phase 2E. The watch output identifies future mission gating candidates."
+    }
+  },
+  "changes_applied": {
+    "gameplay_files_changed": true,
+    "diplomacy": [
+      "Added historical_friend = AGH to GRA history.",
+      "Added historical_friend = GRA to AGH history.",
+      "Added a starting GRA-AGH alliance in history/diplomacy/project_crown_iberia.txt."
+    ],
+    "claims": [
+      "No starting claims were added.",
+      "No starting claims were removed.",
+      "Spain formation claim exclusion for Portuguese areas was left intact."
+    ],
+    "missions": [
+      "No mission files were overridden."
+    ],
+    "forts_development_ownership": [
+      "No Iberian mainland province ownership changed.",
+      "No forts changed.",
+      "No development changed."
+    ]
+  },
+  "risks": [
+    "The GRA-AGH alliance may make early Portugal-Al-Gharb conquest less common and may increase Granada's chance to survive.",
+    "If Castile still dominates repeatedly, later tuning may need small minor-state diplomacy or mission gating rather than province redistribution.",
+    "If Portugal still takes Granadan southern Spain too often, later tuning should inspect specific wars and mission completions from observer saves."
+  ],
+  "intentionally_deferred": [
+    "No major province redistribution.",
+    "No global colonization system.",
+    "No full Iberian mission-tree rewrite.",
+    "No hostile intervention.",
+    "No rare dynastic events.",
+    "No non-Iberian mainland overhaul."
+  ]
+}
