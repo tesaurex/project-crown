@@ -1,0 +1,78 @@
+{
+  "audit": "iberia_observer_targets",
+  "date": "2026-07-08",
+  "branch": "iberia-poc-polish",
+  "scope": "Recommended observer targets after Phase 2D Iberia balance tuning",
+  "recommended_next_run": {
+    "start_date": "1444.11.11",
+    "first_checkpoint_year": 1500,
+    "second_checkpoint_year": 1550,
+    "optional_late_checkpoint_year": 1650,
+    "minimum_runs_before_next_balance_change": 2,
+    "reason": "The first observer run reached 1489 and showed fast Castile and Granada expansion plus Andalusia formation; repeat runs are needed before tuning forts, diplomacy, development, or ownership."
+  },
+  "primary_questions": [
+    "Does Andalusia still form before 1500 after requiring both western and eastern flank pairs?",
+    "Does Granada remain competitive without becoming the repeat early winner?",
+    "Does Castile still snowball quickly despite the Andalusia formable delay?",
+    "Does Portugal survive outside Spain often enough?",
+    "Does Al-Gharb survive long enough to matter without unlocking an immediate Andalusia path?",
+    "Does Catalonia remain a major eastern pole without erasing Aragon too consistently?",
+    "Do Leon, Galicia, and Navarre survive long enough to influence consolidation?"
+  ],
+  "checkpoint_metrics": [
+    {
+      "year": 1500,
+      "record": [
+        "Existing Iberian tags.",
+        "Whether ADU exists.",
+        "Whether GRA exists.",
+        "Top three Iberian countries by province count.",
+        "Portugal and Al-Gharb survival.",
+        "Whether Granada owns and cores both Beja/Algarve and Alicante/Xativa.",
+        "Whether any Iberian country has crossed into non-Iberian regional overhaul territory."
+      ]
+    },
+    {
+      "year": 1550,
+      "record": [
+        "Number of independent Iberian powers.",
+        "Whether consolidation has reached roughly 2-4 meaningful states.",
+        "Whether ADU formed, and if so the formation window.",
+        "Whether Castile, Granada, or Catalonia is a repeat runaway.",
+        "Whether Portugal remains outside Spain or Andalusia.",
+        "Border cleanliness after early wars."
+      ]
+    },
+    {
+      "year": 1650,
+      "record": [
+        "Whether Spain formed.",
+        "Whether Spain formation timing looks plausible.",
+        "Whether Portugal remains usually independent from Spain.",
+        "Whether Andalusia exists as a rival path or failed completely."
+      ]
+    }
+  ],
+  "stop_and_review_triggers": [
+    "Andalusia forms before 1500 in most repeat runs.",
+    "Granada dies immediately in most repeat runs after the formable change.",
+    "Castile or Catalonia eliminates most minors before 1475 in most repeat runs.",
+    "Portugal or Al-Gharb consistently collapses before interacting meaningfully.",
+    "Spain forms before adm tech 10 due to unintended alternate content.",
+    "Any non-Iberian ownership override appears unexpectedly."
+  ],
+  "do_not_tune_until_more_data": [
+    "Iberian province ownership.",
+    "Development values.",
+    "Starting forts for Leon, Galicia, Navarre, Aragon, Portugal, or Al-Gharb.",
+    "Castile, Granada, Catalonia, or Portugal diplomacy beyond existing historical rival/friend seeds.",
+    "Mission-tree rewrites."
+  ],
+  "validation_after_observer": [
+    "Check whether ADU formation used the Project Crown flank requirement.",
+    "Re-run owner/controller consistency if province-history files change in a later pass.",
+    "Re-run border-cleanliness validation if any future ownership change is made.",
+    "Keep Africa, Asia, Australia, Americas, and Philippines untouched until their separate open-region phase."
+  ]
+}

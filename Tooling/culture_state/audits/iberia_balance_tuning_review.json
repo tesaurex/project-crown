@@ -1,0 +1,140 @@
+{
+  "audit": "iberia_balance_tuning_review",
+  "date": "2026-07-08",
+  "branch": "iberia-poc-polish",
+  "scope": "Phase 2D Iberia balance tuning after first observer run",
+  "preflight": {
+    "project_root": "/Users/roman/Desktop/Project Crown",
+    "expected_branch": "iberia-poc-polish",
+    "actual_branch": "iberia-poc-polish",
+    "working_tree_clean_before_work": true,
+    "result": "pass"
+  },
+  "observer_evidence": {
+    "run_reached_year": 1489,
+    "crash_reproduced": false,
+    "observed_outcome": [
+      "Castile expanded quickly.",
+      "Granada expanded quickly.",
+      "Andalusia formed by 1489."
+    ],
+    "evidence_weight": "single observer run; enough for a narrow formable pacing fix, not enough for province redistribution or development changes"
+  },
+  "starting_balance_review": {
+    "castile": {
+      "development": 110,
+      "forts": 2,
+      "starting_claims": "none in Iberian POC files",
+      "diplomacy": {
+        "historical_rivals": [
+          "GRA"
+        ],
+        "historical_friends": [
+          "POR"
+        ]
+      },
+      "read": "Strong central contender, but not uniquely dominant by raw development."
+    },
+    "granada": {
+      "development": 109,
+      "forts": 1,
+      "starting_claims": "none in Iberian POC files",
+      "diplomacy": {
+        "historical_rivals": [
+          "CAS"
+        ],
+        "historical_friends": []
+      },
+      "read": "Starts nearly equal to Castile and already owns the vanilla Andalusia core block required by the formable."
+    },
+    "portugal_and_al_gharb": {
+      "portugal_development": 89,
+      "al_gharb_development": 24,
+      "claims": {
+        "POR_on_AGH": [
+          229,
+          230,
+          4150
+        ],
+        "AGH_on_POR": [
+          227
+        ]
+      },
+      "read": "The split is still restrained, but Beja and Algarve are a small enough target that they should not unlock Andalusia by themselves."
+    },
+    "catalonia_and_aragon": {
+      "catalonia_development": 101,
+      "aragon_development": 36,
+      "read": "Catalonia is a major eastern pole while Aragon is compact but much weaker; this needs repeat observer evidence before any province or fort change."
+    },
+    "northern_minors": {
+      "leon_development": 46,
+      "galicia_development": 28,
+      "navarre_development": 13,
+      "read": "Fragile by design; no single-run evidence yet justifies defensive buffs or extra forts."
+    }
+  },
+  "andalusia_formation_diagnosis": {
+    "vanilla_source": "/Users/roman/Library/Application Support/Steam/steamapps/common/Europa Universalis IV/decisions/AndalusianNation.txt",
+    "project_crown_override": "Mod Build/project_crown/decisions/AndalusianNation.txt",
+    "project_crown_granada_starts_with_required_core_block": [
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      1748,
+      1749,
+      4547,
+      4548
+    ],
+    "vanilla_extra_gate": {
+      "type": "either_or",
+      "western_pair": [
+        229,
+        230
+      ],
+      "eastern_pair": [
+        1750,
+        4549
+      ]
+    },
+    "finding": "Because Project Crown Granada starts with all mandatory Andalusia provinces, the vanilla either-or flank gate let Granada form Andalusia after taking only Beja and Algarve from small Al-Gharb, or only Alicante and Xativa from Catalonia.",
+    "not_primary_causes": [
+      "Granada does not start with broad outgoing claims.",
+      "Project Crown did not add a hostile intervention or mission ladder.",
+      "Spain formation is not the acceleration source because Granada and ADU are excluded from Spain."
+    ]
+  },
+  "changes_applied": {
+    "gameplay_files_changed": true,
+    "files": [
+      "Mod Build/project_crown/decisions/AndalusianNation.txt"
+    ],
+    "change_summary": "Added a Project Crown AndalusianNation decision override. The decision keeps vanilla potential, effects, rewards, and AI willingness, but requires both Beja/Algarve and Alicante/Xativa as owned cores instead of allowing either pair alone.",
+    "intended_effect": "Granada can still form Andalusia, but should need meaningful western and eastern consolidation instead of one small early war.",
+    "andalusia_formation_tuned": true,
+    "spain_formation_tuned": false,
+    "claims_tuned": false,
+    "diplomacy_tuned": false,
+    "forts_tuned": false,
+    "province_ownership_tuned": false,
+    "development_tuned": false
+  },
+  "risks": [
+    "The requirement may delay Andalusia too much if Granada cannot reliably expand east against Catalonia.",
+    "If Castile remains a repeat snowball winner, a later pass may need restrained diplomacy or minor-protection tuning rather than more formable changes.",
+    "If Al-Gharb or Portugal collapse too often, their local claims and fort context should be reviewed after more observer data."
+  ],
+  "deferred": [
+    "No province redistribution.",
+    "No major development rebalance.",
+    "No new Iberian tags.",
+    "No hostile intervention.",
+    "No rare dynastic events.",
+    "No colonial proxy wars.",
+    "No non-Iberian regional overhaul.",
+    "No Africa, Asia, Australia, Americas, or Philippines clearing."
+  ]
+}
